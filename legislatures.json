@@ -1,0 +1,923 @@
+{
+  "V": {
+    "legislatures": [
+      {
+        "legislature": 1958,
+        "total_deputes": 576,
+        "duration": 4,
+        "parties": {
+          "PCF": {
+            "deputes": 10,
+            "color": "#A40C34"},
+          "SFIO": {
+            "deputes": 47,
+            "color": "#F40E39"},
+          "PRS": {
+            "deputes": 40,
+            "color": "#FF3B64"},
+          "MRP": {
+            "deputes": 64,
+            "color": "#FFA500"},
+          "CNIP": {
+            "deputes": 117,
+            "color": "#F49100"},
+          "UNR": {
+            "deputes": 206,
+            "color": "#33ADFF"},
+          "FAEAS": {
+            "deputes": 66,
+            "color":"#808080"},
+          "Autres": {
+            "deputes": 26,
+            "color": "#808080"}
+        }
+      },
+      {
+        "legislature": 1962,
+        "total_deputes": 482,
+        "duration": 4,
+        "parties": {
+          "PCF": {
+            "deputes": 41,
+            "color": "#A40C34"},
+          "SFIO": {
+            "deputes": 66,
+            "color": "#F40E39"},
+          "PRS": {
+            "deputes": 39,
+            "color": "#FF3B64"},
+          "MRP": {
+            "deputes": 55,
+            "color": "#FFA500"},
+          "RI": {
+            "deputes": 35,
+            "color": "#F49100"},
+          "UNR-UDT": {
+            "deputes": 233,
+            "color": "#33ADFF"},
+          "Autres": {
+            "deputes": 13,
+            "color": "#808080"}
+        }
+      },
+      {
+        "legislature": 1967,
+        "total_deputes": 486,
+        "duration": 1,
+        "parties": {
+          "PCF": {
+            "deputes": 73,
+            "color": "#A40C34"},
+          "SFIO": {
+            "deputes": 97,
+            "color": "#F40E39"},
+          "PRS": {
+            "deputes": 24,
+            "color": "#FF3B64"},
+          "CD": {
+            "deputes": 41,
+            "color": "#FFA500",
+            "coalition": "Union des Républicains de Progrès"
+          },
+          "RI": {
+            "deputes": 42,
+            "color": "#F49100",
+            "coalition": "Union des Républicains de Progrès"
+          },
+          "UNR-UDT": {
+            "deputes": 200,
+            "color": "#33ADFF",
+            "coalition": "Union des Républicains de Progrès"
+          },
+          "Autres": {
+            "deputes": 9,
+            "color": "#808080"}
+        }
+      },
+      {
+        "legislature": 1968,
+        "total_deputes": 487,
+        "duration": 5,
+        "parties": {
+          "PCF": {
+            "deputes": 34,
+            "color": "#A40C34"},
+          "SFIO": {
+            "deputes": 42,
+            "color": "#F40E39"},
+          "PRS": {
+            "deputes": 15,
+            "color": "#FF3B64"},
+          "CD": {
+            "deputes": 33,
+            "color": "#FFA500",
+            "coalition": "Union des Républicains de Progrès"
+          },
+          "RI": {
+            "deputes": 61,
+            "color": "#F49100",
+            "coalition": "Union des Républicains de Progrès"
+          },
+          "UDR": {
+            "deputes": 293,
+            "color": "#33ADFF",
+            "coalition": "Union des Républicains de Progrès"
+          },
+          "Autres": {
+            "deputes": 9,
+            "color": "#808080"}
+        }
+      },
+      {
+        "legislature": 1973,
+        "total_deputes": 490,
+        "duration": 5,
+        "parties": {
+          "PCF": {
+            "deputes": 73,
+            "color": "#A40C34"},
+          "PS": {
+            "deputes": 89,
+            "color": "#F40E39"},
+          "PRG": {
+            "deputes": 13,
+            "color": "#FF3B64"},
+          "CDP": {
+            "deputes": 64,
+            "color": "#FFA500",
+            "coalition": "Union des Républicains de Progrès"
+          },
+          "RI": {
+            "deputes": 55,
+            "color": "#F49100",
+            "coalition": "Union des Républicains de Progrès"
+          },
+          "UDR": {
+            "deputes": 183,
+            "color": "#33ADFF",
+            "coalition": "Union des Républicains de Progrès"
+          },
+          "Autres": {
+            "deputes": 13,
+            "color": "#808080"}
+        }
+      },
+      {
+        "legislature": 1978,
+        "total_deputes": 491,
+        "duration": 3,
+        "parties": {
+          "PCF": {
+            "deputes": 86,
+            "color": "#A40C34"},
+          "PS": {
+            "deputes": 113,
+            "color": "#F40E39"},
+          "UDF": {
+            "deputes": 123,
+            "color": "#F49100"},
+          "RPR": {
+            "deputes": 154,
+            "color": "#33ADFF"},
+          "Autres": {
+            "deputes": 15,
+            "color":"#808080"}
+        }
+      },
+      {
+        "legislature": 1981,
+        "total_deputes": 491,
+        "duration": 5,
+        "parties": {
+          "PCF": {
+            "deputes": 44,
+            "color": "#A40C34"},
+          "PS": {
+            "deputes": 266,
+            "color": "#F40E39"},
+          "MRG": {
+            "deputes": 14,
+            "color": "#FF3B64"},
+          "Divers gauche": {
+            "deputes": 9,
+            "color": "#FF3B64"},
+          "UDF": {
+            "deputes": 62,
+            "color": "#F49100",
+            "coalition": "Union pour une Nouvelle Majorité"
+          },
+          "Divers droite": {
+            "deputes": 10,
+            "color": "#89D9FE",
+            "coalition": "Union pour une Nouvelle Majorité"
+          },
+          "RPR": {
+            "deputes": 85,
+            "color": "#33ADFF",
+            "coalition": "Union pour une Nouvelle Majorité"
+          },
+          "FN": {
+            "deputes": 1,
+            "color": "#B18C70"}
+        }
+      },
+      {
+        "legislature": 1986,
+        "total_deputes": 577,
+        "duration": 2,
+        "parties": {
+          "PCF": {
+            "deputes": 35,
+            "color": "#A40C34"},
+          "PS": {
+            "deputes": 215,
+            "color": "#F40E39"},
+          "MRG": {
+            "deputes": 2,
+            "color": "#FF3B64"},
+          "UDF": {
+            "deputes": 132,
+            "color": "#F49100",
+            "coalition": "Union de l'Opposition pour le Renouveau"
+          },
+          "RPR": {
+            "deputes": 157,
+            "color": "#33ADFF",
+            "coalition": "Union de l'Opposition pour le Renouveau"
+          },
+          "FN": {
+            "deputes": 35,
+            "color": "#B18C70"},
+          "Autres": {
+            "deputes": 1,
+            "color":"#808080"}
+        }
+      },
+      {
+        "legislature": 1988,
+        "total_deputes": 577,
+        "duration": 5,
+        "parties": {
+          "PCF": {
+            "deputes": 25,
+            "color": "#A40C34"},
+          "PS": {
+            "deputes": 266,
+            "color": "#F40E39"
+          },
+          "MRG": {
+            "deputes": 9,
+            "color": "#FF3B64"
+          },
+          "Divers gauche": {
+            "deputes": 3,
+            "color": "#FF3B64"
+          },
+          "Divers droite": {
+            "deputes": 8,
+            "color": "#89D9FE"},
+          "CDS": {
+            "deputes": 41,
+            "color": "#FFA500",
+            "coalition": "Union du Rassemblement et du Centre"
+          },
+          "UDF": {
+            "deputes": 92,
+            "color": "#F49100",
+            "coalition": "Union du Rassemblement et du Centre"
+          },
+          "RPR": {
+            "deputes": 132,
+            "color": "#33ADFF",
+            "coalition": "Union du Rassemblement et du Centre"
+          },
+          "FN": {
+            "deputes": 1,
+            "color":"#B18C70"}
+        }
+      },
+      {
+        "legislature": 1993,
+        "total_deputes": 577,
+        "duration": 4,
+        "parties": {
+          "PCF": {
+            "deputes": 23,
+            "color": "#A40C34"},
+          "PS": {
+            "deputes": 52,
+            "color": "#F40E39",
+            "coalition": "Alliance des Français pour le Progrès"
+          },
+          "MDC": {
+            "deputes": 3,
+            "color": "#FF3B64",
+            "coalition": "Alliance des Français pour le Progrès"
+          },
+          "MRG": {
+            "deputes": 6,
+            "color": "#FF3B64",
+            "coalition": "Alliance des Français pour le Progrès"
+          },
+          "Divers gauche": {
+            "deputes": 8,
+            "color": "#FF3B64",
+            "coalition": "Alliance des Français pour le Progrès"
+          },
+          "UDF": {
+            "deputes": 215,
+            "color": "#F49100",
+            "coalition": "Union Pour la France"
+          },
+          "Divers droite": {
+            "deputes": 12,
+            "color": "#89D9FE",
+            "coalition": "Union Pour la France"
+          },
+          "RPR": {
+            "deputes": 258,
+            "color": "#33ADFF",
+            "coalition": "Union Pour la France"
+          }
+        }
+      },
+      {
+        "legislature": 1997,
+        "total_deputes": 577,
+        "duration": 5,
+        "parties": {
+          "PCF": {
+            "deputes": 36,
+            "color": "#A40C34"},
+          "PS": {
+            "deputes": 250,
+            "color": "#F40E39"},
+          "LV": {
+            "deputes": 5,
+            "color": "#80C34E"},
+          "MDC": {
+            "deputes": 7,
+            "color": "#FF3B64"},
+          "PRS": {
+            "deputes": 12,
+            "color": "#FF3B64"},
+          "Divers gauche": {
+            "deputes": 9,
+            "color": "#FF3B64"},
+            "Divers droite": {
+              "deputes": 3,
+              "color": "#808080"},
+          "UDF": {
+            "deputes": 113,
+            "color": "#F49100",
+            "coalition": "Union RPR-UDF"
+          },
+          "RPR": {
+            "deputes": 140,
+            "color": "#33ADFF",
+            "coalition": "Union RPR-UDF"
+          },
+          "MPF": {
+            "deputes": 1,
+            "color": "#B18C70"},
+          "FN": {
+            "deputes": 1,
+            "color": "#B18C70"}
+        }
+      },
+      {
+        "legislature": 2002,
+        "total_deputes": 577,
+        "duration": 5,
+        "parties": {
+          "PCF": {
+            "deputes": 21,
+            "color": "#A40C34"},
+          "PS": {
+            "deputes": 141,
+            "color": "#F40E39"},
+          "LV": {
+            "deputes": 3,
+            "color": "#80C34E"},
+          "PRG": {
+            "deputes": 7,
+            "color": "#FF3B64"},
+          "Divers gauche": {
+            "deputes": 6,
+            "color": "#FF3B64"},
+          "Divers droite": {
+            "deputes": 3,
+            "color": "#89D9FE"},
+          "UDF": {
+            "deputes": 29,
+            "color": "#F49100",
+            "coalition": "Union pour la Majorité Présidentielle"
+          },
+          "UMP": {
+            "deputes": 365,
+            "color": "#33ADFF",
+            "coalition": "Union pour la Majorité Présidentielle"
+          },
+          "MPF": {
+            "deputes": 2,
+            "color": "#B18C70"
+          }
+        }
+      },
+      {
+        "legislature": 2007,
+        "total_deputes": 577,
+        "duration": 5,
+        "parties": {
+          "PCF": {
+            "deputes": 16,
+            "color": "#A40C34"},
+          "PS": {
+            "deputes": 186,
+            "color": "#F40E39"},
+          "LV": {
+            "deputes": 4,
+            "color": "#80C34E"},
+          "MRC": {
+            "deputes": 1,
+            "color": "#FF3B64"},
+          "PRG": {
+            "deputes": 11,
+            "color": "#FF3B64"},
+          "Divers gauche": {
+            "deputes": 9,
+            "color": "#FF3B64"},
+          "MODEM": {
+            "deputes": 3,
+            "color": "#FFA500"},
+          "NC": {
+            "deputes": 24,
+            "color": "#89D9FE",
+            "coalition": "Majorité Présidentielle"
+          },
+          "Divers droite": {
+            "deputes": 4,
+            "color": "#89D9FE"},
+          "UMP": {
+            "deputes": 313,
+            "color": "#33ADFF",
+            "coalition": "Majorité Présidentielle"
+          },
+          "DLF": {
+            "deputes": 2,
+            "color": "#B18C70",
+            "coalition": "Majorité Présidentielle"
+          },
+          "MPF": {
+            "deputes": 2,
+            "color": "#B18C70"},
+          "Autres": {
+            "deputes": 2,
+            "color": "#808080"}
+        }
+      },
+      {
+        "legislature": 2012,
+        "total_deputes": 577,
+        "duration": 5,
+        "parties": {
+          "PCF": {
+            "deputes": 10,
+            "color": "#A40C34"},
+          "PS": {
+            "deputes": 280,
+            "color": "#F40E39"},
+          "EELV": {
+            "deputes": 17,
+            "color": "#80C34E"},
+          "MRC": {
+            "deputes": 3,
+            "color": "#FF3B64"},
+          "PRG": {
+            "deputes": 12,
+            "color": "#FF3B64"},
+          "Divers gauche": {
+            "deputes": 21,
+            "color": "#FF3B64"},
+          "MODEM": {
+            "deputes": 2,
+            "color": "#FFA500"},
+          "NC": {
+            "deputes": 12,
+            "color": "#89D9FE"},
+          "Divers droite": {
+            "deputes": 15,
+            "color": "#89D9FE"},
+          "PR": {
+            "deputes": 6,
+            "color": "#89D9FE"},
+          "UMP": {
+            "deputes": 194,
+            "color": "#33ADFF"},
+          "MPF": {
+            "deputes": 1,
+            "color": "#B18C70"},
+          "DLF": {
+            "deputes": 2,
+            "color": "#B18C70"},
+          "FN": {
+            "deputes": 2,
+            "color": "#B18C70"}
+        }
+      },
+      {
+        "legislature": 2017,
+        "total_deputes": 577,
+        "duration": 5,
+        "parties": {
+          "PCF": {
+            "deputes": 15,
+            "color": "#A40C34"},
+          "LFI": {
+            "deputes": 17,
+            "color": "#C10F3D"},
+          "PS": {
+            "deputes": 29,
+            "color": "#F40E39"},
+          "EELV": {
+            "deputes": 1,
+            "color": "#80C34E"},
+          "MRC": {
+            "deputes": 1,
+            "color": "#FF3B64"},
+          "PRG": {
+            "deputes": 3,
+            "color": "#FF3B64"},
+          "Divers gauche": {
+            "deputes": 12,
+            "color": "#FF3B64"},
+          "MODEM": {
+            "deputes": 42,
+            "color": "#FFA500",
+            "coalition": "Majorité Présidentielle"
+          },
+          "LREM": {
+            "deputes": 308,
+            "color": "#FFDF00",
+            "coalition": "Majorité Présidentielle"
+          },
+          "Divers droite": {
+            "deputes": 6,
+            "color": "#89D9FE"},
+          "UDI": {
+            "deputes": 18,
+            "color": "#F49100",
+            "coalition": "Union de la Droite et du Centre"
+          },
+          "LR": {
+            "deputes": 112,
+            "color": "#33ADFF",
+            "coalition": "Union de la Droite et du Centre"
+          },
+          "DLF": {
+            "deputes": 1,
+            "color": "#B18C70"},
+          "FN": {
+            "deputes": 9,
+            "color": "#B18C70"},
+          "Autres": {
+            "deputes": 3,
+            "color": "#808080"}
+        }
+      },
+      {
+        "legislature": 2022,
+        "total_deputes": 577,
+        "duration": 2,
+        "parties": {
+          "PCF": {
+            "deputes": 22,
+            "color": "#A40C34",
+            "coalition": "Nouvelle Union Populaire Écologique et Sociale"
+          },
+          "LFI": {
+            "deputes": 75,
+            "color": "#C10F3D",
+            "coalition": "Nouvelle Union Populaire Écologique et Sociale"
+          },
+          "EELV": {
+            "deputes": 23,
+            "color": "#80C34E",
+            "coalition": "Nouvelle Union Populaire Écologique et Sociale"
+          },
+          "PS": {
+            "deputes": 37,
+            "color": "#F40E39",
+            "coalition": "Nouvelle Union Populaire Écologique et Sociale"
+          },
+          "PRG": {
+            "deputes": 2,
+            "color": "#FF3B64"},
+          "Divers gauche": {
+            "deputes": 3,
+            "color": "#FF3B64"},
+          "MODEM": {
+            "deputes": 48,
+            "color": "#FFA500",
+            "coalition": "Ensemble"
+          },
+          "RE": {
+            "deputes": 168,
+            "color": "#FFDF00",
+            "coalition": "Ensemble"
+          },
+          "PR": {
+            "deputes": 5,
+            "color": "#89D9FE",
+            "coalition": "Ensemble"
+          },
+          "Horizons": {
+            "deputes": 30,
+            "color": "#89D9FE",
+            "coalition": "Ensemble"
+          },
+          "Divers droite": {
+            "deputes": 2,
+            "color": "#89D9FE"},
+          "LC": {
+            "deputes": 1,
+            "color": "#89D9FE",
+            "coalition": "Union de la Droite et du Centre"
+          },
+          "UDI": {
+            "deputes": 5,
+            "color": "#F49100",
+            "coalition": "Union de la Droite et du Centre"
+          },
+          "LR": {
+            "deputes": 63,
+            "color": "#33ADFF",
+            "coalition": "Union de la Droite et du Centre"
+          },
+          "DLF": {
+            "deputes": 1,
+            "color": "#B18C70"},
+          "RN": {
+            "deputes": 90,
+            "color": "#B18C70"},
+          "Autres": {
+            "deputes": 2,
+            "color": "#808080"}
+        }
+      },
+      {
+      "legislature": 2024,
+      "total_deputes": 577,
+      "duration": 1,
+      "parties": {
+          "PCF": {
+            "deputes": 17,
+            "color": "#A40C34",
+            "coalition": "Nouveau Front Populaire"
+          },
+          "LFI": {
+            "deputes": 72,
+            "color": "#C10F3D",
+            "coalition": "Nouveau Front Populaire"
+          },
+          "EELV": {
+            "deputes": 38,
+            "color": "#80C34E",
+            "coalition": "Nouveau Front Populaire"
+          },
+          "PS": {
+            "deputes": 68,
+            "color": "#F40E39",
+            "coalition": "Nouveau Front Populaire"
+          },
+          "Divers gauche": {
+            "deputes": 3,
+            "color": "#FF3B64"},
+          "MODEM": {
+            "deputes": 36,
+            "color": "#FFA500",
+            "coalition": "Ensemble Pour la République"
+          },
+          "RE": {
+            "deputes": 101,
+            "color": "#FFDF00",
+            "coalition": "Ensemble Pour la République"
+          },
+          "Horizons": {
+            "deputes": 31,
+            "color": "#89D9FE",
+            "coalition": "Ensemble Pour la République"
+          },
+          "UDI": {
+            "deputes": 6,
+            "color": "#F49100",
+            "coalition": "Ensemble Pour la République"
+          },
+          "LC": {
+            "deputes": 1,
+            "color": "#89D9FE"},
+          "Divers droite": {
+            "deputes": 2,
+            "color": "#89D9FE"},
+          "LR": {
+            "deputes": 52,
+            "color": "#33ADFF"},
+          "AD": {
+            "deputes": 16,
+            "color": "#152561",
+            "coalition": "Rassemblement National et Alliés"
+          },
+          "RN": {
+            "deputes": 127,
+            "color": "#B18C70",
+            "coalition": "Rassemblement National et Alliés"
+          },
+          "Autres": {
+            "deputes": 7,
+            "color": "#808080"}
+        }
+      }
+    ],
+    "currents": [
+      {
+        "Communistes": {
+          "parties": [{
+            "PCF": {
+              "full_name": "Parti Communiste Français"
+            }
+          }, {
+            "Indépendantistes": {
+            }
+          }], 
+          "color": "#A40C34"
+        },
+        "Insoumis": {
+          "parties": [{
+            "LFI": {
+              "full_name": "La France Insoumise"
+            }
+          }], 
+          "color": "#C10F3D"
+        },
+        "Socialistes": {
+          "parties": [{
+            "SFIO": {
+              "full_name": "Section Française de l'Internationale Ouvrière"
+            }
+          }, {
+            "PS": {
+              "full_name": "Parti Socialiste"
+            }
+          }], 
+          "color": "#F40E39"
+        },
+        "Écologistes": {
+          "parties": [{
+            "LV":{
+              "full_name": "Les Verts"
+          }}, {
+            "EELV":{
+              "full_name": "Europe Écologie - Les Verts"
+          }}, {
+            "LE":{
+              "full_name": "Les Écologistes"
+          }}], 
+          "color": "#80C34E"
+        },
+        "Citoyens": {
+          "parties": [{
+            "MDC":{
+              "full_name": "Mouvement des Citoyens"
+          }}, {
+            "MRC":{
+              "full_name": "Mouvement Républicain et citoyen"
+          }}], 
+          "color": "#F40E39"
+        },
+        "Radicaux de gauche": {
+          "parties": [{
+            "PRG":{
+              "full_name": "Parti Radical de Gauche",
+              "period": ""
+          }}, {
+            "MRG":{
+              "full_name": "Mouvement des Radicaux de Gauche",
+              "period": ""
+          }}, {
+            "PRS":{
+              "full_name": "Parti Radical-Socialiste",
+              "period": ""
+          }}], 
+          "color": "#FF3B64"
+        },
+        "Divers gauche": {
+          "parties": ["Divers gauche"], 
+          "color": "#FF3B64"
+        },
+        "Centristes démocrates": {
+          "parties": [{
+            "MRP": {
+              "full_name": "Mouvement Républicain Populaire"
+          }}, {
+            "CD": {
+              "full_name": "Centre Démocrate"
+          }}, {
+            "CDP": {
+              "full_name": "Centre Démocratie et Progrès"
+          }}, {
+            "CDS": {
+              "full_name": "Centre des Démocrates Sociaux"
+          }}, {
+            "MODEM": {
+              "full_name": "Mouvement Démocrate"
+          }}], 
+          "color": "#FFA500"
+        },
+        "Macronisme": {
+          "parties": [{
+            "LREM": {
+              "full_name": "La République En March"
+          }}, {
+            "RE": {
+              "full_name": "Renaissance"
+          }}], 
+          "color":"#FFDF00"
+        },
+        "Centre-droit": {
+          "parties": [{
+            "CNIP": {
+              "full_name": "Centre National des Indépendants et Paysans"
+          }}, {
+            "RI": {
+              "full_name": "Républicains Indépendants"
+          }}, {
+            "UDF": {
+              "full_name": "Union pour la Démocratie Française"
+          }}, {
+            "NC": {
+              "full_name": "le Nouveau Centre"
+          }}, {
+            "PR": {
+              "full_name": "Parti Radical"
+          }}, {
+            "LC": {
+              "full_name": "Les Centristes"
+          }}, {
+            "UDI": {
+              "full_name": "Union des Démocrates et Indépendants"
+          }}, {
+            "Horizons": {
+              "full_name": "Horizons"
+          }}], 
+          "color": "#F49100"
+        },
+        "Divers droite": {
+          "parties": ["Divers droite"], 
+          "color": "#89D9FE"
+        },
+        "Droite": {
+          "parties": [{
+            "UNR": {
+              "full_name": "Union pour la Nouvelle République"
+          }}, {"UNR-UDT": {
+              "full_name": "Union pour la Nouvelle République - Union Démocratique du Travail"
+          }}, {"UDR": {
+              "full_name": "Union des Démocrates pour la République"
+          }}, {"RPR": {
+              "full_name": "Rassemblement Pour la République"
+          }}, {"UMP": {
+              "full_name": "Union pour un Mouvement Populaire"
+          }}, {"LR": {
+              "full_name": "Les Républicains"
+          }}], 
+          "color": "#33ADFF"
+        },
+        "Extrême-droite": {
+          "parties": [{
+            "FN": {
+              "full_name": "Front National"
+          }}, {
+            "RN": {
+              "full_name": "Rassemblement National"
+          }}, {"MPF": {
+              "full_name": "Mouvement Pour la France"
+          }}, {"DLF": {
+              "full_name": "Debout La France"
+          }}, {"AD": {
+              "full_name": "À Droite !"
+          }}], 
+          "color": "#B18C70"
+        },
+        "Autres": {
+          "parties": [{
+            "FAEAS": {
+              "full_name": "Formation administrative des élus d'Algérie et du Sahara"
+          }}, {"Autres": {
+              "full_name": "Autres"
+          }}], 
+          "color": "#808080"
+        }
+      }
+    ]
+  }
+}

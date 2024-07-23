@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0 15px;
+    width: 100%;
+}
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+header {
+    width: 95%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    font-size: 12px;
+}
+main {
+    display: flex;
+    flex-direction: column;
+}
+h2 {
+    font-weight: 400;
+    text-align: right;
+    width: 5%;
+    margin: 0;
+    font-size: 12px;
+}
+.lgslt {
+    display: flex;
+    border-top: 0.5px solid black;
+}
+.parties {
+    width: 95%;
+    display: flex;
+}
+.party {
+    height: 100%;
+    padding: 2px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    overflow: hidden;
+    border-right: 0.5px solid rgba(0, 0, 0, 0.3);
+    font-size: 10px;
+    line-height: 110%;
+}
+.transition {
+    display: flex;
+    width: 95%;
+    opacity: 65%;
+}
+.coalition-party {
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-left: none;
+    border-right: none;
+} 
+.coalition-party:first-child {
+    border-left: 2px solid rgba(0, 0, 0, 0.3);
+}
+.coalition-party:last-child {
+    border-right: 2px solid rgba(0, 0, 0, 0.3);
+}
