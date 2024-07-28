@@ -58,14 +58,14 @@ h2 {
     width: 95%;
     opacity: 65%;
 }
-.coalition-party {
+.coalition {
     border: 2px solid rgba(0, 0, 0, 0.3);
     border-left: none;
     border-right: none;
 } 
-.coalition-party:first-child {
+.coalition:first-child {
     border-left: 2px solid rgba(0, 0, 0, 0.3);
 }
-.coalition-party:last-child {
+.coalition:last-child {
     border-right: 2px solid rgba(0, 0, 0, 0.3);
 }

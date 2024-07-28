@@ -127,7 +127,8 @@ async function drawChart() {
                 xEnd: cumulatedPercentage + percentage,
                 width: xScale(percentage),
                 height: barHeight / 2,
-                current: partyData.current
+                current: partyData.current,
+                coalition: partyData.coalition
             };
             cumulatedPercentage += percentage;
             return stackedParty;
@@ -138,13 +139,32 @@ async function drawChart() {
             .data(stackedParties)
             .enter()
             .append('rect')
-            .attr('class', d => `bar bar-${legislature.legislature} bar-${d.partyName}`)
+            .attr('class', d => {
+                const baseClass = `bar bar-${legislature.legislature} bar-${d.partyName.replace(/\s/g, '')}`;
+                const coalitionClass = d.coalition ? `coalition coalition-${d.coalition.replace(/\s/g, '')}` : '';
+                return `${baseClass} ${coalitionClass}`.trim();
+            })
             .attr('x', d => xScale(d.xStart))
             .attr('y', d => d.yPosition)
             .attr('width', d => d.width)
-            .attr('height', d => d.height)
-            .attr('fill', d => d.color)
-            .append('p', d => partyName);
+            .attr('height', d => index === legislatures.length - 1 ? d.height * 2 : d.height)
+            .attr('fill', d => d.color);
+        
+        // Add text to bars
+        svg.selectAll(`.party-${legislature.legislature}`)
+            .data(stackedParties.filter(d => d.width > 15))
+            .enter()
+            .append('text')
+            .attr('class', d => `party-name party-${legislature.legislature} party-${d.partyName.replace(/\s/g, '')}`)
+            .attr('x', d => xScale(d.xStart))
+            .attr('y', d => d.yPosition)
+            .attr('dy', '1.1em')
+            .attr('dx', '.2em')
+            .style('text-anchor', 'start')
+            .style('opacity', 0.5)
+            .style('font-size', '10px')
+            .text(d => d.partyName)
+            .attr('fill', 'black');
             
         // Draw transition between bars to the next legislature
         if (index < legislatures.length - 1) {
@@ -207,6 +227,7 @@ async function drawChart() {
                 );
 
                 svg.append('polygon')
+                    .attr('class', `transition-${legislature.legislature} transition-${party.current.replace(/\s/g, '')}`)
                     .attr('points', trapezoidPoints.map(point => point.join(",")).join(" "))
                     .attr('transform', `translate(0,${cumulatedHeight + barHeight / 2})`)
                     .attr('fill', party.color)

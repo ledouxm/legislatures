@@ -24,12 +24,13 @@
           "UNR": {
             "deputes": 206,
             "color": "#33ADFF"},
-          "FAEAS": {
-            "deputes": 66,
-            "color":"#808080"},
           "Autres": {
             "deputes": 26,
-            "color": "#808080"}
+            "color": "#808080"},
+          "FAEAS": {
+            "deputes": 66,
+            "color":"#808080"
+          }
         }
       },
       {
@@ -57,7 +58,10 @@
             "color": "#33ADFF"},
           "Autres": {
             "deputes": 13,
-            "color": "#808080"}
+            "color": "#808080"},
+          "FAEAS": {
+            "deputes": 0
+          }
         }
       },
       {
@@ -91,7 +95,11 @@
           },
           "Autres": {
             "deputes": 9,
-            "color": "#808080"}
+            "color": "#808080"
+          },
+          "FAEAS": {
+            "deputes": 0
+          }
         }
       },
       {
@@ -125,7 +133,11 @@
           },
           "Autres": {
             "deputes": 9,
-            "color": "#808080"}
+            "color": "#808080"
+          },
+          "FAEAS": {
+            "deputes": 0
+          }
         }
       },
       {
@@ -159,7 +171,11 @@
           },
           "Autres": {
             "deputes": 13,
-            "color": "#808080"}
+            "color": "#808080"
+          },
+          "FAEAS": {
+            "deputes": 0
+          }
         }
       },
       {
@@ -173,15 +189,31 @@
           "PS": {
             "deputes": 113,
             "color": "#F40E39"},
+          "PRG": {
+            "deputes": 0
+          },
+          "DVG": {
+            "deputes": 0
+          },
+          "DVD": {
+            "deputes": 0
+          },
+          "CDP": {
+            "deputes": 0
+          },
           "UDF": {
             "deputes": 123,
             "color": "#F49100"},
           "RPR": {
             "deputes": 154,
             "color": "#33ADFF"},
+          "FN": {
+            "deputes": 0
+          },
           "Autres": {
             "deputes": 15,
-            "color":"#808080"}
+            "color":"#808080"
+          }
         }
       },
       {
@@ -198,17 +230,17 @@
           "MRG": {
             "deputes": 14,
             "color": "#FF3B64"},
-          "Divers gauche": {
+          "DVG": {
             "deputes": 9,
-            "color": "#FF3B64"},
+            "color": "#FF718B"},
+          "DVD": {
+            "deputes": 10,
+            "color": "#89D9FE",
+            "coalition": "Union pour une Nouvelle Majorité"
+          },
           "UDF": {
             "deputes": 62,
             "color": "#F49100",
-            "coalition": "Union pour une Nouvelle Majorité"
-          },
-          "Divers droite": {
-            "deputes": 10,
-            "color": "#89D9FE",
             "coalition": "Union pour une Nouvelle Majorité"
           },
           "RPR": {
@@ -218,7 +250,11 @@
           },
           "FN": {
             "deputes": 1,
-            "color": "#B18C70"}
+            "color": "#B18C70"
+          },
+          "Autres": {
+            "deputes": 0
+          }
         }
       },
       {
@@ -235,6 +271,18 @@
           "MRG": {
             "deputes": 2,
             "color": "#FF3B64"},
+          "DVG": {
+            "deputes": 0,
+            "color": "#FF718B"
+          },
+          "DVD": {
+            "deputes": 0,
+            "color": "#89D9FE"
+          },
+          "CDS": {
+            "deputes": 0,
+            "color": "#FFA500"
+          },
           "UDF": {
             "deputes": 132,
             "color": "#F49100",
@@ -250,7 +298,8 @@
             "color": "#B18C70"},
           "Autres": {
             "deputes": 1,
-            "color":"#808080"}
+            "color":"#808080"
+          }
         }
       },
       {
@@ -265,15 +314,18 @@
             "deputes": 266,
             "color": "#F40E39"
           },
+          "MDC": {
+            "deputes":0
+          },
           "MRG": {
             "deputes": 9,
             "color": "#FF3B64"
           },
-          "Divers gauche": {
+          "DVG": {
             "deputes": 3,
-            "color": "#FF3B64"
+            "color": "#FF718B"
           },
-          "Divers droite": {
+          "DVD": {
             "deputes": 8,
             "color": "#89D9FE"},
           "CDS": {
@@ -293,7 +345,11 @@
           },
           "FN": {
             "deputes": 1,
-            "color":"#B18C70"}
+            "color":"#B18C70"
+          },
+          "Autres": {
+            "deputes": 0
+          }
         }
       },
       {
@@ -309,6 +365,9 @@
             "color": "#F40E39",
             "coalition": "Alliance des Français pour le Progrès"
           },
+          "LV": {
+            "deputes": 0
+          },
           "MDC": {
             "deputes": 3,
             "color": "#FF3B64",
@@ -319,25 +378,37 @@
             "color": "#FF3B64",
             "coalition": "Alliance des Français pour le Progrès"
           },
-          "Divers gauche": {
+          "DVG": {
             "deputes": 8,
-            "color": "#FF3B64",
+            "color": "#FF718B",
             "coalition": "Alliance des Français pour le Progrès"
+          },
+          "DVD": {
+            "deputes": 12,
+            "color": "#89D9FE",
+            "coalition": "Union Pour la France"
+          },
+          "CDS": {
+            "deputes": 0
           },
           "UDF": {
             "deputes": 215,
             "color": "#F49100",
             "coalition": "Union Pour la France"
           },
-          "Divers droite": {
-            "deputes": 12,
-            "color": "#89D9FE",
-            "coalition": "Union Pour la France"
-          },
           "RPR": {
             "deputes": 258,
             "color": "#33ADFF",
             "coalition": "Union Pour la France"
+          },
+          "MPF": {
+            "deputes": 0
+          },
+          "FN": {
+            "deputes": 0
+          },
+          "Autres": {
+            "deputes": 0
           }
         }
       },
@@ -361,12 +432,12 @@
           "PRS": {
             "deputes": 12,
             "color": "#FF3B64"},
-          "Divers gauche": {
+          "DVG": {
             "deputes": 9,
-            "color": "#FF3B64"},
-            "Divers droite": {
-              "deputes": 3,
-              "color": "#808080"},
+            "color": "#FF718B"},
+          "DVD": {
+            "deputes": 3,
+            "color": "#89D9FE"},
           "UDF": {
             "deputes": 113,
             "color": "#F49100",
@@ -379,10 +450,15 @@
           },
           "MPF": {
             "deputes": 1,
-            "color": "#B18C70"},
+            "color": "#B18C70"
+          },
           "FN": {
             "deputes": 1,
-            "color": "#B18C70"}
+            "color": "#B18C70"
+          },
+          "Autres": {
+            "deputes": 0
+          }
         }
       },
       {
@@ -399,15 +475,21 @@
           "LV": {
             "deputes": 3,
             "color": "#80C34E"},
+          "MDC": {
+            "deputes": 0
+          },
           "PRG": {
             "deputes": 7,
             "color": "#FF3B64"},
-          "Divers gauche": {
+          "DVG": {
             "deputes": 6,
-            "color": "#FF3B64"},
-          "Divers droite": {
+            "color": "#FF718B"},
+          "DVD": {
             "deputes": 3,
             "color": "#89D9FE"},
+          "MODEM": {
+            "deputes": 0
+          },
           "UDF": {
             "deputes": 29,
             "color": "#F49100",
@@ -418,9 +500,19 @@
             "color": "#33ADFF",
             "coalition": "Union pour la Majorité Présidentielle"
           },
+          "DLF": {
+            "deputes": 0
+          },
           "MPF": {
             "deputes": 2,
             "color": "#B18C70"
+          },
+          "FN": {
+            "deputes": 0,
+            "color": "#B18C70"
+          },
+          "Autres": {
+            "deputes": 0
           }
         }
       },
@@ -444,20 +536,23 @@
           "PRG": {
             "deputes": 11,
             "color": "#FF3B64"},
-          "Divers gauche": {
+          "DVG": {
             "deputes": 9,
-            "color": "#FF3B64"},
+            "color": "#FF718B"},
+          "DVD": {
+            "deputes": 4,
+            "color": "#89D9FE"},
           "MODEM": {
             "deputes": 3,
             "color": "#FFA500"},
+          "PR": {
+            "deputes": 0
+          },
           "NC": {
             "deputes": 24,
             "color": "#89D9FE",
             "coalition": "Majorité Présidentielle"
           },
-          "Divers droite": {
-            "deputes": 4,
-            "color": "#89D9FE"},
           "UMP": {
             "deputes": 313,
             "color": "#33ADFF",
@@ -470,7 +565,11 @@
           },
           "MPF": {
             "deputes": 2,
-            "color": "#B18C70"},
+            "color": "#B18C70"
+          },
+          "FN": {
+            "deputes": 0
+          },
           "Autres": {
             "deputes": 2,
             "color": "#808080"}
@@ -484,6 +583,9 @@
           "PCF": {
             "deputes": 10,
             "color": "#A40C34"},
+          "LFI": {
+            "deputes": 0
+          },
           "PS": {
             "deputes": 280,
             "color": "#F40E39"},
@@ -496,33 +598,40 @@
           "PRG": {
             "deputes": 12,
             "color": "#FF3B64"},
-          "Divers gauche": {
+          "DVG": {
             "deputes": 21,
-            "color": "#FF3B64"},
+            "color": "#FF718B"},
+          "DVD": {
+            "deputes": 15,
+            "color": "#89D9FE"},
           "MODEM": {
             "deputes": 2,
             "color": "#FFA500"},
-          "NC": {
-            "deputes": 12,
-            "color": "#89D9FE"},
-          "Divers droite": {
-            "deputes": 15,
-            "color": "#89D9FE"},
+          "LREM": {
+            "deputes":0
+          },
           "PR": {
             "deputes": 6,
+            "color": "#89D9FE"},
+          "NC": {
+            "deputes": 12,
             "color": "#89D9FE"},
           "UMP": {
             "deputes": 194,
             "color": "#33ADFF"},
-          "MPF": {
-            "deputes": 1,
-            "color": "#B18C70"},
           "DLF": {
             "deputes": 2,
             "color": "#B18C70"},
+          "MPF": {
+            "deputes": 1,
+            "color": "#B18C70"},
           "FN": {
             "deputes": 2,
-            "color": "#B18C70"}
+            "color": "#B18C70"
+          },
+          "Autres": {
+            "deputes": 0
+          }
         }
       },
       {
@@ -548,9 +657,12 @@
           "PRG": {
             "deputes": 3,
             "color": "#FF3B64"},
-          "Divers gauche": {
+          "DVG": {
             "deputes": 12,
-            "color": "#FF3B64"},
+            "color": "#FF718B"},
+          "DVD": {
+            "deputes": 6,
+            "color": "#89D9FE"},
           "MODEM": {
             "deputes": 42,
             "color": "#FFA500",
@@ -561,13 +673,19 @@
             "color": "#FFDF00",
             "coalition": "Majorité Présidentielle"
           },
-          "Divers droite": {
-            "deputes": 6,
-            "color": "#89D9FE"},
+          "PR": {
+            "deputes": 0
+          },
+          "HOR": {
+            "deputes": 0
+          },
           "UDI": {
             "deputes": 18,
             "color": "#F49100",
             "coalition": "Union de la Droite et du Centre"
+          },
+          "LC": {
+            "deputes": 0
           },
           "LR": {
             "deputes": 112,
@@ -577,6 +695,9 @@
           "DLF": {
             "deputes": 1,
             "color": "#B18C70"},
+          "MPF": {
+            "deputes": 0
+          },
           "FN": {
             "deputes": 9,
             "color": "#B18C70"},
@@ -613,9 +734,12 @@
           "PRG": {
             "deputes": 2,
             "color": "#FF3B64"},
-          "Divers gauche": {
+          "DVG": {
             "deputes": 3,
-            "color": "#FF3B64"},
+            "color": "#FF718B"},
+          "DVD": {
+            "deputes": 2,
+            "color": "#89D9FE"},
           "MODEM": {
             "deputes": 48,
             "color": "#FFA500",
@@ -631,28 +755,28 @@
             "color": "#89D9FE",
             "coalition": "Ensemble"
           },
-          "Horizons": {
+          "HOR": {
             "deputes": 30,
             "color": "#89D9FE",
             "coalition": "Ensemble"
-          },
-          "Divers droite": {
-            "deputes": 2,
-            "color": "#89D9FE"},
-          "LC": {
-            "deputes": 1,
-            "color": "#89D9FE",
-            "coalition": "Union de la Droite et du Centre"
           },
           "UDI": {
             "deputes": 5,
             "color": "#F49100",
             "coalition": "Union de la Droite et du Centre"
           },
+          "LC": {
+            "deputes": 1,
+            "color": "#89D9FE",
+            "coalition": "Union de la Droite et du Centre"
+          },
           "LR": {
             "deputes": 63,
             "color": "#33ADFF",
             "coalition": "Union de la Droite et du Centre"
+          },
+          "AD": {
+            "deputes": 0
           },
           "DLF": {
             "deputes": 1,
@@ -690,9 +814,12 @@
             "color": "#F40E39",
             "coalition": "Nouveau Front Populaire"
           },
-          "Divers gauche": {
+          "DVG": {
             "deputes": 3,
-            "color": "#FF3B64"},
+            "color": "#FF718B"},
+          "DVD": {
+            "deputes": 2,
+            "color": "#89D9FE"},
           "MODEM": {
             "deputes": 36,
             "color": "#FFA500",
@@ -703,7 +830,10 @@
             "color": "#FFDF00",
             "coalition": "Ensemble Pour la République"
           },
-          "Horizons": {
+          "PR": {
+            "deputes": 0
+          },
+          "HOR": {
             "deputes": 31,
             "color": "#89D9FE",
             "coalition": "Ensemble Pour la République"
@@ -716,9 +846,6 @@
           "LC": {
             "deputes": 1,
             "color": "#89D9FE"},
-          "Divers droite": {
-            "deputes": 2,
-            "color": "#89D9FE"},
           "LR": {
             "deputes": 52,
             "color": "#33ADFF"},
@@ -726,6 +853,9 @@
             "deputes": 16,
             "color": "#152561",
             "coalition": "Rassemblement National et Alliés"
+          },
+          "DLF": {
+            "deputes": 0
           },
           "RN": {
             "deputes": 127,
@@ -811,8 +941,8 @@
           "color": "#FF3B64"
         },
         "Divers gauche": {
-          "parties": ["Divers gauche"], 
-          "color": "#FF3B64"
+          "parties": [{"DVG": {"full_name": "Divers gauche"}}], 
+          "color": "#FF718B"
         },
         "Centristes démocrates": {
           "parties": [{
@@ -857,22 +987,34 @@
             "NC": {
               "full_name": "le Nouveau Centre"
           }}, {
-            "PR": {
-              "full_name": "Parti Radical"
-          }}, {
             "LC": {
               "full_name": "Les Centristes"
           }}, {
             "UDI": {
               "full_name": "Union des Démocrates et Indépendants"
-          }}, {
-            "Horizons": {
-              "full_name": "Horizons"
           }}], 
           "color": "#F49100"
         },
         "Divers droite": {
-          "parties": ["Divers droite"], 
+          "parties": [{"DVD": {"full_name": "Divers droite"}}], 
+          "color": "#89D9FE"
+        },
+        "Parti Radical": {
+          "parties": [
+            {
+              "PR": {
+                "full_name": "Parti Radical"
+            }}
+          ],
+          "color": "#89D9FE"
+        },
+        "Horizons": {
+          "parties": [
+            {
+              "HOR": {
+                "full_name": "Horizons"
+            }}
+          ],
           "color": "#89D9FE"
         },
         "Droite": {
@@ -892,30 +1034,52 @@
           }}], 
           "color": "#33ADFF"
         },
-        "Extrême-droite": {
+        "À Droite": {
+          "parties": [
+            {"AD": {
+              "full_name": "À Droite !"
+          }}
+          ],
+          "color": "#B18C70"
+        },
+        "Mouvement Pour la France": {
+          "parties": [
+            {"MPF": {
+              "full_name": "Mouvement Pour la France"
+          }}
+          ],
+          "color": "#B18C70"
+        },
+        "Debout La France": {
+          "parties": [
+            {"DLF": {
+              "full_name": "Debout La France"
+          }}
+          ],
+          "color": "#B18C70"
+        },
+        "Front National": {
           "parties": [{
             "FN": {
               "full_name": "Front National"
           }}, {
             "RN": {
               "full_name": "Rassemblement National"
-          }}, {"MPF": {
-              "full_name": "Mouvement Pour la France"
-          }}, {"DLF": {
-              "full_name": "Debout La France"
-          }}, {"AD": {
-              "full_name": "À Droite !"
           }}], 
           "color": "#B18C70"
         },
         "Autres": {
-          "parties": [{
-            "FAEAS": {
-              "full_name": "Formation administrative des élus d'Algérie et du Sahara"
-          }}, {"Autres": {
+          "parties": [{"Autres": {
               "full_name": "Autres"
           }}], 
           "color": "#808080"
+        },
+        "FAEAS": {
+          "parties": [{
+            "FAEAS": {
+              "full_name": "Formation administrative des élus d'Algérie et du Sahara"
+          }}],
+          "color": "#A0A0A0"
         }
       }
     ]
