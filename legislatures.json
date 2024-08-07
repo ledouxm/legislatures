@@ -360,13 +360,13 @@
           "PCF": {
             "deputes": 23,
             "color": "#A40C34"},
+          "LV": {
+            "deputes": 0
+          },
           "PS": {
             "deputes": 52,
             "color": "#F40E39",
             "coalition": "Alliance des Français pour le Progrès"
-          },
-          "LV": {
-            "deputes": 0
           },
           "MDC": {
             "deputes": 3,
@@ -389,7 +389,8 @@
             "coalition": "Union Pour la France"
           },
           "CDS": {
-            "deputes": 0
+            "deputes": 0,
+            "coalition":"Union Pour la France"
           },
           "UDF": {
             "deputes": 215,
@@ -420,12 +421,12 @@
           "PCF": {
             "deputes": 36,
             "color": "#A40C34"},
-          "PS": {
-            "deputes": 250,
-            "color": "#F40E39"},
           "LV": {
             "deputes": 5,
             "color": "#80C34E"},
+          "PS": {
+            "deputes": 250,
+            "color": "#F40E39"},
           "MDC": {
             "deputes": 7,
             "color": "#FF3B64"},
@@ -469,12 +470,12 @@
           "PCF": {
             "deputes": 21,
             "color": "#A40C34"},
-          "PS": {
-            "deputes": 141,
-            "color": "#F40E39"},
           "LV": {
             "deputes": 3,
             "color": "#80C34E"},
+          "PS": {
+            "deputes": 141,
+            "color": "#F40E39"},
           "MDC": {
             "deputes": 0
           },
@@ -524,12 +525,12 @@
           "PCF": {
             "deputes": 16,
             "color": "#A40C34"},
-          "PS": {
-            "deputes": 186,
-            "color": "#F40E39"},
           "LV": {
             "deputes": 4,
             "color": "#80C34E"},
+          "PS": {
+            "deputes": 186,
+            "color": "#F40E39"},
           "MRC": {
             "deputes": 1,
             "color": "#FF3B64"},
@@ -586,12 +587,12 @@
           "LFI": {
             "deputes": 0
           },
-          "PS": {
-            "deputes": 280,
-            "color": "#F40E39"},
           "EELV": {
             "deputes": 17,
             "color": "#80C34E"},
+          "PS": {
+            "deputes": 280,
+            "color": "#F40E39"},
           "MRC": {
             "deputes": 3,
             "color": "#FF3B64"},
@@ -645,12 +646,12 @@
           "LFI": {
             "deputes": 17,
             "color": "#C10F3D"},
-          "PS": {
-            "deputes": 29,
-            "color": "#F40E39"},
           "EELV": {
             "deputes": 1,
             "color": "#80C34E"},
+          "PS": {
+            "deputes": 29,
+            "color": "#F40E39"},
           "MRC": {
             "deputes": 1,
             "color": "#FF3B64"},
@@ -685,7 +686,8 @@
             "coalition": "Union de la Droite et du Centre"
           },
           "LC": {
-            "deputes": 0
+            "deputes": 0,
+            "coalition": "Union de la Droite et du Centre"
           },
           "LR": {
             "deputes": 112,
@@ -730,6 +732,9 @@
             "deputes": 37,
             "color": "#F40E39",
             "coalition": "Nouvelle Union Populaire Écologique et Sociale"
+          },
+          "MRC": {
+            "deputes": 0
           },
           "PRG": {
             "deputes": 2,
@@ -814,6 +819,9 @@
             "color": "#F40E39",
             "coalition": "Nouveau Front Populaire"
           },
+          "PRG": {
+            "deputes": 0
+          },
           "DVG": {
             "deputes": 3,
             "color": "#FF718B"},
@@ -855,7 +863,8 @@
             "coalition": "Rassemblement National et Alliés"
           },
           "DLF": {
-            "deputes": 0
+            "deputes": 0,
+            "coalition": "Rassemblement National et Alliés"
           },
           "RN": {
             "deputes": 127,

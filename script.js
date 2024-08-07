@@ -77,19 +77,21 @@ async function drawChart() {
 
     // Calculate total duration for the y-axis scale
     const totalDuration = d3.sum(legislatures, d => d.duration);
+    // Determine minimal height for a legislature
+    const minHeight = 24;
 
     // Create SVG container
     const svg = d3.select('#chart')
         .append('svg')
         .attr('width', windowWidth + (margin.left + margin.right))
-        .attr('height', windowHeight + (margin.top + margin.bottom))
+        .attr('height', minHeight * totalDuration + (margin.top + margin.bottom))
         .append('g')
         .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
     // Define scales
     const yScale = d3.scaleLinear()
                      .domain([0, totalDuration])
-                     .range([0, windowHeight]);
+                     .range([0, minHeight * totalDuration]);
 
     const xScale = d3.scaleLinear()
                      .domain([0, 100]) // Percentage from 0 to 100
@@ -115,20 +117,23 @@ async function drawChart() {
         const totalSeats = legislature.total_deputes;
         let cumulatedPercentage = 0;
 
-        const stackedParties = Object.keys(legislature.parties).map(partyName => {
+        const stackedParties = Object.keys(legislature.parties).map((partyName, i) => {
             const partyData = legislature.parties[partyName];
             const percentage = (partyData.deputes / totalSeats) * 100;
             const stackedParty = {
                 partyName,
                 percentage,
+                deputes: partyData.deputes,
                 color: partyData.color,
                 yPosition: cumulatedHeight, // Place vertically with year
                 xStart: cumulatedPercentage, // Place horizontally with cumulated percentage of previous parties
                 xEnd: cumulatedPercentage + percentage,
                 width: xScale(percentage),
-                height: barHeight / 2,
+                height: (index === legislatures.length - 1 ? barHeight : barHeight / 2),
                 current: partyData.current,
-                coalition: partyData.coalition
+                coalition: partyData.coalition,
+                index: i
+
             };
             cumulatedPercentage += percentage;
             return stackedParty;
@@ -147,12 +152,59 @@ async function drawChart() {
             .attr('x', d => xScale(d.xStart))
             .attr('y', d => d.yPosition)
             .attr('width', d => d.width)
-            .attr('height', d => index === legislatures.length - 1 ? d.height * 2 : d.height)
+            .attr('height', d => d.height)
             .attr('fill', d => d.color);
         
-        // Add text to bars
+        // Draw coalition strokes
+        stackedParties.forEach((party, i) => {
+            if (party.coalition) {
+                // Top dashed line
+                svg.append('line')
+                    .attr('x1', xScale(party.xStart) + 0.5)
+                    .attr('x2', xScale(party.xEnd) - 0.5)
+                    .attr('y1', party.yPosition + 0.5)
+                    .attr('y2', party.yPosition + 0.5)
+                    .attr('stroke-dasharray', '2,4')
+                    .attr('stroke', 'rgba(0,0,0,0.5')
+                    .attr('stroke-width', 1);
+                // Bottom dashed line
+                svg.append('line')
+                    .attr('x1', xScale(party.xStart) + 0.5)
+                    .attr('x2', xScale(party.xEnd) - 0.5)
+                    .attr('y1', party.yPosition + party.height - 0.5)
+                    .attr('y2', party.yPosition + party.height - 0.5)
+                    .attr('stroke-dasharray', '2,4')
+                    .attr('stroke', 'rgba(0,0,0,0.5')
+                    .attr('stroke-width', 1);
+
+                // Left line
+                if (i === 0 || stackedParties[i - 1].coalition !== party.coalition) {
+                    svg.append('line')
+                        .attr('x1', xScale(party.xStart) + 0.5)
+                        .attr('x2', xScale(party.xStart) + 0.5)
+                        .attr('y1', party.yPosition)
+                        .attr('y2', party.yPosition + party.height)
+                        .attr('stroke', 'rgba(0,0,0,0.5')
+                        .attr('stroke-width', 1);
+                }
+                // Right line
+                if (i === stackedParties.length - 1 || stackedParties[i + 1].coalition !== party.coalition) {
+                    svg.append('line')
+                        .attr('x1', xScale(party.xEnd) - 0.5)
+                        .attr('x2', xScale(party.xEnd) - 0.5)
+                        .attr('y1', party.yPosition)
+                        .attr('y2', party.yPosition + party.height)
+                        .attr('stroke', 'rgba(0,0,0,0.5')
+                        .attr('stroke-width', 1);
+                }
+            }
+        })
+        
+        // Add party names to bars
+        const minWidthForText = 10;
+        const minHeightForText = 2;
         svg.selectAll(`.party-${legislature.legislature}`)
-            .data(stackedParties.filter(d => d.width > 15))
+            .data(stackedParties.filter(d => d.width > minWidthForText))
             .enter()
             .append('text')
             .attr('class', d => `party-name party-${legislature.legislature} party-${d.partyName.replace(/\s/g, '')}`)
@@ -161,11 +213,26 @@ async function drawChart() {
             .attr('dy', '1.1em')
             .attr('dx', '.2em')
             .style('text-anchor', 'start')
-            .style('opacity', 0.5)
-            .style('font-size', '10px')
+            .style('font-size', '9px')
             .text(d => d.partyName)
             .attr('fill', 'black');
-            
+
+        // Add deputy numbers to bars
+        svg.selectAll(`.deputies-${legislature.legislature}`)
+            .data(stackedParties.filter(d => d.width > minWidthForText && legislature.duration >= minHeightForText))
+            .enter()
+            .append('text')
+            .attr('class', d => `deputies-number deputies-${legislature.legislature} deputies-${d.partyName.replace(/\s/g, '')}`)
+            .attr('x', d => xScale(d.xStart))
+            .attr('y', d => d.yPosition + 11)
+            .attr('dy', '1.1em')
+            .attr('dx', '.2em')
+            .style('text-anchor', 'start')
+            .style('opacity', 0.5)
+            .style('font-size', '8px')
+            .text(d => d.deputes)
+            .attr('fill', 'black');
+
         // Draw transition between bars to the next legislature
         if (index < legislatures.length - 1) {
             const nextLegislature = legislatures[index + 1];

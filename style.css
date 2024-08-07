@@ -58,14 +58,3 @@ h2 {
     width: 95%;
     opacity: 65%;
 }
-.coalition {
-    border: 2px solid rgba(0, 0, 0, 0.3);
-    border-left: none;
-    border-right: none;
-} 
-.coalition:first-child {
-    border-left: 2px solid rgba(0, 0, 0, 0.3);
-}
-.coalition:last-child {
-    border-right: 2px solid rgba(0, 0, 0, 0.3);
-}
