@@ -122,8 +122,10 @@ async function drawChart() {
             const percentage = (partyData.deputes / totalSeats) * 100;
             const stackedParty = {
                 partyName,
+                full_name: partyData.full_name,
                 percentage,
                 deputes: partyData.deputes,
+                totalSeats,
                 color: partyData.color,
                 yPosition: cumulatedHeight, // Place vertically with year
                 xStart: cumulatedPercentage, // Place horizontally with cumulated percentage of previous parties
@@ -133,7 +135,6 @@ async function drawChart() {
                 current: partyData.current,
                 coalition: partyData.coalition,
                 index: i
-
             };
             cumulatedPercentage += percentage;
             return stackedParty;
@@ -304,6 +305,65 @@ async function drawChart() {
 
         cumulatedHeight += barHeight;
     });
+
+    // Select tooltip and add event for each rectangle
+    const tooltip = d3.select("#tooltip");
+    svg.selectAll('rect')
+        .on('mouseover', function (event, d) {
+            // Create tooltip content
+            const deputiesText = `<br>Député${d.deputes > 1 ? 's' : ''} : <strong>${d.deputes}</strong> / ${d.totalSeats} (${d.percentage.toFixed(1)}%) `;
+            const currentText = `<br>Courant : ${d.current}`;
+            const coalitionText = d.coalition ? `<br>Coalition : ${d.coalition}` : '';
+            // const coalitionDeputiesText = 
+
+            tooltip.html(`<strong>${d.full_name}</strong>
+                        ${deputiesText}
+                        ${currentText}
+                        ${coalitionText}
+                        `);
+
+            // Create tooltip transition
+            tooltip.transition()
+                        .duration(200)
+                        .style('opacity', 1)
+                        .style('visibility', 'visible');
+            
+            // Reduce bar opacity
+            d3.select(this).transition()
+                .duration(200)
+                .style('fill-opacity', 0.9);
+        })
+        .on('mousemove', function (event) {
+            // Move tooltip with cursor
+            const tooltipWidth = tooltip.node().offsetWidth;
+            const tooltipHeight = tooltip.node().offsetHeight;
+
+            let tooltipX = event.pageX;
+            let tooltipY = event.pageY;
+
+            if (tooltipX + tooltipWidth > windowWidth) {
+                tooltipX = event.pageX - tooltipWidth;
+            }
+
+            if (tooltipY + tooltipHeight > windowHeight) {
+                tooltipY = event.pageY - tooltipHeight;
+            }
+
+
+            tooltip.style('top', `${tooltipY}px`)
+                    .style('left', `${tooltipX}px`);
+        })
+        .on('mouseout', function(event) {
+            // make the tooltip fade away
+            tooltip.transition()
+                .duration(200)
+                .style('opacity', 0)
+                .style('visibility', 'hidden');
+
+            d3.select(this).transition()
+                .duration(200)
+                .style('fill-opacity', 1);
+        })
 
     // Add the vertical axis (years)
     const yAxis = d3.axisLeft(yScale)

@@ -879,7 +879,7 @@
     ],
     "currents": [
       {
-        "Communistes": {
+        "Communiste": {
           "parties": [{
             "PCF": {
               "full_name": "Parti Communiste Français"
@@ -898,7 +898,7 @@
           }], 
           "color": "#C10F3D"
         },
-        "Socialistes": {
+        "Socialiste": {
           "parties": [{
             "SFIO": {
               "full_name": "Section Française de l'Internationale Ouvrière"
@@ -910,7 +910,7 @@
           }], 
           "color": "#F40E39"
         },
-        "Écologistes": {
+        "Écologiste": {
           "parties": [{
             "LV":{
               "full_name": "Les Verts"
@@ -923,7 +923,7 @@
           }}], 
           "color": "#80C34E"
         },
-        "Citoyens": {
+        "Citoyen": {
           "parties": [{
             "MDC":{
               "full_name": "Mouvement des Citoyens"
@@ -933,7 +933,7 @@
           }}], 
           "color": "#F40E39"
         },
-        "Radicaux de gauche": {
+        "Radical de gauche": {
           "parties": [{
             "PRG":{
               "full_name": "Parti Radical de Gauche",
@@ -953,7 +953,7 @@
           "parties": [{"DVG": {"full_name": "Divers gauche"}}], 
           "color": "#FF718B"
         },
-        "Centristes démocrates": {
+        "Centre démocrate": {
           "parties": [{
             "MRP": {
               "full_name": "Mouvement Républicain Populaire"
@@ -972,10 +972,10 @@
           }}], 
           "color": "#FFA500"
         },
-        "Macronisme": {
+        "Macroniste pur": {
           "parties": [{
             "LREM": {
-              "full_name": "La République En March"
+              "full_name": "La République En Marche"
           }}, {
             "RE": {
               "full_name": "Renaissance"
@@ -1008,7 +1008,7 @@
           "parties": [{"DVD": {"full_name": "Divers droite"}}], 
           "color": "#89D9FE"
         },
-        "Parti Radical": {
+        "Radical de droite": {
           "parties": [
             {
               "PR": {
@@ -1017,7 +1017,7 @@
           ],
           "color": "#89D9FE"
         },
-        "Horizons": {
+        "Droite macroniste": {
           "parties": [
             {
               "HOR": {
@@ -1043,13 +1043,13 @@
           }}], 
           "color": "#33ADFF"
         },
-        "À Droite": {
+        "Droite Ciotti": {
           "parties": [
             {"AD": {
               "full_name": "À Droite !"
           }}
           ],
-          "color": "#B18C70"
+          "color": "#465C74"
         },
         "Mouvement Pour la France": {
           "parties": [
@@ -1057,7 +1057,7 @@
               "full_name": "Mouvement Pour la France"
           }}
           ],
-          "color": "#B18C70"
+          "color": "#49297A"
         },
         "Debout La France": {
           "parties": [
@@ -1065,7 +1065,7 @@
               "full_name": "Debout La France"
           }}
           ],
-          "color": "#B18C70"
+          "color": "#8024AB"
         },
         "Front National": {
           "parties": [{

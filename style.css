@@ -58,3 +58,23 @@ h2 {
     width: 95%;
     opacity: 65%;
 }
+.bar {
+    cursor: none;
+    fill-opacity: 1;
+}
+.party-name, .deputies-number, line {
+    pointer-events: none;
+}
+.tooltip {
+    position: absolute;
+    padding: 5px;
+    font-size: 10px;
+    background-color: white;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    flex-direction: column;
+    
+    --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color); box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
