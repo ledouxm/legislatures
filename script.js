@@ -1,5 +1,9 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
+/**
+ * Fetch legislatures data from a JSON file
+ * @returns {Promise<Array>} An array of legislatures
+ */
 async function getLegislatures() {
     const response = await fetch("legislatures.json");
     const data = await response.json();
@@ -7,6 +11,10 @@ async function getLegislatures() {
     return legislatures;
 }
 
+/**
+ * Fetch currents data from a JSON file
+ * @returns {Promise<Array>} An array of currents
+ */
 async function getCurrents() {
     const response = await fetch("legislatures.json");
     const data = await response.json();
@@ -14,6 +22,10 @@ async function getCurrents() {
     return currents;
 }
 
+/**
+ * Get trapezoid coordinates from two rectangles
+ * @param {Object} prevCurrent - The previous current rectangle
+ */
 function getTrapezoidCoordinates(prevCurrent, nextCurrent, height) {
     return [
         [prevCurrent.start, 0],
@@ -23,8 +35,12 @@ function getTrapezoidCoordinates(prevCurrent, nextCurrent, height) {
     ];
 }
 
+/**
+ * Draw the chart
+ * @returns {Promise<void>}
+ */
 async function drawChart() {
-    const margin = { top: 25, right: 10, bottom: 10, left: 40 };
+    const margin = { top: 30, right: 15, bottom: 10, left: 40 };
     const windowWidth = window.innerWidth - (margin.left + margin.right);
     const windowHeight = window.innerHeight - (margin.top + margin.bottom);
 
@@ -51,6 +67,12 @@ async function drawChart() {
         return partyToCurrent;
     }
 
+    /**
+     * Add currents data to legislatures
+     * @param {Array} legislatures - The legislatures data
+     * @param {Array} currents - The currents data
+     * @returns {Promise<Array>} The updated legislatures data
+     */
     async function addCurrentsToLegislatures(legislatures, currents) {
         const partyToCurrent = mapCurrentsToParties(currents);
 
@@ -120,6 +142,8 @@ async function drawChart() {
         const stackedParties = Object.keys(legislature.parties).map((partyName, i) => {
             const partyData = legislature.parties[partyName];
             const percentage = (partyData.deputes / totalSeats) * 100;
+            const coalitionTotal = Object.values(legislature.parties).filter(p => p.coalition === partyData.coalition).reduce((acc, curr) => acc + curr.deputes, 0);
+            const coalitionMostImportantPartyColor = Object.values(legislature.parties).filter(p => p.coalition === partyData.coalition).reduce((acc, curr) => acc.deputes > curr.deputes ? acc : curr).color;
             const stackedParty = {
                 partyName,
                 full_name: partyData.full_name,
@@ -134,6 +158,8 @@ async function drawChart() {
                 height: (index === legislatures.length - 1 ? barHeight : barHeight / 2),
                 current: partyData.current,
                 coalition: partyData.coalition,
+                coalitionTotal: coalitionTotal,
+                coalitionColor: partyData.coalition ? coalitionMostImportantPartyColor : null,
                 index: i
             };
             cumulatedPercentage += percentage;
@@ -154,33 +180,39 @@ async function drawChart() {
             .attr('y', d => d.yPosition)
             .attr('width', d => d.width)
             .attr('height', d => d.height)
-            .attr('fill', d => d.color);
+            .attr('fill', d => d.color)
+            .attr('data-color', d => d.color)
+            .attr('data-coalition-color', d => d.coalitionColor)
+            .attr("shape-rendering", "crispEdges");
         
         // Draw coalition strokes
         stackedParties.forEach((party, i) => {
             if (party.coalition) {
-                // Top dashed line
+                // Top line
                 svg.append('line')
-                    .attr('x1', xScale(party.xStart) + 0.5)
-                    .attr('x2', xScale(party.xEnd) - 0.5)
-                    .attr('y1', party.yPosition + 0.5)
-                    .attr('y2', party.yPosition + 0.5)
-                    .attr('stroke-dasharray', '2,4')
+                    .attr('class', `coalition-line top coalition-line-${party.coalition.replace(/\s/g, '')}`)
+                    .attr('x1', xScale(party.xStart))
+                    .attr('x2', xScale(party.xEnd))
+                    .attr('y1', party.yPosition)
+                    .attr('y2', party.yPosition)
+                    // .attr('stroke-dasharray', '2,4')
                     .attr('stroke', 'rgba(0,0,0,0.5')
                     .attr('stroke-width', 1);
-                // Bottom dashed line
+                // Bottom line
                 svg.append('line')
-                    .attr('x1', xScale(party.xStart) + 0.5)
-                    .attr('x2', xScale(party.xEnd) - 0.5)
-                    .attr('y1', party.yPosition + party.height - 0.5)
-                    .attr('y2', party.yPosition + party.height - 0.5)
-                    .attr('stroke-dasharray', '2,4')
+                    .attr('class', `coalition-line bottom coalition-line-${party.coalition.replace(/\s/g, '')}`)
+                    .attr('x1', xScale(party.xStart))
+                    .attr('x2', xScale(party.xEnd))
+                    .attr('y1', party.yPosition + party.height)
+                    .attr('y2', party.yPosition + party.height)
+                    // .attr('stroke-dasharray', '2,4')
                     .attr('stroke', 'rgba(0,0,0,0.5')
                     .attr('stroke-width', 1);
 
                 // Left line
                 if (i === 0 || stackedParties[i - 1].coalition !== party.coalition) {
                     svg.append('line')
+                        .attr('class', `coalition-line left coalition-line-${party.coalition.replace(/\s/g, '')}`)
                         .attr('x1', xScale(party.xStart) + 0.5)
                         .attr('x2', xScale(party.xStart) + 0.5)
                         .attr('y1', party.yPosition)
@@ -191,6 +223,7 @@ async function drawChart() {
                 // Right line
                 if (i === stackedParties.length - 1 || stackedParties[i + 1].coalition !== party.coalition) {
                     svg.append('line')
+                        .attr('class', `coalition-line right coalition-line-${party.coalition.replace(/\s/g, '')}`)
                         .attr('x1', xScale(party.xEnd) - 0.5)
                         .attr('x2', xScale(party.xEnd) - 0.5)
                         .attr('y1', party.yPosition)
@@ -202,8 +235,8 @@ async function drawChart() {
         })
         
         // Add party names to bars
-        const minWidthForText = 10;
-        const minHeightForText = 2;
+        const minWidthForText = 18;
+        const minHeightForText = minHeight;
         svg.selectAll(`.party-${legislature.legislature}`)
             .data(stackedParties.filter(d => d.width > minWidthForText))
             .enter()
@@ -212,7 +245,7 @@ async function drawChart() {
             .attr('x', d => xScale(d.xStart))
             .attr('y', d => d.yPosition)
             .attr('dy', '1.1em')
-            .attr('dx', '.2em')
+            .attr('dx', '.25em')
             .style('text-anchor', 'start')
             .style('font-size', '9px')
             .text(d => d.partyName)
@@ -220,14 +253,14 @@ async function drawChart() {
 
         // Add deputy numbers to bars
         svg.selectAll(`.deputies-${legislature.legislature}`)
-            .data(stackedParties.filter(d => d.width > minWidthForText && legislature.duration >= minHeightForText))
+            .data(stackedParties.filter(d => d.width > minWidthForText && d.height >= minHeightForText))
             .enter()
             .append('text')
             .attr('class', d => `deputies-number deputies-${legislature.legislature} deputies-${d.partyName.replace(/\s/g, '')}`)
             .attr('x', d => xScale(d.xStart))
             .attr('y', d => d.yPosition + 11)
             .attr('dy', '1.1em')
-            .attr('dx', '.2em')
+            .attr('dx', '.25em')
             .style('text-anchor', 'start')
             .style('opacity', 0.5)
             .style('font-size', '8px')
@@ -253,7 +286,8 @@ async function drawChart() {
                     xEnd: nextCumulatedPercentage + percentage,
                     width: xScale(percentage),
                     height: nextBarHeight,
-                    current: partyData.current
+                    current: partyData.current,
+                    coalitionColor: partyData.coalitionColor,
                 };
                 nextCumulatedPercentage += percentage;
                 return stackedParty;
@@ -300,6 +334,9 @@ async function drawChart() {
                     .attr('transform', `translate(0,${cumulatedHeight + barHeight / 2})`)
                     .attr('fill', party.color)
                     .attr('opacity', 0.75)
+                    .attr('data-color', party.color)
+                    .attr('data-coalition-color', party.coalitionColor)
+                    .attr("shape-rendering", "crispEdges");
             });
         }
 
@@ -310,16 +347,18 @@ async function drawChart() {
     const tooltip = d3.select("#tooltip");
     svg.selectAll('rect')
         .on('mouseover', function (event, d) {
-            // Create tooltip content
-            const deputiesText = `<br>Député${d.deputes > 1 ? 's' : ''} : <strong>${d.deputes}</strong> / ${d.totalSeats} (${d.percentage.toFixed(1)}%) `;
-            const currentText = `<br>Courant : ${d.current}`;
-            const coalitionText = d.coalition ? `<br>Coalition : ${d.coalition}` : '';
-            // const coalitionDeputiesText = 
+            // Create tooltip rectangle content
+            const deputiesText = `<p><span>Député${d.deputes > 1 ? 's' : ''} :</span> <span><strong>${d.deputes}</strong> / ${d.totalSeats}</span> <span class="percentageValue">(${d.percentage.toFixed(1)}%)</span></p>`;
+            const currentText = `<p><span>Courant :</span> <span class="currentColor" style="background-color: ${d.color}"></span> ${d.current}</p>`;
+            const coalitionText = d.coalition ? `<p><span>Coalition :</span> <span class="currentColor" style="background-color: ${d.coalitionColor}"></span> ${d.coalition}</p>` : '';
+            const coalitionDeputiesText = d.coalition ? `<p><span>Députés de la coalition :</span> <strong>${d.coalitionTotal}</strong> <span class="percentageValue">(${((d.coalitionTotal / d.totalSeats) * 100).toFixed(1)}%)</span></p>` : '';
 
-            tooltip.html(`<strong>${d.full_name}</strong>
-                        ${deputiesText}
+            // Set tooltip content
+            tooltip.html(`<p>${d.full_name}</p>
                         ${currentText}
+                        ${deputiesText}
                         ${coalitionText}
+                        ${coalitionDeputiesText}
                         `);
 
             // Create tooltip transition
@@ -337,16 +376,25 @@ async function drawChart() {
             // Move tooltip with cursor
             const tooltipWidth = tooltip.node().offsetWidth;
             const tooltipHeight = tooltip.node().offsetHeight;
+            // set tooltip classes to top and left by default
+            tooltip.classed('top', true);
+            tooltip.classed('left', true);
+            tooltip.classed('right', false);
+            tooltip.classed('bottom', false);
 
-            let tooltipX = event.pageX;
+            let tooltipX = event.pageX + 5;
             let tooltipY = event.pageY;
 
             if (tooltipX + tooltipWidth > windowWidth) {
-                tooltipX = event.pageX - tooltipWidth;
+                tooltipX = event.pageX - tooltipWidth - 5;
+                tooltip.classed('left', false);
+                tooltip.classed('right', true);
             }
 
             if (tooltipY + tooltipHeight > windowHeight) {
                 tooltipY = event.pageY - tooltipHeight;
+                tooltip.classed('top', false);
+                tooltip.classed('bottom', true);
             }
 
 
@@ -363,7 +411,8 @@ async function drawChart() {
             d3.select(this).transition()
                 .duration(200)
                 .style('fill-opacity', 1);
-        })
+        });
+        
 
     // Add the vertical axis (years)
     const yAxis = d3.axisLeft(yScale)
@@ -376,107 +425,82 @@ async function drawChart() {
         .attr('class', 'y axis')
         .call(yAxis);
 
- 
+    // Add a dashed line at 50% of the chart
+    svg.append('line')
+        .attr('x1', xScale(50))
+        .attr('x2', xScale(50))
+        .attr('y1', 0)
+        .attr('y2', totalDuration * minHeight)
+        .attr('opacity', 0.15)
+        .attr('stroke', 'black')
+        .attr('stroke-dasharray', '10,20')
+        .attr('stroke-width', 0.5);      
+        
+    // Add a checkbox to toggle coalition visibility
+    const coalitionButton = d3.select('#coalition-checkbox');
+    coalitionButton.on('click', function() {
+        const coalitionBars = document.querySelectorAll('.coalition');
+        coalitionBars.forEach(bar => {
+            bar.classList.toggle('coalition-colored');
+            
+            bar.style.stroke = bar.classList.contains('coalition-colored') ? 'black' : 'none';
+            bar.style.strokeWidth = bar.classList.contains('coalition-colored') ? 0.2 : 0;
+
+            bar.style.fill = bar.classList.contains('coalition-colored') ? bar.dataset.coalitionColor : bar.dataset.color;
+            bar.style.opacity = bar.dataset.color === bar.dataset.coalitionColor ? 1 : (bar.classList.contains('coalition-colored') ? 0.8 : 1);
+        });
+        const transitionPolygons = document.querySelectorAll('polygon');
+        transitionPolygons.forEach(polygon => {
+            polygon.classList.toggle('coalition-colored');
+
+            if (polygon.dataset.color !== polygon.dataset.coalitionColor) {
+                polygon.style.fill = polygon.classList.contains('coalition-colored') ? polygon.dataset.coalitionColor : polygon.dataset.color;
+            }
+        });
+    });
+
+    // Add a checkbox to toggle transitions visibility
+    const transitionButton = d3.select('#transitions-checkbox');
+    transitionButton.on('click', function() {
+        const transitionPolygons = document.querySelectorAll('polygon');
+        transitionPolygons.forEach(polygon => {
+            polygon.classList.toggle('transition-hidden');
+            polygon.style.opacity = polygon.classList.contains('transition-hidden') ? 0 : 0.75;
+        });
+
+        // Divide by 2 y axis height to have each legislature height divided by 2
+        const newYScale = d3.scaleLinear()
+                            .domain([0, totalDuration])
+                            .range([0, (minHeight * totalDuration) / 2]);
+                        
+        // Transition y axis
+        svg.select('.y.axis')
+            .transition()
+            .duration(750)
+            .call(d3.axisLeft(newYScale).tickValues(legislatures.map((legislature, i) => {
+                return (i === 0 ? 0 : d3.sum(legislatures.slice(0, i), d => d.duration));
+            }))
+            .tickFormat((d, i) => legislatures[i].legislature));
+        
+        // Transition bars
+        svg.selectAll('rect')
+            .transition()
+            .duration(750)
+            .attr('y', d => d.yPosition / 2);
+
+        // Transition party names
+        svg.selectAll('.party-name')
+            .transition()
+            .duration(750)
+            .attr('y', d => d.yPosition / 2);
+
+        // Transition deputies numbers
+        svg.selectAll('.deputies-number')
+            .transition()
+            .duration(750)
+            .attr('y', d => d.yPosition / 2 + 11);
+    });
+
 }
 
-
 drawChart();
-
-// function createDOMElement(tag, attributes = {}, textContent) {
-// 	// Tag
-// 	const element = document.createElement(tag);
-// 	// Attributes
-// 	for (const [key, value] of Object.entries(attributes)) {
-// 		element.setAttribute(key, value);
-// 	}
-// 	// Text
-// 	if (textContent) {
-// 		element.textContent = textContent;
-// 	}
-
-// 	return element;
-// }
-
-// function createTrapezoid(topWidth, bottomWidth, color, height) {
-//     if (topWidth <= 0 || bottomWidth <= 0) {
-//         console.error('Widths must be greater than zero.');
-//         return null;
-//     }
-
-//     const trapeze = createDOMElement('div', { class: 'trapeze' });
-//     trapeze.style.width = `${bottomWidth}%`;
-//     trapeze.style.height = `${height}px`
-//     trapeze.style.transform = `skewX(${Math.atan((bottomWidth - topWidth) / (2 * height)) * (180 / Math.PI)}deg)`;
-//     trapeze.style.backgroundColor = color;
-
-//     return trapeze;
-// }
-
-// async function getLegislatures() {
-//     const response = await fetch("legislatures.json");
-//     const data = await response.json();
-//     const legislatures = data["V"].legislatures;
-//     return legislatures;
-// }
-
-// function displayLegislature(legislature, nextLegislature) {
-//     const year = legislature.legislature;
-//     const duration = legislature.duration;
-//     const total = legislature.total_deputes;
-//     const parties = legislature.parties;
-//     const partyNames = Object.keys(parties);
-//     const repartition = createDOMElement("div", { "class": "lgslt", "style": `height: ${duration * 15 }px` });
-//     const partiesDiv = createDOMElement("div", { "class": "parties" });
-//     const transitionDuration = duration * 5;
-//     let nextTotal = 0;
-//     let nextParties = {};
-//     let transition = "";
-//     if (nextLegislature) {
-//         nextTotal = nextLegislature.total_deputes;
-//         nextParties = nextLegislature.parties;
-//         transition = createDOMElement("div", { "style": `height: ${transitionDuration}px`, "class": "transition" });
-//     }
-//     const lgslt = createDOMElement("div", {})
-
-//     partyNames.forEach((party) => {
-//         const partyName = party;
-//         const partyNumber = parties[party].deputes;
-//         const percentage = partyNumber / total * 100;
-//         const color = parties[party].color;
-//         const partyBlock = createDOMElement("div", { "style": `width:${percentage}%; background-color: ${color}`, "class": "party" }, partyName);
-//         let coalition = "";
-//         if (parties[party].coalition) {
-//             coalition = parties[party].coalition;
-//             partyBlock.classList.add("coalition-party");
-//         }
-
-//         partiesDiv.appendChild(partyBlock);
-
-//         let nextNumber = 1;
-//         if (nextParties[party]) {
-//             nextNumber = nextParties[party].deputes;
-//             const nextPercentage = nextNumber / nextTotal * 100;
-//             const transitionBlock = createTrapezoid(percentage, nextPercentage, color, transitionDuration);
-//             transition.appendChild(transitionBlock);
-//         }
-//     });
-
-//     const yearText = createDOMElement("h2", {}, year);
-//     repartition.append(partiesDiv, yearText)
-//     lgslt.append(repartition)
-//     return lgslt;
-// }
-
-// function displayData(legislatures) {
-//     const main = document.getElementsByTagName("main")[0];
-//     legislatures.forEach((legislature, index) => {
-//         const lgslt = displayLegislature(legislature, legislatures[index+1])
-//         main.appendChild(lgslt);
-//     });
-// }
-
-// async function init() {
-//     const legislatures = await getLegislatures();
-//     displayData(legislatures);
-// }
-// init();

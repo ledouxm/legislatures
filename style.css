@@ -23,58 +23,106 @@ header {
     background-color: white;
     font-size: 12px;
 }
-main {
+footer {
+    width: 100%;
+    position: sticky;
+
+    bottom: 0;
     display: flex;
     flex-direction: column;
-}
-h2 {
-    font-weight: 400;
-    text-align: right;
-    width: 5%;
-    margin: 0;
+    align-items: center;
+    background-color: white;
     font-size: 12px;
+    padding: 15px;
 }
-.lgslt {
-    display: flex;
-    border-top: 0.5px solid black;
-}
-.parties {
-    width: 95%;
-    display: flex;
-}
-.party {
-    height: 100%;
-    padding: 2px;
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    overflow: hidden;
-    border-right: 0.5px solid rgba(0, 0, 0, 0.3);
-    font-size: 10px;
-    line-height: 110%;
-}
-.transition {
-    display: flex;
-    width: 95%;
-    opacity: 65%;
+h1 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
 }
 .bar {
     cursor: none;
     fill-opacity: 1;
+    transition: fill 0.3s ease;
+}
+polygon {
+    transition: all 0.3s ease;
 }
 .party-name, .deputies-number, line {
     pointer-events: none;
 }
 .tooltip {
     position: absolute;
-    padding: 5px;
+    padding: 5px 0;
     font-size: 10px;
     background-color: white;
     border-radius: 4px;
     pointer-events: none;
     opacity: 0;
     visibility: hidden;
+    display: flex;
     flex-direction: column;
+    gap: 4px;
     
-    --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color); box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+.tooltip p {
+    margin: 0;
+    padding: 0 12px 2px 8px;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+}
+.tooltip p:first-child {
+    font-weight: 500;
+    padding-top: 2px;
+    padding-bottom: 6px;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.5);
+    margin-bottom: 12px;
+}
+.tooltip p:last-child {
+    border-bottom: none;
+}
+.tooltip p span:first-child {
+    opacity: 0.6;
+}
+.tooltip span.currentColor {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.percentageValue {
+    opacity: 0.5;
+}
+
+.tooltip::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 5px;
+    border-style: solid;
+}
+.tooltip.top.left::before {
+    top: 0%;
+    left: 0%;
+    margin-left: -5px;
+    border-color: white transparent transparent transparent;
+}
+.tooltip.top.right::before {
+    top: 0%;
+    right: 0%;
+    margin-right: -5px;
+    border-color: white transparent transparent transparent;
+}
+.tooltip.bottom.left::before {
+    bottom: 0%;
+    left: 0%;
+    margin-left: -5px;
+    border-color: transparent transparent white transparent;
+}
+.tooltip.bottom.right::before {
+    bottom: 0%;
+    right: 0%;
+    margin-right: -5px;
+    border-color: transparent transparent white transparent;
 }
