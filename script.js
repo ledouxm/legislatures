@@ -25,6 +25,9 @@ async function getCurrents() {
 /**
  * Get trapezoid coordinates from two rectangles
  * @param {Object} prevCurrent - The previous current rectangle
+ * @param {Object} nextCurrent - The next current rectangle
+ * @param {Number} height - The height of the trapezoid
+ * @returns {Array} An array of coordinates
  */
 function getTrapezoidCoordinates(prevCurrent, nextCurrent, height) {
     return [
@@ -101,12 +104,14 @@ async function drawChart() {
     const totalDuration = d3.sum(legislatures, d => d.duration);
     // Determine minimal height for a legislature
     const minHeight = 24;
-
+    const svgHeight = minHeight * totalDuration + margin.bottom + margin.top;
+    const svgWidth = windowWidth + (margin.left + margin.right);
     // Create SVG container
     const svg = d3.select('#chart')
         .append('svg')
-        .attr('width', windowWidth + (margin.left + margin.right))
-        .attr('height', minHeight * totalDuration + (margin.top + margin.bottom))
+        .attr('width', svgWidth)
+        .attr('height', svgHeight)
+        .attr('data-height', svgHeight)
         .append('g')
         .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
@@ -119,15 +124,23 @@ async function drawChart() {
                      .domain([0, 100]) // Percentage from 0 to 100
                      .range([0, windowWidth]);
 
+    //  Create header svg container
+    const header = d3.select('header')
+        .append('svg')
+        .attr('width', windowWidth + (margin.left + margin.right))
+        .attr('height', margin.top)
+        .append('g')
+        .attr('transform', `translate(${margin.left}, 0)`);
+
     // Add the horizontal axis (percentage)
     const xAxis = d3.axisTop(xScale)
         .ticks(8)
         .tickFormat(d => d + '%');
     
-    svg.append('g')
+    header.append('g')
         .attr('class', 'x axis')
         .call(xAxis)
-        .attr('transform', 'translate(0,0)');
+        .attr('transform', `translate(0, ${margin.top})`);
 
     // Cumulated height variable to position each legislature
     let cumulatedHeight = 0;
@@ -195,7 +208,10 @@ async function drawChart() {
                     .attr('x2', xScale(party.xEnd))
                     .attr('y1', party.yPosition)
                     .attr('y2', party.yPosition)
-                    // .attr('stroke-dasharray', '2,4')
+                    .attr('data-y1', party.yPosition)
+                    .attr('data-y2', party.yPosition)
+                    .attr('data-new-y1', party.yPosition / 2)
+                    .attr('data-new-y2', party.yPosition / 2)
                     .attr('stroke', 'rgba(0,0,0,0.5')
                     .attr('stroke-width', 1);
                 // Bottom line
@@ -205,7 +221,10 @@ async function drawChart() {
                     .attr('x2', xScale(party.xEnd))
                     .attr('y1', party.yPosition + party.height)
                     .attr('y2', party.yPosition + party.height)
-                    // .attr('stroke-dasharray', '2,4')
+                    .attr('data-y1', party.yPosition + party.height)
+                    .attr('data-y2', party.yPosition + party.height)
+                    .attr('data-new-y1', party.yPosition / 2 + party.height)
+                    .attr('data-new-y2', party.yPosition / 2 + party.height)
                     .attr('stroke', 'rgba(0,0,0,0.5')
                     .attr('stroke-width', 1);
 
@@ -217,6 +236,10 @@ async function drawChart() {
                         .attr('x2', xScale(party.xStart) + 0.5)
                         .attr('y1', party.yPosition)
                         .attr('y2', party.yPosition + party.height)
+                        .attr('data-y1', party.yPosition)
+                        .attr('data-y2', party.yPosition + party.height)
+                        .attr('data-new-y1', party.yPosition / 2)
+                        .attr('data-new-y2', party.yPosition / 2 + party.height)
                         .attr('stroke', 'rgba(0,0,0,0.5')
                         .attr('stroke-width', 1);
                 }
@@ -228,6 +251,10 @@ async function drawChart() {
                         .attr('x2', xScale(party.xEnd) - 0.5)
                         .attr('y1', party.yPosition)
                         .attr('y2', party.yPosition + party.height)
+                        .attr('data-y1', party.yPosition)
+                        .attr('data-y2', party.yPosition + party.height)
+                        .attr('data-new-y1', party.yPosition / 2)
+                        .attr('data-new-y2', party.yPosition / 2 + party.height)
                         .attr('stroke', 'rgba(0,0,0,0.5')
                         .attr('stroke-width', 1);
                 }
@@ -328,10 +355,16 @@ async function drawChart() {
                     party.height
                 );
 
+                const yStart = cumulatedHeight + barHeight / 2;
+
                 svg.append('polygon')
-                    .attr('class', `transition-${legislature.legislature} transition-${party.current.replace(/\s/g, '')}`)
+                    .attr('class', `transition-${legislature.legislature} transition-${party.current.replace(/\s/g, '')} ${party.coalition ? 'transition-coalition' : ''}`)
                     .attr('points', trapezoidPoints.map(point => point.join(",")).join(" "))
-                    .attr('transform', `translate(0,${cumulatedHeight + barHeight / 2})`)
+                    .attr('data-height', party.height)
+                    .attr('data-next-x-start', xScale(nextXStart))
+                    .attr('data-next-x-end', xScale(nextXEnd))
+                    .attr('transform', `translate(0,${yStart})`)
+                    .attr('data-y-start', yStart)
                     .attr('fill', party.color)
                     .attr('opacity', 0.75)
                     .attr('data-color', party.color)
@@ -344,73 +377,83 @@ async function drawChart() {
     });
 
     // Select tooltip and add event for each rectangle
+    const body = document.querySelector('body');
+    body.classList.add('interactions-allowed');
     const tooltip = d3.select("#tooltip");
+
     svg.selectAll('rect')
         .on('mouseover', function (event, d) {
-            // Create tooltip rectangle content
-            const deputiesText = `<p><span>Député${d.deputes > 1 ? 's' : ''} :</span> <span><strong>${d.deputes}</strong> / ${d.totalSeats}</span> <span class="percentageValue">(${d.percentage.toFixed(1)}%)</span></p>`;
-            const currentText = `<p><span>Courant :</span> <span class="currentColor" style="background-color: ${d.color}"></span> ${d.current}</p>`;
-            const coalitionText = d.coalition ? `<p><span>Coalition :</span> <span class="currentColor" style="background-color: ${d.coalitionColor}"></span> ${d.coalition}</p>` : '';
-            const coalitionDeputiesText = d.coalition ? `<p><span>Députés de la coalition :</span> <strong>${d.coalitionTotal}</strong> <span class="percentageValue">(${((d.coalitionTotal / d.totalSeats) * 100).toFixed(1)}%)</span></p>` : '';
-
-            // Set tooltip content
-            tooltip.html(`<p>${d.full_name}</p>
-                        ${currentText}
-                        ${deputiesText}
-                        ${coalitionText}
-                        ${coalitionDeputiesText}
-                        `);
-
-            // Create tooltip transition
-            tooltip.transition()
-                        .duration(200)
-                        .style('opacity', 1)
-                        .style('visibility', 'visible');
-            
-            // Reduce bar opacity
-            d3.select(this).transition()
-                .duration(200)
-                .style('fill-opacity', 0.9);
+            // Check if interactions are allowed
+            if (body.classList.contains('interactions-allowed')) {
+                // Create tooltip rectangle content
+                const deputiesText = `<p><span>Député${d.deputes > 1 ? 's' : ''} :</span> <span><strong>${d.deputes}</strong> / ${d.totalSeats}</span> <span class="percentageValue">(${d.percentage.toFixed(1)}%)</span></p>`;
+                const currentText = `<p><span>Courant :</span> <span class="currentColor" style="background-color: ${d.color}"></span> ${d.current}</p>`;
+                const coalitionText = d.coalition ? `<p><span>Coalition :</span> <span class="currentColor" style="background-color: ${d.coalitionColor}"></span> ${d.coalition}</p>` : '';
+                const coalitionDeputiesText = d.coalition ? `<p><span>Députés de la coalition :</span> <strong>${d.coalitionTotal}</strong> <span class="percentageValue">(${((d.coalitionTotal / d.totalSeats) * 100).toFixed(1)}%)</span></p>` : '';
+    
+                // Set tooltip content
+                tooltip.html(`<p>${d.full_name}</p>
+                            ${currentText}
+                            ${deputiesText}
+                            ${coalitionText}
+                            ${coalitionDeputiesText}
+                            `);
+    
+                // Create tooltip transition
+                tooltip.transition()
+                            .duration(200)
+                            .style('opacity', 1)
+                            .style('visibility', 'visible');
+                
+                // Reduce bar opacity
+                d3.select(this).transition()
+                    .duration(200)
+                    .style('fill-opacity', 0.9);
+            }
         })
         .on('mousemove', function (event) {
-            // Move tooltip with cursor
-            const tooltipWidth = tooltip.node().offsetWidth;
-            const tooltipHeight = tooltip.node().offsetHeight;
-            // set tooltip classes to top and left by default
-            tooltip.classed('top', true);
-            tooltip.classed('left', true);
-            tooltip.classed('right', false);
-            tooltip.classed('bottom', false);
-
-            let tooltipX = event.pageX + 5;
-            let tooltipY = event.pageY;
-
-            if (tooltipX + tooltipWidth > windowWidth) {
-                tooltipX = event.pageX - tooltipWidth - 5;
-                tooltip.classed('left', false);
-                tooltip.classed('right', true);
+            if (body.classList.contains('interactions-allowed')) {
+                // Move tooltip with cursor
+                const tooltipWidth = tooltip.node().offsetWidth;
+                const tooltipHeight = tooltip.node().offsetHeight;
+                // set tooltip classes to top and left by default
+                tooltip.classed('top', true);
+                tooltip.classed('left', true);
+                tooltip.classed('right', false);
+                tooltip.classed('bottom', false);
+    
+                let tooltipX = event.pageX + 5;
+                let tooltipY = event.pageY;
+    
+                if (tooltipX + tooltipWidth > windowWidth) {
+                    tooltipX = event.pageX - tooltipWidth - 5;
+                    tooltip.classed('left', false);
+                    tooltip.classed('right', true);
+                }
+    
+                if (tooltipY + tooltipHeight > windowHeight) {
+                    tooltipY = event.pageY - tooltipHeight;
+                    tooltip.classed('top', false);
+                    tooltip.classed('bottom', true);
+                }
+    
+    
+                tooltip.style('top', `${tooltipY}px`)
+                        .style('left', `${tooltipX}px`);
             }
-
-            if (tooltipY + tooltipHeight > windowHeight) {
-                tooltipY = event.pageY - tooltipHeight;
-                tooltip.classed('top', false);
-                tooltip.classed('bottom', true);
-            }
-
-
-            tooltip.style('top', `${tooltipY}px`)
-                    .style('left', `${tooltipX}px`);
         })
         .on('mouseout', function(event) {
-            // make the tooltip fade away
-            tooltip.transition()
-                .duration(200)
-                .style('opacity', 0)
-                .style('visibility', 'hidden');
-
-            d3.select(this).transition()
-                .duration(200)
-                .style('fill-opacity', 1);
+            if (body.classList.contains('interactions-allowed')) {
+                // make the tooltip fade away
+                tooltip.transition()
+                    .duration(200)
+                    .style('opacity', 0)
+                    .style('visibility', 'hidden');
+    
+                d3.select(this).transition()
+                    .duration(200)
+                    .style('fill-opacity', 1);
+            }
         });
         
 
@@ -449,56 +492,121 @@ async function drawChart() {
             bar.style.fill = bar.classList.contains('coalition-colored') ? bar.dataset.coalitionColor : bar.dataset.color;
             bar.style.opacity = bar.dataset.color === bar.dataset.coalitionColor ? 1 : (bar.classList.contains('coalition-colored') ? 0.8 : 1);
         });
-        const transitionPolygons = document.querySelectorAll('polygon');
+        const transitionPolygons = document.querySelectorAll('polygon.transition-coalition');
         transitionPolygons.forEach(polygon => {
             polygon.classList.toggle('coalition-colored');
 
             if (polygon.dataset.color !== polygon.dataset.coalitionColor) {
                 polygon.style.fill = polygon.classList.contains('coalition-colored') ? polygon.dataset.coalitionColor : polygon.dataset.color;
+                polygon.style.opacity = polygon.classList.contains('coalition-colored') ? 0.65 : 0.75;
+
+                polygon.style.stroke = polygon.classList.contains('coalition-colored') ? 'black' : 'none';
+                polygon.style.strokeWidth = polygon.classList.contains('coalition-colored') ? 0.3 : 0;
+                // polygon.setAttribute('stroke-dasharray', "2,4");
             }
         });
     });
 
     // Add a checkbox to toggle transitions visibility
     const transitionButton = d3.select('#transitions-checkbox');
+    const transitionDuration = 750;
+    const transitionEase = d3.easeQuadInOut;
+
     transitionButton.on('click', function() {
-        const transitionPolygons = document.querySelectorAll('polygon');
-        transitionPolygons.forEach(polygon => {
-            polygon.classList.toggle('transition-hidden');
-            polygon.style.opacity = polygon.classList.contains('transition-hidden') ? 0 : 0.75;
-        });
+        const body = document.querySelector('body');
+        body.classList.toggle('transitions-hidden');
+        const isHidden = body.classList.contains('transitions-hidden');
 
         // Divide by 2 y axis height to have each legislature height divided by 2
         const newYScale = d3.scaleLinear()
-                            .domain([0, totalDuration])
-                            .range([0, (minHeight * totalDuration) / 2]);
-                        
+        .domain([0, totalDuration])
+        .range([0, (minHeight * totalDuration) / 2]);
+
         // Transition y axis
         svg.select('.y.axis')
-            .transition()
-            .duration(750)
-            .call(d3.axisLeft(newYScale).tickValues(legislatures.map((legislature, i) => {
+        .transition()
+        .duration(transitionDuration)
+        .ease(transitionEase)
+        .call(d3.axisLeft(isHidden ? newYScale : yScale)
+            .tickValues(legislatures.map((legislature, i) => {
                 return (i === 0 ? 0 : d3.sum(legislatures.slice(0, i), d => d.duration));
             }))
             .tickFormat((d, i) => legislatures[i].legislature));
-        
+
+        // Transition polygons
+        svg.selectAll('polygon')
+            .transition()
+            .duration(transitionDuration)
+            .ease(transitionEase)
+            .attr('points', function() {
+                const xStart = parseFloat(this.getAttribute('points').split(' ')[0].split(',')[0]);
+                const xEnd = parseFloat(this.getAttribute('points').split(' ')[1].split(',')[0]);
+                const xNextStart = parseFloat(this.getAttribute('data-next-x-start'));
+                const xNextEnd = parseFloat(this.getAttribute('data-next-x-end'));
+                const height = parseFloat(this.getAttribute('data-height'));
+                return getTrapezoidCoordinates(
+                    { start: xStart, end: xEnd },
+                    { start: xNextStart, end: xNextEnd },
+                    isHidden ? 0 : height
+                ).map(point => point.join(",")).join(" ")
+            })
+            .attr('transform', function() {
+                const yStart = parseFloat(this.getAttribute('data-y-start'));
+                const height = parseFloat(this.getAttribute('data-height'));
+                const yPosition = yStart - height;
+                const yNewStart = height + (yPosition / 2);
+                return isHidden ? `translate(0,${yNewStart})` : `translate(0,${yStart})`;
+            });
+
         // Transition bars
         svg.selectAll('rect')
             .transition()
-            .duration(750)
-            .attr('y', d => d.yPosition / 2);
+            .duration(transitionDuration)
+            .ease(transitionEase)
+            .attr('y', d => isHidden ? d.yPosition / 2 : d.yPosition);
 
         // Transition party names
         svg.selectAll('.party-name')
             .transition()
-            .duration(750)
-            .attr('y', d => d.yPosition / 2);
+            .duration(transitionDuration)
+            .ease(transitionEase)
+            .attr('y', d => isHidden ? d.yPosition / 2 : d.yPosition);
 
         // Transition deputies numbers
         svg.selectAll('.deputies-number')
             .transition()
-            .duration(750)
-            .attr('y', d => d.yPosition / 2 + 11);
+            .duration(transitionDuration)
+            .ease(transitionEase)
+            .attr('y', d => (isHidden ? d.yPosition / 2 : d.yPosition) + 11);
+
+        // Transition coalition lines
+        svg.selectAll('.coalition-line')
+            .transition()
+            .duration(transitionDuration)
+            .ease(transitionEase)
+            .attr('y1', function() {
+                return isHidden ? parseFloat(this.getAttribute('data-new-y1')) : parseFloat(this.getAttribute('data-y1'));
+            })
+            .attr('y2', function() {
+                return isHidden ? parseFloat(this.getAttribute('data-new-y2')) : parseFloat(this.getAttribute('data-y2'));
+            });
+        
+        // Resize svg container height
+        const svgToResize = document.querySelector('#chart svg');
+        const svgHeight = parseFloat(svgToResize.getAttribute('data-height'));
+        svgToResize.setAttribute('height', isHidden ? (svgHeight / 2) + 24 : svgHeight);
+        svgToResize.setAttribute('style', `transition-duration: ${transitionDuration}ms; transition-timing-function: ${transitionEase};`);
+
+        // Scroll to the top of the page
+        if (isHidden) {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // Do not allow interactions during transition
+        body.classList.remove('interactions-allowed');  
+        setTimeout(() => {
+            body.classList.add('interactions-allowed');
+        }, transitionDuration);
     });
 
 }

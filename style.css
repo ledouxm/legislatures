@@ -5,6 +5,15 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+svg {
+    transition-property: height;
 }
 .inter {
   font-family: "Inter", sans-serif;
@@ -15,13 +24,8 @@ body {
     "slnt" 0;
 }
 header {
-    width: 95%;
-    position: sticky;
+    position: fixed;
     top: 0;
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    font-size: 12px;
 }
 footer {
     width: 100%;
@@ -39,6 +43,7 @@ h1 {
     font-size: 16px;
     font-weight: 500;
     margin: 0;
+    text-align: center;
 }
 .bar {
     cursor: none;
@@ -46,7 +51,9 @@ h1 {
     transition: fill 0.3s ease;
 }
 polygon {
-    transition: all 0.3s ease;
+    transition-property: opacity, color;
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
 }
 .party-name, .deputies-number, line {
     pointer-events: none;
