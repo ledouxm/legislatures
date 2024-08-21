@@ -7,7 +7,16 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 async function getLegislatures() {
     const response = await fetch("legislatures.json");
     const data = await response.json();
-    const legislatures = data["V"].legislatures;
+    // Give republic id to each legislature
+    // Get republic id from the data key
+    // For each republic, get the legislatures and add the republic id to each legislature
+    const republics = Object.keys(data);
+    republics.forEach((republic) => {
+        data[republic].legislatures.forEach(legislature => {
+            legislature.republic = republic;
+        });
+    });
+    const legislatures = [...data["III"].legislatures, ...data["IV"].legislatures, ...data["V"].legislatures];
     return legislatures;
 }
 
@@ -134,7 +143,7 @@ async function drawChart() {
 
     // Add the horizontal axis (percentage)
     const xAxis = d3.axisTop(xScale)
-        .ticks(8)
+        .tickValues([0, 25, 50, 75, 100])
         .tickFormat(d => d + '%');
     
     header.append('g')
@@ -144,6 +153,7 @@ async function drawChart() {
 
     // Cumulated height variable to position each legislature
     let cumulatedHeight = 0;
+    let previousRepublic = null;
 
     legislatures.forEach((legislature, index) => {
         const barHeight = yScale(legislature.duration);
@@ -373,8 +383,49 @@ async function drawChart() {
             });
         }
 
+        // Add republics names to the chart
+        // Each time a legislature has a new republic, add a text with the republic name
+        if (legislature.republic !== previousRepublic) {
+            previousRepublic = legislature.republic;
+            let previousHeight = 0;
+            if (index - 1 > 0) {
+                previousHeight = yScale(legislatures[index - 1].duration) || 0;
+            }
+            const fontSize = 10;
+            const textYMiddle = fontSize / 4;
+            const republicYPosition = cumulatedHeight - (previousHeight / 4) + textYMiddle;
+
+            const republicGroup = svg.selectAll(`.republic-group republic-group-${legislature.republic}`)
+                .data([legislature])
+                .enter()
+                .append('g')
+                .attr('class', `republic-group republic-group-${legislature.republic}`)
+
+            // Add a line to separate republics
+            republicGroup.append('line')
+                .attr('class', `republic-line republic-line-${legislature.republic}`)
+                .attr('x1', 0)
+                .attr('x2', windowWidth)
+                .attr('y1', cumulatedHeight)
+                .attr('y2', cumulatedHeight)
+                .attr('stroke', 'black')
+                .attr('stroke-dasharray', '15,15')
+                .attr('stroke-width', 0.5);
+
+            // Add republic name
+            republicGroup.append('text')
+                .attr('class', `republic-name republic-${legislature.republic}`)
+                .attr('x', windowWidth / 2)
+                .attr('y', republicYPosition)
+                .style('text-anchor', 'middle')
+                .style('font-size', `${fontSize}px`)
+                .text(`${legislature.republic}e République`)
+                .attr('fill', 'black');
+
+        }
+
         cumulatedHeight += barHeight;
-    });
+    });    
 
     // Select tooltip and add event for each rectangle
     const body = document.querySelector('body');
@@ -489,20 +540,22 @@ async function drawChart() {
             bar.style.stroke = bar.classList.contains('coalition-colored') ? 'black' : 'none';
             bar.style.strokeWidth = bar.classList.contains('coalition-colored') ? 0.2 : 0;
 
-            bar.style.fill = bar.classList.contains('coalition-colored') ? bar.dataset.coalitionColor : bar.dataset.color;
-            bar.style.opacity = bar.dataset.color === bar.dataset.coalitionColor ? 1 : (bar.classList.contains('coalition-colored') ? 0.8 : 1);
+            if (bar.dataset.color !== bar.dataset.coalitionColor) {
+                bar.style.fill = bar.classList.contains('coalition-colored') ? bar.dataset.coalitionColor : bar.dataset.color;
+                bar.style.opacity = bar.classList.contains('coalition-colored') ? 0.8 : 1;
+            }
         });
+
         const transitionPolygons = document.querySelectorAll('polygon.transition-coalition');
         transitionPolygons.forEach(polygon => {
             polygon.classList.toggle('coalition-colored');
 
+            polygon.style.stroke = polygon.classList.contains('coalition-colored') ? 'black' : 'none';
+            polygon.style.strokeWidth = polygon.classList.contains('coalition-colored') ? 0.1 : 0;
+
             if (polygon.dataset.color !== polygon.dataset.coalitionColor) {
                 polygon.style.fill = polygon.classList.contains('coalition-colored') ? polygon.dataset.coalitionColor : polygon.dataset.color;
                 polygon.style.opacity = polygon.classList.contains('coalition-colored') ? 0.65 : 0.75;
-
-                polygon.style.stroke = polygon.classList.contains('coalition-colored') ? 'black' : 'none';
-                polygon.style.strokeWidth = polygon.classList.contains('coalition-colored') ? 0.3 : 0;
-                // polygon.setAttribute('stroke-dasharray', "2,4");
             }
         });
     });
