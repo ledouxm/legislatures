@@ -397,6 +397,9 @@
           "SFIO": {
             "deputes": 102
           },
+          "PSF ": {
+            "deputes": 0
+          },
           "PRS ": {
             "deputes": 27
           },
@@ -437,6 +440,9 @@
           "SFIO": {
             "deputes": 68
           },
+          "PSF ": {
+            "deputes": 4
+          },
           "PRS ": {
             "deputes": 26
           },
@@ -448,29 +454,33 @@
           },
           "LJR": {
             "deputes": 5,
-            "coalition": "Bloc National"
+            "coalition": "Bloc National Républicain"
+          },
+          "DEM": {
+            "deputes": 0,
+            "coalition": "Bloc National Républicain"
           },
           "RI ": {
             "deputes": 93,
-            "coalition": "Bloc National"
+            "coalition": "Bloc National Républicain"
           },
           "PRD": {
-            "deputes": 107,
-            "coalition": "Bloc National"
+            "deputes": 104,
+            "coalition": "Bloc National Républicain"
           },
           "FR": {
-            "deputes": 183,
-            "coalition": "Bloc National"
+            "deputes": 182,
+            "coalition": "Bloc National Républicain"
           },
           "ALP": {
             "deputes": 29,
-            "coalition": "Bloc National"
+            "coalition": "Bloc National Républicain"
           }
         }
       },
       {
         "legislature": 1924,
-        "total_deputes": 552,
+        "total_deputes": 581,
         "duration": 4,
         "parties": {
           "PC-SFIC": {
@@ -480,8 +490,12 @@
             "deputes": 104,
             "coalition": "Cartel des Gauches"
           },
+          "PSF ": {
+            "deputes": 10,
+            "coalition": "Cartel des Gauches"
+          },
           "PRS ": {
-            "deputes": 44,
+            "deputes": 34,
             "coalition": "Cartel des Gauches"
           },
           "PRRS": {
@@ -489,22 +503,22 @@
             "coalition": "Cartel des Gauches"
           },
           "Autres": {
-            "deputes": 0
+            "deputes": 16
           },
           "LJR": {
             "deputes": 1
           },
-          "PDP": {
-            "deputes": 0
+          "DEM": {
+            "deputes": 14
           },
           "RI ": {
-            "deputes": 0
+            "deputes": 40
           },
           "PRDS": {
-            "deputes": 43
+            "deputes": 93
           },
           "FR": {
-            "deputes": 115
+            "deputes": 104
           },
           "ALP": {
             "deputes": 0
@@ -525,8 +539,11 @@
           "SFIO": {
             "deputes": 102
           },
+          "PSF ": {
+            "deputes": 13
+          },
           "PRS ": {
-            "deputes": 60
+            "deputes": 47
           },
           "PRRS": {
             "deputes": 125
@@ -538,7 +555,10 @@
             "deputes": 1
           },
           "PDP": {
-            "deputes": 24
+            "deputes": 23
+          },
+          "RI ": {
+            "deputes": 0
           },
           "AD": {
             "deputes": 180
@@ -566,8 +586,12 @@
             "deputes": 132,
             "coalition": "Cartel des Gauches"
           },
+          "PSF ": {
+            "deputes": 7,
+            "coalition": "Cartel des Gauches"
+          },
           "PRS ": {
-            "deputes": 43,
+            "deputes": 36,
             "coalition": "Cartel des Gauches"
           },
           "PRRS": {
@@ -578,7 +602,7 @@
             "deputes": 2
           },
           "PDP": {
-            "deputes": 49
+            "deputes": 47
           },
           "AD": {
             "deputes": 121
@@ -616,29 +640,36 @@
             "deputes": 149,
             "coalition": "Front Populaire"
           },
+          "PSF ": {
+            "deputes": 0,
+            "coalition": "Front Populaire"
+          },
           "USR": {
             "deputes": 44,
             "coalition": "Front Populaire"
           },
           "PRRS": {
-            "deputes": 115,
+            "deputes": 114,
+            "coalition": "Front Populaire"
+          },
+          "RGR": {
+            "deputes": 0,
+            "coalition": "Front Populaire"
+          },
+          "Autres": {
+            "deputes": 0,
+            "coalition": "Front Populaire"
+          },
+          "MIDFA": {
+            "deputes": 0,
             "coalition": "Front Populaire"
           },
           "PJR": {
             "deputes": 4,
             "coalition": "Front Populaire"
           },
-          "RGR": {
-            "deputes": 0
-          },
-          "Autres": {
-            "deputes": 0
-          },
-          "MIDFA": {
-            "deputes": 0
-          },
           "PDP": {
-            "deputes": 42
+            "deputes": 39
           },
           "AD": {
             "deputes": 82
@@ -692,6 +723,9 @@
           },
           "MIDFA": {
             "deputes": 8
+          },
+          "PJR": {
+            "deputes": 0
           },
           "MRP": {
             "deputes": 162
@@ -1731,7 +1765,7 @@
           ], 
           "color": "#A40C34"
         },
-        "Insoumis": {
+        "Socialiste altermondialiste": {
           "parties": [{
             "LFI": {
               "full_name": "La France Insoumise"
@@ -1843,6 +1877,11 @@
             {
               "FTSF": {
                 "full_name": "Fédération des Travailleurs Socialistes de France"
+              }
+            },
+            {
+              "PSF ": {
+                "full_name": "Parti Socialiste Français"
               }
             }
           ],
@@ -1958,10 +1997,17 @@
           "color": "#FFDD8F"
         },
         "Centre démocrate-chrétien": {
-          "parties": [{
-            "PDP": {
-              "full_name": "Parti Démocrate Populaire"
-          }},{
+          "parties": [
+            {
+              "DEM": {
+                "full_name": "Démocrates"
+              }
+            },
+            {
+              "PDP": {
+                "full_name": "Parti Démocrate Populaire"
+              }
+            },{
             "MRP": {
               "full_name": "Mouvement Républicain Populaire"
           }}, {
@@ -2095,15 +2141,6 @@
           ],
           "color": "#96D2FF"
         },
-        "Droite macroniste": {
-          "parties": [
-            {
-              "HOR": {
-                "full_name": "Horizons"
-            }}
-          ],
-          "color": "#70C2FF"
-        },
         "Libéral-conservateur": {
           "parties": [
             {
@@ -2137,12 +2174,18 @@
             }},
             {
               "PRL": {
-              "full_name": "Parti Républicain de la Liberté"
-          }}
+                "full_name": "Parti Républicain de la Liberté"
+              }
+            },
+            {
+              "HOR": {
+                "full_name": "Horizons"
+              }
+            }
           ],
-          "color": "#85B4FF"
+          "color": "#70C2FF"
         },
-        "Droite": {
+        "Conservateur": {
           "parties": [
             {
               "MR": {
@@ -2181,7 +2224,7 @@
           ],
           "color": "#A24A9A"
         },
-        "Droite Ciotti": {
+        "Droite Ciottiste": {
           "parties": [
             {"AD!": {
               "full_name": "À Droite !"
