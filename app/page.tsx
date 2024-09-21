@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import FiltersLine from "../components/appUi/filtersLine";
-import EntityDetails from "../components/appUi/entityDetails";
 import { Party } from "../types/party";
 import Main from "../components/appUi/main";
 

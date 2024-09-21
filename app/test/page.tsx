@@ -3,12 +3,7 @@
 import { useEffect, useState } from "react";
 import EntityDetails from "../../components/appUi/entityDetails";
 import EntityButton from "../../components/appUi/entityButton";
-
-type Party = {
-    name: string;
-    full_name: string;
-    keyword: string;
-}
+import { Party } from "../../types/party";
 
 export default function TestPage() {
     const [republics, setRepublics] = useState(null);
@@ -145,6 +140,11 @@ export default function TestPage() {
                             setSelectedParty(party)
                             fetchWiki(party.keyword ? party.keyword : party.full_name, party, 'party')
                         }}
+                        onClose={() => {
+                            setCurrentDescription(null)
+                            setCurrentImage(null)
+                            setSelectedCurrent(null)
+                        }}
                     />
                 )}
                 {selectedParty && (
@@ -155,6 +155,11 @@ export default function TestPage() {
                         wiki={partyWiki}
                         parent={selectedCurrent}
                         onClick={() => {}}
+                        onClose={() => {
+                            setPartyDescription(null)
+                            setPartyImage(null)
+                            setSelectedParty(null)
+                        }}
                     />
                 )}
             </div>
