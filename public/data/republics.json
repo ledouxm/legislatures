@@ -1,0 +1,2259 @@
+{
+  "republics": [
+    {
+      "name": "III",
+      "legislatures": [
+        {
+          "legislature": 1871,
+          "total_deputes": 638,
+          "duration": 5,
+          "parties": [
+            {
+              "name": "RI  ",
+              "deputes": 38
+            },
+            {
+              "name": "RR",
+              "deputes": 0
+            },
+            {
+              "name": "RM",
+              "deputes": 112
+            },
+            {
+              "name": "CL",
+              "deputes": 72
+            },
+            {
+              "name": "RO",
+              "deputes": 214
+            },
+            {
+              "name": "RL&C",
+              "deputes": 182
+            },
+            {
+              "name": "BI",
+              "deputes": 0
+            },
+            {
+              "name": "BNP",
+              "deputes": 20
+            }
+          ]
+        },
+        {
+          "legislature": 1876,
+          "total_deputes": 523,
+          "duration": 1,
+          "parties": [
+            {
+              "name": "RI  ",
+              "deputes": 27
+            },
+            {
+              "name": "RR",
+              "deputes": 76
+            },
+            {
+              "name": "RM",
+              "deputes": 150
+            },
+            {
+              "name": "CL",
+              "deputes": 97
+            },
+            {
+              "name": "RO",
+              "deputes": 42
+            },
+            {
+              "name": "RL&C",
+              "deputes": 34
+            },
+            {
+              "name": "BI",
+              "deputes": 15
+            },
+            {
+              "name": "AAP",
+              "deputes": 82
+            }
+          ]
+        },
+        {
+          "legislature": 1877,
+          "total_deputes": 533,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "FPTSF",
+              "deputes": 0
+            },
+            {
+              "name": "RI  ",
+              "deputes": 27
+            },
+            {
+              "name": "RR",
+              "deputes": 74
+            },
+            {
+              "name": "RM",
+              "deputes": 159
+            },
+            {
+              "name": "CL",
+              "deputes": 65
+            },
+            {
+              "name": "RO",
+              "deputes": 41
+            },
+            {
+              "name": "RL&C",
+              "deputes": 56
+            },
+            {
+              "name": "BI",
+              "deputes": 0
+            },
+            {
+              "name": "AAP",
+              "deputes": 111
+            }
+          ]
+        },
+        {
+          "legislature": 1881,
+          "total_deputes": 545,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "FPTSF",
+              "deputes": 2
+            },
+            {
+              "name": "FTSF",
+              "deputes": 0
+            },
+            {
+              "name": "SI",
+              "deputes": 0
+            },
+            {
+              "name": "RS ",
+              "deputes": 44
+            },
+            {
+              "name": "RR",
+              "deputes": 47
+            },
+            {
+              "name": "UR",
+              "deputes": 157
+            },
+            {
+              "name": "UD",
+              "deputes": 207
+            },
+            {
+              "name": "RO",
+              "deputes": 7
+            },
+            {
+              "name": "RL&C",
+              "deputes": 35
+            },
+            {
+              "name": "AAP",
+              "deputes": 46
+            }
+          ]
+        },
+        {
+          "legislature": 1885,
+          "total_deputes": 584,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "CRC",
+              "deputes": 0
+            },
+            {
+              "name": "PO",
+              "deputes": 2
+            },
+            {
+              "name": "FTSF",
+              "deputes": 2
+            },
+            {
+              "name": "SI",
+              "deputes": 1
+            },
+            {
+              "name": "RS ",
+              "deputes": 55
+            },
+            {
+              "name": "RR",
+              "deputes": 40
+            },
+            {
+              "name": "UR",
+              "deputes": 200
+            },
+            {
+              "name": "UD",
+              "deputes": 83
+            },
+            {
+              "name": "RO",
+              "deputes": 63
+            },
+            {
+              "name": "RL&C",
+              "deputes": 73
+            },
+            {
+              "name": "BNP",
+              "deputes": 65
+            },
+            {
+              "name": "BOU",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1889,
+          "total_deputes": 573,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "CRC",
+              "deputes": 2
+            },
+            {
+              "name": "POSR",
+              "deputes": 0
+            },
+            {
+              "name": "PO",
+              "deputes": 3
+            },
+            {
+              "name": "FTSF",
+              "deputes": 2
+            },
+            {
+              "name": "SI",
+              "deputes": 3
+            },
+            {
+              "name": "RS ",
+              "deputes": 50
+            },
+            {
+              "name": "RR",
+              "deputes": 68
+            },
+            {
+              "name": "ULR",
+              "deputes": 49
+            },
+            {
+              "name": "ANR",
+              "deputes": 179
+            },
+            {
+              "name": "MR",
+              "deputes": 0
+            },
+            {
+              "name": "RO",
+              "deputes": 0
+            },
+            {
+              "name": "R&C",
+              "deputes": 110
+            },
+            {
+              "name": "BNP",
+              "deputes": 52
+            },
+            {
+              "name": "BOU",
+              "deputes": 55
+            },
+            {
+              "name": "NAT",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1893,
+          "total_deputes": 581,
+          "duration": 4.5,
+          "parties": [
+            {
+              "name": "CRC",
+              "deputes": 5
+            },
+            {
+              "name": "POSR",
+              "deputes": 5
+            },
+            {
+              "name": "POF",
+              "deputes": 5
+            },
+            {
+              "name": "SI",
+              "deputes": 18
+            },
+            {
+              "name": "RS ",
+              "deputes": 37
+            },
+            {
+              "name": "RR",
+              "deputes": 92
+            },
+            {
+              "name": "ULR",
+              "deputes": 27
+            },
+            {
+              "name": "ANR",
+              "deputes": 284
+            },
+            {
+              "name": "MR",
+              "deputes": 35
+            },
+            {
+              "name": "M&C",
+              "deputes": 58
+            },
+            {
+              "name": "BNP",
+              "deputes": 0
+            },
+            {
+              "name": "BOU",
+              "deputes": 0
+            },
+            {
+              "name": "NAT",
+              "deputes": 15
+            },
+            {
+              "name": "NA",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1898,
+          "total_deputes": 620,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "PSR",
+              "deputes": 12
+            },
+            {
+              "name": "POF",
+              "deputes": 12
+            },
+            {
+              "name": "SI",
+              "deputes": 13
+            },
+            {
+              "name": "RS ",
+              "deputes": 104
+            },
+            {
+              "name": "RR",
+              "deputes": 45
+            },
+            {
+              "name": "UP ",
+              "deputes": 95
+            },
+            {
+              "name": "RP",
+              "deputes": 238
+            },
+            {
+              "name": "MR",
+              "deputes": 58
+            },
+            {
+              "name": "MON",
+              "deputes": 0
+            },
+            {
+              "name": "BOU",
+              "deputes": 0
+            },
+            {
+              "name": "DN",
+              "deputes": 20
+            },
+            {
+              "name": "NA",
+              "deputes": 23
+            }
+          ]
+        },
+        {
+          "legislature": 1902,
+          "total_deputes": 589,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "PSdF",
+              "deputes": 14
+            },
+            {
+              "name": "PSF",
+              "deputes": 29
+            },
+            {
+              "name": "PRRS",
+              "deputes": 104
+            },
+            {
+              "name": "RI ",
+              "deputes": 129
+            },
+            {
+              "name": "ARD",
+              "deputes": 62
+            },
+            {
+              "name": "RP",
+              "deputes": 127
+            },
+            {
+              "name": "ALP",
+              "deputes": 89
+            },
+            {
+              "name": "MON",
+              "deputes": 0
+            },
+            {
+              "name": "PN",
+              "deputes": 35
+            },
+            {
+              "name": "NA",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1906,
+          "total_deputes": 592,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "SFIO",
+              "deputes": 54
+            },
+            {
+              "name": "SI",
+              "deputes": 20
+            },
+            {
+              "name": "PRRS",
+              "deputes": 132
+            },
+            {
+              "name": "RI ",
+              "deputes": 115
+            },
+            {
+              "name": "ARD",
+              "deputes": 66
+            },
+            {
+              "name": "FR",
+              "deputes": 95
+            },
+            {
+              "name": "ALP",
+              "deputes": 80
+            },
+            {
+              "name": "PN",
+              "deputes": 30
+            },
+            {
+              "name": "NA",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1910,
+          "total_deputes": 595,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "SFIO",
+              "deputes": 75
+            },
+            {
+              "name": "SI",
+              "deputes": 24
+            },
+            {
+              "name": "PRRS",
+              "deputes": 150
+            },
+            {
+              "name": "RI ",
+              "deputes": 112
+            },
+            {
+              "name": "ARD",
+              "deputes": 66
+            },
+            {
+              "name": "FR",
+              "deputes": 131
+            },
+            {
+              "name": "ALP",
+              "deputes": 30
+            },
+            {
+              "name": "PN",
+              "deputes": 7
+            },
+            {
+              "name": "NA",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1914,
+          "total_deputes": 602,
+          "duration": 5.5,
+          "parties": [
+            {
+              "name": "SFIO",
+              "deputes": 102
+            },
+            {
+              "name": "PSF ",
+              "deputes": 0
+            },
+            {
+              "name": "PRS ",
+              "deputes": 27
+            },
+            {
+              "name": "PRRS",
+              "deputes": 192
+            },
+            {
+              "name": "Autres",
+              "deputes": 0
+            },
+            {
+              "name": "LJR",
+              "deputes": 0
+            },
+            {
+              "name": "RI ",
+              "deputes": 66
+            },
+            {
+              "name": "PRD",
+              "deputes": 77
+            },
+            {
+              "name": "FR",
+              "deputes": 88
+            },
+            {
+              "name": "ALP",
+              "deputes": 50
+            },
+            {
+              "name": "PN",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1919,
+          "total_deputes": 613,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "PC-SFIC",
+              "deputes": 0
+            },
+            {
+              "name": "SFIO",
+              "deputes": 68
+            },
+            {
+              "name": "PSF ",
+              "deputes": 4
+            },
+            {
+              "name": "PRS ",
+              "deputes": 26
+            },
+            {
+              "name": "PRRS",
+              "deputes": 86
+            },
+            {
+              "name": "Autres",
+              "deputes": 16
+            },
+            {
+              "name": "LJR",
+              "deputes": 5,
+              "coalition": "Bloc National Républicain"
+            },
+            {
+              "name": "DEM",
+              "deputes": 0,
+              "coalition": "Bloc National Républicain"
+            },
+            {
+              "name": "RI ",
+              "deputes": 93,
+              "coalition": "Bloc National Républicain"
+            },
+            {
+              "name": "ARD",
+              "deputes": 104,
+              "coalition": "Bloc National Républicain"
+            },
+            {
+              "name": "FR",
+              "deputes": 182,
+              "coalition": "Bloc National Républicain"
+            },
+            {
+              "name": "ALP",
+              "deputes": 29,
+              "coalition": "Bloc National Républicain"
+            }
+          ]
+        },
+        {
+          "legislature": 1924,
+          "total_deputes": 581,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "PC-SFIC",
+              "deputes": 26
+            },
+            {
+              "name": "SFIO",
+              "deputes": 104,
+              "coalition": "Cartel des Gauches"
+            },
+            {
+              "name": "PSF ",
+              "deputes": 10,
+              "coalition": "Cartel des Gauches"
+            },
+            {
+              "name": "PRS ",
+              "deputes": 34,
+              "coalition": "Cartel des Gauches"
+            },
+            {
+              "name": "PRRS",
+              "deputes": 139,
+              "coalition": "Cartel des Gauches"
+            },
+            {
+              "name": "Autres",
+              "deputes": 16
+            },
+            {
+              "name": "LJR",
+              "deputes": 1
+            },
+            {
+              "name": "DEM",
+              "deputes": 14
+            },
+            {
+              "name": "RI ",
+              "deputes": 40
+            },
+            {
+              "name": "PRDS",
+              "deputes": 93
+            },
+            {
+              "name": "FR",
+              "deputes": 104
+            },
+            {
+              "name": "ALP",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1928,
+          "total_deputes": 602,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "PC-SFIC",
+              "deputes": 11
+            },
+            {
+              "name": "PUP",
+              "deputes": 0
+            },
+            {
+              "name": "SFIO",
+              "deputes": 102
+            },
+            {
+              "name": "PSF ",
+              "deputes": 13
+            },
+            {
+              "name": "PRS ",
+              "deputes": 47
+            },
+            {
+              "name": "PRRS",
+              "deputes": 125
+            },
+            {
+              "name": "Autres",
+              "deputes": 0
+            },
+            {
+              "name": "LJR",
+              "deputes": 1
+            },
+            {
+              "name": "PDP",
+              "deputes": 23
+            },
+            {
+              "name": "RI ",
+              "deputes": 0
+            },
+            {
+              "name": "AD",
+              "deputes": 180
+            },
+            {
+              "name": "FR",
+              "deputes": 100
+            },
+            {
+              "name": "ALP",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1932,
+          "total_deputes": 607,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "PC-SFIC",
+              "deputes": 10
+            },
+            {
+              "name": "PUP",
+              "deputes": 9
+            },
+            {
+              "name": "SFIO",
+              "deputes": 132,
+              "coalition": "Cartel des Gauches"
+            },
+            {
+              "name": "PSF ",
+              "deputes": 7,
+              "coalition": "Cartel des Gauches"
+            },
+            {
+              "name": "PRS ",
+              "deputes": 36,
+              "coalition": "Cartel des Gauches"
+            },
+            {
+              "name": "PRRS",
+              "deputes": 160,
+              "coalition": "Cartel des Gauches"
+            },
+            {
+              "name": "LJR",
+              "deputes": 2
+            },
+            {
+              "name": "PDP",
+              "deputes": 47
+            },
+            {
+              "name": "AD",
+              "deputes": 121
+            },
+            {
+              "name": "FR",
+              "deputes": 83
+            },
+            {
+              "name": "ALP",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1936,
+          "total_deputes": 610,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "PC-SFIC",
+              "deputes": 72,
+              "coalition": "Front Populaire"
+            },
+            {
+              "name": "URP",
+              "deputes": 0,
+              "coalition": "Front Populaire"
+            },
+            {
+              "name": "PUP",
+              "deputes": 6,
+              "coalition": "Front Populaire"
+            },
+            {
+              "name": "RDA",
+              "deputes": 0,
+              "coalition": "Front Populaire"
+            },
+            {
+              "name": "SFIO",
+              "deputes": 149,
+              "coalition": "Front Populaire"
+            },
+            {
+              "name": "PSF ",
+              "deputes": 0,
+              "coalition": "Front Populaire"
+            },
+            {
+              "name": "USR",
+              "deputes": 44,
+              "coalition": "Front Populaire"
+            },
+            {
+              "name": "PRRS",
+              "deputes": 114,
+              "coalition": "Front Populaire"
+            },
+            {
+              "name": "RGR",
+              "deputes": 0,
+              "coalition": "Front Populaire"
+            },
+            {
+              "name": "Autres",
+              "deputes": 0,
+              "coalition": "Front Populaire"
+            },
+            {
+              "name": "MIDFA",
+              "deputes": 0,
+              "coalition": "Front Populaire"
+            },
+            {
+              "name": "PJR",
+              "deputes": 4,
+              "coalition": "Front Populaire"
+            },
+            {
+              "name": "PDP",
+              "deputes": 39
+            },
+            {
+              "name": "AD",
+              "deputes": 82
+            },
+            {
+              "name": "FR",
+              "deputes": 100
+            },
+            {
+              "name": "PPUS",
+              "deputes": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IV",
+      "legislatures": [
+        {
+          "legislature": 1946,
+          "total_deputes": 618,
+          "duration": 5,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 165,
+              "coalition": "Communistes et Républicains Progressistes"
+            },
+            {
+              "name": "URP",
+              "deputes": 11,
+              "coalition": "Communistes et Républicains Progressistes"
+            },
+            {
+              "name": "RDA",
+              "deputes": 6,
+              "coalition": "Communistes et Républicains Progressistes"
+            },
+            {
+              "name": "SFIO",
+              "deputes": 102
+            },
+            {
+              "name": "UDSR",
+              "deputes": 26,
+              "coalition": "Rassemblement des Gauches Républicaines"
+            },
+            {
+              "name": "PRRS",
+              "deputes": 43,
+              "coalition": "Rassemblement des Gauches Républicaines"
+            },
+            {
+              "name": "RGR",
+              "deputes": 1,
+              "coalition": "Rassemblement des Gauches Républicaines"
+            },
+            {
+              "name": "Autres",
+              "deputes": 20
+            },
+            {
+              "name": "MIDFA",
+              "deputes": 8
+            },
+            {
+              "name": "PJR",
+              "deputes": 0
+            },
+            {
+              "name": "MRP",
+              "deputes": 162
+            },
+            {
+              "name": "RI",
+              "deputes": 28
+            },
+            {
+              "name": "PRL",
+              "deputes": 38
+            },
+            {
+              "name": "RPF",
+              "deputes": 0
+            },
+            {
+              "name": "PPUS",
+              "deputes": 8
+            },
+            {
+              "name": "UNIR",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1951,
+          "total_deputes": 625,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 99
+            },
+            {
+              "name": "UP",
+              "deputes": 4
+            },
+            {
+              "name": "RDA",
+              "deputes": 3,
+              "coalition": "Troisième Force"
+            },
+            {
+              "name": "SFIO",
+              "deputes": 107,
+              "coalition": "Troisième Force"
+            },
+            {
+              "name": "UDSR",
+              "deputes": 16,
+              "coalition": "Troisième Force"
+            },
+            {
+              "name": "PRRS",
+              "deputes": 67,
+              "coalition": "Troisième Force"
+            },
+            {
+              "name": "RGR",
+              "deputes": 4,
+              "coalition": "Troisième Force"
+            },
+            {
+              "name": "Autres",
+              "deputes": 14
+            },
+            {
+              "name": "MRP",
+              "deputes": 94,
+              "coalition": "Troisième Force"
+            },
+            {
+              "name": "CNIP",
+              "deputes": 91
+            },
+            {
+              "name": "PRL",
+              "deputes": 0
+            },
+            {
+              "name": "RPF",
+              "deputes": 121
+            },
+            {
+              "name": "PPUS",
+              "deputes": 0
+            },
+            {
+              "name": "UFF",
+              "deputes": 0
+            },
+            {
+              "name": "UNIR",
+              "deputes": 5
+            }
+          ]
+        },
+        {
+          "legislature": 1956,
+          "total_deputes": 594,
+          "duration": 3,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 144
+            },
+            {
+              "name": "UP",
+              "deputes": 6
+            },
+            {
+              "name": "RDA",
+              "deputes": 9,
+              "coalition": "Front Républicain"
+            },
+            {
+              "name": "SFIO",
+              "deputes": 94,
+              "coalition": "Front Républicain"
+            },
+            {
+              "name": "UDSR",
+              "deputes": 10,
+              "coalition": "Front Républicain"
+            },
+            {
+              "name": "PRRS",
+              "deputes": 58,
+              "coalition": "Front Républicain"
+            },
+            {
+              "name": "RGR",
+              "deputes": 14
+            },
+            {
+              "name": "Autres",
+              "deputes": 7
+            },
+            {
+              "name": "FAEAS",
+              "deputes": 0
+            },
+            {
+              "name": "MRP",
+              "deputes": 83
+            },
+            {
+              "name": "CNIP",
+              "deputes": 95
+            },
+            {
+              "name": "RS",
+              "deputes": 22
+            },
+            {
+              "name": "UFF",
+              "deputes": 52
+            },
+            {
+              "name": "UNIR",
+              "deputes": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "V",
+      "legislatures": [
+        {
+          "legislature": 1958,
+          "total_deputes": 576,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 10
+            },
+            {
+              "name": "RDA",
+              "deputes": 0
+            },
+            {
+              "name": "PSU",
+              "deputes": 0
+            },
+            {
+              "name": "SFIO",
+              "deputes": 47
+            },
+            {
+              "name": "UDSR",
+              "deputes": 4
+            },
+            {
+              "name": "PRS",
+              "deputes": 36
+            },
+            {
+              "name": "CR",
+              "deputes": 0
+            },
+            {
+              "name": "Autres",
+              "deputes": 26
+            },
+            {
+              "name": "FAEAS",
+              "deputes": 66
+            },
+            {
+              "name": "MRP",
+              "deputes": 64
+            },
+            {
+              "name": "CNIP",
+              "deputes": 117
+            },
+            {
+              "name": "UNR",
+              "deputes": 206
+            },
+            {
+              "name": "UFF",
+              "deputes": 0
+            },
+            {
+              "name": "UNIR",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1962,
+          "total_deputes": 482,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 41
+            },
+            {
+              "name": "PSU",
+              "deputes": 2
+            },
+            {
+              "name": "SFIO",
+              "deputes": 64
+            },
+            {
+              "name": "UDSR",
+              "deputes": 2
+            },
+            {
+              "name": "PRS",
+              "deputes": 30
+            },
+            {
+              "name": "DVG",
+              "deputes": 0
+            },
+            {
+              "name": "CR",
+              "deputes": 7
+            },
+            {
+              "name": "Autres",
+              "deputes": 13
+            },
+            {
+              "name": "FAEAS",
+              "deputes": 0
+            },
+            {
+              "name": "MRP",
+              "deputes": 55
+            },
+            {
+              "name": "RI",
+              "deputes": 35
+            },
+            {
+              "name": "UNR-UDT",
+              "deputes": 233
+            },
+            {
+              "name": "UFF",
+              "deputes": 0
+            },
+            {
+              "name": "UNIR",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1967,
+          "total_deputes": 486,
+          "duration": 1,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 73
+            },
+            {
+              "name": "PSU",
+              "deputes": 4,
+              "coalition": "Fédération de la Gauche Démocrate et Socialiste"
+            },
+            {
+              "name": "SFIO",
+              "deputes": 76,
+              "coalition": "Fédération de la Gauche Démocrate et Socialiste"
+            },
+            {
+              "name": "CIR",
+              "deputes": 15,
+              "coalition": "Fédération de la Gauche Démocrate et Socialiste"
+            },
+            {
+              "name": "PRS",
+              "deputes": 24,
+              "coalition": "Fédération de la Gauche Démocrate et Socialiste"
+            },
+            {
+              "name": "DVG",
+              "deputes": 2,
+              "coalition": "Fédération de la Gauche Démocrate et Socialiste"
+            },
+            {
+              "name": "CR",
+              "deputes": 0
+            },
+            {
+              "name": "Autres",
+              "deputes": 9
+            },
+            {
+              "name": "CD",
+              "deputes": 41,
+              "coalition": "Union des Républicains de Progrès"
+            },
+            {
+              "name": "RI",
+              "deputes": 42,
+              "coalition": "Union des Républicains de Progrès"
+            },
+            {
+              "name": "UNR-UDT",
+              "deputes": 200,
+              "coalition": "Union des Républicains de Progrès"
+            },
+            {
+              "name": "UFF",
+              "deputes": 0
+            },
+            {
+              "name": "UNIR",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1968,
+          "total_deputes": 487,
+          "duration": 5,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 34
+            },
+            {
+              "name": "PSU",
+              "deputes": 0
+            },
+            {
+              "name": "SFIO",
+              "deputes": 39,
+              "coalition": "Fédération de la Gauche Démocrate et Socialiste"
+            },
+            {
+              "name": "CIR",
+              "deputes": 2,
+              "coalition": "Fédération de la Gauche Démocrate et Socialiste"
+            },
+            {
+              "name": "PRS",
+              "deputes": 15,
+              "coalition": "Fédération de la Gauche Démocrate et Socialiste"
+            },
+            {
+              "name": "DVG",
+              "deputes": 1,
+              "coalition": "Fédération de la Gauche Démocrate et Socialiste"
+            },
+            {
+              "name": "Autres",
+              "deputes": 9
+            },
+            {
+              "name": "CD",
+              "deputes": 33,
+              "coalition": "Union des Républicains de Progrès"
+            },
+            {
+              "name": "RI",
+              "deputes": 61,
+              "coalition": "Union des Républicains de Progrès"
+            },
+            {
+              "name": "UDR",
+              "deputes": 293,
+              "coalition": "Union des Républicains de Progrès"
+            },
+            {
+              "name": "UFF",
+              "deputes": 0
+            },
+            {
+              "name": "UNIR",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1973,
+          "total_deputes": 490,
+          "duration": 5,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 73
+            },
+            {
+              "name": "PSU",
+              "deputes": 1
+            },
+            {
+              "name": "PS",
+              "deputes": 89
+            },
+            {
+              "name": "PRG",
+              "deputes": 13
+            },
+            {
+              "name": "Autres",
+              "deputes": 12
+            },
+            {
+              "name": "CDP",
+              "deputes": 64,
+              "coalition": "Union des Républicains de Progrès"
+            },
+            {
+              "name": "RI",
+              "deputes": 55,
+              "coalition": "Union des Républicains de Progrès"
+            },
+            {
+              "name": "UDR",
+              "deputes": 183,
+              "coalition": "Union des Républicains de Progrès"
+            },
+            {
+              "name": "UFF",
+              "deputes": 0
+            },
+            {
+              "name": "UNIR",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1978,
+          "total_deputes": 491,
+          "duration": 3,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 86
+            },
+            {
+              "name": "PS",
+              "deputes": 103
+            },
+            {
+              "name": "MRG",
+              "deputes": 10
+            },
+            {
+              "name": "DVG",
+              "deputes": 0
+            },
+            {
+              "name": "Autres",
+              "deputes": 15
+            },
+            {
+              "name": "DVD",
+              "deputes": 0
+            },
+            {
+              "name": "CDP",
+              "deputes": 0
+            },
+            {
+              "name": "UDF",
+              "deputes": 123
+            },
+            {
+              "name": "RPR",
+              "deputes": 154
+            },
+            {
+              "name": "FN",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1981,
+          "total_deputes": 491,
+          "duration": 5,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 44
+            },
+            {
+              "name": "PS",
+              "deputes": 266
+            },
+            {
+              "name": "MRG",
+              "deputes": 14
+            },
+            {
+              "name": "DVG",
+              "deputes": 9
+            },
+            {
+              "name": "Autres",
+              "deputes": 0
+            },
+            {
+              "name": "DVD",
+              "deputes": 10,
+              "coalition": "Union pour une Nouvelle Majorité"
+            },
+            {
+              "name": "UDF",
+              "deputes": 62,
+              "coalition": "Union pour une Nouvelle Majorité"
+            },
+            {
+              "name": "RPR",
+              "deputes": 85,
+              "coalition": "Union pour une Nouvelle Majorité"
+            },
+            {
+              "name": "FN",
+              "deputes": 1
+            }
+          ]
+        },
+        {
+          "legislature": 1986,
+          "total_deputes": 577,
+          "duration": 2,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 35
+            },
+            {
+              "name": "PS",
+              "deputes": 210
+            },
+            {
+              "name": "MRG",
+              "deputes": 7
+            },
+            {
+              "name": "DVG",
+              "deputes": 0
+            },
+            {
+              "name": "Autres",
+              "deputes": 1
+            },
+            {
+              "name": "DVD",
+              "deputes": 0
+            },
+            {
+              "name": "CDS",
+              "deputes": 0
+            },
+            {
+              "name": "UDF",
+              "deputes": 132,
+              "coalition": "Union de l'Opposition pour le Renouveau"
+            },
+            {
+              "name": "RPR",
+              "deputes": 157,
+              "coalition": "Union de l'Opposition pour le Renouveau"
+            },
+            {
+              "name": "FN",
+              "deputes": 35
+            }
+          ]
+        },
+        {
+          "legislature": 1988,
+          "total_deputes": 577,
+          "duration": 5,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 25
+            },
+            {
+              "name": "PS",
+              "deputes": 266
+            },
+            {
+              "name": "MDC",
+              "deputes": 0
+            },
+            {
+              "name": "MRG",
+              "deputes": 9
+            },
+            {
+              "name": "DVG",
+              "deputes": 3
+            },
+            {
+              "name": "Autres",
+              "deputes": 0
+            },
+            {
+              "name": "DVD",
+              "deputes": 8
+            },
+            {
+              "name": "CDS",
+              "deputes": 41,
+              "coalition": "Union du Rassemblement et du Centre"
+            },
+            {
+              "name": "UDF",
+              "deputes": 92,
+              "coalition": "Union du Rassemblement et du Centre"
+            },
+            {
+              "name": "RPR",
+              "deputes": 132,
+              "coalition": "Union du Rassemblement et du Centre"
+            },
+            {
+              "name": "FN",
+              "deputes": 1
+            }
+          ]
+        },
+        {
+          "legislature": 1993,
+          "total_deputes": 577,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 23
+            },
+            {
+              "name": "LV",
+              "deputes": 0
+            },
+            {
+              "name": "PS",
+              "deputes": 52,
+              "coalition": "Alliance des Français pour le Progrès"
+            },
+            {
+              "name": "MDC",
+              "deputes": 3,
+              "coalition": "Alliance des Français pour le Progrès"
+            },
+            {
+              "name": "MRG",
+              "deputes": 6,
+              "coalition": "Alliance des Français pour le Progrès"
+            },
+            {
+              "name": "DVG",
+              "deputes": 8,
+              "coalition": "Alliance des Français pour le Progrès"
+            },
+            {
+              "name": "DVD",
+              "deputes": 12,
+              "coalition": "Union Pour la France"
+            },
+            {
+              "name": "CDS",
+              "deputes": 0,
+              "coalition": "Union Pour la France"
+            },
+            {
+              "name": "UDF",
+              "deputes": 215,
+              "coalition": "Union Pour la France"
+            },
+            {
+              "name": "RPR",
+              "deputes": 258,
+              "coalition": "Union Pour la France"
+            },
+            {
+              "name": "MPF",
+              "deputes": 0
+            },
+            {
+              "name": "FN",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1997,
+          "total_deputes": 577,
+          "duration": 5,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 36,
+              "coalition": "Gauche plurielle"
+            },
+            {
+              "name": "LV",
+              "deputes": 5,
+              "coalition": "Gauche plurielle"
+            },
+            {
+              "name": "PS",
+              "deputes": 250,
+              "coalition": "Gauche plurielle"
+            },
+            {
+              "name": "MDC",
+              "deputes": 7,
+              "coalition": "Gauche plurielle"
+            },
+            {
+              "name": "PRS",
+              "deputes": 12,
+              "coalition": "Gauche plurielle"
+            },
+            {
+              "name": "DVG",
+              "deputes": 9,
+              "coalition": "Gauche plurielle"
+            },
+            {
+              "name": "DVD",
+              "deputes": 3
+            },
+            {
+              "name": "UDF",
+              "deputes": 113,
+              "coalition": "Union RPR-UDF"
+            },
+            {
+              "name": "RPR",
+              "deputes": 140,
+              "coalition": "Union RPR-UDF"
+            },
+            {
+              "name": "MPF",
+              "deputes": 1
+            },
+            {
+              "name": "FN",
+              "deputes": 1
+            }
+          ]
+        },
+        {
+          "legislature": 2002,
+          "total_deputes": 577,
+          "duration": 5,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 21
+            },
+            {
+              "name": "LV",
+              "deputes": 3
+            },
+            {
+              "name": "PS",
+              "deputes": 141
+            },
+            {
+              "name": "MDC",
+              "deputes": 0
+            },
+            {
+              "name": "PRG",
+              "deputes": 7
+            },
+            {
+              "name": "DVG",
+              "deputes": 6
+            },
+            {
+              "name": "Autres",
+              "deputes": 0
+            },
+            {
+              "name": "DVD",
+              "deputes": 3
+            },
+            {
+              "name": "MODEM",
+              "deputes": 0
+            },
+            {
+              "name": "UDF",
+              "deputes": 29,
+              "coalition": "Union pour la Majorité Présidentielle"
+            },
+            {
+              "name": "UMP",
+              "deputes": 365,
+              "coalition": "Union pour la Majorité Présidentielle"
+            },
+            {
+              "name": "DLF",
+              "deputes": 0
+            },
+            {
+              "name": "MPF",
+              "deputes": 2
+            },
+            {
+              "name": "FN",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 2007,
+          "total_deputes": 577,
+          "duration": 5,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 16
+            },
+            {
+              "name": "FASE - PG",
+              "deputes": 0
+            },
+            {
+              "name": "LV",
+              "deputes": 4
+            },
+            {
+              "name": "PS",
+              "deputes": 186
+            },
+            {
+              "name": "MRC",
+              "deputes": 1
+            },
+            {
+              "name": "PRG",
+              "deputes": 11
+            },
+            {
+              "name": "DVG",
+              "deputes": 9
+            },
+            {
+              "name": "Autres",
+              "deputes": 2
+            },
+            {
+              "name": "DVD",
+              "deputes": 4
+            },
+            {
+              "name": "MODEM",
+              "deputes": 3
+            },
+            {
+              "name": "PR",
+              "deputes": 0
+            },
+            {
+              "name": "NC",
+              "deputes": 24,
+              "coalition": "Majorité Présidentielle"
+            },
+            {
+              "name": "UMP",
+              "deputes": 313,
+              "coalition": "Majorité Présidentielle"
+            },
+            {
+              "name": "DLF",
+              "deputes": 2,
+              "coalition": "Majorité Présidentielle"
+            },
+            {
+              "name": "MPF",
+              "deputes": 2
+            },
+            {
+              "name": "FN",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 2012,
+          "total_deputes": 577,
+          "duration": 5,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 7,
+              "coalition": "Front de Gauche"
+            },
+            {
+              "name": "FASE - PG",
+              "deputes": 3,
+              "coalition": "Front de Gauche"
+            },
+            {
+              "name": "EELV",
+              "deputes": 17
+            },
+            {
+              "name": "PS",
+              "deputes": 280
+            },
+            {
+              "name": "MRC",
+              "deputes": 3
+            },
+            {
+              "name": "PRG",
+              "deputes": 12
+            },
+            {
+              "name": "DVG",
+              "deputes": 21
+            },
+            {
+              "name": "Autres",
+              "deputes": 0
+            },
+            {
+              "name": "DVD",
+              "deputes": 15
+            },
+            {
+              "name": "MODEM",
+              "deputes": 2
+            },
+            {
+              "name": "LREM",
+              "deputes": 0
+            },
+            {
+              "name": "PR",
+              "deputes": 6
+            },
+            {
+              "name": "NC",
+              "deputes": 12
+            },
+            {
+              "name": "UMP",
+              "deputes": 194
+            },
+            {
+              "name": "DLF",
+              "deputes": 2
+            },
+            {
+              "name": "MPF",
+              "deputes": 1
+            },
+            {
+              "name": "FN",
+              "deputes": 2
+            }
+          ]
+        },
+        {
+          "legislature": 2017,
+          "total_deputes": 577,
+          "duration": 5,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 15
+            },
+            {
+              "name": "LFI",
+              "deputes": 17
+            },
+            {
+              "name": "EELV",
+              "deputes": 1
+            },
+            {
+              "name": "PS",
+              "deputes": 29
+            },
+            {
+              "name": "MRC",
+              "deputes": 1
+            },
+            {
+              "name": "PRG",
+              "deputes": 3
+            },
+            {
+              "name": "DVG",
+              "deputes": 12
+            },
+            {
+              "name": "Autres",
+              "deputes": 3
+            },
+            {
+              "name": "DVD",
+              "deputes": 6
+            },
+            {
+              "name": "MODEM",
+              "deputes": 42,
+              "coalition": "Majorité Présidentielle"
+            },
+            {
+              "name": "LREM",
+              "deputes": 308,
+              "coalition": "Majorité Présidentielle"
+            },
+            {
+              "name": "PR",
+              "deputes": 3,
+              "coalition": "Union de la Droite et du Centre"
+            },
+            {
+              "name": "HOR",
+              "deputes": 0,
+              "coalition": "Union de la Droite et du Centre"
+            },
+            {
+              "name": "UDI",
+              "deputes": 15,
+              "coalition": "Union de la Droite et du Centre"
+            },
+            {
+              "name": "LC",
+              "deputes": 0,
+              "coalition": "Union de la Droite et du Centre"
+            },
+            {
+              "name": "LR",
+              "deputes": 112,
+              "coalition": "Union de la Droite et du Centre"
+            },
+            {
+              "name": "DLF",
+              "deputes": 1
+            },
+            {
+              "name": "MPF",
+              "deputes": 0
+            },
+            {
+              "name": "FN",
+              "deputes": 9
+            }
+          ]
+        },
+        {
+          "legislature": 2022,
+          "total_deputes": 577,
+          "duration": 2,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 22,
+              "coalition": "Nouvelle Union Populaire Écologique et Sociale"
+            },
+            {
+              "name": "LFI",
+              "deputes": 75,
+              "coalition": "Nouvelle Union Populaire Écologique et Sociale"
+            },
+            {
+              "name": "EELV",
+              "deputes": 23,
+              "coalition": "Nouvelle Union Populaire Écologique et Sociale"
+            },
+            {
+              "name": "PS",
+              "deputes": 37,
+              "coalition": "Nouvelle Union Populaire Écologique et Sociale"
+            },
+            {
+              "name": "MRC",
+              "deputes": 0
+            },
+            {
+              "name": "PRG",
+              "deputes": 2
+            },
+            {
+              "name": "DVG",
+              "deputes": 3
+            },
+            {
+              "name": "Autres",
+              "deputes": 2
+            },
+            {
+              "name": "DVD",
+              "deputes": 2
+            },
+            {
+              "name": "MODEM",
+              "deputes": 48,
+              "coalition": "Ensemble"
+            },
+            {
+              "name": "RE",
+              "deputes": 168,
+              "coalition": "Ensemble"
+            },
+            {
+              "name": "PR",
+              "deputes": 5,
+              "coalition": "Ensemble"
+            },
+            {
+              "name": "HOR",
+              "deputes": 30,
+              "coalition": "Ensemble"
+            },
+            {
+              "name": "UDI",
+              "deputes": 5,
+              "coalition": "Union de la Droite et du Centre"
+            },
+            {
+              "name": "LC",
+              "deputes": 1,
+              "coalition": "Union de la Droite et du Centre"
+            },
+            {
+              "name": "LR",
+              "deputes": 63,
+              "coalition": "Union de la Droite et du Centre"
+            },
+            {
+              "name": "AD!",
+              "deputes": 0
+            },
+            {
+              "name": "DLF",
+              "deputes": 1
+            },
+            {
+              "name": "RN",
+              "deputes": 90
+            }
+          ]
+        },
+        {
+          "legislature": 2024,
+          "total_deputes": 577,
+          "duration": 1,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 17,
+              "coalition": "Nouveau Front Populaire"
+            },
+            {
+              "name": "LFI",
+              "deputes": 72,
+              "coalition": "Nouveau Front Populaire"
+            },
+            {
+              "name": "LE",
+              "deputes": 38,
+              "coalition": "Nouveau Front Populaire"
+            },
+            {
+              "name": "PS",
+              "deputes": 68,
+              "coalition": "Nouveau Front Populaire"
+            },
+            {
+              "name": "PRG",
+              "deputes": 0
+            },
+            {
+              "name": "DVG",
+              "deputes": 3
+            },
+            {
+              "name": "Autres",
+              "deputes": 7
+            },
+            {
+              "name": "DVD",
+              "deputes": 2
+            },
+            {
+              "name": "MODEM",
+              "deputes": 36,
+              "coalition": "Ensemble Pour la République"
+            },
+            {
+              "name": "RE",
+              "deputes": 101,
+              "coalition": "Ensemble Pour la République"
+            },
+            {
+              "name": "PR",
+              "deputes": 0,
+              "coalition": "Ensemble Pour la République"
+            },
+            {
+              "name": "HOR",
+              "deputes": 31,
+              "coalition": "Ensemble Pour la République"
+            },
+            {
+              "name": "UDI",
+              "deputes": 6,
+              "coalition": "Ensemble Pour la République"
+            },
+            {
+              "name": "LC",
+              "deputes": 1
+            },
+            {
+              "name": "LR",
+              "deputes": 52
+            },
+            {
+              "name": "AD!",
+              "deputes": 16,
+              "coalition": "Rassemblement National et Alliés"
+            },
+            {
+              "name": "DLF",
+              "deputes": 0,
+              "coalition": "Rassemblement National et Alliés"
+            },
+            {
+              "name": "RN",
+              "deputes": 127,
+              "coalition": "Rassemblement National et Alliés"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
