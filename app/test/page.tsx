@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import EntityDetails from "../../components/appUi/entityDetails";
 import EntityButton from "../../components/appUi/entityButton";
-import { Party } from "../../types/party";
+import { PartyType } from "../../types/party";
 
 export default function TestPage() {
     const [republics, setRepublics] = useState(null);
@@ -30,7 +30,7 @@ export default function TestPage() {
             .then((data) => setCurrents(data.families));
     }, []);
 
-    const updateDescription = (paragraph: string, party: Party, target: string, keyword: string, attempt: number) => {
+    const updateDescription = (paragraph: string, party: PartyType, target: string, keyword: string, attempt: number) => {
         // If no paragraph is found, try to fetch the description with the keyword
         if (!paragraph && attempt < 4 && party) {
             const fallbackKeyword = [keyword.toLocaleLowerCase(), keyword.toLowerCase()];
@@ -72,7 +72,7 @@ export default function TestPage() {
         }
     }
 
-    const fetchWiki = (keyword: string, party: Party, target: string, attempt: number = 0) => {
+    const fetchWiki = (keyword: string, party: PartyType, target: string, attempt: number = 0) => {
         if (!keyword) {
             const noInfo = 'Aucune information disponible…';
             updateDescription(noInfo, party, target, keyword, attempt);
