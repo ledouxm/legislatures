@@ -27,7 +27,7 @@ export default function TestPage() {
         // Fetch the currents
         fetch('/data/currents.json')
             .then((response) => response.json())
-            .then((data) => setCurrents(data));
+            .then((data) => setCurrents(data.families));
     }, []);
 
     const updateDescription = (paragraph: string, party: Party, target: string, keyword: string, attempt: number) => {
@@ -96,7 +96,7 @@ export default function TestPage() {
     return (
         <div className="p-5">
             <h1 className="text-2xl font-normal mb-6">
-                Historique des compositions de l'assemblée nationale des Républiques Françaises
+                Historique des compositions de l&apos;assemblée nationale des Républiques Françaises
             </h1>
 
             <div className="gap-5 grid grid-cols-1 md:grid-cols-3 items-start">
@@ -106,21 +106,23 @@ export default function TestPage() {
                     </h2>
                     {currents ? 
                         (<ul className="w-full flex flex-wrap gap-2 items-start">
-                            {currents.currents.map((current, index) => (
-                                <EntityButton 
-                                    key={index}
-                                    entity={current} 
-                                    onClick={() => {
-                                        fetchWiki(current.keyword, null, 'current')
-                                        setCurrentDescription(null)
-                                        setCurrentImage(null)
-                                        setSelectedCurrent(current)
-                                        setSelectedParty(null)
-                                        setPartyDescription(null)
-                                        setPartyImage(null)
-                                    }}
-                                    isActive={selectedCurrent === current}
-                                />
+                            {currents.map((family, i) => (
+                                family.currents.map((current, index) => (
+                                    <EntityButton 
+                                        key={index}
+                                        entity={current} 
+                                        onClick={() => {
+                                            fetchWiki(current.keyword, null, 'current')
+                                            setCurrentDescription(null)
+                                            setCurrentImage(null)
+                                            setSelectedCurrent(current)
+                                            setSelectedParty(null)
+                                            setPartyDescription(null)
+                                            setPartyImage(null)
+                                        }}
+                                        isActive={selectedCurrent === current}
+                                    />
+                                ))
                             ))}
                         </ul>) :
                         (<p className="text-gray-500">Chargement…</p>)

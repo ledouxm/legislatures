@@ -96,9 +96,11 @@ export default function EntityDetails({ entity, description, image, wiki, parent
 
                         <ul className="w-full flex overflow-x-scroll gap-1.5 items-start no-scrollbar">
                             {subEntities.map((subEntity, index) => (
-                                <div className="w-5/6">
+                                <div 
+                                    className="w-5/6"
+                                    key={index}
+                                >
                                     <EntityButton
-                                        key={index}
                                         entity={subEntity}
                                         onClick={() => onClick(subEntity)}
                                         isActive={true}

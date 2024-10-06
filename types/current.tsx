@@ -1,8 +1,8 @@
-import { Party } from "./party";
+import { PartyType } from "./party";
 
-export type Current = {
+export type CurrentType = {
     name: string;
     color: string;
     keyword: string;
-    parties: Party[];
+    parties: PartyType[];
 }

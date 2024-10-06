@@ -1,7 +1,7 @@
-import { Current } from "./current";
+import { CurrentType } from "./current";
 
-export type Family = {
+export type FamilyType = {
     name: string;
     color: string;
-    currents: Current[];
+    currents: CurrentType[];
 }

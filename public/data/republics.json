@@ -311,6 +311,10 @@
               "deputes": 5
             },
             {
+              "name": "FTSF",
+              "deputes": 0
+            },
+            {
               "name": "SI",
               "deputes": 18
             },
@@ -366,6 +370,10 @@
               "deputes": 12
             },
             {
+              "name": "POSR",
+              "deputes": 0
+            },
+            {
               "name": "POF",
               "deputes": 12
             },
@@ -394,7 +402,7 @@
               "deputes": 58
             },
             {
-              "name": "MON",
+              "name": "M&C",
               "deputes": 0
             },
             {
@@ -416,6 +424,10 @@
           "total_deputes": 589,
           "duration": 4,
           "parties": [
+            {
+              "name": "PSR",
+              "deputes": 0
+            },
             {
               "name": "PSdF",
               "deputes": 14
@@ -445,7 +457,7 @@
               "deputes": 89
             },
             {
-              "name": "MON",
+              "name": "M&C",
               "deputes": 0
             },
             {
@@ -1037,6 +1049,10 @@
               "deputes": 14
             },
             {
+              "name": "MIDFA",
+              "deputes": 0
+            },
+            {
               "name": "MRP",
               "deputes": 94,
               "coalition": "Troisième Force"
@@ -1412,8 +1428,16 @@
               "deputes": 89
             },
             {
+              "name": "CIR",
+              "deputes": 0
+            },
+            {
               "name": "PRG",
               "deputes": 13
+            },
+            {
+              "name": "DVG",
+              "deputes": 0
             },
             {
               "name": "Autres",
@@ -1452,6 +1476,10 @@
             {
               "name": "PCF",
               "deputes": 86
+            },
+            {
+              "name": "PSU",
+              "deputes": 0
             },
             {
               "name": "PS",
@@ -1800,7 +1828,7 @@
               "deputes": 3
             },
             {
-              "name": "MODEM",
+              "name": "MoDem",
               "deputes": 0
             },
             {
@@ -1869,7 +1897,7 @@
               "deputes": 4
             },
             {
-              "name": "MODEM",
+              "name": "MoDem",
               "deputes": 3
             },
             {
@@ -1945,7 +1973,7 @@
               "deputes": 15
             },
             {
-              "name": "MODEM",
+              "name": "MoDem",
               "deputes": 2
             },
             {
@@ -2020,7 +2048,7 @@
               "deputes": 6
             },
             {
-              "name": "MODEM",
+              "name": "MoDem",
               "deputes": 42,
               "coalition": "Majorité Présidentielle"
             },
@@ -2114,7 +2142,7 @@
               "deputes": 2
             },
             {
-              "name": "MODEM",
+              "name": "MoDem",
               "deputes": 48,
               "coalition": "Ensemble"
             },
@@ -2204,7 +2232,7 @@
               "deputes": 2
             },
             {
-              "name": "MODEM",
+              "name": "MoDem",
               "deputes": 36,
               "coalition": "Ensemble Pour la République"
             },

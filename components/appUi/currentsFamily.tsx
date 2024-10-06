@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { Family } from "../../types/family";
+import { FamilyType } from "../../types/family";
 import SettingsButton from "./settingsButton";
 import EntityButton from "./entityButton";
 
 type Props = {
-    family: Family;
+    family: FamilyType;
     onCurrentClick: (current: any) => void;
 }
 

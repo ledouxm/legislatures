@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from "react";
 import FiltersLine from "../components/appUi/filtersLine";
-import { Party } from "../types/party";
+import { PartyType } from "../types/party";
 import Main from "../components/appUi/main";
 
 export default function HomePage() {
     const [republics, setRepublics] = useState(null);
     const [currents, setCurrents] = useState(null);
+    const [events, setEvents] = useState(null);
     const [selectedCurrent, setSelectedCurrent] = useState(null);
     const [currentDescription, setCurrentDescription] = useState(null);
     const [currentImage, setCurrentImage] = useState(null);
@@ -22,16 +23,21 @@ export default function HomePage() {
         // Fetch the republics
         fetch('/data/republics.json')
             .then((response) => response.json())
-            .then((data) => setRepublics(data));
+            .then((data) => setRepublics(data.republics));
 
         // Fetch the currents
         fetch('/data/currents.json')
             .then((response) => response.json())
             .then((data) => setCurrents(data.families));
+        
+        // Fetch the events
+        fetch('/data/events.json')
+            .then((response) => response.json())
+            .then((data) => setEvents(data.events));
     }, []);
 
 
-    const updateDescription = (paragraph: string, party: Party, target: string, keyword: string, attempt: number) => {
+    const updateDescription = (paragraph: string, party: PartyType, target: string, keyword: string, attempt: number) => {
         // If no paragraph is found, try to fetch the description with the keyword
         if (!paragraph && attempt < 4 && party) {
             const fallbackKeyword = [keyword.toLocaleLowerCase(), keyword.toLowerCase()];
@@ -73,7 +79,7 @@ export default function HomePage() {
         }
     }
 
-    const fetchWiki = (keyword: string, party: Party, target: string, attempt: number = 0) => {
+    const fetchWiki = (keyword: string, party: PartyType, target: string, attempt: number = 0) => {
         if (!keyword) {
             const noInfo = 'Aucune information disponible…';
             updateDescription(noInfo, party, target, keyword, attempt);
@@ -125,13 +131,7 @@ export default function HomePage() {
                     setPartyImage(null)
                 }}
             />
-            <Main 
-                selectedEntity={selectedCurrent}
-                currentDescription={currentDescription}
-                currentImage={currentImage}
-                currentWiki={currentWiki}
-                setSelectedEntity={setSelectedCurrent}
-            />
+            <Main republics={republics} currents={currents} events={events} />
         </>
     )
 } 

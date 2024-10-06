@@ -2,15 +2,15 @@
 
 import { EyeClosedIcon, MixerVerticalIcon, ReloadIcon, ShuffleIcon } from "@radix-ui/react-icons";
 import EntityButton from "./entityButton";
-import { Current } from "../../types/current";
+import { CurrentType } from "../../types/current";
 import { useEffect, useRef, useState } from "react";
-import { Family } from "../../types/family";
+import { FamilyType } from "../../types/family";
 import CurrentsFamily from "./currentsFamily";
 import SettingsButton from "./settingsButton";
 
 type Props = {
-    families: Family[];
-    onFilterChange: (current: Current) => void;
+    families: FamilyType[];
+    onFilterChange: (current: CurrentType) => void;
 }
 
 export default function FiltersLine({ families, onFilterChange }: Props) {
@@ -24,22 +24,24 @@ export default function FiltersLine({ families, onFilterChange }: Props) {
 
     // Convert vertical scroll to horizontal scroll
     useEffect(() => {
+        const element = scrollRef.current;
+
         const handleScroll = (e: WheelEvent) => {
-            if (scrollRef.current) {
+            if (element) {
                 if (e.deltaY !== 0) {
                     // Scroll horizontally
-                    scrollRef.current.scrollLeft += e.deltaY;
+                    element.scrollLeft += e.deltaY;
                     // Prevent vertical scroll
                     e.preventDefault();
                 }
             }
         };
-        if (scrollRef.current) {
-            scrollRef.current.addEventListener('wheel', handleScroll, { passive: false });
+        if (element) {
+            element.addEventListener('wheel', handleScroll, { passive: false });
         }
         return () => {
-            if (scrollRef.current) {
-                scrollRef.current.removeEventListener('wheel', handleScroll);
+            if (element) {
+                element.removeEventListener('wheel', handleScroll);
             }
         };
     }, []);

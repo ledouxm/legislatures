@@ -1,0 +1,232 @@
+{
+    "events": [
+        {
+            "begin": "1870-09-04",
+            "end": "1870-09-04",
+            "title": "Proclamation de la Troisième République",
+            "keyword": "Troisième République (France)"
+        },
+        {
+            "begin": "1871-03-18",
+            "end": "1871-05-28",
+            "title": "La Commune de Paris",
+            "keyword": "Commune de Paris"
+        },
+        {
+            "begin": "1875-02-24",
+            "end": "1875-02-25",
+            "title": "Adoption des lois constitutionnelles",
+            "keyword": "Lois constitutionnelles de 1875"
+        },
+        {
+            "begin": "1881-03-29",
+            "end": "1881-03-29",
+            "title": "Adoption de la loi sur la liberté de la presse",
+            "keyword": "Loi sur la liberté de la presse (1881)"
+        },
+        {
+            "begin": "1884-07-12",
+            "end": "1884-07-12",
+            "title": "Loi Waldeck-Rousseau (liberté syndicale)",
+            "keyword": "Loi Waldeck-Rousseau"
+        },
+        {
+            "begin": "1894-12-22",
+            "end": "1906-07-12",
+            "title": "Affaire Dreyfus",
+            "keyword": "Affaire Dreyfus"
+        },
+        {
+            "begin": "1905-07-07",
+            "end": "1905-12-09",
+            "title": "Séparation de l'Église et de l'État",
+            "keyword": "Loi de séparation des Églises et de l'État"
+        },
+        {
+            "begin": "1914-07-28",
+            "end": "1918-11-11",
+            "title": "Première Guerre mondiale",
+            "keyword": "Première Guerre mondiale"
+        },
+        {
+            "begin": "1936-06-07",
+            "end": "1936-06-07",
+            "title": "Accords Matignon",
+            "keyword": "Accords Matignon (1936)"
+        },
+        {
+            "begin": "1940-06-10",
+            "end": "1940-07-10",
+            "title": "Effondrement de la Troisième République",
+            "keyword": "Effondrement de la Troisième République"
+        },
+        {
+            "begin": "1946-10-13",
+            "end": "1946-10-13",
+            "title": "Adoption de la Constitution de la Quatrième République",
+            "keyword": "Constitution française de 1946"
+          },
+          {
+            "begin": "1947-04-18",
+            "end": "1947-04-18",
+            "title": "Création du Rassemblement du peuple français (RPF) par Charles de Gaulle",
+            "keyword": "Rassemblement du peuple français"
+          },
+          {
+            "begin": "1949-04-04",
+            "end": "1949-04-04",
+            "title": "Adhésion de la France à l'OTAN",
+            "keyword": "Organisation du traité de l'Atlantique nord"
+          },
+          {
+            "begin": "1950-05-09",
+            "end": "1950-05-09",
+            "title": "Déclaration Schuman",
+            "keyword": "Déclaration Schuman"
+          },
+          {
+            "begin": "1954-07-20",
+            "end": "1954-07-20",
+            "title": "Accords de Genève",
+            "keyword": "Accords de Genève (1954)"
+          },
+          {
+            "begin": "1954-11-01",
+            "end": "1962-03-19",
+            "title": "Guerre d'Algérie",
+            "keyword": "Guerre d'Algérie"
+          },
+          {
+            "begin": "1956-03-02",
+            "end": "1956-03-02",
+            "title": "Indépendance du Maroc",
+            "keyword": "Indépendance du Maroc"
+          },
+          {
+            "begin": "1956-03-20",
+            "end": "1956-03-20",
+            "title": "Indépendance de la Tunisie",
+            "keyword": "Indépendance de la Tunisie"
+          },
+          {
+            "begin": "1956-11-05",
+            "end": "1956-11-05",
+            "title": "Crise de Suez",
+            "keyword": "Crise du canal de Suez"
+          },
+          {
+            "begin": "1958-05-13",
+            "end": "1958-06-01",
+            "title": "Crise de mai 1958",
+            "keyword": "Crise de mai 1958"
+          },
+          {
+            "begin": "1958-06-01",
+            "end": "1958-06-01",
+            "title": "Investiture de Charles de Gaulle comme président du Conseil",
+            "keyword": "Charles de Gaulle"
+          },
+          {
+            "begin": "1958-09-28",
+            "end": "1958-09-28",
+            "title": "Référendum constitutionnel approuvant la Cinquième République",
+            "keyword": "Référendum de 1958 sur la Constitution française"
+        },
+        {
+            "begin": "1958-09-28",
+            "end": "1958-09-28",
+            "title": "Référendum sur l'adoption de la Constitution de la Cinquième République",
+            "keyword": "Référendum de 1958 sur la Constitution française"
+          },
+          {
+            "begin": "1962-03-18",
+            "end": "1962-03-18",
+            "title": "Accords d'Évian et fin de la guerre d'Algérie",
+            "keyword": "Accords d'Évian"
+          },
+          {
+            "begin": "1962-10-28",
+            "end": "1962-10-28",
+            "title": "Référendum sur l'élection du président de la République au suffrage universel",
+            "keyword": "Référendum de 1962 sur l'élection au suffrage universel"
+          },
+          {
+            "begin": "1968-05-02",
+            "end": "1968-06-23",
+            "title": "Mouvement de mai 1968",
+            "keyword": "Mai 1968"
+          },
+          {
+            "begin": "1969-04-27",
+            "end": "1969-04-27",
+            "title": "Référendum sur la réforme du Sénat et la décentralisation",
+            "keyword": "Référendum de 1969 sur la réforme du Sénat et la régionalisation"
+          },
+          {
+            "begin": "1974-05-19",
+            "end": "1974-05-19",
+            "title": "Élection de Valéry Giscard d'Estaing à la présidence de la République",
+            "keyword": "Valéry Giscard d'Estaing"
+          },
+          {
+            "begin": "1981-05-10",
+            "end": "1981-05-10",
+            "title": "Élection de François Mitterrand à la présidence de la République",
+            "keyword": "François Mitterrand"
+          },
+          {
+            "begin": "1992-09-20",
+            "end": "1992-09-20",
+            "title": "Référendum sur le traité de Maastricht",
+            "keyword": "Référendum de 1992 sur le traité de Maastricht"
+          },
+          {
+            "begin": "1995-05-07",
+            "end": "1995-05-07",
+            "title": "Élection de Jacques Chirac à la présidence de la République",
+            "keyword": "Jacques Chirac"
+          },
+          {
+            "begin": "2000-09-24",
+            "end": "2000-09-24",
+            "title": "Référendum sur la réduction du mandat présidentiel à 5 ans",
+            "keyword": "Référendum de 2000 sur le quinquennat"
+          },
+          {
+            "begin": "2002-05-05",
+            "end": "2002-05-05",
+            "title": "Réélection de Jacques Chirac face à Jean-Marie Le Pen",
+            "keyword": "Élection présidentielle française de 2002"
+          },
+          {
+            "begin": "2005-05-29",
+            "end": "2005-05-29",
+            "title": "Référendum sur le traité établissant une Constitution pour l'Europe",
+            "keyword": "Référendum français de 2005 sur le traité établissant une Constitution pour l'Europe"
+          },
+          {
+            "begin": "2007-05-06",
+            "end": "2007-05-06",
+            "title": "Élection de Nicolas Sarkozy à la présidence de la République",
+            "keyword": "Nicolas Sarkozy"
+          },
+          {
+            "begin": "2012-05-06",
+            "end": "2012-05-06",
+            "title": "Élection de François Hollande à la présidence de la République",
+            "keyword": "François Hollande"
+          },
+          {
+            "begin": "2017-05-07",
+            "end": "2017-05-07",
+            "title": "Élection d'Emmanuel Macron à la présidence de la République",
+            "keyword": "Emmanuel Macron"
+          },
+          {
+            "begin": "2018-11-17",
+            "end": "2019-03-16",
+            "title": "Mouvement des Gilets jaunes",
+            "keyword": "Mouvement des Gilets jaunes"
+          }
+    ]
+}
