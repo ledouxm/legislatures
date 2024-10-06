@@ -82,6 +82,7 @@ export default function Chart({republics, currents, events}: Props) {
                         firstLegislature={firstLegislature}
                         dimensions={dimensions}
                         currents={currents}
+                        nextRepFirstLeg={republics[republics.indexOf(republic) + 1]?.legislatures[0]}
                     />
                 ))}
 
