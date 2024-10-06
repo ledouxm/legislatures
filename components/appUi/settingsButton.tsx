@@ -20,7 +20,7 @@ export default function SettingsButton({
                     'h-8 px-3'
                 }
                 ${number && name ?
-                    'pl-1.5 pr-3' :
+                    'pl-1.5 pr-1.5 sm:pr-3' :
                     ''
                 }
             `}

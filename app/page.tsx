@@ -102,7 +102,7 @@ export default function HomePage() {
 
     return (
         <>
-            <header className="grid grid-cols-12 gap-6 px-10 mt-8 mb-6 max-w-screen-3xl mx-auto">
+            <header className="grid grid-cols-12 gap-6 px-5 md:px-10 mt-4 md:mt-8 mb-3 md:mb-6 max-w-screen-3xl mx-auto">
                 <h1 className="col-start-1 col-span-12 md:col-span-7 text-3xl md:text-5xl">
                     <span className="opacity-40">
                         Entre crises et revendications
@@ -110,7 +110,7 @@ export default function HomePage() {
                     <br/>
                     Les évolutions de la représentation des courants politiques au sein de l’Assemblée Nationale
                 </h1>
-                <div className="md:col-start-8 md:col-span-5 flex flex-col items-start text-2xl">
+                <div className="col-span-12 md:col-start-8 md:col-span-5 flex flex-col items-start text-xl md:text-2xl">
                     <p className="opacity-75">
                         Ce site est une représentation visuelle des résultats des élections législatives françaises depuis leur création. Pariatur minim irure ex magna voluptate eiusmod minim dolore duis laboris ad.
                     </p>

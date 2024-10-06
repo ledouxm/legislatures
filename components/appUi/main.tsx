@@ -16,10 +16,10 @@ type Props = {
 export default function Main({republics, currents, events}: Props) {
     return (
         <main 
-            className="w-full max-w-screen-3xl mx-auto px-10 mb-8"
+            className="w-full max-w-screen-3xl mx-auto px-5 md:px-10 mb-4 md:mb-8"
             style={{ height: "calc(100vh - 10rem)" }}
         >
-            <div className="w-full h-full overflow-y-scroll">
+            <div className="w-full h-full overflow-y-scroll no-scrollbar">
 
                 {/* D3.JS */}
                 {republics && currents && events && (
