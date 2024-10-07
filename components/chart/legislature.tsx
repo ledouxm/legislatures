@@ -1,7 +1,23 @@
+"use client";
+
+import { useState } from "react";
 import { PartyType } from "../../types/party";
 import PartyBar from "./partyBar";
+import { LegislatureType } from "../../types/legislature";
+import { ChartDimensions } from "../utils/useChartDimensions";
+import EntityDetails from "../appUi/entityDetails";
 
-export default function Legislature({leg, nextLeg, minHeight, dimensions, firstLegislature}) {
+type LegislatureProps = {
+    leg: LegislatureType;
+    nextLeg: LegislatureType | null;
+    minHeight: number;
+    dimensions: ChartDimensions;
+    firstLegislature: number;
+}
+
+export default function Legislature({leg, nextLeg, minHeight, dimensions, firstLegislature}: LegislatureProps) {
+    const [hoveredParty, setHoveredParty] = useState<PartyType | null>(null);
+    
     const y = (leg.legislature - firstLegislature) * minHeight;
     const graphWidth = dimensions.boundedWidth * 0.8;
 
@@ -21,6 +37,17 @@ export default function Legislature({leg, nextLeg, minHeight, dimensions, firstL
                 const height = nextLegStart / 2;
                 // Generate the x position of the party by summing the width of the previous parties
                 const partyX = i === 0 ? 0 : leg.parties.slice(0, i).reduce((accumulator, party) => accumulator + (graphWidth * (party.deputes / leg.total_deputes)), 0);
+
+                // Check if the party is in a coalition, and if it's the first or last party of the coalition
+                const isInCoalition = party.coalition?.length > 1;
+                let coalitionBorder = {
+                    first: false,
+                    last: false,
+                }
+                if (isInCoalition) {
+                    coalitionBorder.first = leg.parties[i - 1]?.coalition !== party.coalition;
+                    coalitionBorder.last = leg.parties[i + 1]?.coalition !== party.coalition;
+                }
 
                 // Find the corresponding party in the next legislature
                 const nextParty = nextLeg
@@ -47,6 +74,8 @@ export default function Legislature({leg, nextLeg, minHeight, dimensions, firstL
                     <g
                         key={party.name}
                         className={`${leg.legislature}-${party.current?.name.toLowerCase().replace(/[^a-z]+/g, '')}`}
+                        onMouseEnter={() => setHoveredParty(party)}
+                        onMouseLeave={() => setHoveredParty(null)}
                     >
                         {/* Parties */}
                         <PartyBar
@@ -56,8 +85,10 @@ export default function Legislature({leg, nextLeg, minHeight, dimensions, firstL
                             minHeight={minHeight}
                             partyWidth={partyWidth}
                             partyX={partyX}
+                            coalitionBorder={coalitionBorder}
                         />
-                        {/* Polygons */}
+
+                        {/* Transition polygons */}
                         {nextParty && (
                             <polygon
                                 points={polygonPoints}

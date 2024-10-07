@@ -1,17 +1,31 @@
+import { FamilyType } from "../../types/family";
+import { LegislatureType } from "../../types/legislature";
+import { RepublicType } from "../../types/republic";
+import { ChartDimensions } from "../utils/useChartDimensions";
 import Legislature from "./legislature";
 
-export default function Republic({republic, axisLeftPosition, minHeight, firstLegislature, dimensions, currents, nextRepFirstLeg}) {
+type RepublicProps = {
+    republic: RepublicType;
+    axisLeftPosition: number;
+    minHeight: number;
+    firstLegislature: number;
+    dimensions: ChartDimensions;
+    currents: FamilyType[];
+    nextRepFirstLeg: LegislatureType | null;
+}
+
+export default function Republic({republic, axisLeftPosition, minHeight, firstLegislature, dimensions, currents, nextRepFirstLeg}: RepublicProps) {
     // Add the next rep first legislature to the current republic
     const republicWithNextRepFirstLeg = nextRepFirstLeg 
         ? {
             ...republic,
             legislatures: [
                 ...republic.legislatures,
-                nextRepFirstLeg || {},
+                nextRepFirstLeg,
             ],
         }
         : republic;
-    console.log(republicWithNextRepFirstLeg);
+
     // Give an index to each legislature and currents to each party
     const legislaturesWithIndexes = republicWithNextRepFirstLeg.legislatures.map((leg, i) => {
         // In legislature, find the corresponding current for each party

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 // Inspired by https://2019.wattenberger.com/blog/react-and-d3
 
-interface ChartDimensions {
+export interface ChartDimensions {
     width?: number;
     height?: number;
     marginTop: number;

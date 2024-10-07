@@ -1,4 +1,3 @@
-import { CurrentType } from "../../types/current";
 import { EventType } from "../../types/event";
 import { FamilyType } from "../../types/family";
 import { RepublicType } from "../../types/republic";
