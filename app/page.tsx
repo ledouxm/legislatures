@@ -102,7 +102,7 @@ export default function HomePage() {
 
     return (
         <>
-            <header className="grid grid-cols-12 gap-6 px-5 md:px-10 mt-4 md:mt-8 mb-3 md:mb-6 max-w-screen-3xl mx-auto">
+            {/* <header className="grid grid-cols-12 gap-6 px-5 md:px-10 mt-4 md:mt-8 mb-3 md:mb-6 max-w-screen-3xl mx-auto">
                 <h1 className="col-start-1 col-span-12 md:col-span-7 text-3xl md:text-5xl">
                     <span className="opacity-40">
                         Entre crises et revendications
@@ -118,7 +118,7 @@ export default function HomePage() {
                         En savoir plus
                     </button>
                 </div>
-            </header>
+            </header> */}
             <FiltersLine 
                 families={currents} 
                 onFilterChange={(current) => {

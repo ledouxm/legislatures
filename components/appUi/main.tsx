@@ -5,6 +5,7 @@ import { CurrentType } from "../../types/current";
 import { EventType } from "../../types/event";
 import { RepublicType } from "../../types/republic";
 import { FamilyType } from "../../types/family";
+import { TooltipProvider } from "../utils/tooltipContext";
 
 type Props = {
     republics: RepublicType[];
@@ -23,7 +24,9 @@ export default function Main({republics, currents, events}: Props) {
 
                 {/* D3.JS */}
                 {republics && currents && events && (
-                    <Chart republics={republics} currents={currents} events={events} />
+                    <TooltipProvider>
+                        <Chart republics={republics} currents={currents} events={events} />
+                    </TooltipProvider>
                 )}
                 
                 {/* {selectedEntity && (

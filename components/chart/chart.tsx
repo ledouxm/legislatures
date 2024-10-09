@@ -1,6 +1,8 @@
 import { EventType } from "../../types/event";
 import { FamilyType } from "../../types/family";
 import { RepublicType } from "../../types/republic";
+import Tooltip from "../appUi/tooltip";
+import { useTooltipContext } from "../utils/tooltipContext";
 import useChartDimensions from "../utils/useChartDimensions";
 import Event from "./event";
 import Republic from "./republic";
@@ -15,21 +17,31 @@ type Props = {
 }
 
 export default function Chart({republics, currents, events}: Props) {
+    // Set the dimensions of the chart by giving the margins
     const [ref, dimensions] = useChartDimensions({
         marginTop: 24,
         marginLeft: 0,
         marginRight: 0,
-        marginBottom: 24
+        marginBottom: 0
     })
+
+    // Find the first and last legislature to calculate the total duration
     const firstLegislature = republics[0].legislatures[0].legislature;
     const lastLegislature = republics[republics.length - 1].legislatures[republics[republics.length - 1].legislatures.length - 1].legislature;
     const totalDuration = lastLegislature - firstLegislature;
-    const minHeight = 28;
-    const svgHeight = (minHeight * (totalDuration+2)) + dimensions.marginBottom;
 
+    // Set the minimal height for a legislature (one year, in px)
+    const minHeight = 28;
+    // Calculate the height of the svg
+    const svgHeight = minHeight * totalDuration;
+
+    // Set the position of the left and top axis
     const axisLeftPercentage = 20; // Percentage
     const axisLeftPosition = dimensions.boundedWidth * (axisLeftPercentage / 100); // Pixels
     const axisTopPosition = 20; // Pixels
+
+    // Get the tooltip party
+    const { tooltipParty } = useTooltipContext();
 
     return (
         <div 
@@ -93,6 +105,10 @@ export default function Chart({republics, currents, events}: Props) {
                     axisTopPosition={axisTopPosition}
                 />
             </svg>
+
+            {tooltipParty && (
+                <Tooltip party={tooltipParty} />
+            )}
         </div>
     )
 }
