@@ -19,7 +19,7 @@ type Props = {
 export default function Chart({republics, currents, events}: Props) {
     // Set the dimensions of the chart by giving the margins
     const [ref, dimensions] = useChartDimensions({
-        marginTop: 24,
+        marginTop: 0,
         marginLeft: 0,
         marginRight: 0,
         marginBottom: 0
@@ -33,7 +33,7 @@ export default function Chart({republics, currents, events}: Props) {
     // Set the minimal height for a legislature (one year, in px)
     const minHeight = 28;
     // Calculate the height of the svg
-    const svgHeight = minHeight * totalDuration;
+    const svgHeight = minHeight * totalDuration + minHeight;
 
     // Set the position of the left and top axis
     const axisLeftPercentage = 20; // Percentage
@@ -41,7 +41,7 @@ export default function Chart({republics, currents, events}: Props) {
     const axisTopPosition = 20; // Pixels
 
     // Get the tooltip party
-    const { tooltipParty } = useTooltipContext();
+    const { tooltipContent } = useTooltipContext();
 
     return (
         <div 
@@ -106,8 +106,16 @@ export default function Chart({republics, currents, events}: Props) {
                 />
             </svg>
 
-            {tooltipParty && (
-                <Tooltip party={tooltipParty} />
+            {tooltipContent && (
+                <Tooltip 
+                    chartWidth={dimensions.width}
+                    y={tooltipContent.y}
+                    axisLeftPosition={axisLeftPosition}
+                    xStart={tooltipContent.xStart} 
+                    xEnd={tooltipContent.xEnd} 
+                    legislature={tooltipContent.legislature} 
+                    party={tooltipContent.party} 
+                />
             )}
         </div>
     )

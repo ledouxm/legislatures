@@ -1,10 +1,12 @@
+import { InfoCircledIcon } from "@radix-ui/react-icons";
+
 export default function EntityButton({ entity, onClick, isActive }) {
 
     return (
         <button
-            className={`group rounded-full flex gap-2 items-center max-w-full h-full px-3 text-black/50 hover:text-black bg-black/5 hover:bg-black/10 transition text-base text-nowrap 
+            className={`group flex gap-2 items-center max-w-full h-full text-black/50 hover:text-black bg-black/5 hover:bg-black/10 transition text-base text-nowrap 
                 ${isActive ? "" : "opacity-50"}
-                ${entity.full_name ? "pl-2.5 pr-3" : ""}
+                ${entity.full_name ? "px-1.5 rounded-md" : "px-3 rounded-full"}
                 `}
             onClick={() => onClick(entity)}
         >
@@ -26,7 +28,7 @@ export default function EntityButton({ entity, onClick, isActive }) {
 
             <span className="flex items-center min-w-0">
                 {entity.full_name && (
-                    <span className="text-black/30 group-hover:text-black/50 all-small-caps mr-1 inline-flex h-full text-xs">
+                    <span className="text-black/30 group-hover:text-black/50 all-small-caps mr-1 inline-flex h-full text-xs transition">
                         {entity.name}
                     </span>                        
                 )}
@@ -39,7 +41,7 @@ export default function EntityButton({ entity, onClick, isActive }) {
                     }
                 </span>
             </span>
+            {entity.full_name && <InfoCircledIcon className="size-4 inline-block" />}
         </button>
     )
 }
-// className="text-sm group border border-gray-300 rounded-full flex gap-2 items-center px-3 py-0.5 cursor-pointer shadow-sm hover:shadow-md hover:bg-gray-50 transition text-nowrap"

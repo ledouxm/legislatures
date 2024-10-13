@@ -1,11 +1,11 @@
 "use client";
 
 import { createContext, useContext, useState } from "react";
-import { PartyType } from "../../types/party";
+import { TooltipContentType } from "../../types/tooltipContent";
 
 interface TooltipContextType {
-    tooltipParty: PartyType | null;
-    setTooltipParty: (tooltipParty: PartyType | null) => void;
+    tooltipContent: TooltipContentType | null;
+    setTooltipContent: ({ xStart, xEnd, legislature, party }: TooltipContentType) => void;
 }
 
 // Create context for tooltip
@@ -22,10 +22,10 @@ export const useTooltipContext = () => {
 
 // Create a provider for the tooltip context
 export const TooltipProvider = ({ children }: { children: React.ReactNode }) => {
-    const [tooltipParty, setTooltipParty] = useState(null);
+    const [tooltipContent, setTooltipContent] = useState(null);
 
     return (
-        <TooltipContext.Provider value={{ tooltipParty, setTooltipParty }}>
+        <TooltipContext.Provider value={{ tooltipContent, setTooltipContent }}>
             {children}
         </TooltipContext.Provider>
     )

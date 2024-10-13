@@ -25,7 +25,7 @@ export default function Legislature({ leg, nextLeg, minHeight, dimensions, first
         : minHeight * 2;
 
     // Set the hovered party
-    const { setTooltipParty } = useTooltipContext();
+    const { setTooltipContent } = useTooltipContext();
 
     return (
         <>
@@ -40,6 +40,7 @@ export default function Legislature({ leg, nextLeg, minHeight, dimensions, first
                     const height = nextLegStart / 2;
                     // Generate the x position of the party by summing the width of the previous parties
                     const partyX = i === 0 ? 0 : leg.parties.slice(0, i).reduce((accumulator, party) => accumulator + (graphWidth * (party.deputes / leg.total_deputes)), 0);
+                    
                     // Check if the party is in a coalition, and if it's the first or last party of the coalition
                     const isInCoalition = party.coalition?.length > 1;
                     let coalitionBorder = {
@@ -50,6 +51,7 @@ export default function Legislature({ leg, nextLeg, minHeight, dimensions, first
                         coalitionBorder.first = leg.parties[i - 1]?.coalition !== party.coalition;
                         coalitionBorder.last = leg.parties[i + 1]?.coalition !== party.coalition;
                     }
+
                     // Find the corresponding party in the next legislature
                     const nextParty = nextLeg
                         ? nextLeg.parties?.find(p => p.current.name === party.current.name)
@@ -62,6 +64,7 @@ export default function Legislature({ leg, nextLeg, minHeight, dimensions, first
                     const nextPartyX = nextParty
                         ? nextLeg.parties.slice(0, nextLeg.parties.indexOf(nextParty)).reduce((accumulator, party) => accumulator + (graphWidth * (party.deputes / nextLeg.total_deputes)), 0)
                         : null;
+
                     // Generate the polygon points
                     const polygonPoints = [
                         [partyX, y + height],
@@ -69,13 +72,22 @@ export default function Legislature({ leg, nextLeg, minHeight, dimensions, first
                         [nextPartyX + nextPartyWidth, y + (height * 2)],
                         [nextPartyX, y + (height * 2)],
                     ].map(point => point.join(",")).join(" ");
+
+                    // Create tooltip content
+                    const tooltipContent = {
+                        y : y,
+                        xStart: partyX,
+                        xEnd: partyX + partyWidth,
+                        legislature: leg,
+                        party,
+                    }
             
                     return (
                         <g
                             key={party.name}
                             className={`${leg.legislature}-${party.current?.name.toLowerCase().replace(/[^a-z]+/g, '')}`}
-                            onMouseEnter={() => setTooltipParty(party)}
-                            onMouseLeave={() => setTooltipParty(null)}
+                            onMouseEnter={() => setTooltipContent(tooltipContent)}
+                            onMouseLeave={() => setTooltipContent(null)}
                         >
                             {/* Parties */}
                             <PartyBar

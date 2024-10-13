@@ -31,9 +31,12 @@ export default function Republic({republic, axisLeftPosition, minHeight, firstLe
         // In legislature, find the corresponding current for each party
         const partiesWithCurrents = leg.parties.map(party => {
             const current = currents.flatMap(family => family.currents).find(current => current.parties.find(p => p.name === party.name));
+            const full_name = current?.parties.find(p => p.name === party.name)?.full_name;
+
             return {
                 ...party,
                 current,
+                full_name
             }
         });
 

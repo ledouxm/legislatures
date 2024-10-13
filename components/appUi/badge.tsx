@@ -1,3 +1,4 @@
+import { InfoCircledIcon } from "@radix-ui/react-icons";
 import hexToRgb from "../utils/hexToRgb"
 
 export default function Badge({ name, hex }: { name: string, hex: string }) {
@@ -5,7 +6,7 @@ export default function Badge({ name, hex }: { name: string, hex: string }) {
 
     return (
         <span 
-            className="bg-opacity-10 text-opacity-90 rounded px-1.5 py-0.5 text-xs font-normal cursor-pointer hover:bg-opacity-20 hover:text-opacity-100 hover:shadow-sm transition text-nowrap"
+            className="bg-opacity-10 text-opacity-90 rounded-lg px-1.5 py-0.5 text-base font-normal cursor-pointer hover:bg-opacity-20 hover:text-opacity-100 hover:shadow-sm transition text-nowrap items-center flex gap-1.5"
             style={{ 
                 backgroundColor: `rgb(
                     ${color}, 
@@ -22,6 +23,7 @@ export default function Badge({ name, hex }: { name: string, hex: string }) {
             }}
         >
             {name}
+            <InfoCircledIcon className="size-4 inline-block" />
         </span>
     )
 }
