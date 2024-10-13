@@ -26,7 +26,7 @@ export default function SettingsButton({
             `}
             onClick={onClick}
         >
-            {number &&
+            {(number || number === 0) &&
                 <span 
                     className={`flex items-center justify-center  group-hover:bg-[var(--family-color)] transition rounded-full text-xs text-black/50 group-hover:text-white h-5 
                         ${number <= 10 ? 

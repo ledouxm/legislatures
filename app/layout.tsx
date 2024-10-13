@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
  
 // These styles apply to every route in the application
 import './globals.css'
+import { VisibleCurrentsProvider } from '../components/utils/currentsContext'
  
 export const metadata: Metadata = {
   title: 'Chronoskratos',
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="fr">
         <body>
-            {children}
+            <VisibleCurrentsProvider>
+              {children}
+            </VisibleCurrentsProvider>
         </body>
     </html>
   )

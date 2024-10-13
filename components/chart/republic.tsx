@@ -1,3 +1,4 @@
+import { CurrentType } from "../../types/current";
 import { FamilyType } from "../../types/family";
 import { LegislatureType } from "../../types/legislature";
 import { RepublicType } from "../../types/republic";
@@ -10,11 +11,12 @@ type RepublicProps = {
     minHeight: number;
     firstLegislature: number;
     dimensions: ChartDimensions;
-    currents: FamilyType[];
+    currents: CurrentType[];
     nextRepFirstLeg: LegislatureType | null;
+    axisLeftPercentage: number;
 }
 
-export default function Republic({republic, axisLeftPosition, minHeight, firstLegislature, dimensions, currents, nextRepFirstLeg}: RepublicProps) {
+export default function Republic({republic, axisLeftPosition, minHeight, firstLegislature, dimensions, currents, nextRepFirstLeg, axisLeftPercentage}: RepublicProps) {
     // Add the next rep first legislature to the current republic
     const republicWithNextRepFirstLeg = nextRepFirstLeg 
         ? {
@@ -30,16 +32,22 @@ export default function Republic({republic, axisLeftPosition, minHeight, firstLe
     const legislaturesWithIndexes = republicWithNextRepFirstLeg.legislatures.map((leg, i) => {
         // In legislature, find the corresponding current for each party
         const partiesWithCurrents = leg.parties.map(party => {
-            const current = currents.flatMap(family => family.currents).find(current => current.parties.find(p => p.name === party.name));
+            const current = currents.find(current => current.parties.find(p => p.name === party.name));
             const full_name = current?.parties.find(p => p.name === party.name)?.full_name;
 
-            return {
-                ...party,
-                current,
-                full_name
+            if (current) {
+                            return {
+                                ...party,
+                                current,
+                                full_name
+                            }
+                
+            } else {
+                return;
+                
             }
-        });
-
+        }).filter(party => party);
+        
         return {
             ...leg,
             index: i,
@@ -58,13 +66,18 @@ export default function Republic({republic, axisLeftPosition, minHeight, firstLe
                 const nextLeg = legislaturesWithIndexes.find(l => l.index === leg.index + 1);
                 const nextPartiesWithCurrents = nextLeg
                     ? nextLeg.parties.map(party => {
-                        const current = currents.flatMap(family => family.currents).find(current => current.parties.find(p => p.name === party.name));
+                        const current = currents.find(current => current.parties.find(p => p.name === party.name));
 
-                        return {
-                            ...party,
-                            current,
+                        if (current) {
+                            return {
+                                ...party,
+                                current,
+                            }
+                        } else {
+                            return;
+                            
                         }
-                    })
+                    }).filter(party => party)
                     : null;
                 const nextLegislatureWithCurrents = nextLeg
                     ? {
@@ -81,6 +94,7 @@ export default function Republic({republic, axisLeftPosition, minHeight, firstLe
                         firstLegislature={firstLegislature}
                         minHeight={minHeight}
                         dimensions={dimensions}
+                        axisLeftPercentage={axisLeftPercentage}
                     />
                 )
             })}

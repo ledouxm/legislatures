@@ -1,3 +1,4 @@
+import { CurrentType } from "../../types/current";
 import { EventType } from "../../types/event";
 import { FamilyType } from "../../types/family";
 import { RepublicType } from "../../types/republic";
@@ -12,11 +13,12 @@ import * as d3 from "d3";
 
 type Props = {
     republics: RepublicType[];
-    currents: FamilyType[];
+    currents: CurrentType[];
     events: EventType[];
+    axisLeftPercentage: number;
 }
 
-export default function Chart({republics, currents, events}: Props) {
+export default function Chart({republics, currents, events, axisLeftPercentage}: Props) {
     // Set the dimensions of the chart by giving the margins
     const [ref, dimensions] = useChartDimensions({
         marginTop: 0,
@@ -36,7 +38,7 @@ export default function Chart({republics, currents, events}: Props) {
     const svgHeight = minHeight * totalDuration + minHeight;
 
     // Set the position of the left and top axis
-    const axisLeftPercentage = 20; // Percentage
+    // const axisLeftPercentage = 20; // Percentage
     const axisLeftPosition = dimensions.boundedWidth * (axisLeftPercentage / 100); // Pixels
     const axisTopPosition = 20; // Pixels
 
@@ -94,6 +96,7 @@ export default function Chart({republics, currents, events}: Props) {
                         dimensions={dimensions}
                         currents={currents}
                         nextRepFirstLeg={republics[republics.indexOf(republic) + 1]?.legislatures[0]}
+                        axisLeftPercentage={axisLeftPercentage}
                     />
                 ))}
 

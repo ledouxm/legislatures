@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { FamilyType } from "../../types/family";
 import CurrentsFamily from "./currentsFamily";
 import SettingsButton from "./settingsButton";
+import { useVisibleCurrentsContext } from "../utils/currentsContext";
 
 type Props = {
     families: FamilyType[];
@@ -14,12 +15,12 @@ type Props = {
 }
 
 export default function FiltersLine({ families, onFilterChange }: Props) {
-    const [isActive, setIsActive] = useState(true);
     const scrollRef = useRef<HTMLDivElement>(null);
+    const { visibleCurrents, setVisibleCurrents } = useVisibleCurrentsContext();
+    const currents = families?.flatMap((family) => family.currents);
 
     function handleClick(current) {
         onFilterChange(current);
-        setIsActive(!isActive);
     }
 
     // Convert vertical scroll to horizontal scroll
@@ -52,9 +53,17 @@ export default function FiltersLine({ families, onFilterChange }: Props) {
             <div className="w-full flex">
                 {/* List controls */}
                 <div className="flex gap-1 items-center h-8">
-                    {/* <SettingsButton Icon={MixerVerticalIcon} name="Filtrer" onClick={() => {}} /> */}
-                    <SettingsButton Icon={ShuffleIcon} onClick={() => {}} />
-                    <SettingsButton Icon={ReloadIcon} flipIcon={true} onClick={() => {}} />
+                    {/* Shuffle button */}
+                    <SettingsButton Icon={ShuffleIcon} onClick={() => {
+                        const shuffledCurrents = currents.sort(() => 0.5 - Math.random());
+                        const randomCurrents = shuffledCurrents.slice(0, Math.floor(Math.random() * currents.length) + 1);
+                        setVisibleCurrents(randomCurrents);
+                    }} />
+
+                    {/* Show reset button when currents are filtered */}
+                    {visibleCurrents?.length !== currents?.length && 
+                        <SettingsButton Icon={ReloadIcon} flipIcon={true} onClick={() => setVisibleCurrents(currents)} />
+                    }
                 </div>
 
                 {/* Currents list */}
@@ -73,26 +82,10 @@ export default function FiltersLine({ families, onFilterChange }: Props) {
                                 <EntityButton
                                     entity={{name: "Chargement..."}}
                                     onClick={() => {}}
-                                    isActive={isActive}
+                                    isActive={true}
                                 />
                             </span>
                         )}
-                        {/* {currents ? currents.map((current, index) => (
-                            <EntityButton
-                                key={index}
-                                entity={current}
-                                onClick={() => handleClick(current)}
-                                isActive={isActive}
-                            />
-                        )) : (
-                            <span className="animate-pulse pointer-events-none">
-                                <EntityButton
-                                    entity={{name: "Chargement..."}}
-                                    onClick={() => {}}
-                                    isActive={isActive}
-                                />
-                            </span>
-                        )} */}
                     </div>
                 </div>
             </div>

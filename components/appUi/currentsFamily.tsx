@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FamilyType } from "../../types/family";
 import SettingsButton from "./settingsButton";
 import EntityButton from "./entityButton";
+import { useVisibleCurrentsContext } from "../utils/currentsContext";
 
 type Props = {
     family: FamilyType;
@@ -10,6 +11,7 @@ type Props = {
 
 export default function CurrentsFamily({ family, onCurrentClick }: Props) {
     const [isActive, setIsActive] = useState(false);
+    const { visibleCurrents, setVisibleCurrents } = useVisibleCurrentsContext();
 
     // Merge two currents if they have the same name (even with additionnal space), keep the name and color of the first one, and merge the parties
     const [mergedCurrents, setMergedCurrents] = useState([]);
@@ -41,11 +43,12 @@ export default function CurrentsFamily({ family, onCurrentClick }: Props) {
       mergeCurrents();
     }, [family]);
   
+    const familyNumber = mergedCurrents.filter((current) => visibleCurrents.some((visibleCurrent) => visibleCurrent.name === current.name)).length;
 
     return (
         <>
             <SettingsButton 
-                number={mergedCurrents.length} 
+                number={familyNumber} 
                 color={family.color} 
                 name={family.name} 
                 onClick={() => {setIsActive(!isActive)}} 
@@ -58,7 +61,7 @@ export default function CurrentsFamily({ family, onCurrentClick }: Props) {
                             key={index} 
                             entity={current} 
                             onClick={() => {onCurrentClick(current)}} 
-                            isActive={true} 
+                            isActive={visibleCurrents.some((visibleCurrent) => visibleCurrent.name === current.name)} 
                         />
                     ))}
                 </>
