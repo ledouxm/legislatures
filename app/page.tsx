@@ -39,7 +39,7 @@ export default function HomePage() {
         fetch('/data/events.json')
             .then((response) => response.json())
             .then((data) => setEvents(data.events));
-    }, []);
+    }, [setVisibleCurrents]);
 
 
     const updateDescription = (paragraph: string, party: PartyType, target: string, keyword: string, attempt: number) => {
@@ -108,10 +108,8 @@ export default function HomePage() {
     const handleFilterChange = (current) => {
         if (visibleCurrents.some((c) => c.name === current.name)) {
             setVisibleCurrents(visibleCurrents.filter((c) => c.name !== current.name));
-            console.log("visibleCurrents", visibleCurrents);
         } else {
             setVisibleCurrents([...visibleCurrents, current]);
-            console.log("visibleCurrents", visibleCurrents);
         }
     }
 
@@ -138,7 +136,7 @@ export default function HomePage() {
                     families={currents}
                     onFilterChange={(current) => handleFilterChange(current)}
                 />
-                <Main republics={republics} currents={visibleCurrents} events={events} />
+                <Main republics={republics} currents={currents?.flatMap((family) => family.currents)} events={events} />
         </>
     )
 } 

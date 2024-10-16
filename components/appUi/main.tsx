@@ -19,7 +19,7 @@ type Props = {
 
 
 export default function Main({republics, currents, events}: Props) {
-    const [axisLeftPercentage, setAxisLeftPercentage] = useState(20);
+    const [axisLeftPercentage, setAxisLeftPercentage] = useState(5);
     const [selectedEntity, setSelectedEntity] = useState<CurrentType | null>(null);
     const [currentDescription, setCurrentDescription] = useState<string | null>(null);
     const [currentImage, setCurrentImage] = useState<string | null>(null);
@@ -31,19 +31,19 @@ export default function Main({republics, currents, events}: Props) {
             style={{ height: "calc(100vh - 10rem)" }}
         >
             <div className="w-full h-full overflow-y-scroll no-scrollbar">
-                {/* <div className="flex gap-2">
+                <div className="flex gap-2">
                     <input
                         type="range"
                         name="axisLeft"
                         id="axisLeft"
-                        min={0}
+                        min={5}
                         max={50}
                         value={axisLeftPercentage}
                         step={5}
                         onChange={(e) => setAxisLeftPercentage(Number(e.target.value))}
                     />
                     <PercentageButton percentage={axisLeftPercentage} deputies={axisLeftPercentage} totalDeputies={50} onHover={() => { } } isPercentage={false} />
-                </div> */}
+                </div>
 
                 {/* Chart */}
                 {republics && currents && events && (

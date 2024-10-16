@@ -72,10 +72,10 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
                 height={svgHeight}
             >
                 {/* Events */}
-                {events.map(event => {
+                {events.map((event, index) => {
                     return (
                         <Event
-                            key={event.title}
+                            key={index}
                             event={event}
                             axisLeftPosition={axisLeftPosition}
                             minHeight={minHeight}

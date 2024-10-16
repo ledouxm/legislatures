@@ -5,6 +5,7 @@ export default function Event({event, axisLeftPosition, minHeight, firstLegislat
         <g 
             key={event.title} 
             transform={`translate(0, ${(beginDate - firstLegislature) * minHeight})`}
+            opacity={0}
         >
             <rect
                 x={0}

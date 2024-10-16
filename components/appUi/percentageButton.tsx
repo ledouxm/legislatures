@@ -11,7 +11,7 @@ type PercentageButtonProps = {
 export default function PercentageButton({ percentage, deputies, totalDeputies, isPercentage, onHover }: PercentageButtonProps) {
     return (
         <div 
-            className="flex items-center py-0.5 px-1.5 rounded-full bg-black/5 hover:bg-black/10 text-xs group/percentage cursor-pointer transition"
+            className="flex items-center py-0.5 px-1.5 rounded-full bg-black/5 hover:bg-black/10 text-xs group/percentage cursor-default transition"
             onMouseEnter={onHover}
             onMouseLeave={onHover}
         >

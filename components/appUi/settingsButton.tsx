@@ -19,7 +19,7 @@ export default function SettingsButton({
                     'size-8' : 
                     'h-8 px-3'
                 }
-                ${number && name ?
+                ${(number || number === 0) && name ?
                     'pl-1.5 pr-1.5 sm:pr-3' :
                     ''
                 }
