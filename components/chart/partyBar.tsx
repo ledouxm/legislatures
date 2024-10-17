@@ -30,7 +30,6 @@ export default function PartyBar({ party, y, height, minHeight, partyWidth, part
             className={`party-bar party-${party.name.toLowerCase().replace(/[^a-z]+/g, '')} current-${party.current?.name.toLowerCase().replace(/[^a-z]+/g, '')}`}
             x={partyX}
             y={y}
-            // initial={{ x: partyX + (partyWidth / 2), y: y }}
             animate={{ x: partyX, y: y }}
             transition={{ duration: transitionDuration }}
         >
@@ -88,6 +87,7 @@ export default function PartyBar({ party, y, height, minHeight, partyWidth, part
                         y2={0}
                         stroke="currentColor"
                         strokeWidth={coalitionStrokeWidth}
+                        initial={{ x2: partyWidth }}
                         animate={{ x2: partyWidth }}
                         transition={{ duration: transitionDuration }}
                     />
@@ -99,6 +99,7 @@ export default function PartyBar({ party, y, height, minHeight, partyWidth, part
                         y2={height - coalitionStrokeWidth}
                         stroke="currentColor"
                         strokeWidth={coalitionStrokeWidth}
+                        initial={{ y1: height - coalitionStrokeWidth, x2: partyWidth, y2: height - coalitionStrokeWidth }}
                         animate={{ y1: height - coalitionStrokeWidth, x2: partyWidth, y2: height - coalitionStrokeWidth }}
                         transition={{ duration: transitionDuration }}
                     />
@@ -111,6 +112,7 @@ export default function PartyBar({ party, y, height, minHeight, partyWidth, part
                             y2={height - coalitionStrokeWidth}
                             stroke="currentColor"
                             strokeWidth={coalitionStrokeWidth}
+                            initial={{ y2: height - coalitionStrokeWidth }}
                             animate={{ y2: height - coalitionStrokeWidth }}
                             transition={{ duration: transitionDuration }}
                         />
@@ -125,6 +127,7 @@ export default function PartyBar({ party, y, height, minHeight, partyWidth, part
                             y2={height - coalitionStrokeWidth}
                             stroke="currentColor"
                             strokeWidth={coalitionStrokeWidth}
+                            initial={{ x1: partyWidth - coalitionStrokeWidth, x2: partyWidth - coalitionStrokeWidth, y2: height - coalitionStrokeWidth }}
                             animate={{ x1: partyWidth - coalitionStrokeWidth, x2: partyWidth - coalitionStrokeWidth, y2: height - coalitionStrokeWidth }}
                             transition={{ duration: transitionDuration }}
                         />

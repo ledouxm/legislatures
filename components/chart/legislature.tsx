@@ -86,10 +86,13 @@ export default function Legislature({ leg, nextLeg, minHeight, dimensions, first
                         first: false,
                         last: false,
                     }
-                    const visibleLegParties = leg.parties.filter(party => visibleCurrents.find(current => current.parties.find(p => p.name === party.name)));
                     if (isInCoalition) {
-                        coalitionBorder.first = visibleLegParties[i - 1]?.coalition !== party.coalition;
-                        coalitionBorder.last = visibleLegParties[i + 1]?.coalition !== party.coalition;
+                        // Check if the previous visible party is in the same coalition
+                        const previousVisibleParty = leg.parties.slice(0, i).reverse().find(p => visibleCurrents.find(current => current.parties.find(cp => cp.name === p.name)));
+                        coalitionBorder.first = !previousVisibleParty || previousVisibleParty.coalition !== party.coalition;
+                        // Check if the next visible party is in the same coalition
+                        const nextVisibleParty = leg.parties.slice(i + 1).find(p => visibleCurrents.find(current => current.parties.find(cp => cp.name === p.name)));
+                        coalitionBorder.last = !nextVisibleParty || nextVisibleParty.coalition !== party.coalition;
                     }
 
                     // Find the corresponding party in the next legislature
@@ -149,6 +152,7 @@ export default function Legislature({ leg, nextLeg, minHeight, dimensions, first
                                 coalitionBorder={coalitionBorder}
                                 transitionDuration={transitionDuration}
                             />
+                            
                             {/* Transition polygons */}
                             {nextParty && polygonPoints && (
                                 <motion.polygon
@@ -156,6 +160,7 @@ export default function Legislature({ leg, nextLeg, minHeight, dimensions, first
                                     fill={party.current.color}
                                     opacity={0.75}
                                     shapeRendering="crispEdges"
+                                    initial={{ points: polygonPoints }}
                                     animate={{ points: polygonPoints }}
                                     transition={{ duration: transitionDuration }}
                                 />
