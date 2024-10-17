@@ -35,7 +35,7 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
     // Set the minimal height for a legislature (one year, in px)
     const minHeight = 28;
     // Calculate the height of the svg
-    const svgHeight = minHeight * totalDuration + minHeight;
+    const svgHeight = minHeight * totalDuration + minHeight + dimensions.marginBottom;
 
     // Set the position of the left and top axis
     // const axisLeftPercentage = 20; // Percentage
@@ -51,6 +51,7 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
             className="w-full relative"
             style={{ height: svgHeight + minHeight }}
         >
+            {/* X Axis and top margin */}
             <div
                 className="sticky top-0 z-10 backdrop-blur bg-opacity-45 bg-gradient-to-b from-white via-white/50 to-transparent"
             >
@@ -67,6 +68,8 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
                     />
                 </svg>
             </div>
+
+            {/* Chart */}
             <svg 
                 width={dimensions.width} 
                 height={svgHeight}
@@ -109,6 +112,11 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
                 />
             </svg>
 
+            {/* Bottom margin */}
+            <div className="sticky bottom-0 z-10 backdrop-blur bg-opacity-45 bg-gradient-to-t from-white via-white/50 to-transparent h-7">
+            </div>
+
+            {/* Tooltip */}
             {tooltipContent && (
                 <Tooltip 
                     chartWidth={dimensions.width}

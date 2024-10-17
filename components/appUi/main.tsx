@@ -19,7 +19,7 @@ type Props = {
 
 
 export default function Main({republics, currents, events}: Props) {
-    const [axisLeftPercentage, setAxisLeftPercentage] = useState(5);
+    const [axisLeftPercentage, setAxisLeftPercentage] = useState(20);
     const [selectedEntity, setSelectedEntity] = useState<CurrentType | null>(null);
     const [currentDescription, setCurrentDescription] = useState<string | null>(null);
     const [currentImage, setCurrentImage] = useState<string | null>(null);
@@ -27,8 +27,8 @@ export default function Main({republics, currents, events}: Props) {
 
     return (
         <main 
-            className="w-full max-w-screen-3xl mx-auto px-5 md:px-10 mb-4 md:mb-8"
-            style={{ height: "calc(100vh - 10rem)" }}
+            className="w-full max-w-screen-3xl mx-auto px-5 md:px-10"
+            style={{ height: "calc(100vh - 10.5rem)" }}
         >
             <div className="w-full h-full overflow-y-scroll no-scrollbar">
                 <div className="flex gap-2">

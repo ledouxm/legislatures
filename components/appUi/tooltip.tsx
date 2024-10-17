@@ -62,7 +62,7 @@ export default function Tooltip({ chartWidth, y, axisLeftPosition, xStart, xEnd,
     return (
         <div
             ref={tooltipRef}
-            className="absolute pb-2 flex justify-start transition-all duration-500"
+            className="absolute pb-2 flex justify-start transition-all duration-500 select-none"
             onMouseEnter={() => setTooltipContent(tooltipContent)}
         >
             <div

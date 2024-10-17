@@ -5,8 +5,19 @@ export default function Event({event, axisLeftPosition, minHeight, firstLegislat
         <g 
             key={event.title} 
             transform={`translate(0, ${(beginDate - firstLegislature) * minHeight})`}
-            opacity={0}
+            // opacity={0}
+            clipPath="url(#clip)"
         >
+            <defs>
+                <clipPath id="clip">
+                    <rect 
+                        x="0" 
+                        y="0" 
+                        width={axisLeftPosition} 
+                        height="100%" 
+                    />
+                </clipPath>
+            </defs>
             <rect
                 x={0}
                 y={0}
