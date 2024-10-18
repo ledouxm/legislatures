@@ -43,7 +43,7 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
     const axisTopPosition = 20; // Pixels
 
     // Get the tooltip party
-    const { tooltipContent } = useTooltipContext();
+    const { tooltipContent, setTooltipContent } = useTooltipContext();
 
     return (
         <div 
@@ -73,6 +73,7 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
             <svg 
                 width={dimensions.width} 
                 height={svgHeight}
+                onMouseLeave={() => setTooltipContent(null)}
             >
                 {/* Events */}
                 {events.map((event, index) => {

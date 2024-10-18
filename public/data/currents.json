@@ -44,16 +44,12 @@
         },
         {
           "name": "Indépendantiste",
-          "color": "#D10F3D",
+          "color": "#E40E3B",
           "keyword": "Indépendantisme",
           "parties": [
             {
               "name": "RDA",
               "full_name": "Rassemblement démocratique africain"
-            },
-            {
-              "name": "DVI",
-              "full_name": "Divers indépendantiste"
             }
           ]
         },

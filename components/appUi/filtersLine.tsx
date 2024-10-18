@@ -53,6 +53,9 @@ export default function FiltersLine({ families, onFilterChange }: Props) {
             <div className="w-full flex">
                 {/* List controls */}
                 <div className="flex gap-1 items-center h-8">
+                    {/* Settings button */}
+                    <SettingsButton Icon={MixerVerticalIcon} onClick={() => {}} />
+
                     {/* Shuffle button */}
                     <SettingsButton Icon={ShuffleIcon} onClick={() => {
                         const shuffledCurrents = currents.sort(() => 0.5 - Math.random());

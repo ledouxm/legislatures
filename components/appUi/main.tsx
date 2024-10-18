@@ -27,8 +27,7 @@ export default function Main({republics, currents, events}: Props) {
 
     return (
         <main 
-            className="w-full max-w-screen-3xl mx-auto px-5 md:px-10"
-            style={{ height: "calc(100vh - 10.5rem)" }}
+            className="w-full max-w-screen-3xl mx-auto px-5 md:px-10 h-[calc(100vh-5.75rem)] md:h-[calc(100vh-10.5rem)]"
         >
             <div className="w-full h-full overflow-y-scroll no-scrollbar">
                 <div className="flex gap-2">

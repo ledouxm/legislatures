@@ -16,7 +16,7 @@ export default function SettingsButton({
         <button 
             className={`group flex items-center justify-center rounded-full border border-black/10 hover:border-black/20 transition text-nowrap gap-2 select-none 
                 ${Icon && !name ? 
-                    'size-8' : 
+                    'size-8 flex-shrink-0' : 
                     'h-8 px-3'
                 }
                 ${(number || number === 0) && name ?
