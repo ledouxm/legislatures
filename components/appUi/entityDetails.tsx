@@ -5,7 +5,7 @@ import EntityButton from "./entityButton";
 import Badge from "./badge";
 import WikiLink from "./wikiLink";
 import { Cross1Icon, EyeClosedIcon, EyeOpenIcon } from "@radix-ui/react-icons";
-import { Key, useEffect, useRef, useState } from "react";
+import { Key, useCallback, useEffect, useRef, useState } from "react";
 import { useDetailsContext } from "../utils/detailsContext";
 import { CurrentType } from "../../types/current";
 import { EventType } from "../../types/event";
@@ -34,6 +34,9 @@ export default function EntityDetails() {
     const current = entityType === "current" ? entity as CurrentType : null;
     const party = entityType === "party" ? entity as PartyType : null;
     const event = entityType === "event" ? entity as EventType : null;
+            
+    // Get the entity title
+    const title = event?.title || party?.full_name || current?.name;
 
     const updateWikiLink = (
         wikiUrl: string, 
@@ -49,35 +52,31 @@ export default function EntityDetails() {
         setWikiLink(fullWikiLink);
     }
 
-    const fetchWiki = (searchTerm: string) => {
-        const noInfo = 'Aucune information disponible…';
-        fetch('/api/wiki', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ keyword: searchTerm }),
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            setDescription(data.firstParagraph || noInfo);
-            setImage(data.thumbnail);
-            updateWikiLink(data.pageUrl, searchTerm);
-        });
-    }
     // Fetch the entity content on mount
     useEffect(() => {
         if (entity) {
+            const fetchWiki = (searchTerm: string) => {
+                const noInfo = 'Aucune information disponible…';
+                fetch('/api/wiki', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ keyword: searchTerm }),
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    setDescription(data.firstParagraph || noInfo);
+                    setImage(data.thumbnail);
+                    updateWikiLink(data.pageUrl, searchTerm);
+                });
+            }
             fetchWiki(entity.keyword || title);
         }
-    }, [entity, fetchWiki]);
-
+    }, [entity, title]);
 
     // Get the sub entities
     const subEntities = current?.parties || party?.persons || null;
-            
-    // Get the entity title
-    const title = event?.title || party?.full_name || current?.name;
 
     // Determine if the displayed current is visible or not
     const { visibleCurrents, setVisibleCurrents } = useVisibleCurrentsContext();
@@ -93,9 +92,9 @@ export default function EntityDetails() {
     }
 
     // Close the details
-    function handleClose() {
+    const handleClose = useCallback(() => {
         setDetailsContent(null);
-    }
+    }, [setDetailsContent]);
     // Close on escape key
     useEffect(() => {
         const handleEscape = (e: KeyboardEvent) => {
@@ -107,7 +106,7 @@ export default function EntityDetails() {
         return () => {
             window.removeEventListener("keydown", handleEscape);
         };
-    }, []);
+    }, [handleClose]);
 
     // Open the details of the sub entity
     function onClick(subEntity: any, entity?: any) {
