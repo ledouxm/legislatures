@@ -11,14 +11,6 @@ export default function HomePage() {
     const [currents, setCurrents] = useState(null);
     const [events, setEvents] = useState(null);
     const { visibleCurrents, setVisibleCurrents } = useVisibleCurrentsContext();
-    const [selectedCurrent, setSelectedCurrent] = useState(null);
-    const [currentDescription, setCurrentDescription] = useState(null);
-    const [currentImage, setCurrentImage] = useState(null);
-    const [currentWiki, setCurrentWiki] = useState(null);
-    const [selectedParty, setSelectedParty] = useState(null);
-    const [partyDescription, setPartyDescription] = useState(null);
-    const [partyImage, setPartyImage] = useState(null);
-    const [partyWiki, setPartyWiki] = useState(null);
 
     // Fetch the data
     useEffect(() => {
@@ -41,78 +33,6 @@ export default function HomePage() {
             .then((data) => setEvents(data.events));
     }, [setVisibleCurrents]);
 
-
-    const updateDescription = (paragraph: string, party: PartyType, target: string, keyword: string, attempt: number) => {
-        // If no paragraph is found, try to fetch the description with the keyword
-        if (!paragraph && attempt < 4 && party) {
-            const fallbackKeyword = [keyword.toLocaleLowerCase(), keyword.toLowerCase()];
-            if (party.keyword) {
-                fallbackKeyword.push(party.keyword, party.keyword.toLowerCase());
-            }
-            attempt++;
-            fetchWiki(fallbackKeyword[attempt], party, target, attempt);
-            return;
-        }
-
-        // Update the description for corresponding target
-        if (target === 'current') {
-            setCurrentDescription(paragraph);
-        } else {
-            setPartyDescription(paragraph);
-        }
-    }
-    
-    const updateImage = (image: string, target: string) => {
-        if (target === 'current') {
-            setCurrentImage(image);
-        } else {
-            setPartyImage(image);
-        }
-    }
-
-    const updateLink = (wiki: string, keyword: string, target: string) => {
-        let fullWiki = wiki;
-
-        if (keyword.search("#") !== -1) {
-            fullWiki = wiki + "#" + encodeURIComponent(keyword.split("#")[1].replace(/ /g, "_"));
-        }
-
-        if (target === 'current') {
-            setCurrentWiki(fullWiki);
-        } else {
-            setPartyWiki(fullWiki);
-        }
-    }
-
-    const fetchWiki = (keyword: string, party: PartyType, target: string, attempt: number = 0) => {
-        if (!keyword) {
-            const noInfo = 'Aucune information disponible…';
-            updateDescription(noInfo, party, target, keyword, attempt);
-        } else {
-            fetch('/api/wiki', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ keyword: keyword }),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    updateDescription(data.firstParagraph, party, target, keyword, attempt);
-                    updateImage(data.thumbnail, target);
-                    updateLink(data.pageUrl, keyword, target);
-                });
-        }
-    }
-
-    const handleFilterChange = (current) => {
-        if (visibleCurrents.some((c) => c.name === current.name)) {
-            setVisibleCurrents(visibleCurrents.filter((c) => c.name !== current.name));
-        } else {
-            setVisibleCurrents([...visibleCurrents, current]);
-        }
-    }
-
     return (
         <>
                 {/* <header className="grid grid-cols-12 gap-6 px-5 md:px-10 mt-4 md:mt-8 mb-3 md:mb-6 max-w-screen-3xl mx-auto">
@@ -134,7 +54,6 @@ export default function HomePage() {
                 </header> */}
                 <FiltersLine
                     families={currents}
-                    onFilterChange={(current) => handleFilterChange(current)}
                 />
                 <Main republics={republics} currents={currents?.flatMap((family) => family.currents)} events={events} />
         </>

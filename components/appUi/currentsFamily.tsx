@@ -72,7 +72,7 @@ export default function CurrentsFamily({ family, onCurrentClick }: Props) {
 
     return (
         <>
-            <div className="flex gap-0">
+            <div className="flex last:*:-ml-[1px]">
                 <SettingsButton
                     number={familyNumber}
                     color={family.color}
@@ -91,7 +91,7 @@ export default function CurrentsFamily({ family, onCurrentClick }: Props) {
                         <EntityButton 
                             key={index} 
                             entity={current} 
-                            onClick={() => {onCurrentClick(current)}} 
+                            onClick={() => onCurrentClick(current)} 
                             isActive={visibleCurrents.some((visibleCurrent) => visibleCurrent.name === current.name)} 
                         />
                     ))}

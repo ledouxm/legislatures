@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 // These styles apply to every route in the application
 import './globals.css'
 import { VisibleCurrentsProvider } from '../components/utils/currentsContext'
+import { DetailsProvider } from '../components/utils/detailsContext'
  
 export const metadata: Metadata = {
   title: 'Chronoskratos',
@@ -16,9 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-        <body>
+        <body className='overscroll-none'>
             <VisibleCurrentsProvider>
-              {children}
+              <DetailsProvider>
+                {children}
+              </DetailsProvider>
             </VisibleCurrentsProvider>
         </body>
     </html>

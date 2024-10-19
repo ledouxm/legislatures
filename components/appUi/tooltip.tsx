@@ -6,9 +6,11 @@ import { useTooltipContext } from "../utils/tooltipContext";
 import EntityButton from "./entityButton";
 import Badge from "./badge";
 import PercentageButton from "./percentageButton";
+import { useDetailsContext } from "../utils/detailsContext";
 
 export default function Tooltip({ chartWidth, y, axisLeftPosition, xStart, xEnd, legislature, party }: TooltipContentType) {
     const { setTooltipContent } = useTooltipContext();
+    const { setDetailsContent } = useDetailsContext();
     const tooltipContent = { chartWidth, y, xStart, xEnd, legislature, party };
 
     // Get tooltip dimensions
@@ -75,13 +77,23 @@ export default function Tooltip({ chartWidth, y, axisLeftPosition, xStart, xEnd,
                             {legislature.legislature}
                         </div>
                     }
-                    {party.current && <Badge name={party.current.name} hex={(party.current.color)} />}
+                    {party.current && <Badge name={party.current.name} hex={(party.current.color)} onClick={() => setDetailsContent({entity : party.current})} />}
                 </div>
 
                 {/* Party name and percentage */}
                 <div className="flex gap-1.5 justify-between">
-                    <EntityButton entity={party} onClick={() => {}} isActive={true} />
-                    <PercentageButton percentage={partyPercentage} deputies={party.deputes} totalDeputies={legislature.total_deputes} isPercentage={isPercentage} onHover={handlePercentageClick} />
+                    <EntityButton 
+                        entity={party} 
+                        onClick={() => setDetailsContent({entity : party.current.parties.find(p => p.name === party.name), parent : party.current})} 
+                        isActive={true} 
+                    />
+                    <PercentageButton 
+                        percentage={partyPercentage} 
+                        deputies={party.deputes} 
+                        totalDeputies={legislature.total_deputes} 
+                        isPercentage={isPercentage} 
+                        onHover={handlePercentageClick} 
+                    />
                 </div>
 
                 {/* Coalition name and percentage */}

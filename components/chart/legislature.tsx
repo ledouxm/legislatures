@@ -70,6 +70,7 @@ export default function Legislature({ leg, nextLeg, minHeight, dimensions, first
                         : 0;
                     // Generate the height of the party from its duration and the minimum height
                     const height = nextLegStart / 2;
+                    // const height = (leg.duration * minHeight) / 2;
                     // Generate the x position of the party by summing the width of the previous parties
                     const partyX = i === 0 
                         ? 0 
@@ -138,7 +139,7 @@ export default function Legislature({ leg, nextLeg, minHeight, dimensions, first
                         <g
                             key={party.name}
                             className={`${leg.legislature}-${party.current?.name.toLowerCase().replace(/[^a-z]+/g, '')} ${party.deputes} ${partyWidth}`}
-                            onMouseEnter={() => setTooltipContent(tooltipContent)}
+                            onMouseEnter={() => partyWidth > 0 ? setTooltipContent(tooltipContent) : {}}
                             onMouseLeave={() => setTooltipContent(null)}
                         >
                             {/* Parties */}

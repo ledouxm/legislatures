@@ -7,4 +7,5 @@ export type PartyType = {
     deputes?: number;
     current?: CurrentType;
     coalition?: string;
+    persons?: string[];
 }

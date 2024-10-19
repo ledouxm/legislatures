@@ -10,6 +10,7 @@ import { FamilyType } from "../../types/family";
 import { TooltipProvider } from "../utils/tooltipContext";
 import { useState } from "react";
 import PercentageButton from "./percentageButton";
+import { useDetailsContext } from "../utils/detailsContext";
 
 type Props = {
     republics: RepublicType[];
@@ -20,10 +21,8 @@ type Props = {
 
 export default function Main({republics, currents, events}: Props) {
     const [axisLeftPercentage, setAxisLeftPercentage] = useState(20);
-    const [selectedEntity, setSelectedEntity] = useState<CurrentType | null>(null);
-    const [currentDescription, setCurrentDescription] = useState<string | null>(null);
-    const [currentImage, setCurrentImage] = useState<string | null>(null);
-    const [currentWiki, setCurrentWiki] = useState<string | null>(null);
+    const { detailsContent } = useDetailsContext();
+    const selectedEntity = detailsContent?.entity;
 
     return (
         <main 
@@ -51,21 +50,11 @@ export default function Main({republics, currents, events}: Props) {
                     </TooltipProvider>
                 )}
                 
-                {/* {selectedEntity && (
-                    <div className="w-full h-full flex justify-end items-end fixed top-0 left-0">
-                        <div className="sticky bottom-4">
-                                <EntityDetails
-                                    entity={selectedEntity}
-                                    description={currentDescription}
-                                    image={currentImage}
-                                    wiki={currentWiki}
-                                    parent={null}
-                                    onClick={() => {}}
-                                    onClose={() => {setSelectedEntity(null)}}
-                                />
-                        </div>
-                    </div>
-                )} */}
+                {selectedEntity && (
+                    <EntityDetails
+
+                    />
+                )}
             </div>
         </main>
     )

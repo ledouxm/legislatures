@@ -921,6 +921,90 @@
             {
               "name": "PPUS",
               "deputes": 0
+            },
+            {
+              "name": "PP",
+              "deputes": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VICHY",
+      "legislatures": [
+        {
+          "legislature": 1940,
+          "total_deputes": 1,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "PC-SFIC",
+              "deputes": 0
+            },
+            {
+              "name": "URP",
+              "deputes": 0
+            },
+            {
+              "name": "PUP",
+              "deputes": 0
+            },
+            {
+              "name": "RDA",
+              "deputes": 0
+            },
+            {
+              "name": "SFIO",
+              "deputes": 0
+            },
+            {
+              "name": "PSF ",
+              "deputes": 0
+            },
+            {
+              "name": "USR",
+              "deputes": 0
+            },
+            {
+              "name": "PRRS",
+              "deputes": 0
+            },
+            {
+              "name": "RGR",
+              "deputes": 0
+            },
+            {
+              "name": "Autres",
+              "deputes": 0
+            },
+            {
+              "name": "MIDFA",
+              "deputes": 0
+            },
+            {
+              "name": "PJR",
+              "deputes": 0
+            },
+            {
+              "name": "PDP",
+              "deputes": 0
+            },
+            {
+              "name": "AD",
+              "deputes": 0
+            },
+            {
+              "name": "FR",
+              "deputes": 0
+            },
+            {
+              "name": "PPUS",
+              "deputes": 0
+            },
+            {
+              "name": "PP",
+              "deputes": 1
             }
           ]
         }

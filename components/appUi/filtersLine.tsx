@@ -1,6 +1,6 @@
 "use client";
 
-import { EyeClosedIcon, MixerVerticalIcon, ReloadIcon, ShuffleIcon } from "@radix-ui/react-icons";
+import { MixerVerticalIcon, ReloadIcon, ShuffleIcon } from "@radix-ui/react-icons";
 import EntityButton from "./entityButton";
 import { CurrentType } from "../../types/current";
 import { useEffect, useRef, useState } from "react";
@@ -9,18 +9,18 @@ import CurrentsFamily from "./currentsFamily";
 import SettingsButton from "./settingsButton";
 import { useVisibleCurrentsContext } from "../utils/currentsContext";
 
-type Props = {
-    families: FamilyType[];
-    onFilterChange: (current: CurrentType) => void;
-}
-
-export default function FiltersLine({ families, onFilterChange }: Props) {
+export default function FiltersLine({ families }: { families: FamilyType[] }) {
     const scrollRef = useRef<HTMLDivElement>(null);
     const { visibleCurrents, setVisibleCurrents } = useVisibleCurrentsContext();
     const currents = families?.flatMap((family) => family.currents);
 
-    function handleClick(current) {
-        onFilterChange(current);
+    // On current click, add or remove it from visible currents
+    const handleFilterChange = (current: CurrentType) => {
+        if (visibleCurrents.some((c) => c.name === current.name)) {
+            setVisibleCurrents(visibleCurrents.filter((c) => c.name !== current.name));
+        } else {
+            setVisibleCurrents([...visibleCurrents, current]);
+        }
     }
 
     // Convert vertical scroll to horizontal scroll
@@ -46,7 +46,6 @@ export default function FiltersLine({ families, onFilterChange }: Props) {
             }
         };
     }, []);
-    
 
     return (
         <section className="w-full h-20 md:h-36 px-5 md:px-10 mb-3 md:mb-6 flex items-end max-w-screen-3xl mx-auto">
@@ -78,7 +77,7 @@ export default function FiltersLine({ families, onFilterChange }: Props) {
                             <CurrentsFamily 
                                 key={index} 
                                 family={family}
-                                onCurrentClick={handleClick}
+                                onCurrentClick={handleFilterChange}
                             />
                         )) : (
                             <span className="animate-pulse pointer-events-none">

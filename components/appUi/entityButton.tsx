@@ -4,9 +4,9 @@ export default function EntityButton({ entity, onClick, isActive }) {
 
     return (
         <button
-            className={`group flex gap-2 items-center max-w-full h-full text-black/50 hover:text-black bg-black/5 hover:bg-black/10 transition text-base text-nowrap 
+            className={`group flex gap-2 items-center max-w-full h-full text-black/60 hover:text-black bg-black/5 hover:bg-black/10 transition text-base text-nowrap 
                 ${isActive ? "" : "opacity-50"}
-                ${entity.full_name ? "px-1.5 rounded-md" : "px-3 rounded-full"}
+                ${entity.full_name ? "pl-1.5 pr-2 rounded-md" : "px-3 rounded-full"}
                 `}
             onClick={() => onClick(entity)}
         >
@@ -28,7 +28,7 @@ export default function EntityButton({ entity, onClick, isActive }) {
 
             <span className="flex items-center min-w-0">
                 {entity.full_name && (
-                    <span className="text-black/30 group-hover:text-black/50 all-small-caps mr-1 inline-flex h-full text-xs transition">
+                    <span className="text-black/35 group-hover:text-black/50 all-small-caps mr-1 inline-flex h-full text-xs transition">
                         {entity.name}
                     </span>                        
                 )}
@@ -41,7 +41,7 @@ export default function EntityButton({ entity, onClick, isActive }) {
                     }
                 </span>
             </span>
-            {entity.full_name && <InfoCircledIcon className="size-4 inline-block" />}
+            {/* {entity.full_name && <InfoCircledIcon className="size-4 min-w-4 inline-block" />} */}
         </button>
     )
 }

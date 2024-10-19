@@ -1,7 +1,7 @@
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 import hexToRgb from "../utils/hexToRgb"
 
-export default function Badge({ name, hex }: { name: string, hex: string }) {
+export default function Badge({ name, hex, onClick }: { name: string; hex: string; onClick?: () => void }) {
     const color = hexToRgb(hex);
 
     return (
@@ -21,9 +21,10 @@ export default function Badge({ name, hex }: { name: string, hex: string }) {
                     var(--tw-text-opacity)
                 )` 
             }}
+            onClick={onClick}
         >
             {name}
-            <InfoCircledIcon className="size-4 inline-block" />
+            {/* <InfoCircledIcon className="size-4 inline-block" /> */}
         </span>
     )
 }
