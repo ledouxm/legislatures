@@ -5,7 +5,7 @@ export default function Badge({ name, hex, onClick }: { name: string; hex: strin
     const color = hexToRgb(hex);
 
     return (
-        <span 
+        <button 
             className="bg-opacity-10 text-opacity-90 rounded-lg px-1.5 py-0.5 text-base font-normal cursor-pointer hover:bg-opacity-20 hover:text-opacity-100 hover:shadow-sm transition text-nowrap items-center flex gap-1.5"
             style={{ 
                 backgroundColor: `rgb(
@@ -18,13 +18,13 @@ export default function Badge({ name, hex, onClick }: { name: string; hex: strin
                 )`,
                 borderColor: `rgb(
                     ${color}, 
-                    var(--tw-text-opacity)
+                    var(--tw-border-opacity)
                 )` 
             }}
             onClick={onClick}
         >
             {name}
             {/* <InfoCircledIcon className="size-4 inline-block" /> */}
-        </span>
+        </button>
     )
 }

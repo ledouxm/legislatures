@@ -43,7 +43,7 @@ export default function CurrentsFamily({ family, onCurrentClick }: Props) {
 
     useEffect(() => {
       const mergeCurrents = () => {
-        const courantMap = {};
+        let courantMap = {};
   
         family.currents.forEach((courant) => {
             // Erase the spaces at the beginning and end of the name

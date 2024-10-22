@@ -2,14 +2,18 @@
 
 import { useEffect, useState } from "react";
 import FiltersLine from "../components/appUi/filtersLine";
-import { PartyType } from "../types/party";
 import Main from "../components/appUi/main";
 import { useVisibleCurrentsContext } from "../components/utils/currentsContext";
+import { FamilyType } from "../types/family";
+import { RepublicType } from "../types/republic";
+import { CurrentType } from "../types/current";
+import { EventType } from "../types/event";
 
 export default function HomePage() {
-    const [republics, setRepublics] = useState(null);
-    const [currents, setCurrents] = useState(null);
-    const [events, setEvents] = useState(null);
+    const [republics, setRepublics] = useState<RepublicType[] | null>(null);
+    const [currents, setCurrents] = useState<CurrentType[] | null>(null);
+    const [families, setFamilies] = useState<FamilyType[] | null>(null);
+    const [events, setEvents] = useState<EventType[] | null>(null);
     const { visibleCurrents, setVisibleCurrents } = useVisibleCurrentsContext();
 
     // Fetch the data
@@ -23,8 +27,9 @@ export default function HomePage() {
         fetch('/data/currents.json')
             .then((response) => response.json())
             .then((data) => {
-                setCurrents(data.families);
-                setVisibleCurrents(data.families.flatMap((family) => family.currents));
+                setFamilies(data.families);
+                setCurrents(data.families.flatMap((family: FamilyType) => family.currents));
+                setVisibleCurrents(data.families.flatMap((family: FamilyType) => family.currents));
             });
         
         // Fetch the events
@@ -53,9 +58,9 @@ export default function HomePage() {
                     </div>
                 </header> */}
                 <FiltersLine
-                    families={currents}
+                    families={families}
                 />
-                <Main republics={republics} currents={currents?.flatMap((family) => family.currents)} events={events} />
+                <Main republics={republics} currents={currents} events={events} />
         </>
     )
 } 

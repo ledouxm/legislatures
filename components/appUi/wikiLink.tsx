@@ -6,7 +6,7 @@ export default function WikiLink({ href }: { href: string }) {
         <Link
             href={href}
             target="_blank"
-            className="mt-1 text-sm small-caps group flex items-center gap-1 py-0.5 px-1.5 rounded-full border border-blue-200 text-blue-400 hover:bg-blue-50 hover:border-blue-500 hover:text-blue-500 shadow-sm hover:shadow-md transition"
+            className="mt-0.5 sm:mt-1 text-sm small-caps group flex items-center gap-1 py-0.5 px-1.5 rounded-full border border-blue-200 hover:border-blue-500 text-blue-400 hover:text-blue-500 hover:bg-blue-50 transition"
         >
             <ExternalLinkIcon
                 className="size-3.5 group-hover:scale-110 transition"

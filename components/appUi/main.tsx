@@ -26,7 +26,7 @@ export default function Main({republics, currents, events}: Props) {
 
     return (
         <main 
-            className="w-full max-w-screen-3xl mx-auto px-5 md:px-10 h-[calc(100vh-5.75rem)] md:h-[calc(100vh-10.5rem)]"
+            className="w-full max-w-screen-3xl mx-auto px-3 h-[calc(100dvh-5.75rem)] md:h-[calc(100dvh-10.5rem)]"
         >
             <div className="w-full h-full overflow-y-scroll no-scrollbar">
                 <div className="flex gap-2">
@@ -40,20 +40,29 @@ export default function Main({republics, currents, events}: Props) {
                         step={5}
                         onChange={(e) => setAxisLeftPercentage(Number(e.target.value))}
                     />
-                    <PercentageButton percentage={axisLeftPercentage} deputies={axisLeftPercentage} totalDeputies={50} onHover={() => { } } isPercentage={false} />
+                    <PercentageButton 
+                        percentage={axisLeftPercentage} 
+                        deputies={axisLeftPercentage} 
+                        totalDeputies={50} 
+                        onHover={() => {}} 
+                        isPercentage={false} 
+                    />
                 </div>
 
                 {/* Chart */}
                 {republics && currents && events && (
                     <TooltipProvider>
-                        <Chart republics={republics} currents={currents} events={events} axisLeftPercentage={axisLeftPercentage} />
+                        <Chart 
+                            republics={republics} 
+                            currents={currents} 
+                            events={events} 
+                            axisLeftPercentage={axisLeftPercentage} 
+                        />
                     </TooltipProvider>
                 )}
                 
                 {selectedEntity && (
-                    <EntityDetails
-
-                    />
+                    <EntityDetails/>
                 )}
             </div>
         </main>

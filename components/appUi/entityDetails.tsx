@@ -11,13 +11,7 @@ import { CurrentType } from "../../types/current";
 import { EventType } from "../../types/event";
 import { PartyType } from "../../types/party";
 import { useVisibleCurrentsContext } from "../utils/currentsContext";
-
-function truncateString(str: string, num: number) {
-    if (str.length <= num) {
-      return str
-    }
-    return str.slice(0, num) + '...'
-}
+import truncateString from "../utils/truncateString";
 
 export default function EntityDetails() {
     // Get the entity to display from the context
@@ -107,6 +101,22 @@ export default function EntityDetails() {
             window.removeEventListener("keydown", handleEscape);
         };
     }, [handleClose]);
+    // Close on click outside (when detailsContent is not null)
+    const detailsRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        const handleClickOutside = (e: MouseEvent) => {
+            if (detailsRef.current && !detailsRef.current.contains(e.target as Node)) {
+                handleClose();
+            }
+        };
+        if (detailsContent) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [detailsContent, handleClose]);
+ 
 
     // Open the details of the sub entity
     function onClick(subEntity: any, entity?: any) {
@@ -141,119 +151,128 @@ export default function EntityDetails() {
         };
     }, []);
 
+    // Get window width
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
-        <div className="fixed bottom-5 right-8 z-50 rounded-2xl shadow-md w-[28rem] bg-white p-3 flex flex-col gap-4">
-            {/* Buttons bar */}
-            <div className="flex justify-between w-full h-6">
-                {/* If current, add a button to display or hide it */}
-                {current 
-                    ? <div 
-                        className="size-6 bg-black/5 hover:bg-black/10 rounded-full flex items-center justify-center cursor-pointer text-black/50 hover:text-black transition-all"
-                        onClick={() => handleVisibility()}
+        <div className="fixed z-50 bg-black/25 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-0 top-0 bottom-0 left-0 right-0 sm:pointer-events-none p-2 sm:p-5 flex items-end justify-center sm:justify-start">
+            <div
+                ref={detailsRef}
+                className="rounded-2xl shadow-lg w-full sm:w-auto max-w-[28rem] bg-white p-2.5 sm:p-3 flex flex-col gap-2.5 sm:gap-4 border border-black/5 pointer-events-auto"
+            >
+                {/* Buttons bar */}
+                <div className="flex justify-between w-full">
+                    {/* If current, add a button to display or hide it */}
+                    {current
+                        ? <button
+                            className="size-8 bg-black/5 hover:bg-black/10 rounded-full flex items-center justify-center cursor-pointer text-black/50 hover:text-black transition-all"
+                            onClick={() => handleVisibility()}
+                        >
+                            {isVisible ?
+                                <EyeOpenIcon className="size-4" /> :
+                                <EyeClosedIcon className="size-4" />
+                            }
+                        </button>
+                        // If party, display the parent badge
+                        : party
+                            ? <Badge
+                                name={(parent as CurrentType).name}
+                                hex={(parent as CurrentType).color}
+                                onClick={() => onClick(parent)}
+                            />
+                            // If event, display nothing
+                            : event
+                                ? <div></div>
+                                : <div></div>
+                            // // If person, display the parent button
+                            // : <EntityButton
+                            //     entity={parent}
+                            //     onClick={() => {}}
+                            //     isActive={true}
+                            // />
+                    }
+                    <button
+                        className="size-8 bg-black/5 hover:bg-black/10 rounded-full flex items-center justify-center cursor-pointer text-black/50 hover:text-black transition-all"
+                        onClick={handleClose}
                     >
-                        {isVisible ? 
-                            <EyeOpenIcon className="size-3.5" /> :
-                            <EyeClosedIcon className="size-3.5" />
-                        }
-                    </div>
-                    // If party, display the parent badge
-                    : party
-                        ? <Badge
-                            name={(parent as CurrentType).name}
-                            hex={(parent as CurrentType).color}
-                            onClick={() => onClick(parent)}
-                        />
-                        // If event, display nothing
-                        : event 
-                            ? <div></div>
-                            : <div></div>
-                        // // If person, display the parent button
-                        // : <EntityButton
-                        //     entity={parent}
-                        //     onClick={() => {}}
-                        //     isActive={true}
-                        // />
-                }
-                <div 
-                    className="size-6 bg-black/5 hover:bg-black/10 rounded-full flex items-center justify-center cursor-pointer text-black/50 hover:text-black transition-all"
-                    onClick={handleClose}
-                >
-                    <Cross1Icon className="size-3.5" />
+                        <Cross1Icon className="size-4" />
+                    </button>
                 </div>
-            </div>
-
-            {/* Display image if present */}
-            {image && (
-                <Image
-                    src={image}
-                    alt={title}
-                    width={500}
-                    height={500}
-                    className="w-full relative object-cover object-[50%_25%] max-h-60 rounded-lg pointer-events-none shadow-sm"
-                />
-            )}
-
-            {/* Title and infos */}
-            <div className="flex flex-col gap-3 w-full">
-                <div className="flex flex-col gap-1 items-start">
-                    <h2 className="text-xl font-bold flex gap-2 items-center">
-
-                        {/* Display color if current */}
-                        {current && current.color && (
-                            <span className="relative flex size-3">
-                                <span
-                                    className="animate-ping absolute inline-flex size-full rounded-full opacity-75"
-                                    style={{ backgroundColor: current.color }}
-                                ></span>
-                                <span 
-                                    className="relative inline-flex size-3 rounded-full"
-                                    style={{ backgroundColor: current.color }}
-                                ></span>
-                            </span>
+                {/* Display image if present */}
+                {image && (
+                    <Image
+                        src={image}
+                        alt={title}
+                        width={500}
+                        height={500}
+                        className="w-full relative object-cover object-[50%_25%] max-h-60 rounded-lg pointer-events-none"
+                    />
+                )}
+                {/* Title and infos */}
+                <div className="flex flex-col gap-3 w-full">
+                    <div className="flex flex-col gap-1 items-start">
+                        <h2 className="text-lg sm:text-xl font-bold flex gap-2 items-center">
+                            {/* Display color if current */}
+                            {current && current.color && (
+                                <span className="relative flex size-2.5 sm:size-3">
+                                    <span
+                                        className={`absolute inline-flex size-full rounded-full transition-opacity ${isVisible ? "animate-ping opacity-75" : "opacity-0"}`}
+                                        style={{ backgroundColor: current.color }}
+                                    ></span>
+                                    <span
+                                        className={`relative inline-flex size-2.5 sm:size-3 rounded-full transition-opacity ${isVisible ? "" : "opacity-50"}`}
+                                        style={{ backgroundColor: current.color }}
+                                    ></span>
+                                </span>
+                            )}
+            
+                            {title}
+                        </h2>
+            
+                        <p className="text-gray-500 text-base leading-snug">
+                            {/* If small screens, truncate at 250, else 400 */}
+                            {description 
+                                ? truncateString(description, windowWidth < 640 ? 250 : 400) 
+                                : "Chargement…"
+                            }
+                        </p>
+                        {wikiLink && (
+                            <WikiLink href={wikiLink} />
                         )}
-                        
-                        {title}
-                    </h2>
-                    
-                    <p className="text-gray-500 text-base leading-snug">
-                        {/* If more than 500 characters, truncate */}
-                        {description ? truncateString(description, 400) : "Chargement…"}
-                    </p>
-
-                    {wikiLink && (
-                        <WikiLink href={wikiLink} />
-                    )}
-                </div>
-                
-                {subEntities && (
-                    <div className="flex flex-col gap-2">
+                    </div>
+            
+                    {/* Sub entities */}
+                    <div className={`flex flex-col gap-2 ${subEntities ? "block" : "hidden"}`}>
                         <h3 className="font-bold">
                             {current ?
-                                "Courants" :
+                                "Partis" :
                                 "Personnalités"
                             }
                         </h3>
-
-                        <ul 
+                        <ul
                             ref={detailsScrollRef}
                             className="w-full flex overflow-x-scroll gap-1.5 justify-start no-scrollbar"
                         >
-                            {subEntities.map((subEntity: PartyType | any, index: Key) => (
-                                <div 
-                                    className="w-4/6"
+                            {subEntities && subEntities.map((subEntity: PartyType | any, index: Key) => (
+                                <EntityButton
                                     key={index}
-                                >
-                                    <EntityButton
-                                        entity={subEntity}
-                                        onClick={() => onClick(subEntity, entity)}
-                                        isActive={true}
-                                    />
-                                </div>
+                                    entity={subEntity}
+                                    onClick={() => onClick(subEntity, entity)}
+                                    isActive={true}
+                                />
                             ))}
                         </ul>
                     </div>
-                )}
+                </div>
             </div>
         </div>
     )

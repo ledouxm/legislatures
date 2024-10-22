@@ -48,7 +48,7 @@ export default function FiltersLine({ families }: { families: FamilyType[] }) {
     }, []);
 
     return (
-        <section className="w-full h-20 md:h-36 px-5 md:px-10 mb-3 md:mb-6 flex items-end max-w-screen-3xl mx-auto">
+        <section className="w-full h-20 md:h-36 px-3 mb-3 md:mb-6 flex items-end max-w-screen-3xl mx-auto">
             <div className="w-full flex">
                 {/* List controls */}
                 <div className="flex gap-1 items-center h-8">

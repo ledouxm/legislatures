@@ -1,4 +1,5 @@
 import { InfoCircledIcon } from "@radix-ui/react-icons";
+import truncateString from "../utils/truncateString";
 
 export default function EntityButton({ entity, onClick, isActive }) {
 
@@ -6,7 +7,7 @@ export default function EntityButton({ entity, onClick, isActive }) {
         <button
             className={`group flex gap-2 items-center max-w-full h-full text-black/60 hover:text-black bg-black/5 hover:bg-black/10 transition text-base text-nowrap 
                 ${isActive ? "" : "opacity-50"}
-                ${entity.full_name ? "pl-1.5 pr-2 rounded-md" : "px-3 rounded-full"}
+                ${entity.full_name ? "px-1.5 rounded-md" : "px-3 rounded-full"}
                 `}
             onClick={() => onClick(entity)}
         >
@@ -34,9 +35,9 @@ export default function EntityButton({ entity, onClick, isActive }) {
                 )}
                 
                 {/* If party, display full name */}
-                <span className="truncate">
+                <span>
                     {entity.full_name ?
-                        entity.full_name :
+                        truncateString(entity.full_name, 35) :
                         entity.name
                     }
                 </span>

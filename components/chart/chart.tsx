@@ -114,7 +114,7 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
             </svg>
 
             {/* Bottom margin */}
-            <div className="sticky bottom-0 z-10 backdrop-blur bg-opacity-45 bg-gradient-to-t from-white via-white/50 to-transparent h-7">
+            <div className="sticky bottom-0 z-10 backdrop-blur-md bg-opacity-45 bg-gradient-to-t from-white via-white/50 to-transparent h-3">
             </div>
 
             {/* Tooltip */}

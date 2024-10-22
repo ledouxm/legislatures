@@ -68,20 +68,26 @@ export default function Tooltip({ chartWidth, y, axisLeftPosition, xStart, xEnd,
             onMouseEnter={() => setTooltipContent(tooltipContent)}
         >
             <div
-                className="p-2.5 rounded-xl flex flex-col gap-1.5 bg-white shadow-md z-50 border border-black/5"
+                className="py-1.5 px-[5px] rounded-xl flex flex-col gap-1.5 bg-white shadow-md z-50 border border-black/5"
             >
                 {/* Year and current name */}
-                <div className="flex gap-1.5 justify-start">
-                    {legislature && 
-                        <div className="py-1 px-2 rounded-full border border-black/20 border-dashed text-xs text-black/50 leading-none flex items-center">
+                <div className="flex gap-2 justify-start items-center">
+                    {/* {legislature && 
+                        <div className="py-0.5 px-1.5 rounded-full border border-black/20 border-dashed text-xs text-black/50 leading-none flex items-center">
                             {legislature.legislature}
                         </div>
+                    } */}
+                    {party.current && 
+                        <Badge 
+                            name={party.current.name} 
+                            hex={(party.current.color)} 
+                            onClick={() => setDetailsContent({entity : party.current})} 
+                        />
                     }
-                    {party.current && <Badge name={party.current.name} hex={(party.current.color)} onClick={() => setDetailsContent({entity : party.current})} />}
                 </div>
 
                 {/* Party name and percentage */}
-                <div className="flex gap-1.5 justify-between">
+                <div className="flex gap-2 justify-between items-center">
                     <EntityButton 
                         entity={party} 
                         onClick={() => setDetailsContent({entity : party.current.parties.find(p => p.name === party.name), parent : party.current})} 
@@ -99,18 +105,22 @@ export default function Tooltip({ chartWidth, y, axisLeftPosition, xStart, xEnd,
                 {/* Coalition name and percentage */}
                 {party.coalition && 
                     <div className="flex gap-2 justify-between">
-                        <div className="flex gap-1.5 items-center leading-none">
-                            <span className="text-black/35 pl-0.5">
-                                Coalition
+                        <div className="flex gap-1 items-center leading-none pl-0.5">
+                            <span 
+                                className="size-2 rounded-full inline-block mt-0.5 " 
+                                style={{ backgroundColor: mostImportantParty.current.color }}
+                            ></span>
+                            <span className="text-black/50">
+                                {party.coalition}
                             </span>
-                            <div className="flex gap-1 items-center">
-                                <span className="size-2 rounded-full inline-block" style={{ backgroundColor: mostImportantParty.current.color }}></span>
-                                <span className="text-black/50">
-                                    {party.coalition}
-                                </span>
-                            </div>
                         </div>
-                        <PercentageButton percentage={coalitionPercentage} deputies={coalitionTotalDeputies} totalDeputies={legislature.total_deputes} isPercentage={isPercentage} onHover={handlePercentageClick} />
+                        <PercentageButton 
+                            percentage={coalitionPercentage} 
+                            deputies={coalitionTotalDeputies} 
+                            totalDeputies={legislature.total_deputes} 
+                            isPercentage={isPercentage} 
+                            onHover={handlePercentageClick} 
+                        />
                     </div>
                 }
             </div>
