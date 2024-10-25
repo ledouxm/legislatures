@@ -11,6 +11,7 @@ import { TooltipProvider } from "../utils/tooltipContext";
 import { useState } from "react";
 import PercentageButton from "./percentageButton";
 import { useDetailsContext } from "../utils/detailsContext";
+import { useTransitionsContext } from "../utils/transitionsContext";
 
 type Props = {
     republics: RepublicType[];
@@ -20,16 +21,17 @@ type Props = {
 
 
 export default function Main({republics, currents, events}: Props) {
-    const [axisLeftPercentage, setAxisLeftPercentage] = useState(20);
+    const [axisLeftPercentage, setAxisLeftPercentage] = useState(10);
     const { detailsContent } = useDetailsContext();
     const selectedEntity = detailsContent?.entity;
+    const { transitionsVisibility, setTransitionsVisibility } = useTransitionsContext();
 
     return (
         <main 
             className="w-full max-w-screen-3xl mx-auto px-3 h-[calc(100dvh-5.75rem)] md:h-[calc(100dvh-10.5rem)]"
         >
             <div className="w-full h-full overflow-y-scroll no-scrollbar">
-                <div className="flex gap-2">
+                <div className="flex gap-2 absolute z-20">
                     <input
                         type="range"
                         name="axisLeft"
@@ -47,6 +49,11 @@ export default function Main({republics, currents, events}: Props) {
                         onHover={() => {}} 
                         isPercentage={false} 
                     />
+
+                    <div className="contents">
+                        <input type="checkbox" name="transitions" id="transitions-checkbox" onChange={() => setTransitionsVisibility(!transitionsVisibility)} checked={transitionsVisibility} />
+                        <label htmlFor="transitions-checkbox" className="text-sm">Transitions</label>
+                    </div>
                 </div>
 
                 {/* Chart */}

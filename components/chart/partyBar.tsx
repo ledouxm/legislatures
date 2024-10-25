@@ -20,7 +20,7 @@ export default function PartyBar({ party, y, height, minHeight, partyWidth, part
     const displayText = partyWidth > 30;
 
     // Display deputies if the party is tall enough
-    const displayDeputies = height > (minHeight / 2);
+    const displayDeputies = height > (28 / 2);
 
     const coalitionStrokeWidth = 0.5;
 
@@ -41,8 +41,8 @@ export default function PartyBar({ party, y, height, minHeight, partyWidth, part
                 height={height}
                 fill={party.current.color}
                 shapeRendering="crispEdges"
-                initial={{ width: partyWidth }}
-                animate={{ width: partyWidth }}
+                initial={{ width: partyWidth, height: height }}
+                animate={{ width: partyWidth, height: height }}
                 transition={{ duration: transitionDuration }}
             />
 

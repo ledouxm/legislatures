@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { VisibleCurrentsProvider } from '../components/utils/currentsContext'
 import { DetailsProvider } from '../components/utils/detailsContext'
+import { TransitionsProvider } from '../components/utils/transitionsContext'
  
 export const metadata: Metadata = {
   title: 'Chronoskratos',
@@ -20,7 +21,9 @@ export default function RootLayout({
         <body className='overscroll-none'>
             <VisibleCurrentsProvider>
               <DetailsProvider>
-                {children}
+                <TransitionsProvider>
+                  {children}
+                </TransitionsProvider>
               </DetailsProvider>
             </VisibleCurrentsProvider>
         </body>

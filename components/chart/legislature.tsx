@@ -7,6 +7,7 @@ import { useTooltipContext } from "../utils/tooltipContext";
 import { useVisibleCurrentsContext } from "../utils/currentsContext";
 import { CurrentType } from "../../types/current";
 import { motion } from "framer-motion";
+import { useTransitionsContext } from "../utils/transitionsContext";
 
 type LegislatureProps = {
     leg: LegislatureType;
@@ -52,8 +53,12 @@ export default function Legislature({ leg, nextLeg, minHeight, dimensions, first
     // Set the hovered party
     const { setTooltipContent } = useTooltipContext();
 
-    // Set the transition duration
+    // Set the motion transition duration
     const transitionDuration = 0.5;
+
+    // Toggle currents transition polygons visibility
+    const { transitionsVisibility } = useTransitionsContext();
+    const heightShare = transitionsVisibility ? 2 : 1;
 
     return (
         <>
@@ -69,7 +74,7 @@ export default function Legislature({ leg, nextLeg, minHeight, dimensions, first
                         ? (graphWidth * (party.deputes / filteredTotalDeputies)) || 0
                         : 0;
                     // Generate the height of the party from its duration and the minimum height
-                    const height = nextLegStart / 2;
+                    const height = nextLegStart / heightShare;
                     // const height = (leg.duration * minHeight) / 2;
                     // Generate the x position of the party by summing the width of the previous parties
                     const partyX = i === 0 
@@ -122,8 +127,8 @@ export default function Legislature({ leg, nextLeg, minHeight, dimensions, first
                     const polygonPoints = [
                         [partyX, y + height],
                         [(partyX + partyWidth), y + height],
-                        [(nextPartyX + nextPartyWidth), y + (height * 2)],
-                        [nextPartyX, y + (height * 2)],
+                        [(nextPartyX + nextPartyWidth), y + (height * heightShare)],
+                        [nextPartyX, y + (height * heightShare)],
                     ].map(point => point.join(",")).join(" ");
 
                     // Create tooltip content

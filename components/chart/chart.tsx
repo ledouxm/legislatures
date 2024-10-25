@@ -4,6 +4,7 @@ import { FamilyType } from "../../types/family";
 import { RepublicType } from "../../types/republic";
 import Tooltip from "../appUi/tooltip";
 import { useTooltipContext } from "../utils/tooltipContext";
+import { useTransitionsContext } from "../utils/transitionsContext";
 import useChartDimensions from "../utils/useChartDimensions";
 import Event from "./event";
 import Republic from "./republic";
@@ -33,9 +34,11 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
     const totalDuration = lastLegislature - firstLegislature;
 
     // Set the minimal height for a legislature (one year, in px)
-    const minHeight = 28;
+    const { transitionsVisibility } = useTransitionsContext();
+    const minHeight = transitionsVisibility ? 28 : 14;
+    
     // Calculate the height of the svg
-    const svgHeight = minHeight * totalDuration + minHeight + dimensions.marginBottom;
+    const svgHeight = minHeight * totalDuration + 28 + dimensions.marginBottom;
 
     // Set the position of the left and top axis
     // const axisLeftPercentage = 20; // Percentage
@@ -57,14 +60,14 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
             >
                 <svg
                     width={dimensions.width}
-                    height={minHeight}
+                    height={28}
                 >
                     <XAxis
                         domain={[0, 100]}
                         range={[0, dimensions.boundedWidth]}
                         axisLeftPosition={axisLeftPosition}
                         axisTopPosition={axisTopPosition}
-                        axisHeight={minHeight}
+                        axisHeight={28}
                     />
                 </svg>
             </div>
