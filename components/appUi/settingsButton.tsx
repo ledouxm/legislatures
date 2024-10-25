@@ -7,13 +7,15 @@ type SettingsButtonProps = {
     name?: string;
     onClick: () => void;
     isActive?: boolean;
+    label: string;
 }
 
 export default function SettingsButton({
-    Icon, flipIcon, number, color, name, onClick, isActive
+    Icon, flipIcon, number, color, name, onClick, isActive, label
 }: SettingsButtonProps) {
     return (
         <button 
+            aria-label={label}
             className={`group flex items-center justify-center rounded-full border border-black/10 hover:border-black/20 transition text-nowrap gap-2 select-none 
                 ${Icon && !name ? 
                     'size-8 flex-shrink-0' : 
@@ -28,14 +30,14 @@ export default function SettingsButton({
         >
             {(number || number === 0) &&
                 <span 
-                    className={`flex items-center justify-center  group-hover:bg-[var(--family-color)] transition rounded-full text-xs text-black/50 group-hover:text-white h-5 
+                    className={`flex items-center justify-center  group-hover:bg-[var(--family-color)] transition rounded-full text-xs group-hover:text-white h-5 
                         ${number <= 10 ? 
                             'w-5' : 
                             'px-1.5'
                         }
                         ${isActive ?
                             'bg-[var(--family-color)] text-white group-hover:bg-black/75'
-                            : 'bg-black/5'
+                            : 'bg-black/5 text-black/65'
                         }
                     `}
                     style={{ '--family-color': color } as React.CSSProperties}
@@ -47,7 +49,7 @@ export default function SettingsButton({
                 <Icon className={`size-4 ${flipIcon ? '-scale-x-100' : ''}`} />
             }
             {name && 
-                <span className="hidden sm:inline text-black/50 group-hover:text-black transition text-nowrap">
+                <span className="hidden sm:inline text-black/60 group-hover:text-black transition text-nowrap">
                     {name}
                 </span>
             }

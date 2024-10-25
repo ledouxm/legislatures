@@ -15,7 +15,7 @@ export default function PercentageButton({ percentage, deputies, totalDeputies, 
             onMouseEnter={onHover}
             onMouseLeave={onHover}
         >
-            <span className="text-black/50 group-hover/percentage:text-black transition">
+            <span className="text-black/65 group-hover/percentage:text-black transition">
                 {isFullPowers
                     ? "Plein pouvoirs"
                     : isPercentage
@@ -24,7 +24,7 @@ export default function PercentageButton({ percentage, deputies, totalDeputies, 
                 }
             </span>
             {!isFullPowers && 
-                <span className="text-black/40 sm:text-black/35 group-hover/percentage:text-black/50 transition">
+                <span className="text-black/45 group-hover/percentage:text-black/50 transition">
                     {isPercentage
                         ? "\u202F%"
                         : "/" + totalDeputies

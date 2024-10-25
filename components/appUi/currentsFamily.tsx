@@ -79,22 +79,28 @@ export default function CurrentsFamily({ family, onCurrentClick }: Props) {
                     name={family.name}
                     onClick={() => {setIsActive(!isActive)}}
                     isActive={isActive}
+                    label={`${isActive ? "Masquer" : "Afficher"} la liste des courants : ${family.name}`}
                 />
                 <SettingsButton
                     Icon={isFamilyVisible ? EyeOpenIcon : EyeClosedIcon}
                     onClick={() => toggleFullFamily()}
+                    label={`${isFamilyVisible ? "Masquer" : "Afficher"} tous les courants : ${family.name}`}
                 />
             </div>
             {isActive &&
                 <>
-                    {mergedCurrents.map((current, index) => (
-                        <EntityButton 
-                            key={index} 
-                            entity={current} 
-                            onClick={() => onCurrentClick(current)} 
-                            isActive={visibleCurrents.some((visibleCurrent) => visibleCurrent.name === current.name)} 
-                        />
-                    ))}
+                    {mergedCurrents.map((current, index) => {
+                        const isCurrentVisible = visibleCurrents.some((visibleCurrent) => visibleCurrent.name === current.name);
+                        return (
+                            <EntityButton 
+                                key={index} 
+                                entity={current} 
+                                onClick={() => onCurrentClick(current)} 
+                                isActive={isCurrentVisible} 
+                                label={`${isCurrentVisible ? "Masquer" : "Afficher"} le courant : ${current.name}`}
+                            />
+                        );
+                    })}
                 </>
             }
         </>

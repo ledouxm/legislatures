@@ -53,18 +53,33 @@ export default function FiltersLine({ families }: { families: FamilyType[] }) {
                 {/* List controls */}
                 <div className="flex gap-1 items-center h-8">
                     {/* Settings button */}
-                    <SettingsButton Icon={MixerVerticalIcon} onClick={() => {}} />
+                    <SettingsButton 
+                        Icon={MixerVerticalIcon} 
+                        onClick={() => {}} 
+                        label="Paramétrer la visualisation"
+                    />
 
                     {/* Shuffle button */}
-                    <SettingsButton Icon={ShuffleIcon} onClick={() => {
-                        const shuffledCurrents = currents.sort(() => 0.5 - Math.random());
-                        const randomCurrents = shuffledCurrents.slice(0, Math.floor(Math.random() * currents.length) + 1);
-                        setVisibleCurrents(randomCurrents);
-                    }} />
+                    <SettingsButton 
+                        Icon={ShuffleIcon} 
+                        onClick={() => {
+                            const shuffledCurrents = currents.sort(() => 0.5 - Math.random());
+                            const randomCurrents = shuffledCurrents.slice(0, Math.floor(Math.random() * currents.length) + 1);
+                            setVisibleCurrents(randomCurrents);
+                        }} 
+                        label="Afficher des courants aléatoires"
+                    />
 
                     {/* Show reset button when currents are filtered */}
                     {visibleCurrents?.length !== currents?.length && 
-                        <SettingsButton Icon={ReloadIcon} flipIcon={true} onClick={() => setVisibleCurrents(currents)} />
+                        <SettingsButton 
+                            Icon={ReloadIcon} 
+                            flipIcon={true} 
+                            onClick={() => 
+                                setVisibleCurrents(currents)
+                            } 
+                            label="Réinitialiser les courants affichés"
+                        />
                     }
                 </div>
 
@@ -85,6 +100,7 @@ export default function FiltersLine({ families }: { families: FamilyType[] }) {
                                     entity={{name: "Chargement..."}}
                                     onClick={() => {}}
                                     isActive={true}
+                                    label="Chargement..."
                                 />
                             </span>
                         )}

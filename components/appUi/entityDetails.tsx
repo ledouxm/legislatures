@@ -174,6 +174,8 @@ export default function EntityDetails() {
                     {/* If current, add a button to display or hide it */}
                     {current
                         ? <button
+                            id="visibility-button"
+                            aria-label="Current visibility button"
                             className="size-8 bg-black/5 hover:bg-black/10 rounded-full flex items-center justify-center cursor-pointer text-black/50 hover:text-black transition-all"
                             onClick={() => handleVisibility()}
                         >
@@ -201,6 +203,8 @@ export default function EntityDetails() {
                             // />
                     }
                     <button
+                        id="close-button"
+                        aria-label="Close button"
                         className="size-8 bg-black/5 hover:bg-black/10 rounded-full flex items-center justify-center cursor-pointer text-black/50 hover:text-black transition-all"
                         onClick={handleClose}
                     >
@@ -268,6 +272,7 @@ export default function EntityDetails() {
                                     entity={subEntity}
                                     onClick={() => onClick(subEntity, entity)}
                                     isActive={true}
+                                    label={`${subEntity.full_name || subEntity.name}, détails`}
                                 />
                             ))}
                         </ul>

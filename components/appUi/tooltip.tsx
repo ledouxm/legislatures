@@ -101,6 +101,7 @@ export default function Tooltip({ chartWidth, y, axisLeftPosition, xStart, xEnd,
                         entity={party} 
                         onClick={() => setDetailsContent({entity : party.current.parties.find(p => p.name === party.name), parent : party.current})} 
                         isActive={true} 
+                        label={`${party.name}, détails`}
                     />
                     <PercentageButton 
                         percentage={partyPercentage} 

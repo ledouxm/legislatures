@@ -1,9 +1,10 @@
 import truncateString from "../utils/truncateString";
 
-export default function EntityButton({ entity, onClick, isActive }) {
+export default function EntityButton({ entity, onClick, isActive, label }) {
 
     return (
         <button
+            aria-label={label}
             className={`group flex gap-2 items-center max-w-full h-full text-black/60 sm:hover:text-black bg-black/5 sm:hover:bg-black/10 transition text-sm sm:text-base text-nowrap py-1 sm:py-0.5
                 ${isActive ? "" : "opacity-50"}
                 ${entity.full_name ? "px-1.5 rounded-md" : "px-3 rounded-full"}
