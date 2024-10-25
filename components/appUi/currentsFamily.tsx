@@ -72,7 +72,7 @@ export default function CurrentsFamily({ family, onCurrentClick }: Props) {
 
     return (
         <>
-            <div className="flex last:*:-ml-[1px]">
+            <div className="flex last:*:-ml-px">
                 <SettingsButton
                     number={familyNumber}
                     color={family.color}

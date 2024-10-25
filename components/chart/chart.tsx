@@ -48,7 +48,7 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
     return (
         <div 
             ref={ref} 
-            className="w-full relative"
+            className="w-full relative overflow-visible"
             style={{ height: svgHeight + minHeight }}
         >
             {/* X Axis and top margin */}

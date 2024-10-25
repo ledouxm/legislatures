@@ -47,7 +47,7 @@ export default function SettingsButton({
                 <Icon className={`size-4 ${flipIcon ? '-scale-x-100' : ''}`} />
             }
             {name && 
-                <span className="hidden sm:inline text-black/50 group-hover:text-black transition">
+                <span className="hidden sm:inline text-black/50 group-hover:text-black transition text-nowrap">
                     {name}
                 </span>
             }

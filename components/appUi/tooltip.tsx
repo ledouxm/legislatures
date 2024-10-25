@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import { TooltipContentType } from "../../types/tooltipContent";
 import { useTooltipContext } from "../utils/tooltipContext";
 import EntityButton from "./entityButton";
@@ -61,6 +61,15 @@ export default function Tooltip({ chartWidth, y, axisLeftPosition, xStart, xEnd,
     const [isPercentage, setIsPercentage] = useState(true);
     const handlePercentageClick = () => setIsPercentage(!isPercentage);
 
+    // Set the width of the coalition name
+    const partyLineRef = useRef<HTMLDivElement | null>(null);
+    const [coalitionMaxWidth, setCoalitionMaxWidth] = useState(0);
+    useEffect(() => {
+        if (partyLineRef.current) {
+            setCoalitionMaxWidth(partyLineRef.current.offsetWidth);
+        }
+    }, [party, party.coalition]);
+
     return (
         <div
             ref={tooltipRef}
@@ -87,7 +96,7 @@ export default function Tooltip({ chartWidth, y, axisLeftPosition, xStart, xEnd,
                 </div>
 
                 {/* Party name and percentage */}
-                <div className="flex gap-2 justify-between items-center">
+                <div ref={partyLineRef} className="flex gap-2 justify-between items-center w-min sm:w-auto">
                     <EntityButton 
                         entity={party} 
                         onClick={() => setDetailsContent({entity : party.current.parties.find(p => p.name === party.name), parent : party.current})} 
@@ -104,13 +113,18 @@ export default function Tooltip({ chartWidth, y, axisLeftPosition, xStart, xEnd,
 
                 {/* Coalition name and percentage */}
                 {party.coalition && 
-                    <div className="flex gap-2 justify-between">
-                        <div className="flex gap-1 items-center leading-none pl-0.5">
+                    <div 
+                        className="flex gap-2 justify-between items-center sm:!max-w-none"
+                        style={{ maxWidth: coalitionMaxWidth }}
+                    >
+                        <div className="flex gap-1.5 items-center pl-0.5">
                             <span 
-                                className="size-2 rounded-full inline-block mt-0.5 " 
+                                className="size-2 rounded-full inline-block mt-0.5 shrink-0" 
                                 style={{ backgroundColor: mostImportantParty.current.color }}
                             ></span>
-                            <span className="text-black/50">
+                            <span 
+                                className="text-sm sm:text-base text-black/50 leading-none inline sm:text-nowrap"
+                            >
                                 {party.coalition}
                             </span>
                         </div>

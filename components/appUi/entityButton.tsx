@@ -1,11 +1,10 @@
-import { InfoCircledIcon } from "@radix-ui/react-icons";
 import truncateString from "../utils/truncateString";
 
 export default function EntityButton({ entity, onClick, isActive }) {
 
     return (
         <button
-            className={`group flex gap-2 items-center max-w-full h-full text-black/60 hover:text-black bg-black/5 hover:bg-black/10 transition text-base text-nowrap 
+            className={`group flex gap-2 items-center max-w-full h-full text-black/60 sm:hover:text-black bg-black/5 sm:hover:bg-black/10 transition text-sm sm:text-base text-nowrap py-1 sm:py-0.5
                 ${isActive ? "" : "opacity-50"}
                 ${entity.full_name ? "px-1.5 rounded-md" : "px-3 rounded-full"}
                 `}
@@ -29,15 +28,15 @@ export default function EntityButton({ entity, onClick, isActive }) {
 
             <span className="flex items-center min-w-0">
                 {entity.full_name && (
-                    <span className="text-black/35 group-hover:text-black/50 all-small-caps mr-1 inline-flex h-full text-xs transition">
+                    <span className="text-black/40 sm:text-black/35 group-hover:text-black/50 all-small-caps mr-1 inline-flex h-full text-xs transition text-nowrap">
                         {entity.name}
                     </span>                        
                 )}
                 
                 {/* If party, display full name */}
-                <span>
+                <span className="text-nowrap">
                     {entity.full_name ?
-                        truncateString(entity.full_name, 35) :
+                        truncateString(entity.full_name, 30) :
                         entity.name
                     }
                 </span>
