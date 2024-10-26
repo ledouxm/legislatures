@@ -7,19 +7,21 @@ interface Props {
     domain?: [number, number];
     range?: [number, number];
     axisLeftPosition?: number;
-    axisTopPosition?: number;
     axisHeight?: number;
+    axisRevert?: boolean;
 }
 
 export default function XAxis({
     domain = [0, 100],
     range = [0, 300],
     axisLeftPosition = 0,
-    axisTopPosition = 0,
-    axisHeight = 24
+    axisHeight = 28,
+    axisRevert = false
 }: Props) {
     const tickSize = 6;
-    const tickTop = axisHeight - tickSize - 0.5; // 0.5 is half of the stroke width
+    const tickTop = axisRevert
+        ? tickSize + 0.5
+        : axisHeight - tickSize - 0.5; // 0.5 is half of the stroke width
 
     const ticks = useMemo(() => {
         const adjustedRange = [axisLeftPosition!, range[1]];
@@ -37,16 +39,28 @@ export default function XAxis({
 
     return (
         <>
+            {/* Line */}
             <path
-                d={[
-                    "M", axisLeftPosition, tickTop,
-                    "v", tickSize,
-                    "H", range[1],
-                    "v", -tickSize,
-                ].join(" ")}
+                d={axisRevert 
+                    ? [
+                        // Bottom axis
+                        "M", axisLeftPosition, tickTop,  // Bottom left
+                        "v", -tickSize,                     // Up
+                        "H", range[1],                      // Right
+                        "v", tickSize,                      // Down
+                    ].join(" ") 
+                    : [
+                        // Top axis
+                        "M", axisLeftPosition, tickTop, // Top left
+                        "v", tickSize,                  // Down
+                        "H", range[1],                  // Right
+                        "v", -tickSize,                 // Up
+                    ].join(" ")}
                 fill="none"
                 stroke="currentColor"
             />
+                
+            {/* Ticks */}
             {ticks.map(({ value, xOffset }) => (
                 <g
                     key={value}
@@ -54,7 +68,10 @@ export default function XAxis({
                 >
                     <line
                         y1={tickTop}
-                        y2={axisHeight}
+                        y2={axisRevert
+                            ? tickTop - tickSize
+                            : axisHeight
+                        }
                         stroke="currentColor"
                     />
                     <text

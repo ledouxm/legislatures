@@ -8,18 +8,14 @@ import { motion } from "framer-motion";
 interface Props {
     domain?: [number, number];
     range?: [number, number];
-    frameWidth?: number;
     axisLeftPosition?: number;
-    axisTopPosition?: number;
     legislatures: LegislatureType[];
 }
 
 export default function YAxis({
     domain = [1792, 2024],
     range = [0, 300],
-    frameWidth = 300,
     axisLeftPosition = 0,
-    axisTopPosition = 0,
     legislatures
 }: Props) {    
     const ticks = useMemo(() => {

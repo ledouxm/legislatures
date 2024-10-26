@@ -9,7 +9,7 @@ import CurrentsFamily from "./currentsFamily";
 import SettingsButton from "./settingsButton";
 import { useVisibleCurrentsContext } from "../utils/currentsContext";
 
-export default function FiltersLine({ families }: { families: FamilyType[] }) {
+export default function FiltersLine({ families, setSettingsVisibility }: { families: FamilyType[]; setSettingsVisibility: () => void }) {
     const scrollRef = useRef<HTMLDivElement>(null);
     const { visibleCurrents, setVisibleCurrents } = useVisibleCurrentsContext();
     const currents = families?.flatMap((family) => family.currents);
@@ -55,7 +55,7 @@ export default function FiltersLine({ families }: { families: FamilyType[] }) {
                     {/* Settings button */}
                     <SettingsButton 
                         Icon={MixerVerticalIcon} 
-                        onClick={() => {}} 
+                        onClick={() => setSettingsVisibility()} 
                         label="Paramétrer la visualisation"
                     />
 

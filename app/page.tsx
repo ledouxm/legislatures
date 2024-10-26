@@ -15,6 +15,7 @@ export default function HomePage() {
     const [families, setFamilies] = useState<FamilyType[] | null>(null);
     const [events, setEvents] = useState<EventType[] | null>(null);
     const { visibleCurrents, setVisibleCurrents } = useVisibleCurrentsContext();
+    const [settingsVisibility, setSettingsVisibility] = useState(false);
 
     // Fetch the data
     useEffect(() => {
@@ -59,8 +60,14 @@ export default function HomePage() {
                 </header> */}
                 <FiltersLine
                     families={families}
+                    setSettingsVisibility={() => setSettingsVisibility(!settingsVisibility)}
                 />
-                <Main republics={republics} currents={currents} events={events} />
+                <Main 
+                    republics={republics} 
+                    currents={currents} 
+                    events={events} 
+                    settingsVisibility={settingsVisibility} 
+                />
         </>
     )
 } 

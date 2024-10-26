@@ -33,17 +33,19 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
     const lastLegislature = republics[republics.length - 1].legislatures[republics[republics.length - 1].legislatures.length - 1].legislature;
     const totalDuration = lastLegislature - firstLegislature;
 
+    // Set the reference height for the chart
+    const referenceSize = 28;
+
     // Set the minimal height for a legislature (one year, in px)
     const { transitionsVisibility } = useTransitionsContext();
-    const minHeight = transitionsVisibility ? 28 : 14;
+    const minHeight = transitionsVisibility ? referenceSize : referenceSize / 2;
     
     // Calculate the height of the svg
-    const svgHeight = minHeight * totalDuration + 28 + dimensions.marginBottom;
+    const svgHeight = minHeight * totalDuration + referenceSize + dimensions.marginBottom;
 
     // Set the position of the left and top axis
     // const axisLeftPercentage = 20; // Percentage
     const axisLeftPosition = dimensions.boundedWidth * (axisLeftPercentage / 100); // Pixels
-    const axisTopPosition = 20; // Pixels
 
     // Get the tooltip party
     const { tooltipContent, setTooltipContent } = useTooltipContext();
@@ -60,14 +62,13 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
             >
                 <svg
                     width={dimensions.width}
-                    height={28}
+                    height={referenceSize}
                 >
                     <XAxis
                         domain={[0, 100]}
                         range={[0, dimensions.boundedWidth]}
                         axisLeftPosition={axisLeftPosition}
-                        axisTopPosition={axisTopPosition}
-                        axisHeight={28}
+                        axisHeight={referenceSize}
                     />
                 </svg>
             </div>
@@ -112,12 +113,24 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
                     range={[0, (totalDuration) * minHeight]}
                     legislatures={republics.map(republic => republic.legislatures).flat()}
                     axisLeftPosition={axisLeftPosition}
-                    axisTopPosition={axisTopPosition}
                 />
             </svg>
 
             {/* Bottom margin */}
-            <div className="sticky bottom-0 z-10 backdrop-blur-md bg-opacity-45 bg-gradient-to-t from-white via-white/50 to-transparent h-3">
+            <div className="sticky bottom-0 z-10 backdrop-blur bg-opacity-45 bg-gradient-to-t from-white via-white/50 to-transparent">
+                <svg
+                    width={dimensions.width}
+                    height={referenceSize}
+                >
+                    <XAxis
+                        domain={[0, 100]}
+                        range={[0, dimensions.boundedWidth]}
+                        axisLeftPosition={axisLeftPosition}
+                        axisHeight={referenceSize}
+                        axisRevert={true}
+                    />
+                </svg>
+
             </div>
 
             {/* Tooltip */}

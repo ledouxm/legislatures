@@ -17,10 +17,11 @@ type Props = {
     republics: RepublicType[];
     currents: CurrentType[];
     events: EventType[];
+    settingsVisibility: boolean;
 }
 
 
-export default function Main({republics, currents, events}: Props) {
+export default function Main({republics, currents, events, settingsVisibility}: Props) {
     const [axisLeftPercentage, setAxisLeftPercentage] = useState(10);
     const { detailsContent } = useDetailsContext();
     const selectedEntity = detailsContent?.entity;
@@ -31,7 +32,7 @@ export default function Main({republics, currents, events}: Props) {
             className="w-full max-w-screen-3xl mx-auto px-3 h-[calc(100dvh-5.75rem)] md:h-[calc(100dvh-10.5rem)]"
         >
             <div className="w-full h-full overflow-y-scroll no-scrollbar">
-                <div className="flex gap-2 absolute z-20">
+                <div className={`${settingsVisibility ? "flex" : "hidden"} gap-2 absolute z-20 bg-white bg-opacity-35 backdrop-blur mt-1 px-2.5 py-1.5 rounded-lg border border-black/10`}>
                     <input
                         type="range"
                         name="axisLeft"
