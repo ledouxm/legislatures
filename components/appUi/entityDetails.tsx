@@ -176,7 +176,7 @@ export default function EntityDetails() {
                         ? <button
                             id="visibility-button"
                             aria-label="Current visibility button"
-                            className="size-8 bg-black/5 hover:bg-black/10 rounded-full flex items-center justify-center cursor-pointer text-black/50 hover:text-black transition-all"
+                            className="size-9 bg-black/5 hover:bg-black/10 rounded-full flex items-center justify-center cursor-pointer text-black/50 hover:text-black transition-all"
                             onClick={() => handleVisibility()}
                         >
                             {isVisible ?
@@ -205,7 +205,7 @@ export default function EntityDetails() {
                     <button
                         id="close-button"
                         aria-label="Close button"
-                        className="size-8 bg-black/5 hover:bg-black/10 rounded-full flex items-center justify-center cursor-pointer text-black/50 hover:text-black transition-all"
+                        className="size-9 bg-black/5 hover:bg-black/10 rounded-full flex items-center justify-center cursor-pointer text-black/50 hover:text-black transition-all"
                         onClick={handleClose}
                     >
                         <Cross1Icon className="size-4" />

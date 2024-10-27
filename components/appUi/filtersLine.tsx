@@ -51,7 +51,7 @@ export default function FiltersLine({ families, setSettingsVisibility }: { famil
         <section className="w-full h-20 md:h-36 px-3 mb-3 md:mb-6 flex items-end max-w-screen-3xl mx-auto">
             <div className="w-full flex">
                 {/* List controls */}
-                <div className="flex gap-1 items-center h-8">
+                <div className="flex gap-1 items-center">
                     {/* Settings button */}
                     <SettingsButton 
                         Icon={MixerVerticalIcon} 
