@@ -1,6 +1,4 @@
-"use client";
-
-import { HeightIcon } from "@radix-ui/react-icons";
+import { HeightIcon, PinLeftIcon } from "@radix-ui/react-icons";
 import SettingsButton from "./settingsButton";
 import { useTransitionsContext } from "../utils/transitionsContext";
 
@@ -13,15 +11,27 @@ function HideTransitionsIcon() {
     );
 }
 
-export default function SettingsLine() {
+type Props = {
+    eventVisibility: boolean;
+    setEventVisibility: (eventVisibility: boolean) => void;
+}
+
+export default function SettingsLine({ eventVisibility, setEventVisibility }: Props) {
     const { transitionsVisibility, setTransitionsVisibility } = useTransitionsContext();
 
     return (
         <section className="w-full p-2 flex items-end max-w-screen-3xl mx-auto">
             <div className="w-full flex">
                 <div className="flex gap-1 items-center">
-                    {/* Settings button */}
+                    {/* Events button */}
+                    <SettingsButton
+                        Icon={PinLeftIcon}
+                        onClick={() => setEventVisibility(!eventVisibility)}
+                        label={eventVisibility ? "Masquer les événements" : "Afficher les événements"}
+                        flipIcon={eventVisibility ? true : false}
+                    />
                     
+                    {/* Transition polygons button */}
                     <SettingsButton 
                         Icon={transitionsVisibility ? HideTransitionsIcon : HeightIcon} 
                         onClick={() => setTransitionsVisibility(!transitionsVisibility)}

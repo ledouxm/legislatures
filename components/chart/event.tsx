@@ -15,7 +15,7 @@ export default function Event({event, axisLeftPosition, minHeight, firstLegislat
     const y = (beginDate - firstLegislature) * minHeight;
     const height = ((endDate - beginDate) * minHeight) || minHeight;
 
-    const textStart = 24;
+    const textStart = 8;
 
     const transitionDuration = 0.5;
 
@@ -67,6 +67,7 @@ export default function Event({event, axisLeftPosition, minHeight, firstLegislat
                 fill="currentColor"
                 opacity={0.5}
                 fontSize={10}
+                className="translate-x-0 sm:translate-x-5"
             >
                 {endDate !== beginDate ? `${beginDate} → ${endDate}` : beginDate}
             </text>
@@ -75,7 +76,7 @@ export default function Event({event, axisLeftPosition, minHeight, firstLegislat
             <text
                 x={endDate !== beginDate
                     ? textStart
-                    : textStart + 30
+                    : textStart + 26.5
                 }
                 y={endDate !== beginDate
                     ? 21
@@ -84,6 +85,7 @@ export default function Event({event, axisLeftPosition, minHeight, firstLegislat
                 textAnchor="left"
                 fill="currentColor"
                 fontSize={10}
+                className="translate-x-0 sm:translate-x-5"
             >
                 {event.title}
             </text>

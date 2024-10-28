@@ -11,11 +11,11 @@ export default function PercentageButton({ percentage, deputies, totalDeputies, 
     const isFullPowers = percentage === 100;
     return (
         <div 
-            className="flex items-center py-1 sm:py-0.5 px-1.5 rounded-full bg-black/5 hover:bg-black/10 text-xs group/percentage cursor-default transition"
+            className="flex items-center py-1 sm:py-0.5 px-1.5 rounded-full bg-black/5 text-xs cursor-default"
             onMouseEnter={onHover}
             onMouseLeave={onHover}
         >
-            <span className="text-black/65 group-hover/percentage:text-black transition text-nowrap">
+            <span className="text-black/65 text-nowrap">
                 {isFullPowers
                     ? "Plein pouvoirs"
                     : isPercentage
@@ -24,7 +24,7 @@ export default function PercentageButton({ percentage, deputies, totalDeputies, 
                 }
             </span>
             {!isFullPowers && 
-                <span className="text-black/45 group-hover/percentage:text-black/50 transition">
+                <span className="text-black/45">
                     {isPercentage
                         ? "\u202F%"
                         : "/" + totalDeputies

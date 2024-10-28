@@ -8,8 +8,6 @@ import { FamilyType } from "../types/family";
 import { RepublicType } from "../types/republic";
 import { CurrentType } from "../types/current";
 import { EventType } from "../types/event";
-import SettingsButton from "../components/appUi/settingsButton";
-import { MixerVerticalIcon } from "@radix-ui/react-icons";
 import SettingsLine from "../components/appUi/settingsLine";
 
 export default function HomePage() {
@@ -18,7 +16,7 @@ export default function HomePage() {
     const [families, setFamilies] = useState<FamilyType[] | null>(null);
     const [events, setEvents] = useState<EventType[] | null>(null);
     const { visibleCurrents, setVisibleCurrents } = useVisibleCurrentsContext();
-    const [settingsVisibility, setSettingsVisibility] = useState(false);
+    const [axisLeftPercentage, setAxisLeftPercentage] = useState(10);
 
     // Fetch the data
     useEffect(() => {
@@ -70,14 +68,16 @@ export default function HomePage() {
                     />
                 </div> */}
 
-                <SettingsLine />
+                <SettingsLine
+                    eventVisibility={axisLeftPercentage === 10 ? false : true}
+                    setEventVisibility={() => setAxisLeftPercentage(axisLeftPercentage === 10 ? 50 : 10)}
+                />
 
                 <Main 
                     republics={republics} 
                     currents={currents} 
-                    events={events} 
-                    settingsVisibility={settingsVisibility} 
-                    setSettingsVisibility={() => setSettingsVisibility(false)}
+                    events={events}
+                    axisLeftPercentage={axisLeftPercentage}
                 />
                 <FiltersLine
                     families={families}
