@@ -8,6 +8,9 @@ import { FamilyType } from "../types/family";
 import { RepublicType } from "../types/republic";
 import { CurrentType } from "../types/current";
 import { EventType } from "../types/event";
+import SettingsButton from "../components/appUi/settingsButton";
+import { MixerVerticalIcon } from "@radix-ui/react-icons";
+import SettingsLine from "../components/appUi/settingsLine";
 
 export default function HomePage() {
     const [republics, setRepublics] = useState<RepublicType[] | null>(null);
@@ -58,16 +61,28 @@ export default function HomePage() {
                         </button>
                     </div>
                 </header> */}
-                <FiltersLine
-                    families={families}
-                    setSettingsVisibility={() => setSettingsVisibility(!settingsVisibility)}
-                />
+
+                {/* <div className="fixed z-20 p-2">
+                    <SettingsButton
+                        Icon={MixerVerticalIcon}
+                        onClick={() => setSettingsVisibility(!settingsVisibility)}
+                        label="Paramétrer la visualisation"
+                    />
+                </div> */}
+
+                <SettingsLine />
+
                 <Main 
                     republics={republics} 
                     currents={currents} 
                     events={events} 
                     settingsVisibility={settingsVisibility} 
+                    setSettingsVisibility={() => setSettingsVisibility(false)}
                 />
+                <FiltersLine
+                    families={families}
+                    // setSettingsVisibility={() => setSettingsVisibility(!settingsVisibility)}
+                />                
         </>
     )
 } 

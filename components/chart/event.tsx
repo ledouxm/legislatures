@@ -1,50 +1,72 @@
-export default function Event({event, axisLeftPosition, minHeight, firstLegislature}) {
+import { motion } from "framer-motion";
+import { EventType } from "../../types/event";
+
+type Props = {
+    event: EventType;
+    axisLeftPosition: number;
+    minHeight: number;
+    firstLegislature: number;
+}
+
+export default function Event({event, axisLeftPosition, minHeight, firstLegislature}: Props) {
     const beginDate = new Date(event.begin).getFullYear();
     const endDate = new Date(event.end).getFullYear();
-    
-    // if axisLeftPosition is 50 or less opacity is 0, if axisLeftPosition is minWidth opacity is 1, between 0 and minWidth opacity is linear
-    const minWidth = 150;
-    const opacity = Math.min(1, Math.max(0, (axisLeftPosition - 50) / (minWidth - 50)));
 
+    const y = (beginDate - firstLegislature) * minHeight;
+    const height = ((endDate - beginDate) * minHeight) || minHeight;
+
+    const textStart = 24;
+
+    const transitionDuration = 0.5;
 
     return (
-        <g 
+        <motion.g 
             key={event.title} 
-            transform={`translate(0, ${(beginDate - firstLegislature) * minHeight})`}
-            opacity={opacity}
-            clipPath="url(#clip)"
+            clipPath={`url(#clip-${event.begin})`}
+            initial={{ 
+                y: y, 
+                opacity: "0.1"
+            }}
+            animate={{ 
+                y: y, 
+                opacity: "1"
+            }}
+            transition={{ duration: transitionDuration }}
         >
             {/* Clip */}
             <defs>
-                <clipPath id="clip">
-                    <rect 
+                <clipPath id={`clip-${event.begin}`}>
+                    <motion.rect 
                         x="0" 
                         y="0" 
                         width={axisLeftPosition} 
-                        height="100%" 
+                        initial={{ height: height }}
+                        animate={{ height: height }}
+                        transition={{ duration: transitionDuration }}
                     />
                 </clipPath>
             </defs>
 
             {/* Event rectangle */}
-            <rect
+            <motion.rect
                 x={0}
                 y={0}
                 width={axisLeftPosition}
-                height={((endDate - beginDate) * minHeight) || minHeight}
-                fill="#F2F2F2"
+                initial={{ height: height }}
+                animate={{ height: height }}
+                transition={{ duration: transitionDuration }}
+                fill="black"
+                fillOpacity={0.05}
             />
 
             {/* Event Date */}
             <text
-                x={4}
-                y={9}
-                dominantBaseline="middle"
+                x={textStart}
+                y={10.5}
                 textAnchor="left"
                 fill="currentColor"
                 opacity={0.5}
                 fontSize={10}
-                width={axisLeftPosition}
             >
                 {endDate !== beginDate ? `${beginDate} → ${endDate}` : beginDate}
             </text>
@@ -52,21 +74,19 @@ export default function Event({event, axisLeftPosition, minHeight, firstLegislat
             {/* Event Title */}
             <text
                 x={endDate !== beginDate
-                    ? 4
-                    : 32
+                    ? textStart
+                    : textStart + 30
                 }
                 y={endDate !== beginDate
-                    ? 20
-                    : 9
+                    ? 21
+                    : 10.5
                 }
-                dominantBaseline="middle"
                 textAnchor="left"
                 fill="currentColor"
                 fontSize={10}
-                width={axisLeftPosition}
             >
                 {event.title}
             </text>
-        </g>
+        </motion.g>
     )    
 }

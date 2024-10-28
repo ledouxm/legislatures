@@ -1,15 +1,15 @@
 "use client";
 
-import { MixerVerticalIcon, ReloadIcon, ShuffleIcon } from "@radix-ui/react-icons";
+import { ReloadIcon, ShuffleIcon } from "@radix-ui/react-icons";
 import EntityButton from "./entityButton";
 import { CurrentType } from "../../types/current";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { FamilyType } from "../../types/family";
 import CurrentsFamily from "./currentsFamily";
 import SettingsButton from "./settingsButton";
 import { useVisibleCurrentsContext } from "../utils/currentsContext";
 
-export default function FiltersLine({ families, setSettingsVisibility }: { families: FamilyType[]; setSettingsVisibility: () => void }) {
+export default function FiltersLine({ families }: { families: FamilyType[] }) {
     const scrollRef = useRef<HTMLDivElement>(null);
     const { visibleCurrents, setVisibleCurrents } = useVisibleCurrentsContext();
     const currents = families?.flatMap((family) => family.currents);
@@ -48,16 +48,12 @@ export default function FiltersLine({ families, setSettingsVisibility }: { famil
     }, []);
 
     return (
-        <section className="w-full h-20 md:h-36 px-3 mb-3 md:mb-6 flex items-end max-w-screen-3xl mx-auto">
+        <section className="w-full p-2 flex items-end max-w-screen-3xl mx-auto">
             <div className="w-full flex">
                 {/* List controls */}
                 <div className="flex gap-1 items-center">
                     {/* Settings button */}
-                    <SettingsButton 
-                        Icon={MixerVerticalIcon} 
-                        onClick={() => setSettingsVisibility()} 
-                        label="Paramétrer la visualisation"
-                    />
+
 
                     {/* Shuffle button */}
                     <SettingsButton 
@@ -85,9 +81,9 @@ export default function FiltersLine({ families, setSettingsVisibility }: { famil
 
                 {/* Currents list */}
                 <div className="relative overflow-hidden w-full">
-                    <div className="absolute left-0 top-0 h-full w-6 bg-gradient-to-r from-white via-white z-30 pointer-events-none -translate-x-1.5"></div>
-                    <div className="absolute right-0 top-0 h-full w-6 bg-gradient-to-l from-white via-white z-30 pointer-events-none translate-x-1.5"></div>
-                    <div className="overflow-x-scroll h-full flex gap-1 no-scrollbar px-3.5" ref={scrollRef}>
+                    <div className="absolute left-0 top-0 h-full w-4 bg-gradient-to-r from-white via-white z-30 pointer-events-none -translate-x-1.5"></div>
+                    <div className="absolute right-0 top-0 h-full w-4 bg-gradient-to-l from-white via-white z-30 pointer-events-none translate-x-1.5"></div>
+                    <div className="overflow-x-scroll h-full flex gap-1 no-scrollbar px-2" ref={scrollRef}>
                         {families ? families.map((family, index) => (
                             <CurrentsFamily 
                                 key={index} 

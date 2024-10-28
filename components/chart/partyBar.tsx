@@ -26,7 +26,8 @@ export default function PartyBar({ party, y, height, minHeight, partyWidth, part
     // Display deputies if the party is tall enough
     const displayDeputies = height > (referenceSize / 2);
 
-    const coalitionStrokeWidth = 0.5;
+    const coalitionStrokeWidth = 0.75;
+    const strokeOffset = coalitionStrokeWidth / 2;
 
     return (
         <motion.g
@@ -56,7 +57,7 @@ export default function PartyBar({ party, y, height, minHeight, partyWidth, part
                     {/* Party name */}
                     <text
                         x={4}
-                        y={10}
+                        y={10.5}
                         textAnchor="left"
                         fill="currentColor"
                         fontSize={10}
@@ -68,7 +69,7 @@ export default function PartyBar({ party, y, height, minHeight, partyWidth, part
                     {displayDeputies &&
                         <text
                             x={4}
-                            y={20}
+                            y={20.5}
                             textAnchor="left"
                             fill="currentColor"
                             opacity={0.5}
@@ -85,39 +86,50 @@ export default function PartyBar({ party, y, height, minHeight, partyWidth, part
                 <>
                     {/* Top border */}
                     <motion.line
-                        x1={0}
-                        y1={0}
-                        x2={partyWidth}
-                        y2={0}
+                        x1={-coalitionStrokeWidth}
+                        y1={-strokeOffset}
+                        y2={-strokeOffset}
                         stroke="currentColor"
                         strokeWidth={coalitionStrokeWidth}
-                        initial={{ x2: partyWidth }}
-                        animate={{ x2: partyWidth }}
+                        initial={{ 
+                            x2: partyWidth 
+                        }}
+                        animate={{ 
+                            x2: partyWidth 
+                        }}
                         transition={{ duration: transitionDuration }}
                     />
                     {/* Bottom border */}
                     <motion.line
-                        x1={0}
-                        y1={height - coalitionStrokeWidth}
-                        x2={partyWidth}
-                        y2={height - coalitionStrokeWidth}
+                        x1={-coalitionStrokeWidth}
                         stroke="currentColor"
                         strokeWidth={coalitionStrokeWidth}
-                        initial={{ y1: height - coalitionStrokeWidth, x2: partyWidth, y2: height - coalitionStrokeWidth }}
-                        animate={{ y1: height - coalitionStrokeWidth, x2: partyWidth, y2: height - coalitionStrokeWidth }}
+                        initial={{ 
+                            y1: height - strokeOffset, 
+                            x2: partyWidth, 
+                            y2: height - strokeOffset 
+                        }}
+                        animate={{ 
+                            y1: height - strokeOffset, 
+                            x2: partyWidth, 
+                            y2: height - strokeOffset 
+                        }}
                         transition={{ duration: transitionDuration }}
                     />
                     {/* Left border, if first of coalition */}
                     {coalitionBorder.first &&
                         <motion.line
-                            x1={0}
-                            y1={0}
-                            x2={0}
-                            y2={height - coalitionStrokeWidth}
+                            x1={-strokeOffset}
+                            y1={-strokeOffset}
+                            x2={-strokeOffset}
                             stroke="currentColor"
                             strokeWidth={coalitionStrokeWidth}
-                            initial={{ y2: height - coalitionStrokeWidth }}
-                            animate={{ y2: height - coalitionStrokeWidth }}
+                            initial={{ 
+                                y2: height - strokeOffset 
+                            }}
+                            animate={{ 
+                                y2: height - strokeOffset 
+                            }}
                             transition={{ duration: transitionDuration }}
                         />
                     }
@@ -125,14 +137,19 @@ export default function PartyBar({ party, y, height, minHeight, partyWidth, part
                     {/* Right border, if last of coalition */}
                     {coalitionBorder.last &&
                         <motion.line
-                            x1={partyWidth - coalitionStrokeWidth}
-                            y1={0}
-                            x2={partyWidth - coalitionStrokeWidth}
-                            y2={height - coalitionStrokeWidth}
+                            y1={-strokeOffset}
                             stroke="currentColor"
                             strokeWidth={coalitionStrokeWidth}
-                            initial={{ x1: partyWidth - coalitionStrokeWidth, x2: partyWidth - coalitionStrokeWidth, y2: height - coalitionStrokeWidth }}
-                            animate={{ x1: partyWidth - coalitionStrokeWidth, x2: partyWidth - coalitionStrokeWidth, y2: height - coalitionStrokeWidth }}
+                            initial={{ 
+                                x1: partyWidth - strokeOffset, 
+                                x2: partyWidth - strokeOffset, 
+                                y2: height - strokeOffset
+                            }}
+                            animate={{ 
+                                x1: partyWidth - strokeOffset, 
+                                x2: partyWidth - strokeOffset, 
+                                y2: height - strokeOffset
+                            }}
                             transition={{ duration: transitionDuration }}
                         />
                     }

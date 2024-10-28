@@ -85,12 +85,6 @@
             "keyword": "Déclaration Schuman"
           },
           {
-            "begin": "1954-07-20",
-            "end": "1954-07-20",
-            "title": "Accords de Genève",
-            "keyword": "Accords de Genève (1954)"
-          },
-          {
             "begin": "1954-11-01",
             "end": "1962-03-19",
             "title": "Guerre d'Algérie",
@@ -98,21 +92,9 @@
           },
           {
             "begin": "1956-03-02",
-            "end": "1956-03-02",
-            "title": "Indépendance du Maroc",
-            "keyword": "Indépendance du Maroc"
-          },
-          {
-            "begin": "1956-03-20",
             "end": "1956-03-20",
-            "title": "Indépendance de la Tunisie",
-            "keyword": "Indépendance de la Tunisie"
-          },
-          {
-            "begin": "1956-11-05",
-            "end": "1956-11-05",
-            "title": "Crise de Suez",
-            "keyword": "Crise du canal de Suez"
+            "title": "Indépendance du Maroc et de la Tunisie",
+            "keyword": "Indépendance du Maroc"
           },
           {
             "begin": "1958-05-13",
@@ -121,34 +103,10 @@
             "keyword": "Crise de mai 1958"
           },
           {
-            "begin": "1958-06-01",
-            "end": "1958-06-01",
-            "title": "Investiture de Charles de Gaulle comme président du Conseil",
-            "keyword": "Charles de Gaulle"
-          },
-          {
-            "begin": "1958-09-28",
-            "end": "1958-09-28",
-            "title": "Référendum constitutionnel approuvant la Cinquième République",
-            "keyword": "Référendum de 1958 sur la Constitution française"
-        },
-        {
-            "begin": "1958-09-28",
-            "end": "1958-09-28",
-            "title": "Référendum sur l'adoption de la Constitution de la Cinquième République",
-            "keyword": "Référendum de 1958 sur la Constitution française"
-          },
-          {
             "begin": "1962-03-18",
             "end": "1962-03-18",
             "title": "Accords d'Évian et fin de la guerre d'Algérie",
             "keyword": "Accords d'Évian"
-          },
-          {
-            "begin": "1962-10-28",
-            "end": "1962-10-28",
-            "title": "Référendum sur l'élection du président de la République au suffrage universel",
-            "keyword": "Référendum de 1962 sur l'élection au suffrage universel"
           },
           {
             "begin": "1968-05-02",

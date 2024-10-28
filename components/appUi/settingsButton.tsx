@@ -16,7 +16,7 @@ export default function SettingsButton({
     return (
         <button 
             aria-label={label}
-            className={`group flex items-center justify-center rounded-full border border-black/10 hover:border-black/20 transition text-nowrap gap-2 select-none 
+            className={`group flex items-center justify-center rounded-full border border-black/10 hover:border-black/20 transition text-nowrap gap-2 select-none bg-white
                 ${Icon && !name ? 
                     'size-9 flex-shrink-0' : 
                     'h-9 px-3'

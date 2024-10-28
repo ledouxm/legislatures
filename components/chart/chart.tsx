@@ -24,7 +24,7 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
     const [ref, dimensions] = useChartDimensions({
         marginTop: 0,
         marginLeft: 0,
-        marginRight: 0,
+        marginRight: 8,
         marginBottom: 0
     })
 
@@ -49,6 +49,14 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
 
     // Get the tooltip party
     const { tooltipContent, setTooltipContent } = useTooltipContext();
+
+    // Get the value of the stops positions for the events gradient
+    // Using math.max to avoid negative values, and toFixed to avoid unwanted decimals
+    // The formula use a cross-multiplication to get the percentage of start and end of the gradient
+    // The gradient start at (100 % - (axisSpace * 3)) and end at (100 % - axisSpace) to be sure axis has always a white background
+    const axisSpace = 44; // Width of the Y axis + padding
+    const gradientStart = Math.max((((axisLeftPosition - (axisSpace * 3)) * 100) / axisLeftPosition), 0).toFixed(2);
+    const gradientEnd = Math.max((((axisLeftPosition - axisSpace) * 100) / axisLeftPosition), 0).toFixed(2);
 
     return (
         <div 
@@ -76,22 +84,39 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
             {/* Chart */}
             <svg 
                 width={dimensions.width} 
-                height={svgHeight}
+                height={svgHeight - 1} // -1 to avoid bottom coalition border on last legislature
                 onMouseLeave={() => setTooltipContent(null)}
             >
                 {/* Events */}
-                {events.map((event, index) => {
-                    return (
-                        <Event
-                            key={index}
-                            event={event}
-                            axisLeftPosition={axisLeftPosition}
-                            minHeight={minHeight}
-                            firstLegislature={firstLegislature}
-                        />
-                    )
-                })
-                }
+                <g className="events">
+                    {events.map((event, index) => {
+                        return (
+                            <Event
+                                key={index}
+                                event={event}
+                                axisLeftPosition={axisLeftPosition}
+                                minHeight={minHeight}
+                                firstLegislature={firstLegislature}
+                            />
+                        )
+                    })}
+                </g>
+
+                {/* Gradient over events */}
+                <rect
+                    x={0}
+                    y={0}
+                    width={axisLeftPosition}
+                    height={svgHeight}
+                    fill="url(#events-gradient)"
+                    className="pointer-events-none"
+                />
+                <defs>
+                    <linearGradient id="events-gradient">
+                        <stop offset={`${gradientStart}%`} stopColor="white" stopOpacity={0} />
+                        <stop offset={`${gradientEnd}%`} stopColor="white" stopOpacity={1} />
+                    </linearGradient>
+                </defs>
 
                 {/* Legislatures */}
                 {republics.map(republic => (
@@ -130,7 +155,6 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
                         axisRevert={true}
                     />
                 </svg>
-
             </div>
 
             {/* Tooltip */}

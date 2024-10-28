@@ -164,13 +164,13 @@ export default function EntityDetails() {
     }, []);
 
     return (
-        <div className="fixed z-50 bg-black/25 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-0 top-0 bottom-0 left-0 right-0 sm:pointer-events-none p-2 sm:p-5 flex items-end justify-center sm:justify-start">
+        <div className="fixed z-50 bg-black/25 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-0 top-0 bottom-0 left-0 right-0 sm:pointer-events-none p-2 sm:px-5 sm:py-16 flex items-end justify-center sm:justify-start">
             <div
                 ref={detailsRef}
                 className="rounded-2xl shadow-lg w-full sm:w-auto max-w-[28rem] bg-white p-2.5 sm:p-3 flex flex-col gap-2.5 sm:gap-4 border border-black/5 pointer-events-auto"
             >
                 {/* Buttons bar */}
-                <div className="flex justify-between w-full">
+                <div className="flex justify-between w-full items-start">
                     {/* If current, add a button to display or hide it */}
                     {current
                         ? <button
