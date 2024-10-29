@@ -6,9 +6,10 @@ type Props = {
     axisLeftPosition: number;
     minHeight: number;
     firstLegislature: number;
+    onClick: () => void;
 }
 
-export default function Event({event, axisLeftPosition, minHeight, firstLegislature}: Props) {
+export default function Event({event, axisLeftPosition, minHeight, firstLegislature, onClick}: Props) {
     const beginDate = new Date(event.begin).getFullYear();
     const endDate = new Date(event.end).getFullYear();
 
@@ -32,6 +33,7 @@ export default function Event({event, axisLeftPosition, minHeight, firstLegislat
                 opacity: "1"
             }}
             transition={{ duration: transitionDuration }}
+            onClick={onClick}
         >
             {/* Clip */}
             <defs>

@@ -28,7 +28,7 @@ export default function SettingsLine({ eventVisibility, setEventVisibility }: Pr
                         Icon={PinLeftIcon}
                         onClick={() => setEventVisibility(!eventVisibility)}
                         label={eventVisibility ? "Masquer les événements" : "Afficher les événements"}
-                        flipIcon={eventVisibility ? true : false}
+                        flipIcon={eventVisibility ? false : true}
                     />
                     
                     {/* Transition polygons button */}

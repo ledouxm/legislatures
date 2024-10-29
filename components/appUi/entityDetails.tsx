@@ -167,7 +167,7 @@ export default function EntityDetails() {
         <div className="fixed z-50 bg-black/25 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-0 top-0 bottom-0 left-0 right-0 sm:pointer-events-none p-2 sm:px-5 sm:py-16 flex items-end justify-center sm:justify-start">
             <div
                 ref={detailsRef}
-                className="rounded-2xl shadow-lg w-full sm:w-auto max-w-[28rem] bg-white p-2.5 sm:p-3 flex flex-col gap-2.5 sm:gap-4 border border-black/5 pointer-events-auto"
+                className="rounded-2xl shadow-lg w-full sm:w-auto max-w-[28rem] bg-white p-2.5 sm:p-3 flex flex-col gap-2.5 border border-black/5 pointer-events-auto"
             >
                 {/* Buttons bar */}
                 <div className="flex justify-between w-full items-start">
@@ -191,9 +191,17 @@ export default function EntityDetails() {
                                 hex={(parent as CurrentType).color}
                                 onClick={() => onClick(parent)}
                             />
-                            // If event, display nothing
+                            // If event, display dates
                             : event
-                                ? <div></div>
+                                ? (() => {
+                                    const beginDate = new Date(event.begin).getFullYear();
+                                    const endDate = new Date(event.end).getFullYear();
+                                    return (
+                                        <div className="h-9 px-2.5 rounded-full border border-black/20 border-dashed text-sm text-black/50 leading-none flex items-center">
+                                            {endDate !== beginDate ? `${beginDate} → ${endDate}` : beginDate}
+                                        </div>
+                                    );
+                                })()
                                 : <div></div>
                             // // If person, display the parent button
                             // : <EntityButton
@@ -223,7 +231,7 @@ export default function EntityDetails() {
                 )}
                 {/* Title and infos */}
                 <div className="flex flex-col gap-3 w-full">
-                    <div className="flex flex-col gap-1 items-start">
+                    <div className="flex flex-col items-start">
                         <h2 className="text-lg sm:text-xl font-bold flex gap-2 items-center">
                             {/* Display color if current */}
                             {current && current.color && (

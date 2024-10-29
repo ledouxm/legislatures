@@ -3,6 +3,7 @@ import { EventType } from "../../types/event";
 import { FamilyType } from "../../types/family";
 import { RepublicType } from "../../types/republic";
 import Tooltip from "../appUi/tooltip";
+import { useDetailsContext } from "../utils/detailsContext";
 import { useTooltipContext } from "../utils/tooltipContext";
 import { useTransitionsContext } from "../utils/transitionsContext";
 import useChartDimensions from "../utils/useChartDimensions";
@@ -49,6 +50,9 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
 
     // Get the tooltip party
     const { tooltipContent, setTooltipContent } = useTooltipContext();
+
+    // Set the details content for events
+    const { setDetailsContent } = useDetailsContext();
 
     // Get the value of the stops positions for the events gradient
     // Using math.max to avoid negative values, and toFixed to avoid unwanted decimals
@@ -97,6 +101,7 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
                                 axisLeftPosition={axisLeftPosition}
                                 minHeight={minHeight}
                                 firstLegislature={firstLegislature}
+                                onClick={() => setDetailsContent({entity: event})}
                             />
                         )
                     })}

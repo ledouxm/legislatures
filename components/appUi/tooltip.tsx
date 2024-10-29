@@ -75,17 +75,13 @@ export default function Tooltip({ chartWidth, y, axisLeftPosition, xStart, xEnd,
             ref={tooltipRef}
             className="absolute pb-2 flex justify-start transition-all duration-500 select-none"
             onMouseEnter={() => setTooltipContent(tooltipContent)}
+            onMouseLeave={() => setTooltipContent(null)}
         >
             <div
                 className="py-1.5 px-[5px] rounded-xl flex flex-col gap-1.5 bg-white shadow-md z-50 border border-black/5"
             >
                 {/* Year and current name */}
                 <div className="flex gap-2 justify-start items-center">
-                    {/* {legislature && 
-                        <div className="py-0.5 px-1.5 rounded-full border border-black/20 border-dashed text-xs text-black/50 leading-none flex items-center">
-                            {legislature.legislature}
-                        </div>
-                    } */}
                     {party.current && 
                         <Badge 
                             name={party.current.name} 
