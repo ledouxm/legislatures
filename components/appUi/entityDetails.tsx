@@ -170,7 +170,7 @@ export default function EntityDetails() {
                 className="rounded-2xl shadow-lg w-full sm:w-auto max-w-[28rem] bg-white p-2.5 sm:p-3 flex flex-col gap-2.5 border border-black/5 pointer-events-auto"
             >
                 {/* Buttons bar */}
-                <div className="flex justify-between w-full items-start">
+                <div className="flex justify-between w-full">
                     {/* If current, add a button to display or hide it */}
                     {current
                         ? <button
@@ -231,8 +231,8 @@ export default function EntityDetails() {
                 )}
                 {/* Title and infos */}
                 <div className="flex flex-col gap-3 w-full">
-                    <div className="flex flex-col items-start">
-                        <h2 className="text-lg sm:text-xl font-bold flex gap-2 items-center">
+                    <div className="flex flex-col items-start gap-1">
+                        <h2 className="text-lg sm:text-xl !leading-tight font-bold flex gap-2 items-center">
                             {/* Display color if current */}
                             {current && current.color && (
                                 <span className="relative flex size-2.5 sm:size-3">

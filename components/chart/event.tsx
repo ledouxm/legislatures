@@ -16,7 +16,14 @@ export default function Event({event, axisLeftPosition, minHeight, firstLegislat
     const y = (beginDate - firstLegislature) * minHeight;
     const height = ((endDate - beginDate) * minHeight) || minHeight;
 
-    const textStart = 8;
+    const fontSize = 11;
+    const textX = 8;
+    const textY = fontSize;
+
+    // Check if the event is tall enough to display the title
+    const isTall = height < fontSize * 2.5 
+        ? false 
+        : true;
 
     const transitionDuration = 0.5;
 
@@ -34,25 +41,38 @@ export default function Event({event, axisLeftPosition, minHeight, firstLegislat
             }}
             transition={{ duration: transitionDuration }}
             onClick={onClick}
+            className="hover:opacity-75 transition-opacity cursor-pointer"
         >
             {/* Clip */}
             <defs>
                 <clipPath id={`clip-${event.begin}`}>
                     <motion.rect 
                         x="0" 
-                        y="0" 
+                        y="-2" 
                         width={axisLeftPosition} 
-                        initial={{ height: height }}
-                        animate={{ height: height }}
+                        initial={{ height: height * 1.5 }}
+                        animate={{ height: height * 1.5 }}
                         transition={{ duration: transitionDuration }}
                     />
                 </clipPath>
             </defs>
 
+            {/* Top line */}
+            <line
+                x1={0}
+                x2={axisLeftPosition}
+                y1={-1}
+                y2={-1}
+                stroke="currentColor"
+                // strokeDasharray={"4"}
+                strokeWidth={0.1}
+                strokeOpacity={1}
+            />
+
             {/* Event rectangle */}
             <motion.rect
                 x={0}
-                y={0}
+                y={-1}
                 width={axisLeftPosition}
                 initial={{ height: height }}
                 animate={{ height: height }}
@@ -62,35 +82,47 @@ export default function Event({event, axisLeftPosition, minHeight, firstLegislat
             />
 
             {/* Event Date */}
-            <text
-                x={textStart}
-                y={10.5}
-                textAnchor="left"
-                fill="currentColor"
-                opacity={0.5}
-                fontSize={10}
-                className="translate-x-0 sm:translate-x-5"
-            >
-                {endDate !== beginDate ? `${beginDate} → ${endDate}` : beginDate}
-            </text>
-
-            {/* Event Title */}
-            <text
-                x={endDate !== beginDate
-                    ? textStart
-                    : textStart + 26.5
-                }
-                y={endDate !== beginDate
-                    ? 21
-                    : 10.5
-                }
-                textAnchor="left"
-                fill="currentColor"
-                fontSize={10}
-                className="translate-x-0 sm:translate-x-5"
-            >
-                {event.title}
-            </text>
+            <g className="translate-x-0 sm:translate-x-5">
+                <text
+                    x={textX}
+                    y={textY}
+                    textAnchor="left"
+                    fill="currentColor"
+                    opacity={0.5}
+                    fontSize={fontSize}
+                >
+                    {endDate !== beginDate ? `${beginDate} → ${endDate}` : beginDate}
+                </text>
+                {/* Event Title */}
+                <motion.text
+                    initial={{
+                        x: isTall
+                            ? textX
+                            : endDate !== beginDate
+                                ? textX + (fontSize * 6.5)
+                                : textX + (fontSize * 2.75),
+                        y: isTall
+                            ? textY + fontSize + 1
+                            : textY
+                    }}
+                    animate={{
+                        x: isTall
+                            ? textX
+                            : endDate !== beginDate
+                                ? textX + (fontSize * 6.5)
+                                : textX + (fontSize * 2.75),
+                        y: isTall
+                            ? textY + fontSize + 1
+                            : textY
+                    }}
+                    transition={{ duration: transitionDuration }}
+                    textAnchor="left"
+                    fill="currentColor"
+                    fontSize={fontSize}
+                >
+                    {event.title}
+                </motion.text>
+            </g>
         </motion.g>
     )    
 }

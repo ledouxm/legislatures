@@ -7,18 +7,18 @@ import { CurrentType } from "../../types/current";
 import { EventType } from "../../types/event";
 import { RepublicType } from "../../types/republic";
 import { TooltipProvider } from "../utils/tooltipContext";
-import { useState } from "react";
 import { useDetailsContext } from "../utils/detailsContext";
 
 type Props = {
     republics: RepublicType[];
     currents: CurrentType[];
     events: EventType[];
-    axisLeftPercentage: number;
+    eventsVisibility: boolean;
+    referenceSize: number;
 }
 
 
-export default function Main({republics, currents, events, axisLeftPercentage}: Props) {
+export default function Main({republics, currents, events, eventsVisibility, referenceSize}: Props) {
     const { detailsContent } = useDetailsContext();
     const selectedEntity = detailsContent?.entity;
 
@@ -34,7 +34,8 @@ export default function Main({republics, currents, events, axisLeftPercentage}: 
                             republics={republics} 
                             currents={currents} 
                             events={events} 
-                            axisLeftPercentage={axisLeftPercentage} 
+                            eventsVisibility={eventsVisibility}
+                            referenceSize={referenceSize}
                         />
                     </TooltipProvider>
                 )}

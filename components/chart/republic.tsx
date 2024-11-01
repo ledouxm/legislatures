@@ -13,10 +13,9 @@ type RepublicProps = {
     dimensions: ChartDimensions;
     currents: CurrentType[];
     nextRepFirstLeg: LegislatureType | null;
-    axisLeftPercentage: number;
 }
 
-export default function Republic({republic, axisLeftPosition, minHeight, firstLegislature, dimensions, currents, nextRepFirstLeg, axisLeftPercentage}: RepublicProps) {
+export default function Republic({republic, axisLeftPosition, minHeight, firstLegislature, dimensions, currents, nextRepFirstLeg}: RepublicProps) {
     // Add the next rep first legislature to the current republic
     const republicWithNextRepFirstLeg = nextRepFirstLeg 
         ? {
@@ -94,7 +93,7 @@ export default function Republic({republic, axisLeftPosition, minHeight, firstLe
                         firstLegislature={firstLegislature}
                         minHeight={minHeight}
                         dimensions={dimensions}
-                        axisLeftPercentage={axisLeftPercentage}
+                        axisLeftPosition={axisLeftPosition}
                     />
                 )
             })}

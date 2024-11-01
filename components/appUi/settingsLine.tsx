@@ -1,4 +1,4 @@
-import { HeightIcon, PinLeftIcon } from "@radix-ui/react-icons";
+import { HeightIcon, MinusIcon, PinLeftIcon, PlusIcon } from "@radix-ui/react-icons";
 import SettingsButton from "./settingsButton";
 import { useTransitionsContext } from "../utils/transitionsContext";
 
@@ -14,14 +14,16 @@ function HideTransitionsIcon() {
 type Props = {
     eventVisibility: boolean;
     setEventVisibility: (eventVisibility: boolean) => void;
+    referenceSize: number;
+    setReferenceSize: (referenceSize: number) => void;
 }
 
-export default function SettingsLine({ eventVisibility, setEventVisibility }: Props) {
+export default function SettingsLine({ eventVisibility, setEventVisibility, referenceSize, setReferenceSize }: Props) {
     const { transitionsVisibility, setTransitionsVisibility } = useTransitionsContext();
 
     return (
         <section className="w-full p-2 flex items-end max-w-screen-3xl mx-auto">
-            <div className="w-full flex">
+            <div className="w-full flex justify-between">
                 <div className="flex gap-1 items-center">
                     {/* Events button */}
                     <SettingsButton
@@ -38,6 +40,22 @@ export default function SettingsLine({ eventVisibility, setEventVisibility }: Pr
                         label={transitionsVisibility ? "Masquer les transitions" : "Afficher les transitions"}
                     />
 
+                </div>
+                <div className="flex gap-2 items-center">
+                    {/* Reference size buttons */}
+                    <SettingsButton
+                        Icon={MinusIcon}
+                        onClick={() => setReferenceSize(Math.max(4, referenceSize - 4))}
+                        label="Réduire la taille de référence"
+                    />
+                    <p className="text-sm opacity-75 select-none tabular-nums">
+                        {String(referenceSize).padStart(2, '0')}
+                    </p>
+                    <SettingsButton
+                        Icon={PlusIcon}
+                        onClick={() => setReferenceSize(Math.min(72, referenceSize + 4))}
+                        label="Augmenter la taille de référence"
+                    />
                 </div>
             </div>
         </section>

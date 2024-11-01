@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { CurrentType } from "../../types/current";
 import { EventType } from "../../types/event";
-import { FamilyType } from "../../types/family";
 import { RepublicType } from "../../types/republic";
 import Tooltip from "../appUi/tooltip";
 import { useDetailsContext } from "../utils/detailsContext";
@@ -11,16 +11,16 @@ import Event from "./event";
 import Republic from "./republic";
 import XAxis from "./xAxis";
 import YAxis from "./yAxis";
-import * as d3 from "d3";
 
 type Props = {
     republics: RepublicType[];
     currents: CurrentType[];
     events: EventType[];
-    axisLeftPercentage: number;
+    eventsVisibility: boolean;
+    referenceSize: number;
 }
 
-export default function Chart({republics, currents, events, axisLeftPercentage}: Props) {
+export default function Chart({republics, currents, events, eventsVisibility, referenceSize}: Props) {
     // Set the dimensions of the chart by giving the margins
     const [ref, dimensions] = useChartDimensions({
         marginTop: 0,
@@ -34,8 +34,8 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
     const lastLegislature = republics[republics.length - 1].legislatures[republics[republics.length - 1].legislatures.length - 1].legislature;
     const totalDuration = lastLegislature - firstLegislature;
 
-    // Set the reference height for the chart
-    const referenceSize = 28;
+    // Set the Xaxis height
+    const xAxisHeight = 28;
 
     // Set the minimal height for a legislature (one year, in px)
     const { transitionsVisibility } = useTransitionsContext();
@@ -44,9 +44,16 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
     // Calculate the height of the svg
     const svgHeight = minHeight * totalDuration + referenceSize + dimensions.marginBottom;
 
-    // Set the position of the left and top axis
-    // const axisLeftPercentage = 20; // Percentage
-    const axisLeftPosition = dimensions.boundedWidth * (axisLeftPercentage / 100); // Pixels
+    // Set the position of the left axis in px
+    const axisLeftPosition = !dimensions.boundedWidth
+        ? 0 
+        : !eventsVisibility 
+            ? dimensions.boundedWidth < 640
+                ? 40
+                : 100
+            : dimensions.boundedWidth < 640
+                ? 200
+                : 400;
 
     // Get the tooltip party
     const { tooltipContent, setTooltipContent } = useTooltipContext();
@@ -74,22 +81,23 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
             >
                 <svg
                     width={dimensions.width}
-                    height={referenceSize}
+                    height={xAxisHeight}
                 >
                     <XAxis
                         domain={[0, 100]}
                         range={[0, dimensions.boundedWidth]}
                         axisLeftPosition={axisLeftPosition}
-                        axisHeight={referenceSize}
+                        axisHeight={xAxisHeight}
                     />
                 </svg>
             </div>
 
             {/* Chart */}
             <svg 
-                width={dimensions.width} 
+                width={dimensions.boundedWidth} 
                 height={svgHeight - 1} // -1 to avoid bottom coalition border on last legislature
                 onMouseLeave={() => setTooltipContent(null)}
+                className="select-none"
             >
                 {/* Events */}
                 <g className="events">
@@ -134,7 +142,6 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
                         dimensions={dimensions}
                         currents={currents}
                         nextRepFirstLeg={republics[republics.indexOf(republic) + 1]?.legislatures[0]}
-                        axisLeftPercentage={axisLeftPercentage}
                     />
                 ))}
 
@@ -146,17 +153,41 @@ export default function Chart({republics, currents, events, axisLeftPercentage}:
                 />
             </svg>
 
+            {/* Y axis bar resizer */}
+            {/* <div 
+                className="w-0.5 hover:w-2.5 -translate-x-1/2 bg-black h-full absolute top-7 transition-all peer cursor-col-resize" 
+                style={{ left: axisLeftPosition }}
+                onMouseDown={(e: { clientX: any; }) => {
+                    const startX = e.clientX;
+                    const onMouseMove = (moveEvent: MouseEvent) => {
+                        const newLeftPosition = axisLeftPosition + (moveEvent.clientX - startX);
+                        setAxisLeftPosition(newLeftPosition);
+                    };
+                    const onMouseUp = () => {
+                        window.removeEventListener('mousemove', onMouseMove);
+                        window.removeEventListener('mouseup', onMouseUp);
+                    };
+                    window.addEventListener('mousemove', onMouseMove);
+                    window.addEventListener('mouseup', onMouseUp);
+                }}
+            >
+            </div>
+            <div 
+                className="opacity-0 peer-hover:opacity-100 transition-all w-0 peer-hover:w-0.5 fixed bg-white h-12 rounded-full top-1/2 -translate-x-1/2 pointer-events-none"
+                style={{ left: axisLeftPosition }}
+            ></div> */}
+
             {/* Bottom margin */}
             <div className="sticky bottom-0 z-10 backdrop-blur bg-opacity-45 bg-gradient-to-t from-white via-white/50 to-transparent">
                 <svg
                     width={dimensions.width}
-                    height={referenceSize}
+                    height={xAxisHeight}
                 >
                     <XAxis
                         domain={[0, 100]}
                         range={[0, dimensions.boundedWidth]}
                         axisLeftPosition={axisLeftPosition}
-                        axisHeight={referenceSize}
+                        axisHeight={xAxisHeight}
                         axisRevert={true}
                     />
                 </svg>

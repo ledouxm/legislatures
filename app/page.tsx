@@ -16,7 +16,9 @@ export default function HomePage() {
     const [families, setFamilies] = useState<FamilyType[] | null>(null);
     const [events, setEvents] = useState<EventType[] | null>(null);
     const { visibleCurrents, setVisibleCurrents } = useVisibleCurrentsContext();
-    const [axisLeftPercentage, setAxisLeftPercentage] = useState(10);
+    const [axisLeftPercentage, setAxisLeftPercentage] = useState(50);
+    const [eventVisibility, setEventVisibility] = useState(true);
+    const [referenceSize, setReferenceSize] = useState(28);
 
     // Fetch the data
     useEffect(() => {
@@ -60,28 +62,22 @@ export default function HomePage() {
                     </div>
                 </header> */}
 
-                {/* <div className="fixed z-20 p-2">
-                    <SettingsButton
-                        Icon={MixerVerticalIcon}
-                        onClick={() => setSettingsVisibility(!settingsVisibility)}
-                        label="Paramétrer la visualisation"
-                    />
-                </div> */}
-
                 <SettingsLine
-                    eventVisibility={axisLeftPercentage === 10 ? false : true}
-                    setEventVisibility={() => setAxisLeftPercentage(axisLeftPercentage === 10 ? 50 : 10)}
+                    eventVisibility={eventVisibility}
+                    setEventVisibility={(newValue) => setEventVisibility(newValue)}
+                    referenceSize={referenceSize}
+                    setReferenceSize={(newSize) => setReferenceSize(newSize)}
                 />
 
                 <Main 
                     republics={republics} 
                     currents={currents} 
                     events={events}
-                    axisLeftPercentage={axisLeftPercentage}
+                    eventsVisibility={eventVisibility}
+                    referenceSize={referenceSize}
                 />
                 <FiltersLine
                     families={families}
-                    // setSettingsVisibility={() => setSettingsVisibility(!settingsVisibility)}
                 />                
         </>
     )

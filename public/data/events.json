@@ -1,10 +1,16 @@
 {
     "events": [
+      {
+        "begin": "1870-07-19",
+        "end": "1871-01-28",
+        "title": "Guerre franco-prussienne",
+        "keyword": "Guerre franco-allemande de 1870"
+      },
         {
             "begin": "1870-09-04",
             "end": "1870-09-04",
             "title": "Proclamation de la Troisième République",
-            "keyword": "Troisième République (France)"
+            "keyword": "Proclamation de la République française du 4 septembre 1870"
         },
         {
             "begin": "1871-03-18",
@@ -15,20 +21,32 @@
         {
             "begin": "1875-02-24",
             "end": "1875-02-25",
-            "title": "Adoption des lois constitutionnelles",
+            "title": "Lois constitutionnelles",
             "keyword": "Lois constitutionnelles de 1875"
         },
         {
-            "begin": "1881-07-29",
-            "end": "1881-07-29",
-            "title": "Loi sur la liberté de la presse",
-            "keyword": "Loi du 29 juillet 1881 sur la liberté de la presse"
+            "begin": "1877-05-16",
+            "end": "1877-12-14",
+            "title": "Crise du 16 mai",
+            "keyword": "Crise du 16 mai 1877"
+        },
+        {
+          "begin": "1881-06-16",
+          "end": "1882-03-28",
+          "title": "Lois Jules Ferry sur l'école",
+          "keyword": "Lois Jules Ferry"
         },
         {
             "begin": "1884-07-12",
             "end": "1884-07-12",
-            "title": "Loi sur la liberté syndicale",
+            "title": "Liberté syndicale",
             "keyword": "Loi relative à la création des syndicats professionnels"
+        },
+        {
+            "begin": "1885-01-25",
+            "end": "1891-09-30",
+            "title": "Boulangisme",
+            "keyword": "Boulangisme"
         },
         {
             "begin": "1894-12-22",
@@ -43,10 +61,28 @@
             "keyword": "Loi de séparation des Églises et de l'État"
         },
         {
+          "begin": "1907-03-11",
+          "end": "1907-06-29",
+          "title": "Révolte des vignerons du Midi",
+          "keyword": "Révolte des vignerons de 1907"
+        },
+        {
             "begin": "1914-07-28",
             "end": "1918-11-11",
             "title": "Première Guerre mondiale",
             "keyword": "Première Guerre mondiale"
+        },
+        {
+          "begin": "1923-01-11",
+          "end": "1925-08-25",
+          "title": "Occupation de la Ruhr",
+          "keyword": "Occupation de la Ruhr"
+        },
+        {
+            "begin": "1931-07-31",
+            "end": "1936-02-06",
+            "title": "Grande Dépression",
+            "keyword": "Grande Dépression en France"
         },
         {
             "begin": "1936-06-07",
@@ -55,23 +91,29 @@
             "keyword": "Accords de Matignon (1936)"
         },
         {
-            "begin": "1940-06-10",
-            "end": "1940-07-10",
-            "title": "Effondrement de la Troisième République",
-            "keyword": "Effondrement de la Troisième République"
+            "begin": "1939-09-03",
+            "end": "1945-05-08",
+            "title": "Seconde Guerre mondiale",
+            "keyword": "Seconde Guerre mondiale"
         },
         {
-            "begin": "1946-10-13",
-            "end": "1946-10-13",
-            "title": "Adoption de la Constitution de la Quatrième République",
-            "keyword": "Constitution française de 1946"
-          },
-          {
-            "begin": "1947-04-18",
-            "end": "1947-04-18",
-            "title": "Création du Rassemblement du peuple français (RPF) par Charles de Gaulle",
-            "keyword": "Rassemblement du peuple français"
-          },
+            "begin": "1940-07-10",
+            "end": "1944-08-20",
+            "title": "Régime de Vichy",
+            "keyword": "Régime de Vichy"
+        },
+        {
+          "begin": "1944-04-21",
+          "end": "1944-11-20",
+          "title": "Droit de vote des femmes",
+          "keyword": "Droit de vote des femmes #France"
+        },
+        {
+          "begin": "1945-10-04",
+          "end": "1945-10-19",
+          "title": "Création de la Sécurité sociale",
+          "keyword": "Sécurité sociale (France)"
+        },
           {
             "begin": "1949-04-04",
             "end": "1949-04-04",

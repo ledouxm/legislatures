@@ -52,9 +52,6 @@ export default function FiltersLine({ families }: { families: FamilyType[] }) {
             <div className="w-full flex">
                 {/* List controls */}
                 <div className="flex gap-1 items-center">
-                    {/* Settings button */}
-
-
                     {/* Shuffle button */}
                     <SettingsButton 
                         Icon={ShuffleIcon} 

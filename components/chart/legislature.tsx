@@ -15,15 +15,17 @@ type LegislatureProps = {
     minHeight: number;
     dimensions: ChartDimensions;
     firstLegislature: number;
-    axisLeftPercentage: number;
+    axisLeftPosition: number;
 }
 
-export default function Legislature({ leg, nextLeg, minHeight, dimensions, firstLegislature, axisLeftPercentage }: LegislatureProps) {
+export default function Legislature({ leg, nextLeg, minHeight, dimensions, firstLegislature, axisLeftPosition }: LegislatureProps) {
     // Place the legislature on the y axis
     const y = (leg.legislature - firstLegislature) * minHeight;
 
     // Calculate the width of the graph from the bounded width and the axis left position percentage
-    const graphWidth = dimensions.boundedWidth * (1 - (axisLeftPercentage / 100));
+    // const graphWidth = dimensions.boundedWidth * (1 - (axisLeftPercentage / 100));
+    let graphWidth = dimensions.boundedWidth - axisLeftPosition;
+    graphWidth < 0 ? graphWidth = 0 : graphWidth;
 
     // Calculate the start of the next legislature on the y axis
     const nextLegStart = nextLeg 
