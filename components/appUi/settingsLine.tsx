@@ -24,6 +24,7 @@ export default function SettingsLine({ eventVisibility, setEventVisibility, refe
     return (
         <section className="w-full p-2 flex items-end max-w-screen-3xl mx-auto">
             <div className="w-full flex justify-between">
+                {/* Left */}
                 <div className="flex gap-1 items-center">
                     {/* Events button */}
                     <SettingsButton
@@ -39,13 +40,14 @@ export default function SettingsLine({ eventVisibility, setEventVisibility, refe
                         onClick={() => setTransitionsVisibility(!transitionsVisibility)}
                         label={transitionsVisibility ? "Masquer les transitions" : "Afficher les transitions"}
                     />
-
                 </div>
+
+                {/* Right */}
                 <div className="flex gap-2 items-center">
                     {/* Reference size buttons */}
                     <SettingsButton
                         Icon={MinusIcon}
-                        onClick={() => setReferenceSize(Math.max(4, referenceSize - 4))}
+                        onClick={() => setReferenceSize(Math.max(4, referenceSize / 2))}
                         label="Réduire la taille de référence"
                     />
                     <p className="text-sm opacity-75 select-none tabular-nums">
@@ -53,7 +55,7 @@ export default function SettingsLine({ eventVisibility, setEventVisibility, refe
                     </p>
                     <SettingsButton
                         Icon={PlusIcon}
-                        onClick={() => setReferenceSize(Math.min(72, referenceSize + 4))}
+                        onClick={() => setReferenceSize(Math.min(64, referenceSize * 2))}
                         label="Augmenter la taille de référence"
                     />
                 </div>

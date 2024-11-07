@@ -7,12 +7,6 @@
         "keyword": "Guerre franco-allemande de 1870"
       },
         {
-            "begin": "1870-09-04",
-            "end": "1870-09-04",
-            "title": "Proclamation de la Troisième République",
-            "keyword": "Proclamation de la République française du 4 septembre 1870"
-        },
-        {
             "begin": "1871-03-18",
             "end": "1871-05-28",
             "title": "La Commune de Paris",
@@ -95,12 +89,6 @@
             "end": "1945-05-08",
             "title": "Seconde Guerre mondiale",
             "keyword": "Seconde Guerre mondiale"
-        },
-        {
-            "begin": "1940-07-10",
-            "end": "1944-08-20",
-            "title": "Régime de Vichy",
-            "keyword": "Régime de Vichy"
         },
         {
           "begin": "1944-04-21",

@@ -16,8 +16,7 @@ export default function HomePage() {
     const [families, setFamilies] = useState<FamilyType[] | null>(null);
     const [events, setEvents] = useState<EventType[] | null>(null);
     const { visibleCurrents, setVisibleCurrents } = useVisibleCurrentsContext();
-    const [axisLeftPercentage, setAxisLeftPercentage] = useState(50);
-    const [eventVisibility, setEventVisibility] = useState(true);
+    const [eventVisibility, setEventVisibility] = useState(false);
     const [referenceSize, setReferenceSize] = useState(28);
 
     // Fetch the data

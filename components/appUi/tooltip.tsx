@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TooltipContentType } from "../../types/tooltipContent";
 import { useTooltipContext } from "../utils/tooltipContext";
 import EntityButton from "./entityButton";
@@ -58,7 +58,7 @@ export default function Tooltip({ chartWidth, y, axisLeftPosition, xStart, xEnd,
     const coalitionPercentage = party.coalition ? coalitionTotalDeputies / legislature.total_deputes * 100 : 0;
 
     // On percentage button click, display number of deputies
-    const [isPercentage, setIsPercentage] = useState(true);
+    const [isPercentage, setIsPercentage] = useState(false);
     const handlePercentageClick = () => setIsPercentage(!isPercentage);
 
     // Set the width of the coalition name

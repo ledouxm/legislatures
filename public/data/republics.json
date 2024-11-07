@@ -1,6 +1,337 @@
 {
   "republics": [
     {
+      "name": "Monarchie de Juillet",
+      "legislatures": [
+        {
+          "legislature": 1831,
+          "total_deputes": 459,
+          "duration": 3,
+          "parties": [
+            {
+              "name": "PdM",
+              "deputes": 73
+            },
+            {
+              "name": "TP",
+              "deputes": 0
+            },
+            {
+              "name": "PdR",
+              "deputes": 282
+            },
+            {
+              "name": "LEG",
+              "deputes": 104
+            }
+          ]
+        },
+        {
+          "legislature": 1834,
+          "total_deputes": 460,
+          "duration": 3,
+          "parties": [
+            {
+              "name": "RC",
+              "deputes": 0
+            },
+            {
+              "name": "PdM",
+              "deputes": 75
+            },
+            {
+              "name": "TP",
+              "deputes": 50
+            },
+            {
+              "name": "PdR",
+              "deputes": 320
+            },
+            {
+              "name": "ORL",
+              "deputes": 0
+            },
+            {
+              "name": "LEG",
+              "deputes": 15
+            }
+          ]
+        },
+        {
+          "legislature": 1837,
+          "total_deputes": 464,
+          "duration": 1,
+          "parties": [
+            {
+              "name": "RC",
+              "deputes": 19
+            },
+            {
+              "name": "PdM",
+              "deputes": 142
+            },
+            {
+              "name": "TP",
+              "deputes": 56
+            },
+            {
+              "name": "PdR",
+              "deputes": 205
+            },
+            {
+              "name": "ORL",
+              "deputes": 168
+            },
+            {
+              "name": "LEG",
+              "deputes": 15
+            }
+          ]
+        },
+        {
+          "legislature": 1839,
+          "total_deputes": 459,
+          "duration": 3,
+          "parties": [
+            {
+              "name": "RC",
+              "deputes": 0
+            },
+            {
+              "name": "PdM",
+              "deputes": 240
+            },
+            {
+              "name": "TP",
+              "deputes": 0
+            },
+            {
+              "name": "PdR",
+              "deputes": 199
+            },
+            {
+              "name": "ORL",
+              "deputes": 0
+            },
+            {
+              "name": "LEG",
+              "deputes": 20
+            }
+          ]
+        },
+        {
+          "legislature": 1842,
+          "total_deputes": 459,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "PdM",
+              "deputes": 193
+            },
+            {
+              "name": "PdR",
+              "deputes": 266
+            },
+            {
+              "name": "LEG",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1846,
+          "total_deputes": 458,
+          "duration": 2,
+          "parties": [
+            {
+              "name": "MTG",
+              "deputes": 0
+            },
+            {
+              "name": "PdM",
+              "deputes": 168
+            },
+            {
+              "name": "PdR",
+              "deputes": 290
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "II",
+      "legislatures": [
+        {
+          "legislature": 1848,
+          "total_deputes": 880,
+          "duration": 1,
+          "parties": [
+            {
+              "name": "MTG",
+              "deputes": 152
+            },
+            {
+              "name": "RL",
+              "deputes": 436
+            },
+            {
+              "name": "PdO",
+              "deputes": 292
+            },
+            {
+              "name": "PdR",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1849,
+          "total_deputes": 705,
+          "duration": 3,
+          "parties": [
+            {
+              "name": "MTG",
+              "deputes": 180
+            },
+            {
+              "name": "RL",
+              "deputes": 75
+            },
+            {
+              "name": "PdO",
+              "deputes": 450
+            },
+            {
+              "name": "ROY",
+              "deputes": 0
+            },
+            {
+              "name": "BNP",
+              "deputes": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IId Empire",
+      "legislatures": [
+        {
+          "legislature": 1852,
+          "total_deputes": 261,
+          "duration": 5,
+          "parties": [
+            {
+              "name": "MTG",
+              "deputes": 0
+            },
+            {
+              "name": "REP",
+              "deputes": 3
+            },
+            {
+              "name": "PdO",
+              "deputes": 0
+            },
+            {
+              "name": "ROY",
+              "deputes": 5
+            },
+            {
+              "name": "BNP",
+              "deputes": 253
+            }
+          ]
+        },
+        {
+          "legislature": 1857,
+          "total_deputes": 283,
+          "duration": 6,
+          "parties": [
+            {
+              "name": "REP",
+              "deputes": 7
+            },
+            {
+              "name": "ROY",
+              "deputes": 0
+            },
+            {
+              "name": "BNP",
+              "deputes": 276
+            }
+          ]
+        },
+        {
+          "legislature": 1863,
+          "total_deputes": 283,
+          "duration": 6,
+          "parties": [
+            {
+              "name": "RI  ",
+              "deputes": 0
+            },
+            {
+              "name": "REP",
+              "deputes": 17
+            },
+            {
+              "name": "ROY",
+              "deputes": 41
+            },
+            {
+              "name": "BL",
+              "deputes": 0
+            },
+            {
+              "name": "BNP",
+              "deputes": 251
+            }
+          ]
+        },
+        {
+          "legislature": 1869,
+          "total_deputes": 283,
+          "duration": 1,
+          "parties": [
+            {
+              "name": "OR",
+              "deputes": 8,
+              "coalition": "Républicains"
+            },
+            {
+              "name": "OD",
+              "deputes": 22,
+              "coalition": "Républicains"
+            },
+            {
+              "name": "CL",
+              "deputes": 0
+            },
+            {
+              "name": "RO",
+              "deputes": 0
+            },
+            {
+              "name": "ROY",
+              "deputes": 41
+            },
+            {
+              "name": "BL",
+              "deputes": 120,
+              "coalition": "Bonapartistes"
+            },
+            {
+              "name": "BA",
+              "deputes": 92,
+              "coalition": "Bonapartistes"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "III",
       "legislatures": [
         {
@@ -10,35 +341,43 @@
           "parties": [
             {
               "name": "RI  ",
-              "deputes": 38
+              "deputes": 38,
+              "coalition": "Républicains"
             },
             {
               "name": "RR",
-              "deputes": 0
+              "deputes": 0,
+              "coalition": "Républicains"
             },
             {
               "name": "RM",
-              "deputes": 112
+              "deputes": 112,
+              "coalition": "Républicains"
             },
             {
               "name": "CL",
-              "deputes": 72
+              "deputes": 72,
+              "coalition": "Républicains"
             },
             {
               "name": "RO",
-              "deputes": 214
+              "deputes": 214,
+              "coalition": "Conservateurs"
             },
             {
               "name": "RL&C",
-              "deputes": 182
+              "deputes": 182,
+              "coalition": "Conservateurs"
             },
             {
               "name": "BI",
-              "deputes": 0
+              "deputes": 0,
+              "coalition": "Conservateurs"
             },
             {
               "name": "BNP",
-              "deputes": 20
+              "deputes": 20,
+              "coalition": "Conservateurs"
             }
           ]
         },
@@ -1014,7 +1353,137 @@
       "name": "IV",
       "legislatures": [
         {
+          "legislature": 1945,
+          "total_deputes": 586,
+          "duration": 0.5,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 151
+            },
+            {
+              "name": "URR",
+              "deputes": 8
+            },
+            {
+              "name": "RDA",
+              "deputes": 0
+            },
+            {
+              "name": "SFIO",
+              "deputes": 139
+            },
+            {
+              "name": "UDSR",
+              "deputes": 31
+            },
+            {
+              "name": "PRRS",
+              "deputes": 27
+            },
+            {
+              "name": "RGR",
+              "deputes": 0
+            },
+            {
+              "name": "Autres",
+              "deputes": 9
+            },
+            {
+              "name": "MA",
+              "deputes": 7
+            },
+            {
+              "name": "MRP",
+              "deputes": 150
+            },
+            {
+              "name": "RI",
+              "deputes": 14
+            },
+            {
+              "name": "UR ",
+              "deputes": 39
+            },
+            {
+              "name": "RPF",
+              "deputes": 0
+            },
+            {
+              "name": "PPUS",
+              "deputes": 8
+            },
+            {
+              "name": "UNIR",
+              "deputes": 0
+            }
+          ]
+        },
+        {
           "legislature": 1946,
+          "duration": 0.3,
+          "total_deputes": 586,
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 146
+            },
+            {
+              "name": "URR",
+              "deputes": 7
+            },
+            {
+              "name": "RDA",
+              "deputes": 0
+            },
+            {
+              "name": "SFIO",
+              "deputes": 128
+            },
+            {
+              "name": "UDSR",
+              "deputes": 20
+            },
+            {
+              "name": "PRRS",
+              "deputes": 32
+            },
+            {
+              "name": "RGR",
+              "deputes": 0
+            },
+            {
+              "name": "Autres",
+              "deputes": 9
+            },
+            {
+              "name": "UDMA",
+              "deputes": 11
+            },
+            {
+              "name": "MRP",
+              "deputes": 166
+            },
+            {
+              "name": "RI",
+              "deputes": 23
+            },
+            {
+              "name": "PRL",
+              "deputes": 35
+            },
+            {
+              "name": "RAPS",
+              "deputes": 9
+            },
+            {
+              "name": "UNIR",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1946.5,
           "total_deputes": 618,
           "duration": 5,
           "parties": [

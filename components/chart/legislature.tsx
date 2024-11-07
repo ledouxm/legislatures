@@ -30,7 +30,7 @@ export default function Legislature({ leg, nextLeg, minHeight, dimensions, first
     // Calculate the start of the next legislature on the y axis
     const nextLegStart = nextLeg 
         ? (nextLeg.legislature - leg.legislature) * minHeight 
-        : minHeight * 2;
+        : leg.legislature === 2024 ? minHeight * 2 : minHeight;
 
     // Get the filtered total deputies
     const { visibleCurrents }: { visibleCurrents: CurrentType[] } = useVisibleCurrentsContext();

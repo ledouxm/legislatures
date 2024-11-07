@@ -18,7 +18,7 @@ type PartyBarProps = {
 
 export default function PartyBar({ party, y, height, minHeight, partyWidth, partyX, coalitionBorder, transitionDuration }: PartyBarProps) {
     // Display text if the party is wide enough
-    const displayText = partyWidth > 30 && minHeight > 13;
+    const displayText = partyWidth > 30 && height > 13;
 
     const { transitionsVisibility } = useTransitionsContext();
     const referenceSize = transitionsVisibility ? minHeight : minHeight * 2;

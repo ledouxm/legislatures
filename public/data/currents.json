@@ -26,6 +26,11 @@
           "keyword": "Autogestion",
           "parties": [
             {
+              "name": "URR",
+              "full_name": "Union républicaine et résistance",
+              "keyword": "Union progressiste (France)" 
+            },
+            {
               "name": "URP",
               "full_name": "Union des Républicains Progressistes",
               "keyword": "Union progressiste (France)"
@@ -233,6 +238,21 @@
           "keyword": "Radicalisme #En France",
           "parties": [
             {
+              "name": "RC",
+              "full_name": "Républicains convaincus",
+              "keyword": "Républicains français sous la monarchie de Juillet"
+            },
+            {
+              "name": "MTG",
+              "full_name": "La Montagne",
+              "keyword": "Montagne (1849)"
+            },
+            {
+              "name": "OR",
+              "full_name": "Opposition radicale",
+              "keyword": "Républicains français sous le Second Empire"
+            },
+            {
               "name": "RI  ",
               "full_name": "Radicaux intransigeants"
             },
@@ -387,6 +407,26 @@
           "keyword": "Centre droit",
           "parties": [
             {
+              "name": "PdM",
+              "full_name": "Parti du Mouvement",
+              "keyword": "Courants politiques sous la monarchie de Juillet #Le centre gauche"
+            },
+            {
+              "name": "RL",
+              "full_name": "Républicains libéraux",
+              "keyword": "Républicains modérés (Deuxième République)"
+            },
+            {
+              "name": "REP",
+              "full_name": "Républicains",
+              "keyword": "Républicains français sous le Second Empire"
+            },
+            {
+              "name": "OD",
+              "full_name": "Opposition démocrate",
+              "keyword": "Républicains français sous le Second Empire"
+            },
+            {
               "name": "RM",
               "full_name": "Républicains modérés"
             },
@@ -495,6 +535,11 @@
           "keyword": "libéral-conservatisme",
           "parties": [
             {
+              "name": "TP",
+              "full_name": "Tiers parti",
+              "keyword": "Courants politiques sous la monarchie de Juillet #Le centre"
+            },
+            {
               "name": "CL",
               "full_name": "Conservateurs libéraux",
               "keyword": "Centre gauche (groupe parlementaire)"
@@ -518,6 +563,11 @@
               "full_name": "Fédération républicaine"
             },
             {
+              "name": "UR ",
+              "full_name": "Unité républicaine",
+              "keyword": "Unité républicaine (France)"
+            },
+            {
               "name": "PRL",
               "full_name": "Parti républicain de la liberté"
             },
@@ -532,6 +582,15 @@
           "color": "#33ADFF",
           "keyword": "Conservatisme",
           "parties": [
+            {
+              "name": "PdR",
+              "full_name": "Parti de la résistance",
+              "keyword": "Courants politiques sous la monarchie de Juillet #Le centre droit"
+            },
+            {
+              "name": "PdO",
+              "full_name": "Parti de l'Ordre"
+            },
             {
               "name": "MR",
               "full_name": "Monarchistes Ralliés",
@@ -587,6 +646,11 @@
           "color": "#55A696",
           "keyword": "Agrarisme",
           "parties": [
+            {
+              "name": "RAPS",
+              "full_name": "Républicains d'action paysanne et sociale",
+              "keyword": "Parti paysan d'union sociale"
+            },
             {
               "name": "PPUS",
               "full_name": "Parti paysan d'union sociale"
@@ -708,7 +772,7 @@
       "color": "#4599E0",
       "currents": [
         {
-          "name": "Orléaniste",
+          "name": "Orléaniste fusionniste",
           "color": "#924EAE",
           "keyword": "Orléanisme",
           "parties": [
@@ -720,10 +784,32 @@
           ]
         },
         {
+          "name": "Orléaniste pur",
+          "color": "#924EAE",
+          "keyword": "Orléanisme",
+          "parties": [
+            {
+              "name": "ORL",
+              "full_name": "Orléanistes",
+              "keyword": "Orléanisme #Orléanisme sous la monarchie de Juillet"
+            }
+          ]
+        },
+        {
           "name": "Monarchiste",
           "color": "#4599E0",
           "keyword": "Monarchisme",
           "parties": [
+            {
+              "name": "LEG",
+              "full_name": "Légitimistes",
+              "keyword": "Légitimisme #L’opposition parlementaire légitimiste (1832-1841)"
+            },
+            {
+              "name": "ROY",
+              "full_name": "Royalistes",
+              "keyword": "Légitimisme #La politique de fusion après la chute de la monarchie de Juillet (1848-1870)"
+            },
             {
               "name": "RL&C",
               "full_name": "Royalistes légitimistes & cléricaux",
@@ -747,6 +833,11 @@
           "keyword": "Bonapartisme",
           "parties": [
             {
+              "name": "BL",
+              "full_name": "Bonapartistes libéraux",
+              "keyword": "Bonapartisme"
+            },
+            {
               "name": "BI",
               "full_name": "Bonapartistes indépendants",
               "keyword": "Bonapartisme"
@@ -758,6 +849,11 @@
           "color": "#169547",
           "keyword": "Bonapartisme",
           "parties": [
+            {
+              "name": "BA",
+              "full_name": "Bonapartistes autoritaires",
+              "keyword": "Bonapartisme"
+            },
             {
               "name": "AAP",
               "full_name": "Appel au peuple",
@@ -792,6 +888,14 @@
           "name": "Indépendant d'Algérie",
           "color": "#DAD9DA",
           "parties": [
+            {
+              "name": "MA",
+              "full_name": "Musulmans algériens"
+            },
+            {
+              "name": "UDMA",
+              "full_name": "Union démocratique du manifeste algérien"
+            },
             {
               "name": "MIDFA",
               "full_name": "Musulman indépendant pour la défense du fédéralisme algérien"
