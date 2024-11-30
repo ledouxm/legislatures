@@ -78,7 +78,7 @@ export default function Republic({
       className={`regime-${republic.name}`}
       transform={`translate(${axisLeftPosition},${0})`} // y could be 24*index
     >
-      <g>
+      <g className="pointer-events-none">
         {/* <motion.rect
           x={0}
           height={24}
@@ -95,7 +95,7 @@ export default function Republic({
           opacity={0.4}
         /> */}
         <motion.text
-          dy={-8}
+          dy={-5}
           fontSize={12}
           textAnchor="middle"
           initial={{

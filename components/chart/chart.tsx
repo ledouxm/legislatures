@@ -114,7 +114,9 @@ export default function Chart({
         className="select-none"
       >
         {/* Events */}
-        <g className="events">
+        <g
+          className={`events ${eventsVisibility ? "" : "pointer-events-none"}`}
+        >
           {events.map((event, index) => {
             return (
               <Event
@@ -123,7 +125,9 @@ export default function Chart({
                 axisLeftPosition={axisLeftPosition}
                 minHeight={minHeight}
                 firstLegislature={firstLegislature}
-                onClick={() => setDetailsContent({ entity: event })}
+                onClick={() =>
+                  eventsVisibility ? setDetailsContent({ entity: event }) : {}
+                }
               />
             );
           })}

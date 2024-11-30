@@ -14,28 +14,29 @@ import familiesData from "../public/data/currents.json";
 import eventsData from "../public/data/events.json";
 
 export default function HomePage() {
-    const [republics, setRepublics] = useState<RepublicType[] | null>(null);
-    const [currents, setCurrents] = useState<CurrentType[] | null>(null);
-    const [families, setFamilies] = useState<FamilyType[] | null>(null);
-    const [events, setEvents] = useState<EventType[] | null>(null);
-    const { visibleCurrents, setVisibleCurrents } = useVisibleCurrentsContext();
-    const [eventVisibility, setEventVisibility] = useState(false);
-    const [referenceSize, setReferenceSize] = useState(28);
+  const [republics, setRepublics] = useState<RepublicType[] | null>(null);
+  const [currents, setCurrents] = useState<CurrentType[] | null>(null);
+  const [families, setFamilies] = useState<FamilyType[] | null>(null);
+  const [events, setEvents] = useState<EventType[] | null>(null);
+  const { visibleCurrents, setVisibleCurrents } = useVisibleCurrentsContext();
+  const [eventVisibility, setEventVisibility] = useState(false);
+  const [referenceSize, setReferenceSize] = useState(28);
 
-    // Fetch the data
-    useEffect(() => {
-        const currentsData = familiesData.families.flatMap((family: FamilyType) => family.currents);
-        setRepublics(republicsData.republics);
-        setCurrents(currentsData);
-        setVisibleCurrents(currentsData);
-        setFamilies(familiesData.families);
-        setEvents(eventsData.events);
-    }, [setVisibleCurrents, republicsData, familiesData, eventsData]); // Auto update when json files are updated (dev mode)
+  // Fetch the data
+  useEffect(() => {
+    const currentsData = familiesData.families.flatMap(
+      (family: FamilyType) => family.currents
+    );
+    setRepublics(republicsData.republics);
+    setCurrents(currentsData);
+    setVisibleCurrents(currentsData);
+    setFamilies(familiesData.families);
+    setEvents(eventsData.events);
+  }, [setVisibleCurrents, republicsData, familiesData, eventsData]); // Auto update when json files are updated (dev mode)
 
-
-    return (
-        <>
-                {/* <header className="grid grid-cols-12 gap-6 px-5 md:px-10 mt-4 md:mt-8 mb-3 md:mb-6 max-w-screen-3xl mx-auto">
+  return (
+    <>
+      {/* <header className="grid grid-cols-12 gap-6 px-5 md:px-10 mt-4 md:mt-8 mb-3 md:mb-6 max-w-screen-3xl mx-auto">
                     <h1 className="col-start-1 col-span-12 md:col-span-7 text-3xl md:text-5xl">
                         <span className="opacity-40">
                             Entre crises et revendications
@@ -53,23 +54,21 @@ export default function HomePage() {
                     </div>
                 </header> */}
 
-                <SettingsLine
-                    eventVisibility={eventVisibility}
-                    setEventVisibility={(newValue) => setEventVisibility(newValue)}
-                    referenceSize={referenceSize}
-                    setReferenceSize={(newSize) => setReferenceSize(newSize)}
-                />
+      <SettingsLine
+        eventVisibility={eventVisibility}
+        setEventVisibility={(newValue) => setEventVisibility(newValue)}
+        referenceSize={referenceSize}
+        setReferenceSize={(newSize) => setReferenceSize(newSize)}
+      />
 
-                <Main 
-                    republics={republics} 
-                    currents={currents} 
-                    events={events}
-                    eventsVisibility={eventVisibility}
-                    referenceSize={referenceSize}
-                />
-                <FiltersLine
-                    families={families}
-                />                
-        </>
-    )
-} 
+      <Main
+        republics={republics}
+        currents={currents}
+        events={events}
+        eventsVisibility={eventVisibility}
+        referenceSize={referenceSize}
+      />
+      <FiltersLine families={families} />
+    </>
+  );
+}
