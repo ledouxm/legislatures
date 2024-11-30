@@ -1,6 +1,363 @@
 {
   "republics": [
     {
+      "name": "Monarchie constitutionnelle",
+      "legislatures": [
+        {
+          "legislature": 1791,
+          "total_deputes": 745,
+          "duration": 1,
+          "parties": [
+            {
+              "name": "MON",
+              "deputes": 0
+            },
+            {
+              "name": "GIR",
+              "deputes": 136
+            },
+            {
+              "name": "MAR",
+              "deputes": 345
+            },
+            {
+              "name": "FEU",
+              "deputes": 264
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Première République",
+      "legislatures": [
+        {
+          "legislature": 1792,
+          "total_deputes": 749,
+          "duration": 3,
+          "parties": [
+            {
+              "name": "EXG",
+              "deputes": 0
+            },
+            {
+              "name": "MON",
+              "deputes": 200
+            },
+            {
+              "name": "GIR",
+              "deputes": 160
+            },
+            {
+              "name": "MAR",
+              "deputes": 389
+            },
+            {
+              "name": "Autres",
+              "deputes": 0
+            },
+            {
+              "name": "CLY",
+              "deputes": 0
+            },
+            {
+              "name": "ROY",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1795,
+          "total_deputes": 504,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "EXG",
+              "deputes": 0
+            },
+            {
+              "name": "MON",
+              "deputes": 106
+            },
+            {
+              "name": "GIR",
+              "deputes": 0
+            },
+            {
+              "name": "THER",
+              "deputes": 135
+            },
+            {
+              "name": "Autres",
+              "deputes": 44
+            },
+            {
+              "name": "CLY",
+              "deputes": 159
+            },
+            {
+              "name": "ROY",
+              "deputes": 33
+            }
+          ]
+        },
+        {
+          "legislature": 1799,
+          "total_deputes": 500,
+          "duration": 1,
+          "parties": [
+            {
+              "name": "EXG",
+              "deputes": 30
+            },
+            {
+              "name": "MON",
+              "deputes": 240
+            },
+            {
+              "name": "GIR",
+              "deputes": 0
+            },
+            {
+              "name": "MAR",
+              "deputes": 0
+            },
+            {
+              "name": "Autres",
+              "deputes": 0
+            },
+            {
+              "name": "CLY",
+              "deputes": 150
+            },
+            {
+              "name": "BNP",
+              "deputes": 0
+            },
+            {
+              "name": "ROY",
+              "deputes": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Premier Empire",
+      "legislatures": [
+        {
+          "legislature": 1800,
+          "total_deputes": 300,
+          "duration": 14,
+          "parties": [
+            {
+              "name": "EXG",
+              "deputes": 0
+            },
+            {
+              "name": "MON",
+              "deputes": 0
+            },
+            {
+              "name": "LIB",
+              "deputes": 0
+            },
+            {
+              "name": "CLY",
+              "deputes": 0
+            },
+            {
+              "name": "BNP",
+              "deputes": 300
+            },
+            {
+              "name": "ROY",
+              "deputes": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cent jours",
+      "legislatures": [
+        {
+          "legislature": 1815,
+          "total_deputes": 630,
+          "duration": 1,
+          "parties": [
+            {
+              "name": "REP ",
+              "deputes": 40
+            },
+            {
+              "name": "LIB",
+              "deputes": 510
+            },
+            {
+              "name": "DOC",
+              "deputes": 0
+            },
+            {
+              "name": "BNP",
+              "deputes": 80
+            },
+            {
+              "name": "UR  ",
+              "deputes": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seconde Restauration",
+      "legislatures": [
+        {
+          "legislature": 1815.5,
+          "total_deputes": 400,
+          "duration": 1,
+          "parties": [
+            {
+              "name": "REP ",
+              "deputes": 0
+            },
+            {
+              "name": "LIB",
+              "deputes": 0
+            },
+            {
+              "name": "DOC",
+              "deputes": 50
+            },
+            {
+              "name": "BNP",
+              "deputes": 0
+            },
+            {
+              "name": "UR  ",
+              "deputes": 350
+            }
+          ]
+        },
+        {
+          "legislature": 1816,
+          "total_deputes": 258,
+          "duration": 4,
+          "parties": [
+            {
+              "name": "REP ",
+              "deputes": 20
+            },
+            {
+              "name": "LIB",
+              "deputes": 10
+            },
+            {
+              "name": "DOC",
+              "deputes": 136
+            },
+            {
+              "name": "UR  ",
+              "deputes": 92
+            }
+          ]
+        },
+        {
+          "legislature": 1820,
+          "total_deputes": 430,
+          "duration": 3,
+          "parties": [
+            {
+              "name": "REP ",
+              "deputes": 0
+            },
+            {
+              "name": "LIB",
+              "deputes": 80
+            },
+            {
+              "name": "CD ",
+              "deputes": 190
+            },
+            {
+              "name": "UR  ",
+              "deputes": 160
+            },
+            {
+              "name": "UCO",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1824,
+          "total_deputes": 430,
+          "duration": 3,
+          "parties": [
+            {
+              "name": "LIB",
+              "deputes": 17
+            },
+            {
+              "name": "CD ",
+              "deputes": 0
+            },
+            {
+              "name": "UR  ",
+              "deputes": 413
+            },
+            {
+              "name": "UCO",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1827,
+          "total_deputes": 430,
+          "duration": 3,
+          "parties": [
+            {
+              "name": "LIB",
+              "deputes": 185
+            },
+            {
+              "name": "UR  ",
+              "deputes": 170
+            },
+            {
+              "name": "UCO",
+              "deputes": 75
+            }
+          ]
+        },
+        {
+          "legislature": 1830,
+          "total_deputes": 556,
+          "duration": 1,
+          "parties": [
+            {
+              "name": "LIB",
+              "deputes": 274
+            },
+            {
+              "name": "PdR",
+              "deputes": 0
+            },
+            {
+              "name": "UR  ",
+              "deputes": 282
+            },
+            {
+              "name": "UCO",
+              "deputes": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Monarchie de Juillet",
       "legislatures": [
         {
@@ -160,7 +517,7 @@
       ]
     },
     {
-      "name": "II",
+      "name": "Deuxième République",
       "legislatures": [
         {
           "legislature": 1848,
@@ -203,11 +560,11 @@
               "deputes": 450
             },
             {
-              "name": "ROY",
+              "name": "BNP",
               "deputes": 0
             },
             {
-              "name": "BNP",
+              "name": "ROY",
               "deputes": 0
             }
           ]
@@ -215,7 +572,7 @@
       ]
     },
     {
-      "name": "IId Empire",
+      "name": "Second Empire",
       "legislatures": [
         {
           "legislature": 1852,
@@ -235,12 +592,12 @@
               "deputes": 0
             },
             {
-              "name": "ROY",
-              "deputes": 5
-            },
-            {
               "name": "BNP",
               "deputes": 253
+            },
+            {
+              "name": "ROY",
+              "deputes": 5
             }
           ]
         },
@@ -254,12 +611,12 @@
               "deputes": 7
             },
             {
-              "name": "ROY",
-              "deputes": 0
-            },
-            {
               "name": "BNP",
               "deputes": 276
+            },
+            {
+              "name": "ROY",
+              "deputes": 0
             }
           ]
         },
@@ -277,16 +634,16 @@
               "deputes": 17
             },
             {
-              "name": "ROY",
-              "deputes": 41
-            },
-            {
               "name": "BL",
               "deputes": 0
             },
             {
               "name": "BNP",
               "deputes": 251
+            },
+            {
+              "name": "ROY",
+              "deputes": 41
             }
           ]
         },
@@ -314,10 +671,6 @@
               "deputes": 0
             },
             {
-              "name": "ROY",
-              "deputes": 41
-            },
-            {
               "name": "BL",
               "deputes": 120,
               "coalition": "Bonapartistes"
@@ -326,13 +679,17 @@
               "name": "BA",
               "deputes": 92,
               "coalition": "Bonapartistes"
+            },
+            {
+              "name": "ROY",
+              "deputes": 41
             }
           ]
         }
       ]
     },
     {
-      "name": "III",
+      "name": "Troisième République",
       "legislatures": [
         {
           "legislature": 1871,
@@ -365,11 +722,6 @@
               "coalition": "Conservateurs"
             },
             {
-              "name": "RL&C",
-              "deputes": 182,
-              "coalition": "Conservateurs"
-            },
-            {
               "name": "BI",
               "deputes": 0,
               "coalition": "Conservateurs"
@@ -377,6 +729,11 @@
             {
               "name": "BNP",
               "deputes": 20,
+              "coalition": "Conservateurs"
+            },
+            {
+              "name": "RL&C",
+              "deputes": 182,
               "coalition": "Conservateurs"
             }
           ]
@@ -407,16 +764,16 @@
               "deputes": 42
             },
             {
-              "name": "RL&C",
-              "deputes": 34
-            },
-            {
               "name": "BI",
               "deputes": 15
             },
             {
               "name": "AAP",
               "deputes": 82
+            },
+            {
+              "name": "RL&C",
+              "deputes": 34
             }
           ]
         },
@@ -450,16 +807,16 @@
               "deputes": 41
             },
             {
-              "name": "RL&C",
-              "deputes": 56
-            },
-            {
               "name": "BI",
               "deputes": 0
             },
             {
               "name": "AAP",
               "deputes": 111
+            },
+            {
+              "name": "RL&C",
+              "deputes": 56
             }
           ]
         },
@@ -501,12 +858,12 @@
               "deputes": 7
             },
             {
-              "name": "RL&C",
-              "deputes": 35
-            },
-            {
               "name": "AAP",
               "deputes": 46
+            },
+            {
+              "name": "RL&C",
+              "deputes": 35
             }
           ]
         },
@@ -552,12 +909,12 @@
               "deputes": 63
             },
             {
-              "name": "RL&C",
-              "deputes": 73
-            },
-            {
               "name": "BNP",
               "deputes": 65
+            },
+            {
+              "name": "RL&C",
+              "deputes": 73
             },
             {
               "name": "BOU",
@@ -615,12 +972,12 @@
               "deputes": 0
             },
             {
-              "name": "R&C",
-              "deputes": 110
-            },
-            {
               "name": "BNP",
               "deputes": 52
+            },
+            {
+              "name": "R&C",
+              "deputes": 110
             },
             {
               "name": "BOU",
@@ -678,12 +1035,12 @@
               "deputes": 35
             },
             {
-              "name": "M&C",
-              "deputes": 58
-            },
-            {
               "name": "BNP",
               "deputes": 0
+            },
+            {
+              "name": "M&C",
+              "deputes": 58
             },
             {
               "name": "BOU",
@@ -1270,7 +1627,7 @@
       ]
     },
     {
-      "name": "VICHY",
+      "name": "Régime de Vichy",
       "legislatures": [
         {
           "legislature": 1940,
@@ -1350,7 +1707,7 @@
       ]
     },
     {
-      "name": "IV",
+      "name": "Quatrième République",
       "legislatures": [
         {
           "legislature": 1945,
@@ -1711,7 +2068,7 @@
       ]
     },
     {
-      "name": "V",
+      "name": "Cinquième République",
       "legislatures": [
         {
           "legislature": 1958,

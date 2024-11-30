@@ -3,6 +3,6 @@ import { PartyType } from "./party";
 export type CurrentType = {
     name: string;
     color: string;
-    keyword: string;
+    keyword?: string;
     parties: PartyType[];
 }

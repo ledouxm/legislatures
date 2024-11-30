@@ -233,10 +233,32 @@
           ]
         },
         {
-          "name": "Radical de gauche",
-          "color": "#FF5879",
-          "keyword": "Radicalisme #En France",
+          "name": "Sans-culotte",
+          "color": "#C10F3D",
+          "keyword": "Sans-culottes",
           "parties": [
+            {
+              "name": "EXG",
+              "full_name": "Extrème gauche",
+              "keyword": "Sans-culottes"
+            }
+          ]
+        },
+        {
+          "name": "Républicain jacobin",
+          "color": "#FF3057",
+          "keyword": "Jacobinisme",
+          "parties": [
+            {
+              "name": "MON",
+              "full_name": "Montagnards",
+              "keyword": "Montagne (Révolution française)"
+            },
+            {
+              "name": "REP ",
+              "full_name": "Républicains",
+              "keyword": "Républicains français sous la Restauration"
+            },
             {
               "name": "RC",
               "full_name": "Républicains convaincus",
@@ -246,7 +268,14 @@
               "name": "MTG",
               "full_name": "La Montagne",
               "keyword": "Montagne (1849)"
-            },
+            }
+          ]
+        },
+        {
+          "name": "Radical de gauche",
+          "color": "#FF5879",
+          "keyword": "Radicalisme #En France",
+          "parties": [
             {
               "name": "OR",
               "full_name": "Opposition radicale",
@@ -407,6 +436,16 @@
           "keyword": "Centre droit",
           "parties": [
             {
+              "name": "GIR",
+              "full_name": "Girondins",
+              "keyword": "Gironde (Révolution française)"
+            },
+            {
+              "name": "LIB",
+              "full_name": "Libéraux",
+              "keyword": "Libéraux (Restauration)"
+            },
+            {
               "name": "PdM",
               "full_name": "Parti du Mouvement",
               "keyword": "Courants politiques sous la monarchie de Juillet #Le centre gauche"
@@ -535,6 +574,16 @@
           "keyword": "libéral-conservatisme",
           "parties": [
             {
+              "name": "MAR",
+              "full_name": "Marais",
+              "keyword": "Plaine (Révolution française)"
+            },
+            {
+              "name": "THER",
+              "full_name": "Thermidoriens",
+              "keyword": "Thermidorien"
+            },
+            {
               "name": "TP",
               "full_name": "Tiers parti",
               "keyword": "Courants politiques sous la monarchie de Juillet #Le centre"
@@ -582,6 +631,26 @@
           "color": "#33ADFF",
           "keyword": "Conservatisme",
           "parties": [
+            {
+              "name": "FEU",
+              "full_name": "Feuillants",
+              "keyword": "Club des feuillants"
+            },
+            {
+              "name": "CLY",
+              "full_name": "Clichyens",
+              "keyword": "Club de Clichy"
+            },
+            {
+              "name": "DOC",
+              "full_name": "Doctrinaires",
+              "keyword": "Doctrinaires (politique)"
+            },
+            {
+              "name": "CD ",
+              "full_name": "Centre droit",
+              "keyword": "Doctrinaires (politique)"
+            },
             {
               "name": "PdR",
               "full_name": "Parti de la résistance",
@@ -801,6 +870,11 @@
           "keyword": "Monarchisme",
           "parties": [
             {
+              "name": "UR  ",
+              "full_name": "Ultraroyalistes",
+              "keyword": "Ultraroyalistes (France)"
+            },
+            {
               "name": "LEG",
               "full_name": "Légitimistes",
               "keyword": "Légitimisme #L’opposition parlementaire légitimiste (1832-1841)"
@@ -824,6 +898,18 @@
               "name": "M&C",
               "full_name": "Monarchistes & cléricaux",
               "keyword": "Monarchisme"
+            }
+          ]
+        },
+        {
+          "name": "Monarchiste absolutiste",
+          "color": "#2C61A1",
+          "keyword": "Absolutisme",
+          "parties": [
+            {
+              "name": "UCO",
+              "full_name": "Ultraroyalistes de la contre-opposition",
+              "keyword": "Ultraroyalistes (France)"
             }
           ]
         },

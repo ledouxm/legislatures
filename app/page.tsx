@@ -9,6 +9,9 @@ import { RepublicType } from "../types/republic";
 import { CurrentType } from "../types/current";
 import { EventType } from "../types/event";
 import SettingsLine from "../components/appUi/settingsLine";
+import republicsData from "../public/data/republics.json";
+import familiesData from "../public/data/currents.json";
+import eventsData from "../public/data/events.json";
 
 export default function HomePage() {
     const [republics, setRepublics] = useState<RepublicType[] | null>(null);
@@ -21,25 +24,14 @@ export default function HomePage() {
 
     // Fetch the data
     useEffect(() => {
-        // Fetch the republics
-        fetch('/data/republics.json')
-            .then((response) => response.json())
-            .then((data) => setRepublics(data.republics));
+        const currentsData = familiesData.families.flatMap((family: FamilyType) => family.currents);
+        setRepublics(republicsData.republics);
+        setCurrents(currentsData);
+        setVisibleCurrents(currentsData);
+        setFamilies(familiesData.families);
+        setEvents(eventsData.events);
+    }, [setVisibleCurrents, republicsData, familiesData, eventsData]); // Auto update when json files are updated (dev mode)
 
-        // Fetch the currents
-        fetch('/data/currents.json')
-            .then((response) => response.json())
-            .then((data) => {
-                setFamilies(data.families);
-                setCurrents(data.families.flatMap((family: FamilyType) => family.currents));
-                setVisibleCurrents(data.families.flatMap((family: FamilyType) => family.currents));
-            });
-        
-        // Fetch the events
-        fetch('/data/events.json')
-            .then((response) => response.json())
-            .then((data) => setEvents(data.events));
-    }, [setVisibleCurrents]);
 
     return (
         <>

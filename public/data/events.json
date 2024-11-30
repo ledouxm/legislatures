@@ -1,220 +1,424 @@
 {
-    "events": [
-      {
-        "begin": "1870-07-19",
-        "end": "1871-01-28",
-        "title": "Guerre franco-prussienne",
-        "keyword": "Guerre franco-allemande de 1870"
-      },
-        {
-            "begin": "1871-03-18",
-            "end": "1871-05-28",
-            "title": "La Commune de Paris",
-            "keyword": "Commune de Paris"
-        },
-        {
-            "begin": "1875-02-24",
-            "end": "1875-02-25",
-            "title": "Lois constitutionnelles",
-            "keyword": "Lois constitutionnelles de 1875"
-        },
-        {
-            "begin": "1877-05-16",
-            "end": "1877-12-14",
-            "title": "Crise du 16 mai",
-            "keyword": "Crise du 16 mai 1877"
-        },
-        {
-          "begin": "1881-06-16",
-          "end": "1882-03-28",
-          "title": "Lois Jules Ferry sur l'école",
-          "keyword": "Lois Jules Ferry"
-        },
-        {
-            "begin": "1884-07-12",
-            "end": "1884-07-12",
-            "title": "Liberté syndicale",
-            "keyword": "Loi relative à la création des syndicats professionnels"
-        },
-        {
-            "begin": "1885-01-25",
-            "end": "1891-09-30",
-            "title": "Boulangisme",
-            "keyword": "Boulangisme"
-        },
-        {
-            "begin": "1894-12-22",
-            "end": "1906-07-12",
-            "title": "Affaire Dreyfus",
-            "keyword": "Affaire Dreyfus"
-        },
-        {
-            "begin": "1905-07-07",
-            "end": "1905-12-09",
-            "title": "Séparation de l'Église et de l'État",
-            "keyword": "Loi de séparation des Églises et de l'État"
-        },
-        {
-          "begin": "1907-03-11",
-          "end": "1907-06-29",
-          "title": "Révolte des vignerons du Midi",
-          "keyword": "Révolte des vignerons de 1907"
-        },
-        {
-            "begin": "1914-07-28",
-            "end": "1918-11-11",
-            "title": "Première Guerre mondiale",
-            "keyword": "Première Guerre mondiale"
-        },
-        {
-          "begin": "1923-01-11",
-          "end": "1925-08-25",
-          "title": "Occupation de la Ruhr",
-          "keyword": "Occupation de la Ruhr"
-        },
-        {
-            "begin": "1931-07-31",
-            "end": "1936-02-06",
-            "title": "Grande Dépression",
-            "keyword": "Grande Dépression en France"
-        },
-        {
-            "begin": "1936-06-07",
-            "end": "1936-06-07",
-            "title": "Accords de Matignon",
-            "keyword": "Accords de Matignon (1936)"
-        },
-        {
-            "begin": "1939-09-03",
-            "end": "1945-05-08",
-            "title": "Seconde Guerre mondiale",
-            "keyword": "Seconde Guerre mondiale"
-        },
-        {
-          "begin": "1944-04-21",
-          "end": "1944-11-20",
-          "title": "Droit de vote des femmes",
-          "keyword": "Droit de vote des femmes #France"
-        },
-        {
-          "begin": "1945-10-04",
-          "end": "1945-10-19",
-          "title": "Création de la Sécurité sociale",
-          "keyword": "Sécurité sociale (France)"
-        },
-          {
-            "begin": "1949-04-04",
-            "end": "1949-04-04",
-            "title": "Adhésion de la France à l'OTAN",
-            "keyword": "Organisation du traité de l'Atlantique nord"
-          },
-          {
-            "begin": "1950-05-09",
-            "end": "1950-05-09",
-            "title": "Déclaration Schuman",
-            "keyword": "Déclaration Schuman"
-          },
-          {
-            "begin": "1954-11-01",
-            "end": "1962-03-19",
-            "title": "Guerre d'Algérie",
-            "keyword": "Guerre d'Algérie"
-          },
-          {
-            "begin": "1956-03-02",
-            "end": "1956-03-20",
-            "title": "Indépendance du Maroc et de la Tunisie",
-            "keyword": "Indépendance du Maroc"
-          },
-          {
-            "begin": "1958-05-13",
-            "end": "1958-06-01",
-            "title": "Crise de mai 1958",
-            "keyword": "Crise de mai 1958"
-          },
-          {
-            "begin": "1962-03-18",
-            "end": "1962-03-18",
-            "title": "Accords d'Évian et fin de la guerre d'Algérie",
-            "keyword": "Accords d'Évian"
-          },
-          {
-            "begin": "1968-05-02",
-            "end": "1968-06-23",
-            "title": "Mouvement de mai 68",
-            "keyword": "Mai 68"
-          },
-          {
-            "begin": "1969-04-27",
-            "end": "1969-04-27",
-            "title": "Référendum sur la réforme du Sénat et la décentralisation",
-            "keyword": "Référendum de 1969 sur la réforme du Sénat et la régionalisation"
-          },
-          {
-            "begin": "1974-05-19",
-            "end": "1974-05-19",
-            "title": "Élection de Valéry Giscard d'Estaing à la présidence de la République",
-            "keyword": "Valéry Giscard d'Estaing"
-          },
-          {
-            "begin": "1981-05-10",
-            "end": "1981-05-10",
-            "title": "Élection de François Mitterrand à la présidence de la République",
-            "keyword": "François Mitterrand"
-          },
-          {
-            "begin": "1992-09-20",
-            "end": "1992-09-20",
-            "title": "Référendum sur le traité de Maastricht",
-            "keyword": "Référendum de 1992 sur le traité de Maastricht"
-          },
-          {
-            "begin": "1995-05-07",
-            "end": "1995-05-07",
-            "title": "Élection de Jacques Chirac à la présidence de la République",
-            "keyword": "Jacques Chirac"
-          },
-          {
-            "begin": "2000-09-24",
-            "end": "2000-09-24",
-            "title": "Référendum sur la réduction du mandat présidentiel à 5 ans",
-            "keyword": "Référendum de 2000 sur le quinquennat"
-          },
-          {
-            "begin": "2002-05-05",
-            "end": "2002-05-05",
-            "title": "Réélection de Jacques Chirac face à Jean-Marie Le Pen",
-            "keyword": "Élection présidentielle française de 2002"
-          },
-          {
-            "begin": "2005-05-29",
-            "end": "2005-05-29",
-            "title": "Référendum sur le traité établissant une Constitution pour l'Europe",
-            "keyword": "Référendum français de 2005 sur le traité établissant une Constitution pour l'Europe"
-          },
-          {
-            "begin": "2007-05-06",
-            "end": "2007-05-06",
-            "title": "Élection de Nicolas Sarkozy à la présidence de la République",
-            "keyword": "Nicolas Sarkozy"
-          },
-          {
-            "begin": "2012-05-06",
-            "end": "2012-05-06",
-            "title": "Élection de François Hollande à la présidence de la République",
-            "keyword": "François Hollande"
-          },
-          {
-            "begin": "2017-05-07",
-            "end": "2017-05-07",
-            "title": "Élection d'Emmanuel Macron à la présidence de la République",
-            "keyword": "Emmanuel Macron"
-          },
-          {
-            "begin": "2018-11-17",
-            "end": "2019-03-16",
-            "title": "Mouvement des Gilets jaunes",
-            "keyword": "Mouvement des Gilets jaunes"
-          }
-    ]
+  "events": [
+    {
+      "begin": "1792-04-20",
+      "end": "1797-10-18",
+      "title": "Guerre de la Première Coalition",
+      "keyword": "Guerre de la première coalition"
+    },
+    {
+      "begin": "1794-07-27",
+      "end": "1794-07-28",
+      "title": "Chute de Robespierre",
+      "keyword": "Chute de Robespierre"
+    },
+    {
+      "begin": "1797-09-04",
+      "end": "1797-09-04",
+      "title": "Coup d'État du 18 fructidor",
+      "keyword": "Coup d'État du 18 fructidor an V"
+    },
+    {
+      "begin": "1798-11-29",
+      "end": "1802-03-25",
+      "title": "Guerre de la Deuxième Coalition",
+      "keyword": "Guerre de la deuxième coalition"
+    },
+    {
+      "begin": "1799-11-09",
+      "end": "1799-11-10",
+      "title": "Coup d'État du 18 Brumaire",
+      "keyword": "Coup d'État du 18 Brumaire"
+    },
+    {
+      "begin": "1802-05-20",
+      "end": "1802-05-20",
+      "title": "Rétablissement de l'esclavage",
+      "keyword": "Rétablissement de l'esclavage par Napoléon Bonaparte"
+    },
+    {
+      "begin": "1803-04-30",
+      "end": "1803-05-08",
+      "title": "Vente de la Louisiane aux États-Unis (37 Francs/Km²)",
+      "keyword": "Vente de la Louisiane"
+    },
+    {
+      "begin": "1804-01-01",
+      "end": "1804-01-01",
+      "title": "Indépendance d'Haïti",
+      "keyword": "Révolution haïtienne #L'indépendance d'Haïti"
+    },
+    {
+      "begin": "1805-04-11",
+      "end": "1806-07-18",
+      "title": "Guerre de la Troisième Coalition",
+      "keyword": "Guerre de la troisième coalition"
+    },
+    {
+      "begin": "1806-10-09",
+      "end": "1807-07-09",
+      "title": "Guerre de la Quatrième Coalition",
+      "keyword": "Guerre de la Quatrième Coalition"
+    },
+    {
+      "begin": "1809-04-10",
+      "end": "1809-10-14",
+      "title": "Guerre de la Cinquième Coalition",
+      "keyword": "Guerre de la cinquième coalition"
+    },
+    {
+      "begin": "1812-06-24",
+      "end": "1812-12-30",
+      "title": "Campagne de Russie",
+      "keyword": "Campagne de Russie"
+    },
+    {
+      "begin": "1813-03-03",
+      "end": "1814-05-30",
+      "title": "Guerre de la Sixième Coalition",
+      "keyword": "Guerre de la Sixième Coalition"
+    },
+    {
+      "begin": "1814-03-30",
+      "end": "1814-04-11",
+      "title": "Défaite et première abdication de Napoléon",
+      "keyword": "Première abdication de Napoléon Ier"
+    },
+    {
+      "begin": "1815-03-20",
+      "end": "1815-07-07",
+      "title": "Cent-Jours et seconde abdication de Napoléon",
+      "keyword": "Cent-Jours"
+    },
+    {
+      "begin": "1816-09-22",
+      "end": "1817-06-21",
+      "title": "Année sans été (famines)",
+      "keyword": "Année sans été"
+    },
+    {
+      "begin": "1820-03-28",
+      "end": "1820-03-31",
+      "title": "Lois rétablissant la censure et restreignant les libertés individuelles",
+      "keyword": "Liberté de la presse sous la Restauration"
+    },
+    {
+      "begin": "1823-04-07",
+      "end": "1823-11-05",
+      "title": "Expédition d'Espagne",
+      "keyword": "Expédition d'Espagne"
+    },
+    {
+      "begin": "1825-04-17",
+      "end": "1825-04-17",
+      "title": "Indemnisation de la France par Haïti (5405 Francs/Km²)",
+      "keyword": "Indemnisation de la France par la république d'Haïti"
+    },
+    {
+      "begin": "1827-04-25",
+      "end": "1827-04-25",
+      "title": "Loi d'interdiction de la traite des Noirs",
+      "keyword": "Loi du 25 avril 1827"
+    },
+    {
+      "begin": "1830-07-27",
+      "end": "1830-07-29",
+      "title": "Révolution de 1830",
+      "keyword": "Trois Glorieuses"
+    },
+    {
+      "begin": "1831-11-21",
+      "end": "1831-12-03",
+      "title": "Première révolte des Canuts",
+      "keyword": "Révolte des canuts"
+    },
+    {
+      "begin": "1832-06-05",
+      "end": "1847-12-23",
+      "title": "Conquête de l'État d'Abdelkader (Algérie)",
+      "keyword": "Conquête de l'Algérie par la France"
+    },
+    {
+      "begin": "1834-04-09",
+      "end": "1834-04-15",
+      "title": "Seconde révolte des Canuts",
+      "keyword": "Révolte des canuts"
+    },
+    {
+      "begin": "1839-05-12",
+      "end": "1839-05-13",
+      "title": "Insurrection républicaine à Paris",
+      "keyword": "Société des saisons"
+    },
+    {
+      "begin": "1844-08-06",
+      "end": "1844-09-10",
+      "title": "Expédition du Maroc",
+      "keyword": "Guerre franco-marocaine (1844)"
+    },
+    {
+      "begin": "1848-02-22",
+      "end": "1848-02-25",
+      "title": "Révolution de 1848",
+      "keyword": "Révolution française de 1848"
+    },
+    {
+      "begin": "1851-12-02",
+      "end": "1851-12-02",
+      "title": "Coup d'État de Louis-Napoléon Bonaparte",
+      "keyword": "Coup d'État du 2 décembre 1851"
+    },
+    {
+      "begin": "1852-12-02",
+      "end": "1852-12-02",
+      "title": "Proclamation du Second Empire",
+      "keyword": "Second Empire"
+    },
+    {
+      "begin": "1853-10-04",
+      "end": "1856-03-30",
+      "title": "Guerre de Crimée",
+      "keyword": "Guerre de Crimée"
+    },
+    {
+      "begin": "1859-04-26",
+      "end": "1859-07-12",
+      "title": "Campagne d'Italie",
+      "keyword": "Campagne d'Italie (1859)"
+    },
+    {
+      "begin": "1860-04-15",
+      "end": "1860-04-23",
+      "title": "Rattachement de la Savoie et de Nice à la France",
+      "keyword": "Annexion de la Savoie"
+    },
+    {
+      "begin": "1861-12-08",
+      "end": "1867-06-21",
+      "title": "Expédition du Mexique",
+      "keyword": "Expédition du Mexique"
+    },
+    {
+      "begin": "1864-05-25",
+      "end": "1864-05-25",
+      "title": "Droit de grève",
+      "keyword": "Loi Ollivier"
+    },
+    {
+      "begin": "1870-07-19",
+      "end": "1871-01-28",
+      "title": "Guerre franco-prussienne",
+      "keyword": "Guerre franco-allemande de 1870"
+    },
+    {
+      "begin": "1871-03-18",
+      "end": "1871-05-28",
+      "title": "Commune de Paris",
+      "keyword": "Commune de Paris"
+    },
+    {
+      "begin": "1875-02-24",
+      "end": "1875-02-25",
+      "title": "Lois constitutionnelles",
+      "keyword": "Lois constitutionnelles de 1875"
+    },
+    {
+      "begin": "1877-05-16",
+      "end": "1877-12-14",
+      "title": "Crise du 16 mai",
+      "keyword": "Crise du 16 mai 1877"
+    },
+    {
+      "begin": "1881-06-16",
+      "end": "1882-03-28",
+      "title": "Lois Jules Ferry sur l'école",
+      "keyword": "Lois Jules Ferry"
+    },
+    {
+      "begin": "1884-07-12",
+      "end": "1884-07-12",
+      "title": "Liberté syndicale",
+      "keyword": "Loi relative à la création des syndicats professionnels"
+    },
+    {
+      "begin": "1885-01-25",
+      "end": "1891-09-30",
+      "title": "Boulangisme",
+      "keyword": "Boulangisme"
+    },
+    {
+      "begin": "1894-12-22",
+      "end": "1906-07-12",
+      "title": "Affaire Dreyfus",
+      "keyword": "Affaire Dreyfus"
+    },
+    {
+      "begin": "1905-07-07",
+      "end": "1905-12-09",
+      "title": "Séparation de l'Église et de l'État",
+      "keyword": "Loi de séparation des Églises et de l'État"
+    },
+    {
+      "begin": "1907-03-11",
+      "end": "1907-06-29",
+      "title": "Révolte des vignerons du Midi",
+      "keyword": "Révolte des vignerons de 1907"
+    },
+    {
+      "begin": "1914-07-28",
+      "end": "1918-11-11",
+      "title": "Première Guerre mondiale",
+      "keyword": "Première Guerre mondiale"
+    },
+    {
+      "begin": "1923-01-11",
+      "end": "1925-08-25",
+      "title": "Occupation de la Ruhr",
+      "keyword": "Occupation de la Ruhr"
+    },
+    {
+      "begin": "1931-07-31",
+      "end": "1936-02-06",
+      "title": "Grande Dépression",
+      "keyword": "Grande Dépression en France"
+    },
+    {
+      "begin": "1936-06-07",
+      "end": "1936-06-07",
+      "title": "Accords de Matignon",
+      "keyword": "Accords de Matignon (1936)"
+    },
+    {
+      "begin": "1939-09-03",
+      "end": "1945-05-08",
+      "title": "Seconde Guerre mondiale",
+      "keyword": "Seconde Guerre mondiale"
+    },
+    {
+      "begin": "1944-04-21",
+      "end": "1944-11-20",
+      "title": "Droit de vote des femmes",
+      "keyword": "Droit de vote des femmes #France"
+    },
+    {
+      "begin": "1945-10-04",
+      "end": "1945-10-19",
+      "title": "Création de la Sécurité sociale",
+      "keyword": "Sécurité sociale (France)"
+    },
+    {
+      "begin": "1949-04-04",
+      "end": "1949-04-04",
+      "title": "Adhésion de la France à l'OTAN",
+      "keyword": "Organisation du traité de l'Atlantique nord"
+    },
+    {
+      "begin": "1950-05-09",
+      "end": "1950-05-09",
+      "title": "Déclaration Schuman",
+      "keyword": "Déclaration Schuman"
+    },
+    {
+      "begin": "1954-11-01",
+      "end": "1962-03-19",
+      "title": "Guerre d'Algérie",
+      "keyword": "Guerre d'Algérie"
+    },
+    {
+      "begin": "1956-03-02",
+      "end": "1956-03-20",
+      "title": "Indépendance du Maroc et de la Tunisie",
+      "keyword": "Indépendance du Maroc"
+    },
+    {
+      "begin": "1958-05-13",
+      "end": "1958-06-01",
+      "title": "Crise de mai 1958",
+      "keyword": "Crise de mai 1958"
+    },
+    {
+      "begin": "1962-03-18",
+      "end": "1962-03-18",
+      "title": "Accords d'Évian et fin de la guerre d'Algérie",
+      "keyword": "Accords d'Évian"
+    },
+    {
+      "begin": "1968-05-02",
+      "end": "1968-06-23",
+      "title": "Mouvement de mai 68",
+      "keyword": "Mai 68"
+    },
+    {
+      "begin": "1969-04-27",
+      "end": "1969-04-27",
+      "title": "Référendum sur la réforme du Sénat et la décentralisation",
+      "keyword": "Référendum de 1969 sur la réforme du Sénat et la régionalisation"
+    },
+    {
+      "begin": "1974-05-19",
+      "end": "1974-05-19",
+      "title": "Élection de Valéry Giscard d'Estaing à la présidence de la République",
+      "keyword": "Valéry Giscard d'Estaing"
+    },
+    {
+      "begin": "1981-05-10",
+      "end": "1981-05-10",
+      "title": "Élection de François Mitterrand à la présidence de la République",
+      "keyword": "François Mitterrand"
+    },
+    {
+      "begin": "1992-09-20",
+      "end": "1992-09-20",
+      "title": "Référendum sur le traité de Maastricht",
+      "keyword": "Référendum de 1992 sur le traité de Maastricht"
+    },
+    {
+      "begin": "1995-05-07",
+      "end": "1995-05-07",
+      "title": "Élection de Jacques Chirac à la présidence de la République",
+      "keyword": "Jacques Chirac"
+    },
+    {
+      "begin": "2000-09-24",
+      "end": "2000-09-24",
+      "title": "Référendum sur la réduction du mandat présidentiel à 5 ans",
+      "keyword": "Référendum de 2000 sur le quinquennat"
+    },
+    {
+      "begin": "2002-05-05",
+      "end": "2002-05-05",
+      "title": "Réélection de Jacques Chirac face à Jean-Marie Le Pen",
+      "keyword": "Élection présidentielle française de 2002"
+    },
+    {
+      "begin": "2005-05-29",
+      "end": "2005-05-29",
+      "title": "Référendum sur le traité établissant une Constitution pour l'Europe",
+      "keyword": "Référendum français de 2005 sur le traité établissant une Constitution pour l'Europe"
+    },
+    {
+      "begin": "2007-05-06",
+      "end": "2007-05-06",
+      "title": "Élection de Nicolas Sarkozy à la présidence de la République",
+      "keyword": "Nicolas Sarkozy"
+    },
+    {
+      "begin": "2012-05-06",
+      "end": "2012-05-06",
+      "title": "Élection de François Hollande à la présidence de la République",
+      "keyword": "François Hollande"
+    },
+    {
+      "begin": "2017-05-07",
+      "end": "2017-05-07",
+      "title": "Élection d'Emmanuel Macron à la présidence de la République",
+      "keyword": "Emmanuel Macron"
+    },
+    {
+      "begin": "2018-11-17",
+      "end": "2019-03-16",
+      "title": "Mouvement des Gilets jaunes",
+      "keyword": "Mouvement des Gilets jaunes"
+    }
+  ]
 }

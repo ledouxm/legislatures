@@ -47,7 +47,7 @@ export default function SettingsLine({ eventVisibility, setEventVisibility, refe
                     {/* Reference size buttons */}
                     <SettingsButton
                         Icon={MinusIcon}
-                        onClick={() => setReferenceSize(Math.max(4, referenceSize / 2))}
+                        onClick={() => setReferenceSize(Math.max(4, referenceSize - 12))}
                         label="Réduire la taille de référence"
                     />
                     <p className="text-sm opacity-75 select-none tabular-nums">
@@ -55,7 +55,7 @@ export default function SettingsLine({ eventVisibility, setEventVisibility, refe
                     </p>
                     <SettingsButton
                         Icon={PlusIcon}
-                        onClick={() => setReferenceSize(Math.min(64, referenceSize * 2))}
+                        onClick={() => setReferenceSize(Math.min(88, referenceSize + 12))}
                         label="Augmenter la taille de référence"
                     />
                 </div>
