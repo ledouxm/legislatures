@@ -78,41 +78,46 @@ export default function Republic({
       className={`regime-${republic.name}`}
       transform={`translate(${axisLeftPosition},${0})`} // y could be 24*index
     >
-      <g className="pointer-events-none">
-        <motion.text
-          dy={-4}
-          fontSize={12}
-          textAnchor="middle"
-          initial={{
-            x: regimeWidth / 2,
-            y: regimeY
-          }}
-          animate={{
-            x: regimeWidth / 2,
-            y: regimeY
-          }}
-          transition={{ duration: 0.5 }}
-        >
-          {republic.name}
-        </motion.text>
-      </g>
-      <motion.line
-        x1={0}
-        stroke="black"
-        strokeWidth={1}
-        strokeDasharray={"2 2"}
-        initial={{
-          x2: regimeWidth,
-          y1: regimeY - 0.5,
-          y2: regimeY - 0.5
-        }}
-        animate={{
-          x2: regimeWidth,
-          y1: regimeY - 0.5,
-          y2: regimeY - 0.5
-        }}
-        transition={{ duration: 0.5 }}
-      />
+      {/* Regime name */}
+      {minHeight > 8 && (
+        <g className="pointer-events-none">
+          <motion.text
+            dy={-4}
+            fontSize={12}
+            textAnchor="middle"
+            initial={{
+              x: regimeWidth / 2,
+              y: regimeY
+            }}
+            animate={{
+              x: regimeWidth / 2,
+              y: regimeY
+            }}
+            transition={{ duration: 0.5 }}
+          >
+            {republic.name}
+          </motion.text>
+          <motion.line
+            x1={0}
+            stroke="black"
+            strokeWidth={1}
+            strokeDasharray={"2 2"}
+            initial={{
+              x2: regimeWidth,
+              y1: regimeY - 0.5,
+              y2: regimeY - 0.5
+            }}
+            animate={{
+              x2: regimeWidth,
+              y1: regimeY - 0.5,
+              y2: regimeY - 0.5
+            }}
+            transition={{ duration: 0.5 }}
+          />
+        </g>
+      )}
+
+      {/* Legislatures list */}
       <g>
         {legislaturesWithIndexes.map((leg) => {
           // Find the next legislature and add the currents to the parties

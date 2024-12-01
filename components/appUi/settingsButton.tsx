@@ -8,6 +8,7 @@ type SettingsButtonProps = {
   isActive?: boolean;
   label: string;
   isVisible?: boolean;
+  position?: { x: "left" | "right"; y: "top" | "bottom" };
 };
 
 export default function SettingsButton({
@@ -19,48 +20,68 @@ export default function SettingsButton({
   onClick,
   isActive = true,
   label,
-  isVisible = true
+  isVisible = true,
+  position
 }: SettingsButtonProps) {
   return (
-    <button
-      aria-label={label}
-      className={`group flex items-center justify-center rounded-full border border-black/10 hover:border-black/20 transition text-nowrap gap-2 select-none bg-white
-                ${Icon && !name ? "size-9 flex-shrink-0" : "h-9 px-3"}
-                ${(number || number === 0) && name ? "pl-1.5 pr-3" : ""}
-                ${
-                  !isVisible
-                    ? "opacity-0 translate-y-10 pointer-events-none"
-                    : "opacity-100 translate-y-0 pointer-events-auto"
-                }
-            `}
-      onClick={onClick}
+    <div
+      className={`relative group ${
+        !isVisible
+          ? "opacity-0 pointer-events-none"
+          : "opacity-100 pointer-events-auto"
+      }`}
     >
-      {(number || number === 0) && (
-        <span
-          className={`flex items-center justify-center  group-hover:bg-[var(--family-color)] transition rounded-full text-xs group-hover:text-white size-6 
-                        ${
-                          isActive
-                            ? "bg-[var(--family-color)] text-white group-hover:bg-black/75"
-                            : "bg-black/5 text-black/65"
-                        }
-                    `}
-          style={{ "--family-color": color } as React.CSSProperties}
+      <button
+        aria-label={label}
+        className={` flex items-center justify-center rounded-full border border-black/10 hover:border-black/20 transition text-nowrap gap-2 select-none bg-white
+                    ${Icon && !name ? "size-9 flex-shrink-0" : "h-9 px-3"}
+                    ${(number || number === 0) && name ? "pl-1.5 pr-3" : ""}
+                    ${!isVisible ? "translate-y-10" : "translate-y-0"}
+                `}
+        onClick={onClick}
+      >
+        {(number || number === 0) && (
+          <span
+            className={`flex items-center justify-center  group-hover:bg-[var(--family-color)] transition rounded-full text-xs group-hover:text-white size-6
+                            ${
+                              isActive
+                                ? "bg-[var(--family-color)] text-white group-hover:bg-black/75"
+                                : "bg-black/5 text-black/65"
+                            }
+                        `}
+            style={{ "--family-color": color } as React.CSSProperties}
+          >
+            {number}
+          </span>
+        )}
+        {Icon && (
+          <Icon
+            className={`size-4 ${
+              flipIcon ? "-scale-x-100" : ""
+            } transition-transform`}
+          />
+        )}
+        {name && (
+          <span className="inline text-black/60 group-hover:text-black transition text-nowrap">
+            {name}
+          </span>
+        )}
+      </button>
+
+      {/* Tooltip */}
+      {position && (
+        <div
+          className="hidden group-hover:block delay-100 absolute text-xs text-left text-nowrap z-30 bg-white p-1.5 rounded-md border border-black/20 pointer-events-none opacity-85"
+          style={{
+            left: position?.x === "left" ? 0 : "auto",
+            right: position?.x === "right" ? 0 : "auto",
+            top: position?.y === "top" ? "2.5rem" : "auto",
+            bottom: position?.y === "bottom" ? "2.5rem" : "auto"
+          }}
         >
-          {number}
-        </span>
+          {label}
+        </div>
       )}
-      {Icon && (
-        <Icon
-          className={`size-4 ${
-            flipIcon ? "-scale-x-100" : ""
-          } transition-transform`}
-        />
-      )}
-      {name && (
-        <span className="inline text-black/60 group-hover:text-black transition text-nowrap">
-          {name}
-        </span>
-      )}
-    </button>
+    </div>
   );
 }

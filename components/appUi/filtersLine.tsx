@@ -61,6 +61,7 @@ export default function FiltersLine({ families }: { families: FamilyType[] }) {
             onClick={() => setVisibleCurrents(currents)}
             label="Réinitialiser les courants affichés"
             isVisible={visibleCurrents?.length !== currents?.length}
+            position={{ x: "left", y: "bottom" }}
           />
 
           {/* Shuffle button */}
@@ -75,15 +76,16 @@ export default function FiltersLine({ families }: { families: FamilyType[] }) {
               setVisibleCurrents(randomCurrents);
             }}
             label="Afficher des courants aléatoires"
+            position={{ x: "left", y: "bottom" }}
           />
         </div>
 
         {/* Currents list */}
-        <div className="relative overflow-hidden w-full">
+        <div className="relative overflow-x-hidden overflow-y-visible w-full">
           <div className="absolute left-0 top-0 h-full w-4 bg-gradient-to-r from-white via-white z-30 pointer-events-none -translate-x-1.5"></div>
           <div className="absolute right-0 top-0 h-full w-4 bg-gradient-to-l from-white via-white z-30 pointer-events-none translate-x-1.5"></div>
           <div
-            className="overflow-x-scroll h-full flex gap-1 no-scrollbar px-2"
+            className="overflow-x-scroll overflow-y-visible h-full flex gap-1 no-scrollbar px-2"
             ref={scrollRef}
           >
             {families ? (

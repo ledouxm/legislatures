@@ -68,6 +68,7 @@ export default function SettingsLine({
                 : "Afficher les événements"
             }
             flipIcon={eventVisibility ? false : true}
+            position={{ x: "left", y: "top" }}
           />
 
           {/* Transition polygons button */}
@@ -79,17 +80,19 @@ export default function SettingsLine({
                 ? "Masquer les transitions"
                 : "Afficher les transitions"
             }
+            position={{ x: "left", y: "top" }}
           />
 
           {/* Coalitions button */}
           <SettingsButton
-            Icon={coalitionsVisibility ? MarginIcon : PaddingIcon}
+            Icon={coalitionsVisibility ? PaddingIcon : MarginIcon}
             onClick={() => setCoalitionsVisibility(!coalitionsVisibility)}
             label={
               coalitionsVisibility
                 ? "Masquer les coalitions"
                 : "Afficher les coalitions"
             }
+            position={{ x: "left", y: "top" }}
           />
         </div>
 
@@ -100,6 +103,7 @@ export default function SettingsLine({
             Icon={MinusIcon}
             onClick={() => setReferenceSize(Math.max(4, referenceSize - 12))}
             label="Réduire la taille de référence"
+            position={{ x: "right", y: "top" }}
           />
           <p className="text-sm opacity-75 select-none tabular-nums">
             {String(referenceSize).padStart(2, "0")}
@@ -108,6 +112,7 @@ export default function SettingsLine({
             Icon={PlusIcon}
             onClick={() => setReferenceSize(Math.min(88, referenceSize + 12))}
             label="Augmenter la taille de référence"
+            position={{ x: "right", y: "top" }}
           />
         </div>
       </div>

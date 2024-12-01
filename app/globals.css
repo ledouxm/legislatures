@@ -19,9 +19,9 @@
   }
   .small-caps {
     font-variant-caps: small-caps;
-  }  
+  }
 }
 
-*{
+* {
   text-wrap: balance;
 }
