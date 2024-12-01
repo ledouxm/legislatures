@@ -184,30 +184,6 @@ export default function Chart({
         />
       </svg>
 
-      {/* Y axis bar resizer */}
-      {/* <div 
-                className="w-0.5 hover:w-2.5 -translate-x-1/2 bg-black h-full absolute top-7 transition-all peer cursor-col-resize" 
-                style={{ left: axisLeftPosition }}
-                onMouseDown={(e: { clientX: any; }) => {
-                    const startX = e.clientX;
-                    const onMouseMove = (moveEvent: MouseEvent) => {
-                        const newLeftPosition = axisLeftPosition + (moveEvent.clientX - startX);
-                        setAxisLeftPosition(newLeftPosition);
-                    };
-                    const onMouseUp = () => {
-                        window.removeEventListener('mousemove', onMouseMove);
-                        window.removeEventListener('mouseup', onMouseUp);
-                    };
-                    window.addEventListener('mousemove', onMouseMove);
-                    window.addEventListener('mouseup', onMouseUp);
-                }}
-            >
-            </div>
-            <div 
-                className="opacity-0 peer-hover:opacity-100 transition-all w-0 peer-hover:w-0.5 fixed bg-white h-12 rounded-full top-1/2 -translate-x-1/2 pointer-events-none"
-                style={{ left: axisLeftPosition }}
-            ></div> */}
-
       {/* Bottom margin */}
       <div className="sticky bottom-0 z-10 backdrop-blur bg-opacity-45 bg-gradient-to-t from-white via-white/50 to-transparent">
         <svg
@@ -228,12 +204,8 @@ export default function Chart({
       {tooltipContent && (
         <Tooltip
           chartWidth={dimensions.width}
-          y={tooltipContent.y}
+          tooltipContent={tooltipContent}
           axisLeftPosition={axisLeftPosition}
-          xStart={tooltipContent.xStart}
-          xEnd={tooltipContent.xEnd}
-          legislature={tooltipContent.legislature}
-          party={tooltipContent.party}
         />
       )}
     </div>

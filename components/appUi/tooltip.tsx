@@ -8,18 +8,21 @@ import Badge from "./badge";
 import PercentageButton from "./percentageButton";
 import { useDetailsContext } from "../utils/detailsContext";
 
+type Props = {
+  chartWidth: number;
+  axisLeftPosition: number;
+  tooltipContent: TooltipContentType;
+};
+
 export default function Tooltip({
   chartWidth,
-  y,
   axisLeftPosition,
-  xStart,
-  xEnd,
-  legislature,
-  party
-}: TooltipContentType) {
+  tooltipContent
+}: Props) {
   const { setTooltipContent } = useTooltipContext();
   const { setDetailsContent } = useDetailsContext();
-  const tooltipContent = { chartWidth, y, xStart, xEnd, legislature, party };
+  const { y, xStart, xEnd, legislature, party, coalitionDatas } =
+    tooltipContent;
 
   // Get tooltip dimensions
   const tooltipRef = useRef(null);
@@ -63,26 +66,10 @@ export default function Tooltip({
     chartWidth
   ]);
 
-  // Find all the parties from the same coalition in the legislature
-  const coalitionParties = party.coalition
-    ? legislature.parties.filter((p) => p.coalition === party.coalition)
-    : [];
-  // Calculate the total number of deputes in the coalition
-  const coalitionTotalDeputies = party.coalition
-    ? coalitionParties.reduce(
-        (accumulator, party) => accumulator + party.deputes,
-        0
-      )
-    : 0;
-  // Get the most important party in the coalition
-  const mostImportantParty = party.coalition
-    ? coalitionParties.reduce((a, b) => (a.deputes > b.deputes ? a : b))
-    : null;
-
   // Calculate the party percentage and the coalition percentage
   const partyPercentage = (party.deputes / legislature.total_deputes) * 100;
   const coalitionPercentage = party.coalition
-    ? (coalitionTotalDeputies / legislature.total_deputes) * 100
+    ? (coalitionDatas.deputies / legislature.total_deputes) * 100
     : 0;
 
   // On percentage button click, display number of deputies
@@ -102,7 +89,7 @@ export default function Tooltip({
     <div
       ref={tooltipRef}
       className="absolute pb-2 flex justify-start transition-all duration-500 select-none"
-      onMouseEnter={() => setTooltipContent(tooltipContent)}
+      onMouseEnter={() => setTooltipContent({ chartWidth, ...tooltipContent })}
       onMouseLeave={() => setTooltipContent(null)}
     >
       <div className="py-1.5 px-[5px] rounded-xl flex flex-col gap-1.5 bg-white shadow-md z-50 border border-black/5">
@@ -153,7 +140,7 @@ export default function Tooltip({
             <div className="flex gap-1.5 items-center pl-0.5">
               <span
                 className="size-2 rounded-full inline-block mt-0.5 shrink-0"
-                style={{ backgroundColor: mostImportantParty.current.color }}
+                style={{ backgroundColor: coalitionDatas.color }}
               ></span>
               <span className="text-sm sm:text-base text-black/50 leading-none inline sm:text-nowrap">
                 {party.coalition}
@@ -161,7 +148,7 @@ export default function Tooltip({
             </div>
             <PercentageButton
               percentage={coalitionPercentage}
-              deputies={coalitionTotalDeputies}
+              deputies={coalitionDatas.deputies}
               totalDeputies={legislature.total_deputes}
               isPercentage={isPercentage}
               onHover={handlePercentageClick}

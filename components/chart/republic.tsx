@@ -79,21 +79,6 @@ export default function Republic({
       transform={`translate(${axisLeftPosition},${0})`} // y could be 24*index
     >
       <g className="pointer-events-none">
-        {/* <motion.rect
-          x={0}
-          height={24}
-          fill="white"
-          initial={{
-            y: regimeY - 24,
-            width: regimeWidth
-          }}
-          animate={{
-            y: regimeY - 24,
-            width: regimeWidth
-          }}
-          transition={{ duration: 0.5 }}
-          opacity={0.4}
-        /> */}
         <motion.text
           dy={-4}
           fontSize={12}

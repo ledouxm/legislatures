@@ -51,9 +51,18 @@ export default function FiltersLine({ families }: { families: FamilyType[] }) {
 
   return (
     <section className="w-full p-2 flex items-end max-w-screen-3xl mx-auto relative z-20">
-      <div className="w-full flex items-end h-8">
+      <div className="w-full flex items-end h-9">
         {/* List controls */}
-        <div className="flex flex-col-reverse gap-1 items-center">
+        <div className="flex flex-col gap-1 items-center">
+          {/* Show reset button when currents are filtered */}
+          <SettingsButton
+            Icon={ReloadIcon}
+            flipIcon={true}
+            onClick={() => setVisibleCurrents(currents)}
+            label="Réinitialiser les courants affichés"
+            isVisible={visibleCurrents?.length !== currents?.length}
+          />
+
           {/* Shuffle button */}
           <SettingsButton
             Icon={ShuffleIcon}
@@ -66,15 +75,6 @@ export default function FiltersLine({ families }: { families: FamilyType[] }) {
               setVisibleCurrents(randomCurrents);
             }}
             label="Afficher des courants aléatoires"
-          />
-
-          {/* Show reset button when currents are filtered */}
-          <SettingsButton
-            Icon={ReloadIcon}
-            flipIcon={true}
-            onClick={() => setVisibleCurrents(currents)}
-            label="Réinitialiser les courants affichés"
-            isVisible={visibleCurrents?.length !== currents?.length}
           />
         </div>
 
