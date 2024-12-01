@@ -95,7 +95,7 @@ export default function Republic({
           opacity={0.4}
         /> */}
         <motion.text
-          dy={-5}
+          dy={-4}
           fontSize={12}
           textAnchor="middle"
           initial={{
