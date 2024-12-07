@@ -5,6 +5,7 @@ import { LegislatureType } from "../../types/legislature";
 import { RepublicType } from "../../types/republic";
 import { ChartDimensions } from "../utils/useChartDimensions";
 import Legislature from "./legislature";
+import getDate from "../utils/getDate";
 
 type RepublicProps = {
   republic: RepublicType;
@@ -68,8 +69,8 @@ export default function Republic({
     }
   );
 
-  const regimeY =
-    (republic.legislatures[0].legislature - firstLegislature) * minHeight;
+  const firstLegOfRegime = republic.legislatures[0];
+  const regimeY = (getDate(republic.begin) - firstLegislature) * minHeight;
   const regimeWidth = dimensions.boundedWidth - axisLeftPosition;
 
   return (
@@ -78,6 +79,50 @@ export default function Republic({
       className={`regime-${republic.name}`}
       transform={`translate(${axisLeftPosition},${0})`} // y could be 24*index
     >
+      {/* Legislatures list */}
+      <g>
+        {legislaturesWithIndexes.map((leg) => {
+          // Find the next legislature and add the currents to the parties
+          const nextLeg = legislaturesWithIndexes.find(
+            (l) => l.index === leg.index + 1
+          );
+          const nextPartiesWithCurrents = nextLeg
+            ? nextLeg.parties
+                .map((party) => {
+                  const current = currents.find((current) =>
+                    current.parties.find((p) => p.name === party.name)
+                  );
+                  if (current) {
+                    return {
+                      ...party,
+                      current
+                    };
+                  } else {
+                    return;
+                  }
+                })
+                .filter((party) => party)
+            : null;
+          const nextLegislatureWithCurrents = nextLeg
+            ? {
+                ...nextLeg,
+                parties: nextPartiesWithCurrents
+              }
+            : null;
+          return (
+            <Legislature
+              key={leg.begin}
+              leg={leg}
+              nextLeg={nextLegislatureWithCurrents}
+              firstLegislature={firstLegislature}
+              minHeight={minHeight}
+              dimensions={dimensions}
+              axisLeftPosition={axisLeftPosition}
+            />
+          );
+        })}
+      </g>
+
       {/* Regime name */}
       {minHeight > 8 && (
         <g className="pointer-events-none">
@@ -116,50 +161,6 @@ export default function Republic({
           />
         </g>
       )}
-
-      {/* Legislatures list */}
-      <g>
-        {legislaturesWithIndexes.map((leg) => {
-          // Find the next legislature and add the currents to the parties
-          const nextLeg = legislaturesWithIndexes.find(
-            (l) => l.index === leg.index + 1
-          );
-          const nextPartiesWithCurrents = nextLeg
-            ? nextLeg.parties
-                .map((party) => {
-                  const current = currents.find((current) =>
-                    current.parties.find((p) => p.name === party.name)
-                  );
-                  if (current) {
-                    return {
-                      ...party,
-                      current
-                    };
-                  } else {
-                    return;
-                  }
-                })
-                .filter((party) => party)
-            : null;
-          const nextLegislatureWithCurrents = nextLeg
-            ? {
-                ...nextLeg,
-                parties: nextPartiesWithCurrents
-              }
-            : null;
-          return (
-            <Legislature
-              key={leg.legislature}
-              leg={leg}
-              nextLeg={nextLegislatureWithCurrents}
-              firstLegislature={firstLegislature}
-              minHeight={minHeight}
-              dimensions={dimensions}
-              axisLeftPosition={axisLeftPosition}
-            />
-          );
-        })}
-      </g>
     </g>
   );
 }

@@ -1,13 +1,11 @@
 import { motion } from "framer-motion";
 import { PartyType } from "../../types/party";
-import { useTransitionsContext } from "../utils/transitionsContext";
 import { useCoalitionsContext } from "../utils/coalitionsContext";
 
 type PartyBarProps = {
   party: PartyType;
   y: number;
   height: number;
-  minHeight: number;
   partyWidth: number;
   partyX: number;
   coalitionDatas: {
@@ -23,7 +21,6 @@ export default function PartyBar({
   party,
   y,
   height,
-  minHeight,
   partyWidth,
   partyX,
   coalitionDatas,
@@ -32,11 +29,8 @@ export default function PartyBar({
   // Display text if the party is wide enough
   const displayText = partyWidth > 30 && height > 13;
 
-  const { transitionsVisibility } = useTransitionsContext();
-  const referenceSize = transitionsVisibility ? minHeight : minHeight * 2;
-
   // Display deputies if the party is tall enough
-  const displayDeputies = height > referenceSize / 2;
+  const displayDeputies = height > 28;
 
   const coalitionStrokeWidth = 0.75;
   const strokeOffset = coalitionStrokeWidth / 2;

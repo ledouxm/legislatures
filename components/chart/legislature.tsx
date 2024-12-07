@@ -8,6 +8,7 @@ import { useVisibleCurrentsContext } from "../utils/currentsContext";
 import { CurrentType } from "../../types/current";
 import { motion } from "framer-motion";
 import { useTransitionsContext } from "../utils/transitionsContext";
+import getDate from "../utils/getDate";
 
 type LegislatureProps = {
   leg: LegislatureType;
@@ -26,20 +27,21 @@ export default function Legislature({
   firstLegislature,
   axisLeftPosition
 }: LegislatureProps) {
+  // Toggle currents transition polygons visibility
+  const { transitionsVisibility } = useTransitionsContext();
+  const heightShare = transitionsVisibility ? 2 : 1;
+
   // Place the legislature on the y axis
-  const y = (leg.legislature - firstLegislature) * minHeight;
+  const y = (getDate(leg.begin) - firstLegislature) * minHeight;
+
+  // Generate the height of the legislature from its duration and the minimum height
+  const duration =
+    getDate(nextLeg ? nextLeg.begin : leg.end) - getDate(leg.begin);
+  const height = (duration * minHeight) / heightShare;
 
   // Calculate the width of the graph from the bounded width and the axis left position percentage
-  // const graphWidth = dimensions.boundedWidth * (1 - (axisLeftPercentage / 100));
   let graphWidth = dimensions.boundedWidth - axisLeftPosition;
   graphWidth < 0 ? (graphWidth = 0) : graphWidth;
-
-  // Calculate the start of the next legislature on the y axis
-  const nextLegStart = nextLeg
-    ? (nextLeg.legislature - leg.legislature) * minHeight
-    : leg.legislature === 2024
-    ? minHeight * 2
-    : minHeight;
 
   // Get the filtered total deputies
   const { visibleCurrents }: { visibleCurrents: CurrentType[] } =
@@ -55,6 +57,7 @@ export default function Legislature({
       return accumulator;
     }
   }, 0);
+
   // Same for the next legislature
   const filteredNextTotalDeputies = nextLeg
     ? nextLeg.parties.reduce((accumulator, party) => {
@@ -76,14 +79,10 @@ export default function Legislature({
   // Set the motion transition duration
   const transitionDuration = 0.5;
 
-  // Toggle currents transition polygons visibility
-  const { transitionsVisibility } = useTransitionsContext();
-  const heightShare = transitionsVisibility ? 2 : 1;
-
   return (
     <>
       <g
-        key={leg.legislature}
+        key={leg.begin}
         className={`legislature-${leg.legislature}`}
       >
         {leg.parties.map((party, i) => {
@@ -95,9 +94,6 @@ export default function Legislature({
           const partyWidth = isVisible
             ? graphWidth * (party.deputes / filteredTotalDeputies) || 0
             : 0;
-          // Generate the height of the party from its duration and the minimum height
-          const height = nextLegStart / heightShare;
-          // const height = (leg.duration * minHeight) / 2;
           // Generate the x position of the party by summing the width of the previous parties
           const partyX =
             i === 0
@@ -235,7 +231,6 @@ export default function Legislature({
                 party={party}
                 y={y}
                 height={height}
-                minHeight={minHeight}
                 partyWidth={partyWidth}
                 partyX={partyX}
                 coalitionDatas={coalitionDatas}

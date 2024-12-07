@@ -11,6 +11,7 @@ import Event from "./event";
 import Republic from "./republic";
 import XAxis from "./xAxis";
 import YAxis from "./yAxis";
+import getDate from "../utils/getDate";
 
 type Props = {
   republics: RepublicType[];
@@ -36,11 +37,12 @@ export default function Chart({
   });
 
   // Find the first and last legislature to calculate the total duration
-  const firstLegislature = republics[0].legislatures[0].legislature;
-  const lastLegislature =
+  const firstLegislature = getDate(republics[0].legislatures[0].begin);
+  const lastLegislature = getDate(
     republics[republics.length - 1].legislatures[
       republics[republics.length - 1].legislatures.length - 1
-    ].legislature;
+    ].begin
+  );
   const totalDuration = lastLegislature - firstLegislature;
 
   // Set the Xaxis height

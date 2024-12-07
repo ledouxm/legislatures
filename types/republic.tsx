@@ -1,6 +1,8 @@
 import { LegislatureType } from "./legislature";
 
 export type RepublicType = {
-    name: string;
-    legislatures: LegislatureType[];
-}
+  name: string;
+  begin?: string;
+  end?: string;
+  legislatures: LegislatureType[];
+};

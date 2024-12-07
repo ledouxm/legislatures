@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { EventType } from "../../types/event";
+import getDate from "../utils/getDate";
 
 type Props = {
   event: EventType;
@@ -16,11 +17,11 @@ export default function Event({
   firstLegislature,
   onClick
 }: Props) {
-  const beginDate = new Date(event.begin).getFullYear();
-  const endDate = new Date(event.end).getFullYear();
+  const beginDate = getDate(event.begin);
+  const endDate = getDate(event.end);
 
   const y = (beginDate - firstLegislature) * minHeight;
-  const height = (endDate - beginDate) * minHeight || minHeight;
+  const height = Math.max((endDate - beginDate) * minHeight, minHeight);
 
   const fontSize = 11;
   const textX = 8;
@@ -95,7 +96,12 @@ export default function Event({
           opacity={0.5}
           fontSize={fontSize}
         >
-          {endDate !== beginDate ? `${beginDate} → ${endDate}` : beginDate}
+          {endDate.toString().split(".")[0] !==
+          beginDate.toString().split(".")[0]
+            ? `${beginDate.toString().split(".")[0]} → ${
+                endDate.toString().split(".")[0]
+              }`
+            : beginDate.toString().split(".")[0]}
         </text>
         {/* Event Title */}
         <motion.text
