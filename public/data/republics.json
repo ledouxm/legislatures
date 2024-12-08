@@ -1,44 +1,826 @@
 {
   "republics": [
     {
-      "name": "III",
+      "name": "Monarchie constitutionnelle",
+      "begin": "1791-09-03",
+      "end": "1792-09-21",
+      "legislatures": [
+        {
+          "legislature": 1791,
+          "total_deputes": 745,
+          "duration": 1,
+          "begin": "1791-10-01",
+          "end": "1792-09-21",
+          "parties": [
+            {
+              "name": "MON",
+              "deputes": 0
+            },
+            {
+              "name": "GIR",
+              "deputes": 136
+            },
+            {
+              "name": "MAR",
+              "deputes": 345
+            },
+            {
+              "name": "FEU",
+              "deputes": 264
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Première République",
+      "begin": "1792-09-21",
+      "end": "1804-05-18",
+      "legislatures": [
+        {
+          "legislature": 1792,
+          "total_deputes": 749,
+          "duration": 3,
+          "begin": "1792-09-21",
+          "end": "1795-10-26",
+          "parties": [
+            {
+              "name": "EXG",
+              "deputes": 0
+            },
+            {
+              "name": "MON",
+              "deputes": 200
+            },
+            {
+              "name": "GIR",
+              "deputes": 160
+            },
+            {
+              "name": "MAR",
+              "deputes": 389
+            },
+            {
+              "name": "Autres",
+              "deputes": 0
+            },
+            {
+              "name": "CLY",
+              "deputes": 0
+            },
+            {
+              "name": "ROY",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1795,
+          "total_deputes": 504,
+          "duration": 4,
+          "begin": "1795-10-27",
+          "end": "1799-04-16",
+          "parties": [
+            {
+              "name": "EXG",
+              "deputes": 0
+            },
+            {
+              "name": "MON",
+              "deputes": 106
+            },
+            {
+              "name": "GIR",
+              "deputes": 0
+            },
+            {
+              "name": "THER",
+              "deputes": 135
+            },
+            {
+              "name": "Autres",
+              "deputes": 44
+            },
+            {
+              "name": "CLY",
+              "deputes": 159
+            },
+            {
+              "name": "ROY",
+              "deputes": 33
+            }
+          ]
+        },
+        {
+          "legislature": 1799,
+          "total_deputes": 500,
+          "duration": 1,
+          "begin": "1799-04-16",
+          "end": "1799-12-26",
+          "parties": [
+            {
+              "name": "EXG",
+              "deputes": 30
+            },
+            {
+              "name": "MON",
+              "deputes": 240
+            },
+            {
+              "name": "GIR",
+              "deputes": 0
+            },
+            {
+              "name": "MAR",
+              "deputes": 0
+            },
+            {
+              "name": "Autres",
+              "deputes": 0
+            },
+            {
+              "name": "CLY",
+              "deputes": 150
+            },
+            {
+              "name": "BNP",
+              "deputes": 0
+            },
+            {
+              "name": "ROY",
+              "deputes": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Premier Empire",
+      "begin": "1804-05-18",
+      "end": "1814-04-04",
+      "legislatures": [
+        {
+          "legislature": 1800,
+          "total_deputes": 300,
+          "duration": 14,
+          "begin": "1800-01-01",
+          "end": "1814-06-04",
+          "parties": [
+            {
+              "name": "EXG",
+              "deputes": 0
+            },
+            {
+              "name": "MON",
+              "deputes": 0
+            },
+            {
+              "name": "LIB",
+              "deputes": 0
+            },
+            {
+              "name": "CLY",
+              "deputes": 0
+            },
+            {
+              "name": "BNP",
+              "deputes": 300
+            },
+            {
+              "name": "ROY",
+              "deputes": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Première Restauration",
+      "begin": "1814-04-06",
+      "end": "1814-03-20",
+      "legislatures": [
+        {
+          "legislature": 1814,
+          "total_deputes": 237,
+          "duration": 1,
+          "begin": "1814-06-04",
+          "end": "1815-03-20",
+          "parties": [
+            {
+              "name": "EXG",
+              "deputes": 0
+            },
+            {
+              "name": "MON",
+              "deputes": 0
+            },
+            {
+              "name": "LIB",
+              "deputes": 0
+            },
+            {
+              "name": "CLY",
+              "deputes": 0
+            },
+            {
+              "name": "BNP",
+              "deputes": 300
+            },
+            {
+              "name": "ROY",
+              "deputes": 0
+            }
+          ],
+          "source": [
+            "https://www.conseil-constitutionnel.fr/les-constitutions-dans-l-histoire/charte-constitutionnelle-du-4-juin-1814#articles_transitoires"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cent jours",
+      "begin": "1815-03-20",
+      "end": "1815-07-08",
+      "legislatures": [
+        {
+          "legislature": 1815,
+          "total_deputes": 630,
+          "duration": 1,
+          "begin": "1815-06-03",
+          "end": "1815-07-13",
+          "parties": [
+            {
+              "name": "REP ",
+              "deputes": 40
+            },
+            {
+              "name": "LIB",
+              "deputes": 510
+            },
+            {
+              "name": "DOC",
+              "deputes": 0
+            },
+            {
+              "name": "BNP",
+              "deputes": 80
+            },
+            {
+              "name": "UR  ",
+              "deputes": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seconde Restauration",
+      "begin": "1815-07-07",
+      "end": "1830-08-02",
+      "legislatures": [
+        {
+          "legislature": 1815,
+          "total_deputes": 400,
+          "duration": 1,
+          "begin": "1815-10-07",
+          "end": "1816-09-05",
+          "parties": [
+            {
+              "name": "REP ",
+              "deputes": 0
+            },
+            {
+              "name": "LIB",
+              "deputes": 0
+            },
+            {
+              "name": "DOC",
+              "deputes": 50
+            },
+            {
+              "name": "BNP",
+              "deputes": 0
+            },
+            {
+              "name": "UR  ",
+              "deputes": 350
+            }
+          ]
+        },
+        {
+          "legislature": 1816,
+          "total_deputes": 258,
+          "duration": 4,
+          "begin": "1816-11-04",
+          "end": "1823-12-24",
+          "parties": [
+            {
+              "name": "REP ",
+              "deputes": 20
+            },
+            {
+              "name": "LIB",
+              "deputes": 10
+            },
+            {
+              "name": "DOC",
+              "deputes": 136
+            },
+            {
+              "name": "UR  ",
+              "deputes": 92
+            }
+          ]
+        },
+        {
+          "legislature": 1824,
+          "total_deputes": 430,
+          "duration": 3,
+          "begin": "1824-03-23",
+          "end": "1827-11-05",
+          "parties": [
+            {
+              "name": "REP ",
+              "deputes": 0
+            },
+            {
+              "name": "LIB",
+              "deputes": 17
+            },
+            {
+              "name": "CD ",
+              "deputes": 0
+            },
+            {
+              "name": "UR  ",
+              "deputes": 413
+            },
+            {
+              "name": "UCO",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1827,
+          "total_deputes": 430,
+          "duration": 3,
+          "begin": "1828-02-05",
+          "end": "1830-05-16",
+          "parties": [
+            {
+              "name": "LIB",
+              "deputes": 185
+            },
+            {
+              "name": "UR  ",
+              "deputes": 170
+            },
+            {
+              "name": "UCO",
+              "deputes": 75
+            }
+          ]
+        },
+        {
+          "legislature": 1830,
+          "total_deputes": 556,
+          "duration": 1,
+          "begin": "1830-06-23",
+          "end": "1831-05-31",
+          "parties": [
+            {
+              "name": "LIB",
+              "deputes": 274
+            },
+            {
+              "name": "PdR",
+              "deputes": 0
+            },
+            {
+              "name": "UR  ",
+              "deputes": 282
+            },
+            {
+              "name": "UCO",
+              "deputes": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Monarchie de Juillet",
+      "begin": "1830-08-09",
+      "end": "1848-02-24",
+      "legislatures": [
+        {
+          "legislature": 1831,
+          "total_deputes": 459,
+          "duration": 3,
+          "begin": "1831-07-23",
+          "end": "1834-05-25",
+          "parties": [
+            {
+              "name": "PdM",
+              "deputes": 73
+            },
+            {
+              "name": "TP",
+              "deputes": 0
+            },
+            {
+              "name": "PdR",
+              "deputes": 282
+            },
+            {
+              "name": "LEG",
+              "deputes": 104
+            }
+          ]
+        },
+        {
+          "legislature": 1834,
+          "total_deputes": 460,
+          "duration": 3,
+          "begin": "1834-07-31",
+          "end": "1837-10-03",
+          "parties": [
+            {
+              "name": "RC",
+              "deputes": 0
+            },
+            {
+              "name": "PdM",
+              "deputes": 75
+            },
+            {
+              "name": "TP",
+              "deputes": 50
+            },
+            {
+              "name": "PdR",
+              "deputes": 320
+            },
+            {
+              "name": "ORL",
+              "deputes": 0
+            },
+            {
+              "name": "LEG",
+              "deputes": 15
+            }
+          ]
+        },
+        {
+          "legislature": 1837,
+          "total_deputes": 464,
+          "duration": 1,
+          "begin": "1837-12-18",
+          "end": "1839-02-02",
+          "parties": [
+            {
+              "name": "RC",
+              "deputes": 19
+            },
+            {
+              "name": "PdM",
+              "deputes": 142
+            },
+            {
+              "name": "TP",
+              "deputes": 56
+            },
+            {
+              "name": "PdR",
+              "deputes": 205
+            },
+            {
+              "name": "ORL",
+              "deputes": 168
+            },
+            {
+              "name": "LEG",
+              "deputes": 15
+            }
+          ]
+        },
+        {
+          "legislature": 1839,
+          "total_deputes": 459,
+          "duration": 3,
+          "begin": "1839-04-04",
+          "end": "1842-06-12",
+          "parties": [
+            {
+              "name": "RC",
+              "deputes": 0
+            },
+            {
+              "name": "PdM",
+              "deputes": 240
+            },
+            {
+              "name": "TP",
+              "deputes": 0
+            },
+            {
+              "name": "PdR",
+              "deputes": 199
+            },
+            {
+              "name": "ORL",
+              "deputes": 0
+            },
+            {
+              "name": "LEG",
+              "deputes": 20
+            }
+          ]
+        },
+        {
+          "legislature": 1842,
+          "total_deputes": 459,
+          "duration": 4,
+          "begin": "1842-07-26",
+          "end": "1846-07-06",
+          "parties": [
+            {
+              "name": "PdM",
+              "deputes": 193
+            },
+            {
+              "name": "PdR",
+              "deputes": 266
+            },
+            {
+              "name": "LEG",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1846,
+          "total_deputes": 458,
+          "duration": 2,
+          "begin": "1846-08-17",
+          "end": "1848-02-24",
+          "parties": [
+            {
+              "name": "MTG",
+              "deputes": 0
+            },
+            {
+              "name": "PdM",
+              "deputes": 168
+            },
+            {
+              "name": "PdR",
+              "deputes": 290
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deuxième République",
+      "begin": "1848-02-24",
+      "end": "1852-12-02",
+      "legislatures": [
+        {
+          "legislature": 1848,
+          "total_deputes": 880,
+          "duration": 1,
+          "begin": "1848-05-04",
+          "end": "1849-05-26",
+          "parties": [
+            {
+              "name": "MTG",
+              "deputes": 152
+            },
+            {
+              "name": "RL",
+              "deputes": 436
+            },
+            {
+              "name": "PdO",
+              "deputes": 292
+            },
+            {
+              "name": "PdR",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1849,
+          "total_deputes": 705,
+          "duration": 3,
+          "begin": "1849-05-28",
+          "end": "1851-12-02",
+          "parties": [
+            {
+              "name": "MTG",
+              "deputes": 180
+            },
+            {
+              "name": "RL",
+              "deputes": 75
+            },
+            {
+              "name": "PdO",
+              "deputes": 450
+            },
+            {
+              "name": "BNP",
+              "deputes": 0
+            },
+            {
+              "name": "ROY",
+              "deputes": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Second Empire",
+      "begin": "1852-12-02",
+      "end": "1870-09-04",
+      "legislatures": [
+        {
+          "legislature": 1852,
+          "total_deputes": 261,
+          "duration": 5,
+          "begin": "1852-03-29",
+          "end": "1857-11-28",
+          "parties": [
+            {
+              "name": "MTG",
+              "deputes": 0
+            },
+            {
+              "name": "REP",
+              "deputes": 3
+            },
+            {
+              "name": "PdO",
+              "deputes": 0
+            },
+            {
+              "name": "BNP",
+              "deputes": 253
+            },
+            {
+              "name": "ROY",
+              "deputes": 5
+            }
+          ]
+        },
+        {
+          "legislature": 1857,
+          "total_deputes": 283,
+          "duration": 6,
+          "begin": "1857-11-28",
+          "end": "1863-11-05",
+          "parties": [
+            {
+              "name": "REP",
+              "deputes": 7
+            },
+            {
+              "name": "BNP",
+              "deputes": 276
+            },
+            {
+              "name": "ROY",
+              "deputes": 0
+            }
+          ]
+        },
+        {
+          "legislature": 1863,
+          "total_deputes": 283,
+          "duration": 6,
+          "begin": "1863-11-05",
+          "end": "1869-04-28",
+          "parties": [
+            {
+              "name": "RI  ",
+              "deputes": 0
+            },
+            {
+              "name": "REP",
+              "deputes": 17
+            },
+            {
+              "name": "BL",
+              "deputes": 0
+            },
+            {
+              "name": "BNP",
+              "deputes": 251
+            },
+            {
+              "name": "ROY",
+              "deputes": 41
+            }
+          ]
+        },
+        {
+          "legislature": 1869,
+          "total_deputes": 283,
+          "duration": 1,
+          "begin": "1869-04-28",
+          "end": "1870-09-04",
+          "parties": [
+            {
+              "name": "OR",
+              "deputes": 8,
+              "coalition": "Républicains"
+            },
+            {
+              "name": "OD",
+              "deputes": 22,
+              "coalition": "Républicains"
+            },
+            {
+              "name": "CL",
+              "deputes": 0
+            },
+            {
+              "name": "RO",
+              "deputes": 0
+            },
+            {
+              "name": "BL",
+              "deputes": 120,
+              "coalition": "Bonapartistes"
+            },
+            {
+              "name": "BA",
+              "deputes": 92,
+              "coalition": "Bonapartistes"
+            },
+            {
+              "name": "ROY",
+              "deputes": 41
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Troisième République",
+      "begin": "1870-09-04",
+      "end": "1940-07-10",
       "legislatures": [
         {
           "legislature": 1871,
           "total_deputes": 638,
           "duration": 5,
+          "begin": "1871-02-12",
+          "end": "1876-03-07",
           "parties": [
             {
               "name": "RI  ",
-              "deputes": 38
+              "deputes": 38,
+              "coalition": "Républicains"
             },
             {
               "name": "RR",
-              "deputes": 0
+              "deputes": 0,
+              "coalition": "Républicains"
             },
             {
               "name": "RM",
-              "deputes": 112
+              "deputes": 112,
+              "coalition": "Républicains"
             },
             {
               "name": "CL",
-              "deputes": 72
+              "deputes": 72,
+              "coalition": "Républicains"
             },
             {
               "name": "RO",
-              "deputes": 214
-            },
-            {
-              "name": "RL&C",
-              "deputes": 182
+              "deputes": 214,
+              "coalition": "Conservateurs"
             },
             {
               "name": "BI",
-              "deputes": 0
+              "deputes": 0,
+              "coalition": "Conservateurs"
             },
             {
               "name": "BNP",
-              "deputes": 20
+              "deputes": 20,
+              "coalition": "Conservateurs"
+            },
+            {
+              "name": "RL&C",
+              "deputes": 182,
+              "coalition": "Conservateurs"
             }
           ]
         },
@@ -46,6 +828,8 @@
           "legislature": 1876,
           "total_deputes": 523,
           "duration": 1,
+          "begin": "1876-03-09",
+          "end": "1877-06-25",
           "parties": [
             {
               "name": "RI  ",
@@ -68,16 +852,16 @@
               "deputes": 42
             },
             {
-              "name": "RL&C",
-              "deputes": 34
-            },
-            {
               "name": "BI",
               "deputes": 15
             },
             {
               "name": "AAP",
               "deputes": 82
+            },
+            {
+              "name": "RL&C",
+              "deputes": 34
             }
           ]
         },
@@ -85,6 +869,8 @@
           "legislature": 1877,
           "total_deputes": 533,
           "duration": 4,
+          "begin": "1877-11-07",
+          "end": "1881-10-21",
           "parties": [
             {
               "name": "FPTSF",
@@ -111,16 +897,16 @@
               "deputes": 41
             },
             {
-              "name": "RL&C",
-              "deputes": 56
-            },
-            {
               "name": "BI",
               "deputes": 0
             },
             {
               "name": "AAP",
               "deputes": 111
+            },
+            {
+              "name": "RL&C",
+              "deputes": 56
             }
           ]
         },
@@ -128,6 +914,8 @@
           "legislature": 1881,
           "total_deputes": 545,
           "duration": 4,
+          "begin": "1881-10-28",
+          "end": "1885-11-09",
           "parties": [
             {
               "name": "FPTSF",
@@ -162,12 +950,12 @@
               "deputes": 7
             },
             {
-              "name": "RL&C",
-              "deputes": 35
-            },
-            {
               "name": "AAP",
               "deputes": 46
+            },
+            {
+              "name": "RL&C",
+              "deputes": 35
             }
           ]
         },
@@ -175,6 +963,8 @@
           "legislature": 1885,
           "total_deputes": 584,
           "duration": 4,
+          "begin": "1885-11-10",
+          "end": "1889-11-11",
           "parties": [
             {
               "name": "CRC",
@@ -213,12 +1003,12 @@
               "deputes": 63
             },
             {
-              "name": "RL&C",
-              "deputes": 73
-            },
-            {
               "name": "BNP",
               "deputes": 65
+            },
+            {
+              "name": "RL&C",
+              "deputes": 73
             },
             {
               "name": "BOU",
@@ -230,6 +1020,8 @@
           "legislature": 1889,
           "total_deputes": 573,
           "duration": 4,
+          "begin": "1889-11-12",
+          "end": "1893-10-14",
           "parties": [
             {
               "name": "CRC",
@@ -276,12 +1068,12 @@
               "deputes": 0
             },
             {
-              "name": "R&C",
-              "deputes": 110
-            },
-            {
               "name": "BNP",
               "deputes": 52
+            },
+            {
+              "name": "R&C",
+              "deputes": 110
             },
             {
               "name": "BOU",
@@ -297,6 +1089,8 @@
           "legislature": 1893,
           "total_deputes": 581,
           "duration": 4.5,
+          "begin": "1893-10-15",
+          "end": "1898-05-31",
           "parties": [
             {
               "name": "CRC",
@@ -309,6 +1103,10 @@
             {
               "name": "POF",
               "deputes": 5
+            },
+            {
+              "name": "FTSF",
+              "deputes": 0
             },
             {
               "name": "SI",
@@ -335,12 +1133,12 @@
               "deputes": 35
             },
             {
-              "name": "M&C",
-              "deputes": 58
-            },
-            {
               "name": "BNP",
               "deputes": 0
+            },
+            {
+              "name": "M&C",
+              "deputes": 58
             },
             {
               "name": "BOU",
@@ -360,10 +1158,16 @@
           "legislature": 1898,
           "total_deputes": 620,
           "duration": 4,
+          "begin": "1898-06-01",
+          "end": "1902-05-31",
           "parties": [
             {
               "name": "PSR",
               "deputes": 12
+            },
+            {
+              "name": "POSR",
+              "deputes": 0
             },
             {
               "name": "POF",
@@ -394,7 +1198,7 @@
               "deputes": 58
             },
             {
-              "name": "MON",
+              "name": "M&C",
               "deputes": 0
             },
             {
@@ -415,7 +1219,13 @@
           "legislature": 1902,
           "total_deputes": 589,
           "duration": 4,
+          "begin": "1902-06-01",
+          "end": "1906-05-31",
           "parties": [
+            {
+              "name": "PSR",
+              "deputes": 0
+            },
             {
               "name": "PSdF",
               "deputes": 14
@@ -445,7 +1255,7 @@
               "deputes": 89
             },
             {
-              "name": "MON",
+              "name": "M&C",
               "deputes": 0
             },
             {
@@ -462,6 +1272,8 @@
           "legislature": 1906,
           "total_deputes": 592,
           "duration": 4,
+          "begin": "1906-06-01",
+          "end": "1910-05-31",
           "parties": [
             {
               "name": "SFIO",
@@ -505,6 +1317,8 @@
           "legislature": 1910,
           "total_deputes": 595,
           "duration": 4,
+          "begin": "1910-06-01",
+          "end": "1914-05-31",
           "parties": [
             {
               "name": "SFIO",
@@ -548,6 +1362,8 @@
           "legislature": 1914,
           "total_deputes": 602,
           "duration": 5.5,
+          "begin": "1914-06-01",
+          "end": "1919-12-07",
           "parties": [
             {
               "name": "SFIO",
@@ -599,6 +1415,8 @@
           "legislature": 1919,
           "total_deputes": 613,
           "duration": 4,
+          "begin": "1919-12-08",
+          "end": "1924-05-31",
           "parties": [
             {
               "name": "PC-SFIC",
@@ -660,6 +1478,8 @@
           "legislature": 1924,
           "total_deputes": 581,
           "duration": 4,
+          "begin": "1924-06-01",
+          "end": "1928-05-31",
           "parties": [
             {
               "name": "PC-SFIC",
@@ -719,6 +1539,8 @@
           "legislature": 1928,
           "total_deputes": 602,
           "duration": 4,
+          "begin": "1928-06-01",
+          "end": "1932-05-31",
           "parties": [
             {
               "name": "PC-SFIC",
@@ -778,6 +1600,8 @@
           "legislature": 1932,
           "total_deputes": 607,
           "duration": 4,
+          "begin": "1932-06-01",
+          "end": "1936-05-31",
           "parties": [
             {
               "name": "PC-SFIC",
@@ -833,6 +1657,8 @@
           "legislature": 1936,
           "total_deputes": 610,
           "duration": 4,
+          "begin": "1936-06-01",
+          "end": "1940-07-10",
           "parties": [
             {
               "name": "PC-SFIC",
@@ -909,18 +1735,251 @@
             {
               "name": "PPUS",
               "deputes": 0
+            },
+            {
+              "name": "PP",
+              "deputes": 0
             }
           ]
         }
       ]
     },
     {
-      "name": "IV",
+      "name": "Régime de Vichy",
+      "begin": "1940-07-10",
+      "end": "1944-08-20",
       "legislatures": [
         {
+          "legislature": 1940,
+          "total_deputes": 1,
+          "duration": 4,
+          "begin": "1940-07-10",
+          "end": "1944-08-20",
+          "parties": [
+            {
+              "name": "PC-SFIC",
+              "deputes": 0
+            },
+            {
+              "name": "URP",
+              "deputes": 0
+            },
+            {
+              "name": "PUP",
+              "deputes": 0
+            },
+            {
+              "name": "RDA",
+              "deputes": 0
+            },
+            {
+              "name": "SFIO",
+              "deputes": 0
+            },
+            {
+              "name": "PSF ",
+              "deputes": 0
+            },
+            {
+              "name": "USR",
+              "deputes": 0
+            },
+            {
+              "name": "PRRS",
+              "deputes": 0
+            },
+            {
+              "name": "RGR",
+              "deputes": 0
+            },
+            {
+              "name": "Autres",
+              "deputes": 0
+            },
+            {
+              "name": "MIDFA",
+              "deputes": 0
+            },
+            {
+              "name": "PJR",
+              "deputes": 0
+            },
+            {
+              "name": "PDP",
+              "deputes": 0
+            },
+            {
+              "name": "AD",
+              "deputes": 0
+            },
+            {
+              "name": "FR",
+              "deputes": 0
+            },
+            {
+              "name": "PPUS",
+              "deputes": 0
+            },
+            {
+              "name": "PP",
+              "deputes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gouvernement Provisoire de la République Française",
+      "begin": "1944-06-03",
+      "end": "1946-10-27",
+      "legislatures": [
+        {
+          "legislature": 1945,
+          "total_deputes": 586,
+          "duration": 0.5,
+          "begin": "1945-11-06",
+          "end": "1946-06-10",
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 151
+            },
+            {
+              "name": "URR",
+              "deputes": 8
+            },
+            {
+              "name": "RDA",
+              "deputes": 0
+            },
+            {
+              "name": "SFIO",
+              "deputes": 139
+            },
+            {
+              "name": "UDSR",
+              "deputes": 31
+            },
+            {
+              "name": "PRRS",
+              "deputes": 27
+            },
+            {
+              "name": "RGR",
+              "deputes": 0
+            },
+            {
+              "name": "Autres",
+              "deputes": 9
+            },
+            {
+              "name": "MA",
+              "deputes": 7
+            },
+            {
+              "name": "MRP",
+              "deputes": 150
+            },
+            {
+              "name": "RI",
+              "deputes": 14
+            },
+            {
+              "name": "UR ",
+              "deputes": 39
+            },
+            {
+              "name": "RPF",
+              "deputes": 0
+            },
+            {
+              "name": "PPUS",
+              "deputes": 8
+            },
+            {
+              "name": "UNIR",
+              "deputes": 0
+            }
+          ]
+        },
+        {
           "legislature": 1946,
+          "total_deputes": 586,
+          "duration": 0.3,
+          "begin": "1946-06-11",
+          "end": "1946-11-27",
+          "parties": [
+            {
+              "name": "PCF",
+              "deputes": 146
+            },
+            {
+              "name": "URR",
+              "deputes": 7
+            },
+            {
+              "name": "RDA",
+              "deputes": 0
+            },
+            {
+              "name": "SFIO",
+              "deputes": 128
+            },
+            {
+              "name": "UDSR",
+              "deputes": 20
+            },
+            {
+              "name": "PRRS",
+              "deputes": 32
+            },
+            {
+              "name": "RGR",
+              "deputes": 0
+            },
+            {
+              "name": "Autres",
+              "deputes": 9
+            },
+            {
+              "name": "UDMA",
+              "deputes": 11
+            },
+            {
+              "name": "MRP",
+              "deputes": 166
+            },
+            {
+              "name": "RI",
+              "deputes": 23
+            },
+            {
+              "name": "PRL",
+              "deputes": 35
+            },
+            {
+              "name": "RAPS",
+              "deputes": 9
+            },
+            {
+              "name": "UNIR",
+              "deputes": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Quatrième République",
+      "begin": "1946-10-27",
+      "end": "1958-06-04",
+      "legislatures": [
+        {
+          "legislature": 1946.5,
           "total_deputes": 618,
           "duration": 5,
+          "begin": "1946-11-28",
+          "end": "1951-07-04",
           "parties": [
             {
               "name": "PCF",
@@ -930,6 +1989,11 @@
             {
               "name": "URP",
               "deputes": 11,
+              "coalition": "Communistes et Républicains Progressistes"
+            },
+            {
+              "name": "PUP",
+              "deputes": 0,
               "coalition": "Communistes et Républicains Progressistes"
             },
             {
@@ -998,6 +2062,8 @@
           "legislature": 1951,
           "total_deputes": 625,
           "duration": 4,
+          "begin": "1951-07-05",
+          "end": "1955-12-01",
           "parties": [
             {
               "name": "PCF",
@@ -1037,6 +2103,10 @@
               "deputes": 14
             },
             {
+              "name": "MIDFA",
+              "deputes": 0
+            },
+            {
               "name": "MRP",
               "deputes": 94,
               "coalition": "Troisième Force"
@@ -1071,6 +2141,8 @@
           "legislature": 1956,
           "total_deputes": 594,
           "duration": 3,
+          "begin": "1956-01-19",
+          "end": "1958-12-08",
           "parties": [
             {
               "name": "PCF",
@@ -1137,12 +2209,15 @@
       ]
     },
     {
-      "name": "V",
+      "name": "Cinquième République",
+      "begin": "1958-10-04",
       "legislatures": [
         {
           "legislature": 1958,
           "total_deputes": 576,
           "duration": 4,
+          "begin": "1958-12-09",
+          "end": "1962-10-10",
           "parties": [
             {
               "name": "PCF",
@@ -1206,6 +2281,8 @@
           "legislature": 1962,
           "total_deputes": 482,
           "duration": 4,
+          "begin": "1962-12-06",
+          "end": "1967-04-02",
           "parties": [
             {
               "name": "PCF",
@@ -1269,6 +2346,8 @@
           "legislature": 1967,
           "total_deputes": 486,
           "duration": 1,
+          "begin": "1967-04-03",
+          "end": "1968-05-30",
           "parties": [
             {
               "name": "PCF",
@@ -1336,6 +2415,8 @@
           "legislature": 1968,
           "total_deputes": 487,
           "duration": 5,
+          "begin": "1968-07-11",
+          "end": "1973-04-01",
           "parties": [
             {
               "name": "PCF",
@@ -1398,6 +2479,8 @@
           "legislature": 1973,
           "total_deputes": 490,
           "duration": 5,
+          "begin": "1973-04-02",
+          "end": "1978-04-02",
           "parties": [
             {
               "name": "PCF",
@@ -1412,8 +2495,16 @@
               "deputes": 89
             },
             {
+              "name": "CIR",
+              "deputes": 0
+            },
+            {
               "name": "PRG",
               "deputes": 13
+            },
+            {
+              "name": "DVG",
+              "deputes": 0
             },
             {
               "name": "Autres",
@@ -1448,10 +2539,16 @@
           "legislature": 1978,
           "total_deputes": 491,
           "duration": 3,
+          "begin": "1978-04-03",
+          "end": "1981-05-22",
           "parties": [
             {
               "name": "PCF",
               "deputes": 86
+            },
+            {
+              "name": "PSU",
+              "deputes": 0
             },
             {
               "name": "PS",
@@ -1495,6 +2592,8 @@
           "legislature": 1981,
           "total_deputes": 491,
           "duration": 5,
+          "begin": "1981-07-02",
+          "end": "1986-04-01",
           "parties": [
             {
               "name": "PCF",
@@ -1541,6 +2640,8 @@
           "legislature": 1986,
           "total_deputes": 577,
           "duration": 2,
+          "begin": "1986-04-02",
+          "end": "1988-05-14",
           "parties": [
             {
               "name": "PCF",
@@ -1590,6 +2691,8 @@
           "legislature": 1988,
           "total_deputes": 577,
           "duration": 5,
+          "begin": "1988-06-23",
+          "end": "1993-04-01",
           "parties": [
             {
               "name": "PCF",
@@ -1644,6 +2747,8 @@
           "legislature": 1993,
           "total_deputes": 577,
           "duration": 4,
+          "begin": "1993-04-02",
+          "end": "1997-04-21",
           "parties": [
             {
               "name": "PCF",
@@ -1707,6 +2812,8 @@
           "legislature": 1997,
           "total_deputes": 577,
           "duration": 5,
+          "begin": "1997-06-12",
+          "end": "2002-06-18",
           "parties": [
             {
               "name": "PCF",
@@ -1766,6 +2873,8 @@
           "legislature": 2002,
           "total_deputes": 577,
           "duration": 5,
+          "begin": "2002-06-19",
+          "end": "2007-06-19",
           "parties": [
             {
               "name": "PCF",
@@ -1800,7 +2909,7 @@
               "deputes": 3
             },
             {
-              "name": "MODEM",
+              "name": "MoDem",
               "deputes": 0
             },
             {
@@ -1831,6 +2940,8 @@
           "legislature": 2007,
           "total_deputes": 577,
           "duration": 5,
+          "begin": "2007-06-20",
+          "end": "2012-06-19",
           "parties": [
             {
               "name": "PCF",
@@ -1869,7 +2980,7 @@
               "deputes": 4
             },
             {
-              "name": "MODEM",
+              "name": "MoDem",
               "deputes": 3
             },
             {
@@ -1905,6 +3016,8 @@
           "legislature": 2012,
           "total_deputes": 577,
           "duration": 5,
+          "begin": "2012-06-20",
+          "end": "2017-06-20",
           "parties": [
             {
               "name": "PCF",
@@ -1945,7 +3058,7 @@
               "deputes": 15
             },
             {
-              "name": "MODEM",
+              "name": "MoDem",
               "deputes": 2
             },
             {
@@ -1982,6 +3095,8 @@
           "legislature": 2017,
           "total_deputes": 577,
           "duration": 5,
+          "begin": "2017-06-21",
+          "end": "2022-06-21",
           "parties": [
             {
               "name": "PCF",
@@ -2020,7 +3135,7 @@
               "deputes": 6
             },
             {
-              "name": "MODEM",
+              "name": "MoDem",
               "deputes": 42,
               "coalition": "Majorité Présidentielle"
             },
@@ -2072,6 +3187,8 @@
           "legislature": 2022,
           "total_deputes": 577,
           "duration": 2,
+          "begin": "2022-06-22",
+          "end": "2024-06-09",
           "parties": [
             {
               "name": "PCF",
@@ -2114,7 +3231,7 @@
               "deputes": 2
             },
             {
-              "name": "MODEM",
+              "name": "MoDem",
               "deputes": 48,
               "coalition": "Ensemble"
             },
@@ -2166,6 +3283,8 @@
           "legislature": 2024,
           "total_deputes": 577,
           "duration": 1,
+          "begin": "2024-07-18",
+          "end": "now",
           "parties": [
             {
               "name": "PCF",
@@ -2204,7 +3323,7 @@
               "deputes": 2
             },
             {
-              "name": "MODEM",
+              "name": "MoDem",
               "deputes": 36,
               "coalition": "Ensemble Pour la République"
             },
