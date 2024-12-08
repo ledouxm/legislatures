@@ -1,5 +1,6 @@
 import {
   HeightIcon,
+  InfoCircledIcon,
   MarginIcon,
   MinusIcon,
   PaddingIcon,
@@ -40,13 +41,15 @@ type Props = {
   setEventVisibility: (eventVisibility: boolean) => void;
   referenceSize: number;
   setReferenceSize: (referenceSize: number) => void;
+  setInfosVisibility: (infosVisibility: boolean) => void;
 };
 
 export default function SettingsLine({
   eventVisibility,
   setEventVisibility,
   referenceSize,
-  setReferenceSize
+  setReferenceSize,
+  setInfosVisibility
 }: Props) {
   const { transitionsVisibility, setTransitionsVisibility } =
     useTransitionsContext();
@@ -55,7 +58,7 @@ export default function SettingsLine({
 
   return (
     <section className="w-full p-2 flex items-end max-w-screen-3xl mx-auto">
-      <div className="w-full flex justify-between">
+      <div className="w-full flex justify-between gap-2">
         {/* Left */}
         <div className="flex gap-1 items-center">
           {/* Events button */}
@@ -98,11 +101,20 @@ export default function SettingsLine({
 
         {/* Right */}
         <div className="flex gap-2 items-center">
+          {/* Infos button */}
+          <SettingsButton
+            Icon={InfoCircledIcon}
+            // name="En savoir plus"
+            onClick={() => setInfosVisibility(true)}
+            label="Informations"
+            position={{ x: "right", y: "top" }}
+          />
+
           {/* Reference size buttons */}
           <SettingsButton
             Icon={MinusIcon}
             onClick={() => setReferenceSize(Math.max(4, referenceSize - 12))}
-            label="Réduire la taille de référence"
+            label="Réduire la taille du graphique"
             position={{ x: "right", y: "top" }}
           />
           <p className="text-sm opacity-75 select-none tabular-nums">
@@ -111,7 +123,7 @@ export default function SettingsLine({
           <SettingsButton
             Icon={PlusIcon}
             onClick={() => setReferenceSize(Math.min(88, referenceSize + 12))}
-            label="Augmenter la taille de référence"
+            label="Augmenter la taille du graphique"
             position={{ x: "right", y: "top" }}
           />
         </div>

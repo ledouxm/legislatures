@@ -92,7 +92,7 @@ export default function Tooltip({
       onMouseEnter={() => setTooltipContent({ chartWidth, ...tooltipContent })}
       onMouseLeave={() => setTooltipContent(null)}
     >
-      <div className="py-1.5 px-[5px] rounded-xl flex flex-col gap-1.5 bg-white shadow-md z-50 border border-black/5">
+      <div className="py-1.5 px-[5px] rounded-xl flex flex-col gap-1.5 bg-white shadow-md z-30 border border-black/5">
         {/* Year and current name */}
         <div className="flex gap-2 justify-start items-center">
           {party.current && (

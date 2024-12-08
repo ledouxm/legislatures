@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { PartyType } from "../../types/party";
-import { useCoalitionsContext } from "../utils/coalitionsContext";
 
 type PartyBarProps = {
   party: PartyType;
@@ -15,6 +14,7 @@ type PartyBarProps = {
     deputies: number;
   };
   transitionDuration: number;
+  barColor: string;
 };
 
 export default function PartyBar({
@@ -24,7 +24,8 @@ export default function PartyBar({
   partyWidth,
   partyX,
   coalitionDatas,
-  transitionDuration
+  transitionDuration,
+  barColor
 }: PartyBarProps) {
   // Display text if the party is wide enough
   const displayText = partyWidth > 30 && height > 13;
@@ -34,16 +35,6 @@ export default function PartyBar({
 
   const coalitionStrokeWidth = 0.75;
   const strokeOffset = coalitionStrokeWidth / 2;
-
-  // Determine the bar color based on coalition visibility
-  const { coalitionsVisibility } = useCoalitionsContext();
-  let barColor = party.current.color;
-  if (coalitionDatas.color && coalitionsVisibility) {
-    barColor =
-      party.current.color !== coalitionDatas.color
-        ? coalitionDatas.color + "CC" // Add alpha channel (80% opacity)
-        : party.current.color;
-  }
 
   return (
     <motion.g

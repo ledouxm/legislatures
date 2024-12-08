@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { EventType } from "../../types/event";
 import getDate from "../utils/getDate";
+import getYear from "../utils/getYear";
 
 type Props = {
   event: EventType;
@@ -96,19 +97,16 @@ export default function Event({
           opacity={0.5}
           fontSize={fontSize}
         >
-          {endDate.toString().split(".")[0] !==
-          beginDate.toString().split(".")[0]
-            ? `${beginDate.toString().split(".")[0]} → ${
-                endDate.toString().split(".")[0]
-              }`
-            : beginDate.toString().split(".")[0]}
+          {getYear(endDate) !== getYear(beginDate)
+            ? `${getYear(beginDate)} → ${getYear(endDate)}`
+            : getYear(beginDate)}
         </text>
         {/* Event Title */}
         <motion.text
           initial={{
             x: isTall
               ? textX
-              : endDate !== beginDate
+              : getYear(endDate) !== getYear(beginDate)
               ? textX + fontSize * 6.5
               : textX + fontSize * 2.75,
             y: isTall ? textY + fontSize + 1 : textY
@@ -116,7 +114,7 @@ export default function Event({
           animate={{
             x: isTall
               ? textX
-              : endDate !== beginDate
+              : getYear(endDate) !== getYear(beginDate)
               ? textX + fontSize * 6.5
               : textX + fontSize * 2.75,
             y: isTall ? textY + fontSize + 1 : textY

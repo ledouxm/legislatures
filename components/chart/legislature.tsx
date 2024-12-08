@@ -9,6 +9,7 @@ import { CurrentType } from "../../types/current";
 import { motion } from "framer-motion";
 import { useTransitionsContext } from "../utils/transitionsContext";
 import getDate from "../utils/getDate";
+import { useCoalitionsContext } from "../utils/coalitionsContext";
 
 type LegislatureProps = {
   leg: LegislatureType;
@@ -27,6 +28,8 @@ export default function Legislature({
   firstLegislature,
   axisLeftPosition
 }: LegislatureProps) {
+  const { coalitionsVisibility } = useCoalitionsContext();
+
   // Toggle currents transition polygons visibility
   const { transitionsVisibility } = useTransitionsContext();
   const heightShare = transitionsVisibility ? 2 : 1;
@@ -160,6 +163,14 @@ export default function Legislature({
             coalitionDatas.color = coalitionMainParty.current.color;
           }
 
+          // Give the party a color based on the coalition visibility
+          const partyColor =
+            coalitionDatas.color && coalitionsVisibility
+              ? party.current.color !== coalitionDatas.color
+                ? coalitionDatas.color + "CC" // Add alpha channel (80% opacity)
+                : party.current.color
+              : party.current.color;
+
           // Find the corresponding party in the next legislature
           const nextParty = nextLeg
             ? nextLeg.parties?.find(
@@ -235,17 +246,18 @@ export default function Legislature({
                 partyX={partyX}
                 coalitionDatas={coalitionDatas}
                 transitionDuration={transitionDuration}
+                barColor={partyColor}
               />
 
               {/* Transition polygons */}
               {nextParty && polygonPoints && (
                 <motion.polygon
                   points={polygonPoints}
-                  fill={party.current.color}
+                  fill={partyColor}
                   opacity={0.75}
                   shapeRendering="crispEdges"
-                  initial={{ points: polygonPoints }}
-                  animate={{ points: polygonPoints }}
+                  initial={{ points: polygonPoints, fill: partyColor }}
+                  animate={{ points: polygonPoints, fill: partyColor }}
                   transition={{ duration: transitionDuration }}
                 />
               )}
