@@ -178,9 +178,9 @@ export default function InfosModal({ setInfosVisibility }: Props) {
               >
                 n&apos;hésitez pas à me contacter
               </a>
-              . Je n'ai pas été totalement méthodique dans mon approche, et j'ai
-              pu commettre des erreurs. Je suis ouvert à toute critique
-              constructive, tant sur le contenu que sur le code.
+              . Je n&apos;ai pas été totalement méthodique dans mon approche, et
+              j&apos;ai pu commettre des erreurs. Je suis ouvert à toute
+              critique constructive, tant sur le contenu que sur le code.
             </p>
           </article>
           <article className="col-span-12 sm:col-span-5 py-8 max-w-prose flex flex-col gap-4">
