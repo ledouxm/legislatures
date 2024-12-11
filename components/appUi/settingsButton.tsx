@@ -71,7 +71,7 @@ export default function SettingsButton({
       {/* Tooltip */}
       {position && (
         <div
-          className="hidden group-hover:block delay-100 absolute text-xs text-left text-nowrap z-30 bg-white p-1.5 rounded-md border border-black/20 pointer-events-none opacity-85"
+          className="hidden group-hover:block group-has-[:focus]:block sm:group-has-[:focus]:hidden delay-100 absolute text-xs text-left text-nowrap z-30 bg-white p-1.5 rounded-md border border-black/20 pointer-events-none opacity-85"
           style={{
             left: position?.x === "left" ? 0 : "auto",
             right: position?.x === "right" ? 0 : "auto",
