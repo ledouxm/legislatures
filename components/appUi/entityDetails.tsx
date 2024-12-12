@@ -6,13 +6,14 @@ import Badge from "./badge";
 import WikiLink from "./wikiLink";
 import { Cross1Icon, EyeClosedIcon, EyeOpenIcon } from "@radix-ui/react-icons";
 import { Key, useCallback, useEffect, useRef, useState } from "react";
-import { useDetailsContext } from "../utils/detailsContext";
+import { useDetailsContext } from "../utils/contexts/detailsContext";
 import { CurrentType } from "../../types/current";
 import { EventType } from "../../types/event";
 import { PartyType } from "../../types/party";
-import { useVisibleCurrentsContext } from "../utils/currentsContext";
+import { useVisibleCurrentsContext } from "../utils/contexts/currentsContext";
 import truncateString from "../utils/truncateString";
 import IconButton from "./iconButton";
+import useKeyPress from "../utils/hooks/useKeyPress";
 
 export default function EntityDetails() {
   // Get the entity to display from the context
@@ -94,17 +95,7 @@ export default function EntityDetails() {
     setDetailsContent(null);
   }, [setDetailsContent]);
   // Close on escape key
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        handleClose();
-      }
-    };
-    window.addEventListener("keydown", handleEscape);
-    return () => {
-      window.removeEventListener("keydown", handleEscape);
-    };
-  }, [handleClose]);
+  useKeyPress("Escape", handleClose);
   // Close on click outside (when detailsContent is not null)
   const detailsRef = useRef<HTMLDivElement>(null);
   useEffect(() => {

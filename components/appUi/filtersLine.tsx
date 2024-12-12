@@ -1,13 +1,13 @@
 "use client";
 
-import { ReloadIcon, ShuffleIcon } from "@radix-ui/react-icons";
+import { ReloadIcon, ShuffleIcon, SymbolIcon } from "@radix-ui/react-icons";
 import EntityButton from "./entityButton";
 import { CurrentType } from "../../types/current";
 import { useEffect, useRef } from "react";
 import { FamilyType } from "../../types/family";
 import CurrentsFamily from "./currentsFamily";
 import SettingsButton from "./settingsButton";
-import { useVisibleCurrentsContext } from "../utils/currentsContext";
+import { useVisibleCurrentsContext } from "../utils/contexts/currentsContext";
 
 export default function FiltersLine({ families }: { families: FamilyType[] }) {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -62,6 +62,7 @@ export default function FiltersLine({ families }: { families: FamilyType[] }) {
             label="Réinitialiser les courants affichés"
             isVisible={visibleCurrents?.length !== currents?.length}
             position={{ x: "left", y: "bottom" }}
+            kbd="r"
           />
 
           {/* Shuffle button */}
@@ -77,6 +78,7 @@ export default function FiltersLine({ families }: { families: FamilyType[] }) {
             }}
             label="Afficher des courants aléatoires"
             position={{ x: "left", y: "bottom" }}
+            kbd="s"
           />
         </div>
 
@@ -85,7 +87,7 @@ export default function FiltersLine({ families }: { families: FamilyType[] }) {
           <div className="absolute left-0 top-0 h-full w-4 bg-gradient-to-r from-white via-white z-30 pointer-events-none -translate-x-1.5"></div>
           <div className="absolute right-0 top-0 h-full w-4 bg-gradient-to-l from-white via-white z-30 pointer-events-none translate-x-1.5"></div>
           <div
-            className="overflow-x-scroll overflow-y-visible h-full flex gap-1 no-scrollbar px-2"
+            className="overflow-x-scroll overflow-y-visible h-9 flex gap-1 no-scrollbar px-2"
             ref={scrollRef}
           >
             {families ? (
@@ -97,9 +99,11 @@ export default function FiltersLine({ families }: { families: FamilyType[] }) {
                 />
               ))
             ) : (
-              <span className="animate-pulse pointer-events-none">
+              <span className="pointer-events-none">
                 <EntityButton
-                  entity={{ name: "Chargement..." }}
+                  entity={{
+                    name: <SymbolIcon className="size-4 animate-spin" />
+                  }}
                   onClick={() => {}}
                   isActive={true}
                   label="Chargement..."

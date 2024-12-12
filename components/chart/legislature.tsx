@@ -2,14 +2,14 @@
 
 import PartyBar from "./partyBar";
 import { LegislatureType } from "../../types/legislature";
-import { ChartDimensions } from "../utils/useChartDimensions";
-import { useTooltipContext } from "../utils/tooltipContext";
-import { useVisibleCurrentsContext } from "../utils/currentsContext";
+import { ChartDimensions } from "../utils/hooks/useChartDimensions";
+import { useTooltipContext } from "../utils/contexts/tooltipContext";
+import { useVisibleCurrentsContext } from "../utils/contexts/currentsContext";
 import { CurrentType } from "../../types/current";
 import { motion } from "framer-motion";
-import { useTransitionsContext } from "../utils/transitionsContext";
+import { useTransitionsContext } from "../utils/contexts/transitionsContext";
 import getDate from "../utils/getDate";
-import { useCoalitionsContext } from "../utils/coalitionsContext";
+import { useCoalitionsContext } from "../utils/contexts/coalitionsContext";
 
 type LegislatureProps = {
   leg: LegislatureType;

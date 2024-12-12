@@ -8,8 +8,6 @@ import {
   PlusIcon
 } from "@radix-ui/react-icons";
 import SettingsButton from "./settingsButton";
-import { useTransitionsContext } from "../utils/transitionsContext";
-import { useCoalitionsContext } from "../utils/coalitionsContext";
 
 function HideTransitionsIcon() {
   return (
@@ -42,6 +40,10 @@ type Props = {
   referenceSize: number;
   setReferenceSize: (referenceSize: number) => void;
   setInfosVisibility: (infosVisibility: boolean) => void;
+  transitionsVisibility: boolean;
+  setTransitionsVisibility: (transitionsVisibility: boolean) => void;
+  coalitionsVisibility: boolean;
+  setCoalitionsVisibility: (coalitionsVisibility: boolean) => void;
 };
 
 export default function SettingsLine({
@@ -49,13 +51,12 @@ export default function SettingsLine({
   setEventVisibility,
   referenceSize,
   setReferenceSize,
-  setInfosVisibility
+  setInfosVisibility,
+  transitionsVisibility,
+  setTransitionsVisibility,
+  coalitionsVisibility,
+  setCoalitionsVisibility
 }: Props) {
-  const { transitionsVisibility, setTransitionsVisibility } =
-    useTransitionsContext();
-  const { coalitionsVisibility, setCoalitionsVisibility } =
-    useCoalitionsContext();
-
   return (
     <section className="w-full p-2 flex items-end max-w-screen-3xl mx-auto">
       <div className="w-full flex justify-between gap-2">
@@ -72,6 +73,7 @@ export default function SettingsLine({
             }
             flipIcon={eventVisibility ? false : true}
             position={{ x: "left", y: "top" }}
+            kbd="e"
           />
 
           {/* Transition polygons button */}
@@ -84,6 +86,7 @@ export default function SettingsLine({
                 : "Afficher les transitions"
             }
             position={{ x: "left", y: "top" }}
+            kbd="t"
           />
 
           {/* Coalitions button */}
@@ -96,6 +99,7 @@ export default function SettingsLine({
                 : "Afficher les coalitions"
             }
             position={{ x: "left", y: "top" }}
+            kbd="c"
           />
         </div>
 
@@ -108,6 +112,7 @@ export default function SettingsLine({
             onClick={() => setInfosVisibility(true)}
             label="Informations"
             position={{ x: "right", y: "top" }}
+            kbd="i"
           />
 
           {/* Reference size buttons */}
@@ -116,6 +121,7 @@ export default function SettingsLine({
             onClick={() => setReferenceSize(Math.max(4, referenceSize - 12))}
             label="Réduire la taille du graphique"
             position={{ x: "right", y: "top" }}
+            kbd={["-", "_"]}
           />
           <p className="text-sm opacity-75 select-none tabular-nums">
             {String(referenceSize).padStart(2, "0")}
@@ -125,6 +131,7 @@ export default function SettingsLine({
             onClick={() => setReferenceSize(Math.min(88, referenceSize + 12))}
             label="Augmenter la taille du graphique"
             position={{ x: "right", y: "top" }}
+            kbd={["+", "="]}
           />
         </div>
       </div>

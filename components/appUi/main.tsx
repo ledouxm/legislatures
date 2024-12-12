@@ -6,8 +6,8 @@ import Chart from "../chart/chart";
 import { CurrentType } from "../../types/current";
 import { EventType } from "../../types/event";
 import { RepublicType } from "../../types/republic";
-import { TooltipProvider } from "../utils/tooltipContext";
-import { useDetailsContext } from "../utils/detailsContext";
+import { TooltipProvider } from "../utils/contexts/tooltipContext";
+import { useDetailsContext } from "../utils/contexts/detailsContext";
 import { useEffect, useRef, useState } from "react";
 
 type Props = {

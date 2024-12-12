@@ -1,3 +1,5 @@
+import useKeyPress from "../utils/hooks/useKeyPress";
+
 type SettingsButtonProps = {
   Icon?: React.ElementType;
   flipIcon?: boolean;
@@ -9,6 +11,7 @@ type SettingsButtonProps = {
   label: string;
   isVisible?: boolean;
   position?: { x: "left" | "right"; y: "top" | "bottom" };
+  kbd?: string | string[];
 };
 
 export default function SettingsButton({
@@ -21,8 +24,10 @@ export default function SettingsButton({
   isActive = true,
   label,
   isVisible = true,
-  position
+  position,
+  kbd
 }: SettingsButtonProps) {
+  useKeyPress(kbd, onClick);
   return (
     <div
       className={`relative group ${
@@ -71,7 +76,7 @@ export default function SettingsButton({
       {/* Tooltip */}
       {position && (
         <div
-          className="hidden group-hover:block group-has-[:focus]:block sm:group-has-[:focus]:hidden delay-100 absolute text-xs text-left text-nowrap z-30 bg-white p-1.5 rounded-md border border-black/20 pointer-events-none opacity-85"
+          className="hidden group-hover:block group-has-[:focus]:block delay-100 absolute text-xs text-left text-nowrap z-30 bg-white p-1.5 rounded-md border border-black/20 pointer-events-none opacity-85"
           style={{
             left: position?.x === "left" ? 0 : "auto",
             right: position?.x === "right" ? 0 : "auto",
@@ -80,6 +85,11 @@ export default function SettingsButton({
           }}
         >
           {label}
+          {kbd && (
+            <kbd className="hidden sm:inline ml-1.5 text-black/80 border border-black/30 rounded px-1 py-0.5 bg-black/5">
+              {kbd[0] || kbd}
+            </kbd>
+          )}
         </div>
       )}
     </div>

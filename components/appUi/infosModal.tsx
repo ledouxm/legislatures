@@ -4,6 +4,7 @@ import { Cross1Icon, GitHubLogoIcon } from "@radix-ui/react-icons";
 import { useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import IconButton from "./iconButton";
+import useKeyPress from "../utils/hooks/useKeyPress";
 
 function InfoLink({ href, children }) {
   return (
@@ -28,17 +29,7 @@ export default function InfosModal({ setInfosVisibility }: Props) {
   }, [setInfosVisibility]);
 
   // Close on escape key
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        handleClose();
-      }
-    };
-    window.addEventListener("keydown", handleEscape);
-    return () => {
-      window.removeEventListener("keydown", handleEscape);
-    };
-  }, [handleClose]);
+  useKeyPress("Escape", handleClose);
 
   // Close on click outside
   const infoModalRef = useRef<HTMLDivElement>(null);
@@ -185,13 +176,33 @@ export default function InfosModal({ setInfosVisibility }: Props) {
               le code.
             </p>
           </article>
-          <article className="col-span-12 sm:col-span-5 pt-8 max-w-prose flex flex-col gap-4">
+          <article className="col-span-12 sm:col-span-5 pt-8 max-w-prose flex flex-col gap-4 justify-between">
             <p>
               Je remercie également{" "}
               <span className="text-blue-500">
                 {"{"}dites-moi si vous voulez apparaitre là dedans ou non{"}"}
               </span>{" "}
               pour leurs explications et retours.{" "}
+            </p>
+            <p className="border-t border-black/30 pt-6 mt-4">
+              <InfoLink href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">
+                Contenu soumis à la licence CC-BY-SA 4.0
+              </InfoLink>
+              . Source : Article{" "}
+              <em>
+                <InfoLink href="http://fr.wikipedia.org/wiki/Liste_des_l%C3%A9gislatures_fran%C3%A7aises">
+                  Liste des législatures françaises
+                </InfoLink>
+              </em>{" "}
+              de{" "}
+              <InfoLink href="https://fr.wikipedia.org/">
+                Wikipédia en français
+              </InfoLink>{" "}
+              (
+              <InfoLink href="http://fr.wikipedia.org/w/index.php?title=Liste_des_l%C3%A9gislatures_fran%C3%A7aises&action=history">
+                auteurs
+              </InfoLink>
+              )
             </p>
           </article>
         </section>

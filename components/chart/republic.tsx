@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import { CurrentType } from "../../types/current";
-import { FamilyType } from "../../types/family";
 import { LegislatureType } from "../../types/legislature";
 import { RepublicType } from "../../types/republic";
-import { ChartDimensions } from "../utils/useChartDimensions";
+import { ChartDimensions } from "../utils/hooks/useChartDimensions";
 import Legislature from "./legislature";
 import getDate from "../utils/getDate";
 

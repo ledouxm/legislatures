@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 
 // These styles apply to every route in the application
 import "./globals.css";
-import { VisibleCurrentsProvider } from "../components/utils/currentsContext";
-import { DetailsProvider } from "../components/utils/detailsContext";
-import { TransitionsProvider } from "../components/utils/transitionsContext";
-import { CoalitionsProvider } from "../components/utils/coalitionsContext";
+import { VisibleCurrentsProvider } from "../components/utils/contexts/currentsContext";
+import { DetailsProvider } from "../components/utils/contexts/detailsContext";
+import { TransitionsProvider } from "../components/utils/contexts/transitionsContext";
+import { CoalitionsProvider } from "../components/utils/contexts/coalitionsContext";
 
 export const metadata: Metadata = {
   title: "Chronoskratos",

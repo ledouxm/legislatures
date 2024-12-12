@@ -2,11 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import { TooltipContentType } from "../../types/tooltipContent";
-import { useTooltipContext } from "../utils/tooltipContext";
+import { useTooltipContext } from "../utils/contexts/tooltipContext";
 import EntityButton from "./entityButton";
 import Badge from "./badge";
 import PercentageButton from "./percentageButton";
-import { useDetailsContext } from "../utils/detailsContext";
+import { useDetailsContext } from "../utils/contexts/detailsContext";
 
 type Props = {
   chartWidth: number;

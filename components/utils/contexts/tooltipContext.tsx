@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState } from "react";
-import { TooltipContentType } from "../../types/tooltipContent";
+import { TooltipContentType } from "../../../types/tooltipContent";
 
 interface TooltipContextType {
   tooltipContent: TooltipContentType | null;

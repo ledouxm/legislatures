@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { FamilyType } from "../../types/family";
 import SettingsButton from "./settingsButton";
 import EntityButton from "./entityButton";
-import { useVisibleCurrentsContext } from "../utils/currentsContext";
+import { useVisibleCurrentsContext } from "../utils/contexts/currentsContext";
 import { EyeClosedIcon, EyeOpenIcon } from "@radix-ui/react-icons";
 
 type Props = {

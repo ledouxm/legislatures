@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import FiltersLine from "../components/appUi/filtersLine";
 import Main from "../components/appUi/main";
-import { useVisibleCurrentsContext } from "../components/utils/currentsContext";
+import { useVisibleCurrentsContext } from "../components/utils/contexts/currentsContext";
 import { FamilyType } from "../types/family";
 import { RepublicType } from "../types/republic";
 import { CurrentType } from "../types/current";
@@ -13,6 +13,8 @@ import republicsData from "../public/data/republics.json";
 import familiesData from "../public/data/currents.json";
 import eventsData from "../public/data/events.json";
 import InfosModal from "../components/appUi/infosModal";
+import { useTransitionsContext } from "../components/utils/contexts/transitionsContext";
+import { useCoalitionsContext } from "../components/utils/contexts/coalitionsContext";
 
 export default function HomePage() {
   const [republics, setRepublics] = useState<RepublicType[] | null>(null);
@@ -23,6 +25,10 @@ export default function HomePage() {
   const [eventVisibility, setEventVisibility] = useState(false);
   const [referenceSize, setReferenceSize] = useState(28);
   const [infosVisibility, setInfosVisibility] = useState(false);
+  const { transitionsVisibility, setTransitionsVisibility } =
+    useTransitionsContext();
+  const { coalitionsVisibility, setCoalitionsVisibility } =
+    useCoalitionsContext();
 
   // Fetch the data
   useEffect(() => {
@@ -44,6 +50,14 @@ export default function HomePage() {
         referenceSize={referenceSize}
         setReferenceSize={(newSize) => setReferenceSize(newSize)}
         setInfosVisibility={setInfosVisibility}
+        transitionsVisibility={transitionsVisibility}
+        setTransitionsVisibility={(newValue) =>
+          setTransitionsVisibility(newValue)
+        }
+        coalitionsVisibility={coalitionsVisibility}
+        setCoalitionsVisibility={(newValue) =>
+          setCoalitionsVisibility(newValue)
+        }
       />
 
       <Main
