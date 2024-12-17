@@ -124,6 +124,7 @@ export default function SettingsLine({
             kbd={["-", "_"]}
           />
           <p className="text-sm opacity-75 select-none tabular-nums">
+            <span className="sr-only">Taille du graphique :</span>
             {String(referenceSize).padStart(2, "0")}
           </p>
           <SettingsButton

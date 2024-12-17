@@ -9,6 +9,7 @@ type Props = {
   minHeight: number;
   firstLegislature: number;
   onClick: () => void;
+  eventsVisibility: boolean;
 };
 
 export default function Event({
@@ -16,10 +17,19 @@ export default function Event({
   axisLeftPosition,
   minHeight,
   firstLegislature,
-  onClick
+  onClick,
+  eventsVisibility
 }: Props) {
   const beginDate = getDate(event.begin);
   const endDate = getDate(event.end);
+
+  const formatDates = (label: boolean = false) => {
+    return (
+      (getYear(endDate) !== getYear(beginDate)
+        ? `${getYear(beginDate)} ${label ? "à" : "→"} ${getYear(endDate)}`
+        : getYear(beginDate)) + (label ? ", " + event.title : "")
+    );
+  };
 
   const y = (beginDate - firstLegislature) * minHeight;
   const height = Math.max((endDate - beginDate) * minHeight, minHeight);
@@ -48,6 +58,8 @@ export default function Event({
       transition={{ duration: transitionDuration }}
       onClick={onClick}
       className="hover:opacity-75 transition-opacity cursor-pointer"
+      role="listitem"
+      aria-label={formatDates(true)}
     >
       {/* Clip */}
       <defs>
@@ -85,10 +97,23 @@ export default function Event({
         transition={{ duration: transitionDuration }}
         fill="black"
         fillOpacity={0.05}
+        aria-label="Ouvrir le détail de l'événement"
+        role="button"
+        onClick={onClick}
+        tabIndex={eventsVisibility ? 0 : -1}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            onClick();
+          }
+        }}
       />
 
-      {/* Event Date */}
-      <g className="translate-x-0 sm:translate-x-5">
+      {/* Event text */}
+      <g
+        aria-hidden
+        className="translate-x-0 sm:translate-x-5"
+      >
+        {/* Event date */}
         <text
           x={textX}
           y={textY}
@@ -97,11 +122,10 @@ export default function Event({
           opacity={0.5}
           fontSize={fontSize}
         >
-          {getYear(endDate) !== getYear(beginDate)
-            ? `${getYear(beginDate)} → ${getYear(endDate)}`
-            : getYear(beginDate)}
+          <tspan>{formatDates()}</tspan>
         </text>
-        {/* Event Title */}
+
+        {/* Event title */}
         <motion.text
           initial={{
             x: isTall

@@ -5,6 +5,7 @@ import { RepublicType } from "../../types/republic";
 import { ChartDimensions } from "../utils/hooks/useChartDimensions";
 import Legislature from "./legislature";
 import getDate from "../utils/getDate";
+import getYear from "../utils/getYear";
 
 type RepublicProps = {
   republic: RepublicType;
@@ -72,14 +73,25 @@ export default function Republic({
   const regimeY = (getDate(republic.begin) - firstLegislature) * minHeight;
   const regimeWidth = dimensions.boundedWidth - axisLeftPosition;
 
+  const republicDescription = `(de ${getYear(getDate(republic.begin))} à ${
+    getYear(getDate(republic.end)) || "aujourd'hui"
+  }). ${republic.legislatures.length} législatures.`;
+
   return (
     <g
+      aria-labelledby={`regime-${republic.begin}-label`}
+      // aria-describedby={`regime-${republic.begin}-description`}
+      aria-details={`regime-${republic.begin}-description`}
       key={republic.name}
       className={`regime-${republic.name}`}
-      transform={`translate(${axisLeftPosition},${0})`} // y could be 24*index
+      transform={`translate(${axisLeftPosition}, 0)`}
+      role="listitem"
     >
       {/* Legislatures list */}
-      <g>
+      <g
+        role="list"
+        aria-label="Législatures"
+      >
         {legislaturesWithIndexes.map((leg) => {
           // Find the next legislature and add the currents to the parties
           const nextLeg = legislaturesWithIndexes.find(
@@ -117,6 +129,10 @@ export default function Republic({
               minHeight={minHeight}
               dimensions={dimensions}
               axisLeftPosition={axisLeftPosition}
+              isNextRep={
+                leg.index === legislaturesWithIndexes.length - 1 &&
+                leg.legislature !== 2024
+              }
             />
           );
         })}
@@ -125,7 +141,15 @@ export default function Republic({
       {/* Regime name */}
       {minHeight > 8 && (
         <g className="pointer-events-none">
+          <text
+            aria-hidden
+            id={`regime-${republic.begin}-description`}
+            className="sr-only"
+          >
+            {republicDescription}
+          </text>
           <motion.text
+            id={`regime-${republic.begin}-label`}
             dy={-4}
             fontSize={12}
             textAnchor="middle"

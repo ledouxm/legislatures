@@ -166,6 +166,7 @@ export default function EntityDetails() {
         ref={detailsRef}
         className="rounded-2xl shadow-lg w-full sm:w-auto max-w-[28rem] max-h-full overflow-y-scroll bg-white p-2.5 sm:p-3 flex flex-col gap-2.5 border border-black/5 pointer-events-auto"
         role="dialog"
+        tabIndex={0}
       >
         {/* Buttons bar */}
         <div className="flex justify-between w-full gap-2">
@@ -182,6 +183,7 @@ export default function EntityDetails() {
               <Badge
                 name={(parent as CurrentType).name}
                 hex={(parent as CurrentType).color}
+                label={`Courant : ${(parent as CurrentType).name}`}
                 onClick={() => onClick(parent)}
               />
             ) : // If event, display dates

@@ -120,7 +120,6 @@ export default function Tooltip({
               })
             }
             isActive={true}
-            label={`${party.name}, détails`}
           />
           <PercentageButton
             percentage={partyPercentage}

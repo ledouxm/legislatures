@@ -1,20 +1,19 @@
-import { InfoCircledIcon } from "@radix-ui/react-icons";
 import hexToRgb from "../utils/hexToRgb";
 
-export default function Badge({
-  name,
-  hex,
-  onClick
-}: {
+type Props = {
   name: string;
   hex: string;
+  label?: string;
   onClick?: () => void;
-}) {
+};
+
+export default function Badge({ name, hex, label, onClick }: Props) {
   const color = hexToRgb(hex);
 
   return (
     <button
-      aria-label={`${name}, détails`}
+      aria-label={label}
+      aria-hidden={!label}
       className="bg-opacity-10 text-opacity-90 rounded-lg px-2 py-1 sm:py-0.5 text-sm sm:text-base font-normal cursor-pointer hover:bg-opacity-20 hover:text-opacity-100 hover:shadow-sm transition text-nowrap items-center flex gap-1.5 truncate"
       style={{
         backgroundColor: `rgb(
@@ -33,7 +32,6 @@ export default function Badge({
       onClick={onClick}
     >
       {name}
-      {/* <InfoCircledIcon className="size-4 inline-block" /> */}
     </button>
   );
 }

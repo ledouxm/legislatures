@@ -36,6 +36,10 @@ export default function PartyBar({
   const coalitionStrokeWidth = 0.75;
   const strokeOffset = coalitionStrokeWidth / 2;
 
+  const srDescription = `${party.deputes} députés. Courant : ${
+    party.current.name
+  }. ${party.coalition ? "Coalition : " + party.coalition : ""}`;
+
   return (
     <motion.g
       key={party.name}
@@ -45,10 +49,14 @@ export default function PartyBar({
         .toLowerCase()
         .replace(/[^a-z]+/g, "")}`}
       x={partyX}
-      y={y}
-      animate={{ x: partyX, y: y }}
+      y={0}
+      animate={{ x: partyX }}
       transition={{ duration: transitionDuration }}
+      aria-label={party.full_name}
+      aria-hidden={party.deputes === 0}
+      role="listitem"
     >
+      <text className="sr-only">{srDescription}</text>
       {/* Current rectangle with its current color */}
       <motion.rect
         x={0}
@@ -72,6 +80,7 @@ export default function PartyBar({
             textAnchor="left"
             fill="currentColor"
             fontSize={10}
+            aria-hidden
           >
             {party.name}
           </text>
@@ -85,6 +94,7 @@ export default function PartyBar({
               fill="currentColor"
               opacity={0.5}
               fontSize={10}
+              aria-hidden
             >
               {party.deputes}
             </text>

@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { useTransitionsContext } from "../utils/contexts/transitionsContext";
 import getDate from "../utils/getDate";
 import { useCoalitionsContext } from "../utils/contexts/coalitionsContext";
+import getYear from "../utils/getYear";
 
 type LegislatureProps = {
   leg: LegislatureType;
@@ -18,6 +19,7 @@ type LegislatureProps = {
   dimensions: ChartDimensions;
   firstLegislature: number;
   axisLeftPosition: number;
+  isNextRep: boolean;
 };
 
 export default function Legislature({
@@ -26,7 +28,8 @@ export default function Legislature({
   minHeight,
   dimensions,
   firstLegislature,
-  axisLeftPosition
+  axisLeftPosition,
+  isNextRep
 }: LegislatureProps) {
   const { coalitionsVisibility } = useCoalitionsContext();
 
@@ -82,11 +85,61 @@ export default function Legislature({
   // Set the motion transition duration
   const transitionDuration = 0.5;
 
+  // Screen readers
+  const mostImportantParty = leg.parties.reduce((a, b) =>
+    a.deputes > b.deputes ? a : b
+  );
+  // Find most important coalition by reducing deputies number of all parties having the same coalition
+  const coalitionsParties = leg.parties.filter((p) => p.coalition);
+  const coalitionsDeputies = coalitionsParties.reduce((acc, party) => {
+    if (party.coalition) {
+      if (!acc[party.coalition]) {
+        acc[party.coalition] = { name: party.coalition, deputes: 0 };
+      }
+      acc[party.coalition].deputes += party.deputes;
+    }
+    return acc;
+  }, {} as { [key: string]: { name: string; deputes: number } });
+
+  // Find the coalition with the most deputies
+  const mostImportantCoalition = Object.values(coalitionsDeputies).reduce(
+    (a, b) => (a.deputes > b.deputes ? a : b),
+    { name: "", deputes: 0 }
+  );
+  const isPartyMostImportantEntity =
+    mostImportantParty.deputes > mostImportantCoalition.deputes;
+
+  const srDescription = isPartyMostImportantEntity
+    ? `Courant majoritaire : ${mostImportantParty.current.name} avec : ${
+        mostImportantParty.full_name
+      }, (${((mostImportantParty.deputes / leg.total_deputes) * 100).toFixed(
+        0
+      )}%).`
+    : `Coalition majoritaire : ${mostImportantCoalition.name}, (${(
+        (mostImportantCoalition.deputes / leg.total_deputes) *
+        100
+      ).toFixed(0)}%)`;
+
+  // Hide the next rep first leg, its only purpose is to calculate the transition polygons
+  if (isNextRep) {
+    return null;
+  }
+
   return (
-    <>
+    <motion.g
+      key={leg.begin}
+      aria-label={`Législature : de ${getYear(getDate(leg.begin))} à ${
+        getYear(getDate(leg.end)) || "aujourd'hui"
+      }`}
+      role="listitem"
+      className={`legislature-${leg.legislature}`}
+      animate={{ y: y }}
+      transition={{ duration: transitionDuration }}
+    >
+      <text className="sr-only">{srDescription}</text>
       <g
-        key={leg.begin}
-        className={`legislature-${leg.legislature}`}
+        role="list"
+        aria-label="Partis"
       >
         {leg.parties.map((party, i) => {
           // Find if the party is visible
@@ -112,7 +165,6 @@ export default function Legislature({
                           (iteratedParty.deputes / filteredTotalDeputies) || 0
                     : accumulator;
                 }, 0);
-
           // Check if the party is in a coalition, and if it's the first or last party of the coalition, and what is its most important party color
           const isInCoalition = party.coalition?.length > 1;
           let coalitionDatas = {
@@ -145,7 +197,6 @@ export default function Legislature({
             coalitionDatas.last =
               !nextVisibleParty ||
               nextVisibleParty.coalition !== party.coalition;
-
             // Find all the parties from the same coalition in the legislature
             const coalitionParties = leg.parties.filter(
               (p) => p.coalition === party.coalition
@@ -162,7 +213,6 @@ export default function Legislature({
             );
             coalitionDatas.color = coalitionMainParty.current.color;
           }
-
           // Give the party a color based on the coalition visibility
           const partyColor =
             coalitionDatas.color && coalitionsVisibility
@@ -170,7 +220,6 @@ export default function Legislature({
                 ? coalitionDatas.color + "CC" // Add alpha channel (80% opacity)
                 : party.current.color
               : party.current.color;
-
           // Find the corresponding party in the next legislature
           const nextParty = nextLeg
             ? nextLeg.parties?.find(
@@ -205,17 +254,15 @@ export default function Legislature({
                     : accumulator;
                 }, 0)
             : null;
-
           // Generate the polygon points
           const polygonPoints = [
-            [partyX, y + height],
-            [partyX + partyWidth, y + height],
-            [nextPartyX + nextPartyWidth, y + height * heightShare],
-            [nextPartyX, y + height * heightShare]
+            [partyX, height],
+            [partyX + partyWidth, height],
+            [nextPartyX + nextPartyWidth, height * heightShare],
+            [nextPartyX, height * heightShare]
           ]
             .map((point) => point.join(","))
             .join(" ");
-
           // Create tooltip content
           const tooltipContent = {
             y,
@@ -225,7 +272,6 @@ export default function Legislature({
             party,
             coalitionDatas
           };
-
           return (
             <g
               key={party.name}
@@ -248,7 +294,6 @@ export default function Legislature({
                 transitionDuration={transitionDuration}
                 barColor={partyColor}
               />
-
               {/* Transition polygons */}
               {nextParty && polygonPoints && (
                 <motion.polygon
@@ -265,6 +310,6 @@ export default function Legislature({
           );
         })}
       </g>
-    </>
+    </motion.g>
   );
 }

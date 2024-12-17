@@ -20,6 +20,10 @@
   .small-caps {
     font-variant-caps: small-caps;
   }
+
+  .sr-only {
+    @apply opacity-0 select-none pointer-events-none;
+  }
 }
 
 * {

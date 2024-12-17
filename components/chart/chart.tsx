@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { CurrentType } from "../../types/current";
 import { EventType } from "../../types/event";
 import { RepublicType } from "../../types/republic";
@@ -94,7 +93,10 @@ export default function Chart({
       style={{ height: svgHeight + minHeight }}
     >
       {/* X Axis and top margin */}
-      <div className="sticky top-0 z-10 backdrop-blur bg-opacity-45 bg-gradient-to-b from-white via-white/50 to-transparent">
+      <div
+        aria-hidden
+        className="sticky top-0 z-10 backdrop-blur bg-opacity-45 bg-gradient-to-b from-white via-white/50 to-transparent"
+      >
         <svg
           width={dimensions.width}
           height={xAxisHeight}
@@ -110,14 +112,20 @@ export default function Chart({
 
       {/* Chart */}
       <svg
+        id="chart"
         width={dimensions.boundedWidth}
         height={svgHeight - 1} // -1 to avoid bottom coalition border on last legislature
         onMouseLeave={() => setTooltipContent(null)}
         className="select-none"
+        role="group"
+        aria-label="Visualisation interactive des législatures françaises"
       >
         {/* Events */}
         <g
           className={`events ${eventsVisibility ? "" : "pointer-events-none"}`}
+          role="list"
+          aria-hidden={!eventsVisibility}
+          aria-label={eventsVisibility ? "Événements contextuels" : ""}
         >
           {events.map((event, index) => {
             return (
@@ -130,6 +138,7 @@ export default function Chart({
                 onClick={() =>
                   eventsVisibility ? setDetailsContent({ entity: event }) : {}
                 }
+                eventsVisibility={eventsVisibility}
               />
             );
           })}
@@ -160,21 +169,26 @@ export default function Chart({
         </defs>
 
         {/* Legislatures */}
-        {republics.map((republic, index) => (
-          <Republic
-            key={republic.name}
-            republic={republic}
-            index={index + 1}
-            axisLeftPosition={axisLeftPosition}
-            minHeight={minHeight}
-            firstLegislature={firstLegislature}
-            dimensions={dimensions}
-            currents={currents}
-            nextRepFirstLeg={
-              republics[republics.indexOf(republic) + 1]?.legislatures[0]
-            }
-          />
-        ))}
+        <g
+          role="list"
+          aria-label="Régimes politiques"
+        >
+          {republics.map((republic, index) => (
+            <Republic
+              key={republic.name}
+              republic={republic}
+              index={index + 1}
+              axisLeftPosition={axisLeftPosition}
+              minHeight={minHeight}
+              firstLegislature={firstLegislature}
+              dimensions={dimensions}
+              currents={currents}
+              nextRepFirstLeg={
+                republics[republics.indexOf(republic) + 1]?.legislatures[0]
+              }
+            />
+          ))}
+        </g>
 
         <YAxis
           domain={[firstLegislature, lastLegislature]}
@@ -187,7 +201,10 @@ export default function Chart({
       </svg>
 
       {/* Bottom margin */}
-      <div className="sticky bottom-0 z-10 backdrop-blur bg-opacity-45 bg-gradient-to-t from-white via-white/50 to-transparent">
+      <div
+        aria-hidden
+        className="sticky bottom-0 z-10 backdrop-blur bg-opacity-45 bg-gradient-to-t from-white via-white/50 to-transparent"
+      >
         <svg
           width={dimensions.width}
           height={xAxisHeight}

@@ -15,6 +15,7 @@ import eventsData from "../public/data/events.json";
 import InfosModal from "../components/appUi/infosModal";
 import { useTransitionsContext } from "../components/utils/contexts/transitionsContext";
 import { useCoalitionsContext } from "../components/utils/contexts/coalitionsContext";
+import Link from "next/link";
 
 export default function HomePage() {
   const [republics, setRepublics] = useState<RepublicType[] | null>(null);
@@ -44,6 +45,12 @@ export default function HomePage() {
 
   return (
     <>
+      <Link
+        href="#chart"
+        className="sr-only"
+        role="navigation"
+        aria-label="Accès rapide"
+      ></Link>
       <SettingsLine
         eventVisibility={eventVisibility}
         setEventVisibility={(newValue) => setEventVisibility(newValue)}

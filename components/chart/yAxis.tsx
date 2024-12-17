@@ -31,7 +31,10 @@ export default function YAxis({
   }, [domain, legislatures, range]);
 
   return (
-    <g className="y-axis">
+    <g
+      aria-hidden
+      className="y-axis"
+    >
       {/* The axis line */}
       <path
         d={[
@@ -68,6 +71,7 @@ export default function YAxis({
             />
             {/* Tick text */}
             <text
+              aria-hidden
               style={{
                 fontSize: "10px",
                 textAnchor: "middle",

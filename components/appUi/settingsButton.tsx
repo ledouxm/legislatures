@@ -38,12 +38,14 @@ export default function SettingsButton({
     >
       <button
         aria-label={label}
+        aria-hidden={!isVisible}
         className={` flex items-center justify-center rounded-full border border-black/10 hover:border-black/20 transition text-nowrap gap-2 select-none bg-white
                     ${Icon && !name ? "size-9 flex-shrink-0" : "h-9 px-3"}
                     ${(number || number === 0) && name ? "pl-1.5 pr-3" : ""}
                     ${!isVisible ? "translate-y-10" : "translate-y-0"}
                 `}
         onClick={onClick}
+        aria-keyshortcuts={Array.isArray(kbd) ? kbd.join(" ou ") : kbd || ""}
       >
         {(number || number === 0) && (
           <span
@@ -76,7 +78,8 @@ export default function SettingsButton({
       {/* Tooltip */}
       {position && (
         <div
-          className="hidden group-hover:block group-has-[:focus]:block delay-100 absolute text-xs text-left text-nowrap z-30 bg-white p-1.5 rounded-md border border-black/20 pointer-events-none opacity-85"
+          aria-hidden
+          className="hidden group-hover:block group-has-[:focus]:block sm:group-has-[:focus:not(:hover):not(:focus-visible)]:hidden delay-100 absolute text-xs text-left text-nowrap z-40 bg-white p-1.5 rounded-md border border-black/20 pointer-events-none opacity-85"
           style={{
             left: position?.x === "left" ? 0 : "auto",
             right: position?.x === "right" ? 0 : "auto",
