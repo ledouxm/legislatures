@@ -3,5 +3,5 @@ export type EventType = {
   end: string;
   title: string;
   keyword: string;
-  type?: "Cohabitation" | "Référendum" | "Lutte" | "Guerre" | "Loi";
+  type?: "Cohabitation" | "Référendum" | "Lutte" | "Guerre" | "Loi" | string;
 };
