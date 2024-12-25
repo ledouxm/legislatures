@@ -43,6 +43,16 @@ export default function Event({
 
   const transitionDuration = 0.5;
 
+  // Event type color
+  const eventColor =
+    {
+      Cohabitation: "#FFC107",
+      Référendum: "#4CAF50",
+      Lutte: "#2196F3",
+      Guerre: "#D32F2F",
+      Loi: "#673AB7"
+    }[event.type] || "black";
+
   return (
     <motion.g
       key={event.title}
@@ -81,7 +91,7 @@ export default function Event({
         x2={axisLeftPosition}
         y1={-1}
         y2={-1}
-        stroke="currentColor"
+        stroke={eventColor}
         // strokeDasharray={"4"}
         strokeWidth={0.1}
         strokeOpacity={1}
@@ -95,7 +105,7 @@ export default function Event({
         initial={{ height: height }}
         animate={{ height: height }}
         transition={{ duration: transitionDuration }}
-        fill="black"
+        fill={eventColor}
         fillOpacity={0.05}
         aria-label="Ouvrir le détail de l'événement"
         role="button"
@@ -118,7 +128,7 @@ export default function Event({
           x={textX}
           y={textY}
           textAnchor="left"
-          fill="currentColor"
+          fill={eventColor}
           opacity={0.5}
           fontSize={fontSize}
         >
@@ -145,7 +155,7 @@ export default function Event({
           }}
           transition={{ duration: transitionDuration }}
           textAnchor="left"
-          fill="currentColor"
+          fill={eventColor}
           fontSize={fontSize}
         >
           {event.title}
