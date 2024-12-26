@@ -48,26 +48,20 @@ export default function Event({
     {
       Cohabitation: "#FFC107",
       Référendum: "#4CAF50",
-      Lutte: "#2196F3",
+      Lutte: "#673AB7",
       Guerre: "#D32F2F",
-      Loi: "#673AB7"
+      Loi: "#2196F3"
     }[event.type] || "black";
 
   return (
     <motion.g
       key={event.title}
       clipPath={`url(#clip-${event.begin})`}
-      initial={{
-        y: y,
-        opacity: "0.1"
-      }}
-      animate={{
-        y: y,
-        opacity: "1"
-      }}
+      initial={{ y: y }}
+      animate={{ y: y }}
       transition={{ duration: transitionDuration }}
       onClick={onClick}
-      className="hover:opacity-75 transition-opacity cursor-pointer"
+      className="cursor-pointer group/event group-has-[g:hover]/eventslist:[&:not(:hover)]:opacity-25 transition-opacity duration-500"
       role="listitem"
       aria-label={formatDates(true)}
     >
@@ -106,7 +100,7 @@ export default function Event({
         animate={{ height: height }}
         transition={{ duration: transitionDuration }}
         fill={eventColor}
-        fillOpacity={0.05}
+        className="opacity-5 group-hover/event:opacity-15 transition-opacity"
         aria-label="Ouvrir le détail de l'événement"
         role="button"
         onClick={onClick}
@@ -129,7 +123,7 @@ export default function Event({
           y={textY}
           textAnchor="left"
           fill={eventColor}
-          opacity={0.5}
+          className="opacity-50 group-hover/event:opacity-85 transition-opacity"
           fontSize={fontSize}
         >
           <tspan>{formatDates()}</tspan>

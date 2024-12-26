@@ -122,7 +122,9 @@ export default function Chart({
       >
         {/* Events */}
         <g
-          className={`events ${eventsVisibility ? "" : "pointer-events-none"}`}
+          className={`events ${
+            eventsVisibility ? "" : "pointer-events-none"
+          } group/eventslist`}
           role="list"
           aria-hidden={!eventsVisibility}
           aria-label={eventsVisibility ? "Événements contextuels" : ""}

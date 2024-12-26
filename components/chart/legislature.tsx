@@ -35,7 +35,7 @@ export default function Legislature({
 
   // Toggle currents transition polygons visibility
   const { transitionsVisibility } = useTransitionsContext();
-  const heightShare = transitionsVisibility ? 2 : 1;
+  const heightShare = transitionsVisibility ? 1.75 : 1;
 
   // Place the legislature on the y axis
   const y = (getDate(leg.begin) - firstLegislature) * minHeight;
@@ -299,7 +299,7 @@ export default function Legislature({
                 <motion.polygon
                   points={polygonPoints}
                   fill={partyColor}
-                  opacity={0.75}
+                  opacity={0.65}
                   shapeRendering="crispEdges"
                   initial={{ points: polygonPoints, fill: partyColor }}
                   animate={{ points: polygonPoints, fill: partyColor }}

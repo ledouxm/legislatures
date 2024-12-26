@@ -8,9 +8,9 @@ import { TransitionsProvider } from "../components/utils/contexts/transitionsCon
 import { CoalitionsProvider } from "../components/utils/contexts/coalitionsContext";
 
 export const metadata: Metadata = {
-  title: "Chronoskratos",
+  title: "Visualisation des législatures françaises",
   description:
-    "Historique des compositions de l'assemblée nationale des Républiques Françaises"
+    "Historique des compositions de l'assemblée nationale depuis 1791"
 };
 
 export default function RootLayout({

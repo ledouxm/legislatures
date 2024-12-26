@@ -250,6 +250,12 @@
       "type": "Loi"
     },
     {
+      "begin": "1885-01-25",
+      "end": "1891-09-30",
+      "title": "Crise boulangiste",
+      "keyword": "Boulangisme"
+    },
+    {
       "begin": "1894-12-22",
       "end": "1906-07-12",
       "title": "Affaire Dreyfus",
@@ -503,7 +509,7 @@
     {
       "begin": "2020-03-17",
       "end": "2021-05-02",
-      "title": "Confinements lié à la pandémie de Covid-19",
+      "title": "Confinements liés à la pandémie de Covid-19",
       "keyword": "Confinements liés à la pandémie de Covid-19 en France"
     },
     {

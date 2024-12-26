@@ -60,9 +60,9 @@ export default function InfosModal({ setInfosVisibility }: Props) {
           <div className="bg-white rounded-full">
             <Link
               className="size-9 bg-black/5 hover:bg-black/10 rounded-full flex items-center justify-center cursor-pointer text-black/50 hover:text-black transition-all"
-              href="#"
+              href="https://github.com/Spratch/legislatures"
               target="_blank"
-              title="Voir le code source"
+              title="Contribuer sur GitHub"
             >
               <GitHubLogoIcon className="size-5" />
             </Link>
@@ -165,7 +165,7 @@ export default function InfosModal({ setInfosVisibility }: Props) {
               Si vous y rencontrez des erreurs, des imprécisions, des oublis, ou
               si vous avez des suggestions,{" "}
               <a
-                href="mailto:"
+                href="mailto:legislaturesfr@gmail.com"
                 className="text-blue-500 hover:opacity-70 transition-opacity"
               >
                 n&rsquo;hésitez pas à me contacter
@@ -178,11 +178,8 @@ export default function InfosModal({ setInfosVisibility }: Props) {
           </article>
           <article className="col-span-12 sm:col-span-5 pt-8 max-w-prose flex flex-col gap-4 justify-between">
             <p>
-              Je remercie également{" "}
-              <span className="text-blue-500">
-                {"{"}dites-moi si vous voulez apparaitre là dedans ou non{"}"}
-              </span>{" "}
-              pour leurs explications et retours.{" "}
+              Je remercie également toutes les personnes qui m&rsquo;ont apporté
+              données, explications, retours et soutien.{" "}
             </p>
             <p className="border-t border-black/30 pt-6 mt-4">
               <InfoLink href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">

@@ -41,7 +41,7 @@ export default function HomePage() {
     setVisibleCurrents(currentsData);
     setFamilies(familiesData.families);
     setEvents(eventsData.events);
-  }, [setVisibleCurrents, republicsData, familiesData, eventsData]); // Auto update when json files are updated (dev mode)
+  }, [setVisibleCurrents]); // Add republicsData, familiesData, eventsData to auto update when json files are updated (dev mode)
 
   return (
     <>
