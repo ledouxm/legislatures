@@ -45,12 +45,6 @@ export default function HomePage() {
 
   return (
     <>
-      <Link
-        href="#chart"
-        className="sr-only"
-        role="navigation"
-        aria-label="Accès rapide"
-      ></Link>
       <SettingsLine
         eventVisibility={eventVisibility}
         setEventVisibility={(newValue) => setEventVisibility(newValue)}
