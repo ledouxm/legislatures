@@ -5,4 +5,5 @@ export type RepublicType = {
   begin?: string;
   end?: string;
   legislatures: LegislatureType[];
+  source?: string[];
 };
