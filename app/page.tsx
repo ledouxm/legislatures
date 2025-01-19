@@ -15,7 +15,6 @@ import eventsData from "../public/data/events.json";
 import InfosModal from "../components/appUi/infosModal";
 import { useTransitionsContext } from "../components/utils/contexts/transitionsContext";
 import { useCoalitionsContext } from "../components/utils/contexts/coalitionsContext";
-import Link from "next/link";
 
 export default function HomePage() {
   const [republics, setRepublics] = useState<RepublicType[] | null>(null);

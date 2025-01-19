@@ -190,6 +190,9 @@
               "name": "ROY",
               "deputes": 0
             }
+          ],
+          "source": [
+            "J'aimerai en trouver. Je n'ai aucune donnée sur la législature du premier Empire."
           ]
         }
       ]
@@ -201,7 +204,7 @@
       "legislatures": [
         {
           "legislature": 1814,
-          "total_deputes": 237,
+          "total_deputes": 300,
           "duration": 1,
           "begin": "1814-06-04",
           "end": "1815-03-20",
