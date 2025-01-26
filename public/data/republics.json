@@ -76,7 +76,7 @@
         },
         {
           "legislature": 1795,
-          "total_deputes": 504,
+          "total_deputes": 477,
           "duration": 4,
           "begin": "1795-10-27",
           "end": "1799-04-16",
@@ -98,7 +98,7 @@
               "deputes": 135
             },
             {
-              "name": "Autres",
+              "name": "Indé",
               "deputes": 44
             },
             {
@@ -109,6 +109,12 @@
               "name": "ROY",
               "deputes": 33
             }
+          ],
+          "source": [
+            "Puisque la législature de 1795 est renouvelée par tiers en trois élections, j'ai fait le choix d'additionner les résultats des élections de 1795 (150 députés), 1797 (177) et 1798 (150).",
+            "https://fr.wikipedia.org/wiki/%C3%89lections_l%C3%A9gislatives_fran%C3%A7aises_de_1795",
+            "https://fr.wikipedia.org/wiki/%C3%89lections_l%C3%A9gislatives_fran%C3%A7aises_de_1797",
+            "https://fr.wikipedia.org/wiki/%C3%89lections_l%C3%A9gislatives_fran%C3%A7aises_de_1798"
           ]
         },
         {
@@ -150,6 +156,9 @@
               "name": "ROY",
               "deputes": 80
             }
+          ],
+          "source": [
+            "https://fr.wikipedia.org/wiki/%C3%89lections_l%C3%A9gislatives_fran%C3%A7aises_de_1799"
           ]
         }
       ]
@@ -235,6 +244,7 @@
             }
           ],
           "source": [
+            "J'ai seulement trouvé dans la constitution que les députés de cette législature sont restés les mêmes que ceux de la législature précédente.",
             "https://www.conseil-constitutionnel.fr/les-constitutions-dans-l-histoire/charte-constitutionnelle-du-4-juin-1814#articles_transitoires"
           ]
         }

@@ -28,7 +28,7 @@
             {
               "name": "URR",
               "full_name": "Union républicaine et résistance",
-              "keyword": "Union progressiste (France)" 
+              "keyword": "Union progressiste (France)"
             },
             {
               "name": "URP",
@@ -326,7 +326,7 @@
               "full_name": "Divers gauche"
             }
           ]
-        }        
+        }
       ]
     },
     {
@@ -538,7 +538,7 @@
               "keyword": "Les Centristes - Le Nouveau Centre"
             }
           ]
-        }        
+        }
       ]
     },
     {
@@ -703,7 +703,7 @@
               "full_name": "Les Républicains"
             }
           ]
-        }        
+        }
       ]
     },
     {
@@ -951,7 +951,7 @@
               "keyword": "Bonapartisme"
             }
           ]
-        }        
+        }
       ]
     },
     {
@@ -963,6 +963,11 @@
           "color": "#CDCCCD",
           "keyword": "Non-inscrit à l'Assemblée nationale",
           "parties": [
+            {
+              "name": "Indé",
+              "full_name": "Indépendant",
+              "keyword": "Indépendant (politique) #France"
+            },
             {
               "name": "Autres",
               "full_name": "Autres",

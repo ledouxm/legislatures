@@ -186,16 +186,34 @@ export default function EntityDetails() {
                 label={`Courant : ${(parent as CurrentType).name}`}
                 onClick={() => onClick(parent)}
               />
-            ) : // If event, display dates
+            ) : // If event, display dates and type
             event ? (
               (() => {
                 const beginDate = new Date(event.begin).getFullYear();
                 const endDate = new Date(event.end).getFullYear();
                 return (
-                  <div className="h-9 px-2.5 rounded-full border border-black/20 border-dashed text-sm text-black/50 leading-none flex items-center">
-                    {endDate !== beginDate
-                      ? `${beginDate} → ${endDate}`
-                      : beginDate}
+                  <div className="flex gap-2 items-stretch">
+                    <div className="h-9 px-2.5 rounded-full border border-black/20 border-dashed text-sm text-black/50 leading-none flex items-center">
+                      {endDate !== beginDate
+                        ? `${beginDate} → ${endDate}`
+                        : beginDate}
+                    </div>
+                    {event.type && (
+                      <Badge
+                        name={event.type}
+                        hex={
+                          {
+                            Cohabitation: "#FFC107",
+                            Référendum: "#4CAF50",
+                            Lutte: "#673AB7",
+                            Guerre: "#D32F2F",
+                            Loi: "#2196F3"
+                          }[event.type] || "black"
+                        }
+                        label={event.type}
+                        isClickable={false}
+                      />
+                    )}
                   </div>
                 );
               })()
