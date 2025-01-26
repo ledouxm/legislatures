@@ -3,7 +3,6 @@ import { PartyType } from "../../types/party";
 
 type PartyBarProps = {
   party: PartyType;
-  y: number;
   height: number;
   partyWidth: number;
   partyX: number;
@@ -19,7 +18,6 @@ type PartyBarProps = {
 
 export default function PartyBar({
   party,
-  y,
   height,
   partyWidth,
   partyX,

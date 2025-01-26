@@ -14,6 +14,7 @@ import { useVisibleCurrentsContext } from "../utils/contexts/currentsContext";
 import truncateString from "../utils/truncateString";
 import IconButton from "./iconButton";
 import useKeyPress from "../utils/hooks/useKeyPress";
+import { useHorizontalScroll } from "../utils/hooks/useHorizontalScroll";
 
 export default function EntityDetails() {
   // Get the entity to display from the context
@@ -124,29 +125,7 @@ export default function EntityDetails() {
   }
 
   // Convert vertical scroll to horizontal scroll
-  const detailsScrollRef = useRef<HTMLUListElement>(null);
-  useEffect(() => {
-    const element = detailsScrollRef.current;
-
-    const handleScroll = (e: WheelEvent) => {
-      if (element) {
-        if (e.deltaY !== 0) {
-          // Scroll horizontally
-          element.scrollLeft += e.deltaY;
-          // Prevent vertical scroll
-          e.preventDefault();
-        }
-      }
-    };
-    if (element) {
-      element.addEventListener("wheel", handleScroll, { passive: false });
-    }
-    return () => {
-      if (element) {
-        element.removeEventListener("wheel", handleScroll);
-      }
-    };
-  }, []);
+  const detailsScrollRef = useHorizontalScroll<HTMLUListElement>();
 
   // Get window width
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);

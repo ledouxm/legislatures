@@ -1,8 +1,8 @@
 import { useMemo } from "react";
-import * as d3 from "d3";
 import { LegislatureType } from "../../types/legislature";
 import { motion } from "framer-motion";
 import getDate from "../utils/getDate";
+import { scaleLinear } from "d3";
 
 // Inspired by https://2019.wattenberger.com/blog/react-and-d3
 
@@ -20,7 +20,7 @@ export default function YAxis({
   legislatures
 }: Props) {
   const ticks = useMemo(() => {
-    const yScale = d3.scaleLinear().domain(domain).range(range);
+    const yScale = scaleLinear().domain(domain).range(range);
 
     const customTicks = legislatures.map((leg) => getDate(leg.begin));
 

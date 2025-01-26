@@ -1,5 +1,5 @@
+import { scaleLinear } from "d3";
 import { useMemo } from "react";
-import * as d3 from "d3";
 
 // Inspired by https://2019.wattenberger.com/blog/react-and-d3
 
@@ -23,7 +23,7 @@ export default function XAxis({
 
   const ticks = useMemo(() => {
     const adjustedRange = [axisLeftPosition!, range[1]];
-    const xScale = d3.scaleLinear().domain(domain).range(adjustedRange);
+    const xScale = scaleLinear().domain(domain).range(adjustedRange);
 
     const customTicks = [25, 50, 75];
 

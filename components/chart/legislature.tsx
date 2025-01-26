@@ -286,7 +286,6 @@ export default function Legislature({
               {/* Parties */}
               <PartyBar
                 party={party}
-                y={y}
                 height={height}
                 partyWidth={partyWidth}
                 partyX={partyX}

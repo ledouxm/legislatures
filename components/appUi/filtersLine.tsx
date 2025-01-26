@@ -3,14 +3,15 @@
 import { ReloadIcon, ShuffleIcon, SymbolIcon } from "@radix-ui/react-icons";
 import EntityButton from "./entityButton";
 import { CurrentType } from "../../types/current";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { FamilyType } from "../../types/family";
 import CurrentsFamily from "./currentsFamily";
 import SettingsButton from "./settingsButton";
 import { useVisibleCurrentsContext } from "../utils/contexts/currentsContext";
+import { useHorizontalScroll } from "../utils/hooks/useHorizontalScroll";
 
 export default function FiltersLine({ families }: { families: FamilyType[] }) {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useHorizontalScroll<HTMLDivElement>(); // Convert vertical scroll to horizontal scroll
   const { visibleCurrents, setVisibleCurrents } = useVisibleCurrentsContext();
   const currents = families?.flatMap((family) => family.currents);
 
@@ -25,29 +26,25 @@ export default function FiltersLine({ families }: { families: FamilyType[] }) {
     }
   };
 
-  // Convert vertical scroll to horizontal scroll
-  useEffect(() => {
-    const element = scrollRef.current;
-
-    const handleScroll = (e: WheelEvent) => {
-      if (element) {
-        if (e.deltaY !== 0) {
-          // Scroll horizontally
-          element.scrollLeft += e.deltaY;
-          // Prevent vertical scroll
-          e.preventDefault();
-        }
-      }
-    };
-    if (element) {
-      element.addEventListener("wheel", handleScroll, { passive: false });
+  // Use Fisher-Yates algorithm to shuffle an array
+  const shuffleArray = (array: CurrentType[]) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-    return () => {
-      if (element) {
-        element.removeEventListener("wheel", handleScroll);
-      }
-    };
-  }, []);
+    return shuffled;
+  };
+
+  // Shuffle currents and show a random number of them
+  const handleShuffle = () => {
+    const shuffledCurrents = shuffleArray(currents);
+    const randomCurrents = shuffledCurrents.slice(
+      0,
+      Math.floor(Math.random() * currents.length) + 1
+    );
+    setVisibleCurrents(randomCurrents);
+  };
 
   return (
     <section className="w-full p-2 flex items-end max-w-screen-3xl mx-auto relative z-20">
@@ -68,14 +65,7 @@ export default function FiltersLine({ families }: { families: FamilyType[] }) {
           {/* Shuffle button */}
           <SettingsButton
             Icon={ShuffleIcon}
-            onClick={() => {
-              const shuffledCurrents = currents.sort(() => 0.5 - Math.random());
-              const randomCurrents = shuffledCurrents.slice(
-                0,
-                Math.floor(Math.random() * currents.length) + 1
-              );
-              setVisibleCurrents(randomCurrents);
-            }}
+            onClick={handleShuffle}
             label="Afficher des courants aléatoires"
             position={{ x: "left", y: "bottom" }}
             kbd="s"
