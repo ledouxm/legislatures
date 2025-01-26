@@ -7,6 +7,7 @@ import { DetailsProvider } from "../components/utils/contexts/detailsContext";
 import { TransitionsProvider } from "../components/utils/contexts/transitionsContext";
 import { CoalitionsProvider } from "../components/utils/contexts/coalitionsContext";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const title = "Visualisation des législatures françaises";
 const description =
@@ -50,6 +51,7 @@ export default function RootLayout({
           </DetailsProvider>
         </VisibleCurrentsProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
